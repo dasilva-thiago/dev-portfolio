@@ -160,33 +160,33 @@ nav .right a span {
     font-weight: 600;
 }
 
-/* section 3 testimony */
-.testimony-section {
+/* section 3 about */
+.about-section {
     padding: 0 50px;
     margin-bottom: 100px;
 }
 
-.testimony-section h2 {
+.about-section h2 {
     font-size: 35px;
     margin-bottom: 30px;
 }
 
-.testimony-section .group {
+.about-section .group {
     display: flex;
     align-items: center;
     gap: 50px;
 }
 
-.testimony-section .group .person-details {
+.about-section .group .person-details {
     text-align: center ;
     flex: 2;
 }
 
-.testimony-section .group .text {
+.about-section .group .text {
     flex: 8;
 }
 
-.testimony-section .group .person-details img {
+.about-section .group .person-details img {
     width: 200px;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -194,11 +194,11 @@ nav .right a span {
     margin-bottom: 10px;
 }
 
-.testimony-section .group .person-details p {
+.about-section .group .person-details p {
     font-weight: 600;
 }
 
-.testimony-section .group .person-details p:last-child {
+.about-section .group .person-details p:last-child {
     font-weight: normal;
 
 }
@@ -281,15 +281,15 @@ nav .right a span {
       width: 300px;  
     }
 
-    /* Section 3: Testimony */
-    .testimony-section h2 {
+    /* Section 3 about */
+    .about-section h2 {
         text-align: center;
     }
-        .testimony-section .group {
+        .about-section .group {
             flex-direction: column;
         }
     
-        .testimony-section .group .text {
+        .about-section .group .text {
             text-align: center;
         }
 
@@ -337,8 +337,8 @@ nav .right a span {
         font-size: 16px;
     }
 
-    /* section 4: TESTIMONY*/
-        .testimony-section
+    /* section 4: About */
+        .about-section
         {
             padding: 0 20px;
         }
