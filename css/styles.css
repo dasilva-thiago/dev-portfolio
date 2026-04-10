@@ -2,6 +2,7 @@
     --text-color: #1a1c20;
     --link-color: #4a76ee;
     --background-color: #eeeff1;
+    --muted-color: #555;
 }
 
 * {
@@ -160,7 +161,125 @@ nav .right a span {
     font-weight: 600;
 }
 
-/* section 3 about */
+/* Section 3: Projects */
+.projects-section {
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+
+.projects-section h2 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.projects-section .section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    min-height: 320px;
+
+    /* <a> styles reset */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    box-shadow: 0 6px 25px rgba(0,0,0,0.14);
+    transform: translateY(-3px);
+    transition: all .2s ease;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: var(--link-color);
+    color: var(--background-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0,5px;
+}
+
+.project-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: var(--muted-color);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tech span {
+    background-color: var(--background-color);
+    border: 1.5px solid #d3d3d3;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* setas do carousel */
+.projects-section .carousel-control-prev,
+.projects-section .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.projects-section .carousel-control-prev { left: -20px; }
+.projects-section .carousel-control-next { right: -20px; }
+
+/* pontinhos indicadores */
+.projects-section .carousel-indicators [data-bs-target] {
+    background-color: var(--text-color);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    opacity: 0.3;
+}
+
+.projects-section .carousel-indicators .active {
+    opacity: 1;
+}
+
+
+
+/* Section 4: About */
 .about-section {
     padding: 0 50px;
     margin-bottom: 100px;
@@ -203,7 +322,7 @@ nav .right a span {
 
 }
 
-/* section 4: Contact */
+/* Section 5: Contact */
 
 .contact-section {
     padding: 0 50px;
@@ -281,6 +400,19 @@ nav .right a span {
       width: 300px;  
     }
 
+    /* projects */
+.project-card {
+    flex-direction: column;
+    padding: 25px;
+}
+
+.project-image {
+    width: 100%;
+}
+
+.projects-section .carousel-control-prev { left: 0; }
+.projects-section .carousel-control-next { right: 0; }
+
     /* Section 3 about */
     .about-section h2 {
         text-align: center;
@@ -337,13 +469,18 @@ nav .right a span {
         font-size: 16px;
     }
 
+    /* projects */
+.projects-section {
+    padding: 0 20px;
+}
+
     /* section 4: About */
         .about-section
         {
             padding: 0 20px;
         }
 
-    /* section 4: Contact */
+    /* section 5: Contact */
         .contact-section {
             padding: 0 20px;
         }
