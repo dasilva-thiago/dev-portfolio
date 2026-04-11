@@ -186,7 +186,7 @@ nav .right a span {
     background-color: var(--background-color);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    min-height: 320px;
+    min-height: 418px;
 
     /* <a> styles reset */
     text-decoration: none;
@@ -208,7 +208,19 @@ nav .right a span {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
 }
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
 
 .project-tag {
     display: inline-block;
@@ -220,7 +232,7 @@ nav .right a span {
     font-weight: 600;
     margin-bottom: 12px;
     text-transform: uppercase;
-    letter-spacing: 0,5px;
+    letter-spacing: 0.5px;
 }
 
 .project-info h3 {
@@ -229,7 +241,7 @@ nav .right a span {
 }
 
 .project-info p {
-    color: var(--muted-color);
+    color: var(--text-color);
     margin-bottom: 16px;
     line-height: 1.6;
 }
@@ -252,17 +264,30 @@ nav .right a span {
 /* setas do carousel */
 .projects-section .carousel-control-prev,
 .projects-section .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    background-color: var(--text-color);
-    border-radius: 50%;
+    width: 36px;
+    height: 36px;
     top: 50%;
     transform: translateY(-50%);
     opacity: 1;
+
+    border-color: transparent;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 14px;
+
+    position:absolute;
 }
 
-.projects-section .carousel-control-prev { left: -20px; }
-.projects-section .carousel-control-next { right: -20px; }
+.projects-section .carousel-control-prev:hover,
+.projects-section .carousel-control-next:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    transition: all .2s ease;
+}
+
+
+.projects-section .carousel-control-prev { left: -50px; }
+.projects-section .carousel-control-next { right: -50px; }
 
 /* pontinhos indicadores */
 .projects-section .carousel-indicators [data-bs-target] {
@@ -404,10 +429,12 @@ nav .right a span {
 .project-card {
     flex-direction: column;
     padding: 25px;
+    height: auto;
 }
 
 .project-image {
     width: 100%;
+    height: 200px;
 }
 
 .projects-section .carousel-control-prev { left: 0; }
@@ -470,9 +497,12 @@ nav .right a span {
     }
 
     /* projects */
-.projects-section {
-    padding: 0 20px;
-}
+    .projects-section {
+        padding: 0 20px;
+    }
+
+    .projects-section .carousel-control-prev { left: -22px; }
+    .projects-section .carousel-control-next { right: -22px; }
 
     /* section 4: About */
         .about-section
