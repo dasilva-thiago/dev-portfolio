@@ -31,6 +31,7 @@ body {
     color: var(--text-color);
     max-width: 1400px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 a {
@@ -60,13 +61,29 @@ nav .right a {
     margin: 0 10px;
 }
 
+nav .right {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
 nav .right a:last-child {
     color: var(--background-color);
     background-color: var(--text-color);
     padding: 5px 15px;
     border-radius: 5px;
-   
+}
 
+nav .right button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 22px;
+    padding: 0 10px;
 }
 
 nav .right a span {
@@ -401,6 +418,7 @@ nav .right a span {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-width: 0;
 }
 
 .contact-section .group form label {
@@ -424,6 +442,9 @@ nav .right a span {
     outline: none;
     resize: none;
     transition: border-color .2s ease, box-shadow .2s ease;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .contact-section .group form input:focus,
