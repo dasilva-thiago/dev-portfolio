@@ -130,7 +130,7 @@
 <!-- projects section -->
 <section id="projects" class="projects-section">
     <h2>Projects</h2>
-    <p class="section-subtitle">Some of my recent work</p>
+    <p class="section-subtitle">My recent work</p>
 
     <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
 
@@ -246,7 +246,7 @@
             <h2>Contact</h2>
             
             <div class="group">
-                <div class="text"> <p>Feel free to get in touch! I'm currently looking for internship and other opportunities in technology, especially in software development. If you have a project, opportunity, or just want to connect and exchange ideas, I’d be happy to talk. <br><br> You can reach me through this form or via email and LinkedIn. I’m always open to new challenges and collaborations. </p>
+                <div class="text"> <p>Feel free to get in touch! I'm currently looking for internship and other opportunities in technology, especially in software development. If you have a project, opportunity, or just want to connect and exchange ideas, I’d be happy to talk. <br><br> You can reach me through this form or via email and LinkedIn. Let’s work together. Send me a message — I’ll get back to you soon. </p>
 
                 </div>
 
@@ -260,7 +260,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" cols="30" rows="10"></textarea>
 
-                    <button type="submit">Send Message</button>
+                    <button type="submit">Get in Touch</button>
                 </form>
             </div>
          </section>
@@ -295,7 +295,7 @@
             const data = await response.json();
 
             if(data.success) {
-                alert('Message sent successfully!');
+                alert('Got it! I’ll reply as soon as possible.');
                 form.reset();
             } else {
                 alert('Failed to send message. Please try again later.');
@@ -304,7 +304,7 @@
                 console.error('Error sending message:', error);
                 alert('An error occurred while sending your message. Please try again later.');
             } finally {
-                button.textContent = 'Send Message';
+                button.textContent = 'Get in Touch';
                 button.disabled = false;
             }
         });
