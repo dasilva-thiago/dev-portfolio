@@ -150,9 +150,9 @@
 
         <!-- Indicadores (pontinhos) -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-label="Project 1"></button>
+            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Project 2"></button>
+            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Project 3"></button>
         </div>
 
         <!-- Slides -->
@@ -228,10 +228,10 @@
         </div><!-- /carousel-inner -->
 
                 <!-- Setas de navegação -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" aria-label="Previous Project">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" aria-label="Next Project">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
 
@@ -280,6 +280,30 @@
          </section>
 
         </main>
+
+        <footer>
+
+            <div class="footer-links">
+                <a href="https://github.com/dasilva-thiago" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Github</span>
+
+                </a>
+                <a href="https://www.linkedin.com/in/thiago-da-silva-876805269/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>Linkedin</span>
+                </a>
+                <a href="mailto:thiagosillva785@gmaill.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+            <p>&copy; <span id="footer-year"></span> Thiago da Silva • Pindamonhangaba, SP • Brazil</p>
+        </footer>
+
+        <script>
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
+        </script>
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
      
