@@ -443,10 +443,18 @@ nav .right a span {
     text-align: center;
 }
 
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 36px;    
+    overflow: visible;        
+}
+
 .timeline::before {
     content: '';
     position: absolute;
-    left: 6px;
+    left: 8px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -460,7 +468,7 @@ nav .right a span {
 
 .timeline-dot {
     position: absolute;
-    left: -27px;
+    left: -24px;
     top: 5px;
     width: 14px;
     height: 14px;
@@ -665,8 +673,20 @@ footer .footer-links a:hover {
 @media (max-width: 600px) {
     /*navbar for mobile*/
     nav {
-        padding: 0 20px;
+        padding: 0 16px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 60px;
+        gap: 6px;
+    }
 
+    nav .left a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    nav .right {
+        gap: 2px;
     }
 
     nav .right a span {
@@ -675,12 +695,19 @@ footer .footer-links a:hover {
 
      nav .right a {
         font-size: 22px;
+        padding: 0 4px;
     }
 
      nav .right a:last-child {
        color: var(--text-color);
        background-color: transparent;
        padding: 0;
+    }
+
+    .lang-switcher .lang-btn {
+        font-size: 11px;
+        padding: 3px 6px;
+        line-height: 1.6;
     }
 
     /*section 1 hero*/
