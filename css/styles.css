@@ -386,8 +386,6 @@ nav .right a span {
     opacity: 1;
 }
 
-
-
 /* Section 4: About */
 .about-section {
     padding: 0 50px;
@@ -402,7 +400,7 @@ nav .right a span {
 
 .about-section .group {
     display: flex;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: 50px;
 }
 
@@ -675,20 +673,31 @@ footer .footer-links a:hover {
 @media (max-width: 600px) {
     /*navbar for mobile*/
     nav {
-        padding: 0 16px;
-        flex-wrap: wrap;
+        padding: 20px;
+        flex-direction: column-reverse;
         height: auto;
         min-height: 60px;
-        gap: 6px;
+        gap: 15px;
     }
 
     nav .left a {
-        font-size: 16px;
+        font-size: 22px;
         white-space: nowrap;
     }
 
     nav .right {
-        gap: 2px;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav .right a {
+        font-size: 32px; 
+        padding: 5px;
+    }
+
+    .lang-switcher {
+        margin-left: 5px;
     }
 
     nav .right a span {
@@ -716,6 +725,26 @@ footer .footer-links a:hover {
     .hero-section {
         padding: 0 20px;
     }
+    
+    .hero-section .headshot img {
+        width: 250px;
+    }
+    .hero-section .text {
+        text-align: center;
+    }
+
+    .hero-section .text .links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-right: 0;
+    }
+
+    .hero-section .text .links a {
+        margin-right: 0;
+    }
+
     .hero-section .text h2 {
         font-size: 30px;
     }
@@ -737,18 +766,70 @@ footer .footer-links a:hover {
     .projects-section .carousel-control-next { right: -22px; }
 
     /* section 4: About */
-        .about-section
-        {
-            padding: 0 20px;
-        }
+    .about-section{
+        padding: 0 20px;
+    }
+
+    .about-section .group {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; 
+    }
+
+    .about-section .group .person-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section .group .text {
+        padding-top: 0;
+        text-align: center;
+    }
+
+    .about-section h2 {
+        margin-bottom: 20px;
+    }
 
     /* experience & education */
-        .experience-section {
+    .experience-section {
             padding: 0 20px;
         }
         
     /* section 5: Contact */
-        .contact-section {
-            padding: 0 20px;
-        }
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-section .group {
+        align-items: center;
+    }
+
+    .contact-section .group text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-section .group form {
+        width: 100%;
+        max-width: 400px;
+        align-items: center;
+    }
+
+    .contact-section .group form label{
+        text-align: center;
+        width: 100%;
+    }
+
+     .contact-section .group form input,
+     .contact-section .group form textarea {
+        width: 100%;
+        max-width: 250px;
+     }
+
+     .contact-section .group form button {
+        width: 100%;
+        max-width: 250px;
+     }
 }

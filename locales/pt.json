@@ -7,7 +7,7 @@
   },
   "hero": {
     "title": "Olá, eu sou o Thiago",
-    "description": "Sou estudante de Engenharia da Computação e Técnico em TI em formação, atualmente em transição para a área de tecnologia após experiência profissional em ambiente de laboratório industrial. Tenho grande interesse em desenvolvimento backend, bancos de dados e na construção de aplicações escaláveis.\n\nEstou constantemente aprimorando minhas habilidades em C#, Python e JavaScript, enquanto desenvolvo projetos que combinam fundamentos sólidos de programação com resolução prática de problemas. Busco oportunidades onde possa crescer como desenvolvedor e contribuir com dedicação, curiosidade e uma forte mentalidade de aprendizado."
+    "description": "Sou estudante de Engenharia da Computação e Técnico em Informática em formação, atualmente em transição para a área de tecnologia após experiência profissional em ambiente de laboratório industrial. Tenho grande interesse em desenvolvimento backend, bancos de dados e na construção de aplicações escaláveis.\n\nEstou constantemente aprimorando minhas habilidades em C#, Python e JavaScript, enquanto desenvolvo projetos que combinam fundamentos sólidos de programação com resolução prática de problemas. Busco oportunidades onde possa crescer como desenvolvedor e contribuir com dedicação, curiosidade e uma forte mentalidade de aprendizado."
   },
   "sections": {
     "skills": {
@@ -16,13 +16,13 @@
     },
     "projects": {
       "title": "Projetos",
-      "subtitle": "Meus trabalhos recentes — Clique para o repositório no GitHub"
+      "subtitle": "Meus trabalhos recentes — Clique para ir ao repositório no GitHub"
     },
     "about": {
       "title": "Sobre Mim"
     },
     "experience": {
-      "title": "Experiência & Educação"
+      "title": "Experiência e Educação"
     },
     "contact": {
       "title": "Contato"
@@ -36,7 +36,7 @@
     },
     {
       "title": "Portfólio de Desenvolvedor",
-      "description": "Este próprio site de portfólio — construído do zero, apresenta minhas habilidades, projetos e experiências. Está em constante evolução com novas funcionalidades e melhorias à medida que cresço como desenvolvedor.",
+      "description": "Este mesmo site de portfólio — construído do zero, apresenta minhas habilidades, projetos e experiências. Está em constante evolução com novas funcionalidades e melhorias à medida que cresço como desenvolvedor.",
       "tag": "Frontend"
     },
     {
@@ -52,13 +52,13 @@
   },
   "experience": [
     {
-      "date": "2025 - Presente",
+      "date": "2025 - 2030",
       "title": "Estudante de Engenharia da Computação",
       "place": "UNIVESP",
       "description": "Atualmente cursando Engenharia da Computação, com foco em desenvolvimento de software, bancos de dados e construção de uma base sólida em linguagens como C#, Python e JavaScript."
     },
     {
-      "date": "2025 - Presente",
+      "date": "2025 - 2027",
       "title": "Técnico em Informática",
       "place": "SENAC",
       "description": "Experiência prática em manutenção de hardware, redes e suporte a software, combinando formação técnica com graduação em engenharia."
