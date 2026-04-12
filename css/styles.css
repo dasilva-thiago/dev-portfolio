@@ -13,7 +13,7 @@ body.dark-mode {
     --background-color: #16181d;
     --white-color: #1e2128;
     --border-color: #2e3038;
-    --muted-color: #b0b0b0;
+    --muted-color: #d1d1d1;
 }
 * {
     margin: 0;
@@ -26,7 +26,11 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif; 
+    /* safe fallbacks  */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
     background-color: var(--background-color);
     color: var(--text-color);
     max-width: 1400px;
@@ -52,11 +56,18 @@ nav {
 
 nav .left a {
     color: var(--text-color);
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
 }
 
 nav .right a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    min-width: 44px;
+    min-height: 44px;
+    transition: transform .2s ease;
     color: var(--text-color);
     margin: 0 10px;
 }
@@ -70,7 +81,7 @@ nav .right {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: 12px;
 }
 
 nav .right a:last-child {
@@ -100,10 +111,16 @@ nav .right a span {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    padding: 0 10px;
     color: var(--text-color);
     transition: transform .2s ease;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px; 
+    min-width: 44px;   
+    min-height: 44px;  
+    padding: 0;        
 }
 
 .dark-toggle:hover {
@@ -115,16 +132,22 @@ nav .right a span {
 /* Language Toggle */
 
 .lang-switcher{
+    display: flex;
+    height: 38px;
+    align-items: center;
     border: 1.5px solid var(--border-color);
     border-radius: 6px;
     overflow: hidden;
 }
 
 .lang-switcher .lang-btn{
+    display: flex;
+    align-items: center;
+    height: 100%;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 600;
-    padding: 4px 10px;
+    padding: 0px 12px;
     background: none;
     border: none;
     border-right: 1.5px solid var(--border-color);
@@ -191,9 +214,12 @@ nav .right a span {
 }
 
 .hero-section .headshot img {
-    width: 350px;
-    border-radius: 50%; 
-
+    width: 278px;
+    height: 275px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover; 
 }
 
 /* Section 2: Skills */
@@ -686,27 +712,33 @@ footer .footer-links a:hover {
     }
 
     nav .right {
-        gap: 8px;
+        gap: 10px;
         width: 100%;
         justify-content: center;
-    }
-
-    nav .right a {
-        font-size: 32px; 
-        padding: 5px;
+        flex-wrap: wrap;
     }
 
     .lang-switcher {
         margin-left: 5px;
     }
 
-    nav .right a span {
-        display: none;
+    nav .right a {
+        font-size: 28px;
+        min-width: 48px; 
+        min-height: 48px;
     }
 
-     nav .right a {
-        font-size: 22px;
-        padding: 0 4px;
+    nav .right a, 
+    nav .right button, 
+    .lang-switcher .lang-btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav .right a span {
+        display: none;
     }
 
      nav .right a:last-child {
@@ -715,10 +747,19 @@ footer .footer-links a:hover {
        padding: 0;
     }
 
+    nav .right .dark-toggle {
+        font-size: 26px; 
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    .lang-switcher {
+        height: 44px;
+    }
+
     .lang-switcher .lang-btn {
-        font-size: 11px;
-        padding: 3px 6px;
-        line-height: 1.6;
+        font-size: 14px;
+        padding: 10px 12px;
     }
 
     /*section 1 hero*/
@@ -822,14 +863,10 @@ footer .footer-links a:hover {
         width: 100%;
     }
 
-     .contact-section .group form input,
-     .contact-section .group form textarea {
-        width: 100%;
-        max-width: 250px;
-     }
-
-     .contact-section .group form button {
-        width: 100%;
-        max-width: 250px;
-     }
+    .contact-section .group form input,
+    .contact-section .group form textarea,
+    .contact-section .group form button {
+    max-width: 100%;
+    width: 100%;
+    }
 }

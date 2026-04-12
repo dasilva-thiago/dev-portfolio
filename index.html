@@ -20,8 +20,10 @@
 
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -110,7 +112,11 @@
             </div>
 
             <div class="headshot">
-                <img src="assets/img/profile_edit1.webp" alt="Thiago da Silva Profile Picture"/>
+                <img src="assets/img/profile_edit1.webp" 
+                alt="Thiago da Silva Profile Picture"
+                width="231"
+                height="300"
+                fetchpriority="high"/>
             </div>
         </section>
 
@@ -124,23 +130,28 @@
 
             <div class="cells">
                 <div class="cell">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"
+                    width="45" height="45" loading="lazy"/>
                     <span>HTML</span>
                 </div>
                 <div class="cell">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"
+                    width="45" height="45" loading="lazy"/>
                     <span>CSS</span>
                 </div>
                 <div class="cell">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"
+                    width="45" height="45" loading="lazy"/>
                     <span>JavaScript</span>
                 </div>
                 <div class="cell">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#"
+                    width="45" height="45" loading="lazy"/>
                     <span>C#</span>
                 </div>
                 <div class="cell">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"
+                    width="45" height="45" loading="lazy"/>
                     <span>Python</span>
                 </div>
             </div>
@@ -180,7 +191,8 @@
                                 </div>
                             </div>
                             <div class="project-image">
-                                <img src="assets/img/BAexp_screenshot.webp" alt="BAexp Screenshot"/>
+                                <img src="assets/img/BAexp_screenshot.webp" alt="BAexp Screenshot"
+                                width="600" height="400" loading="lazy" />/>
                             </div>
                         </a>
                     </div>
@@ -224,7 +236,7 @@
                                 </div>
                             </div>
                             <div class="project-image">
-                                <img src="assets/img/Aviation_Safety_Project_screenshot.webp" alt="Aviation Safety Project Screenshot"/>
+                                <img src="assets/img/Aviation_Safety_Project_screenshot.webp" alt="Aviation Safety Project Screenshot" width="600" height="400" loading="lazy" />/>
                             </div>
                         </a>
                     </div>
@@ -248,7 +260,7 @@
 
             <div class="group">
                 <div class="person-details">
-                    <img src="assets/img/about_picture1.webp" alt="Thiago da Silva Profile Picture"/>
+                    <img src="assets/img/about_picture1.webp" alt="Thiago da Silva Profile Picture" width="200" height="200" loading="lazy"/>
                     <p>Thiago da Silva</p>
                     <p data-i18n="about.role">Computer Engineering Student</p>
                 </div>
@@ -314,13 +326,13 @@
 
                 <form id="contact-form">
                     <label for="name" data-i18n="contact.form.name">Name</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
 
                     <label for="email" data-i18n="contact.form.email">Email</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" name="email" required placeholder="your_email@example.com">
 
                     <label for="message" data-i18n="contact.form.message">Message</label>
-                    <textarea id="message" cols="30" rows="10"></textarea>
+                    <textarea id="message" name="message" cols="30" rows="10" required placeholder="Your Message"></textarea>
 
                     <button type="submit" data-i18n="contact.form.button">Get in Touch</button>
                 </form>
