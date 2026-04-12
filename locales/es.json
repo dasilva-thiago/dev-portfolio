@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "skills": "Habilidades",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Hola, soy Thiago",
+    "description": "Soy estudiante de Ingeniería en Computación y Técnico en TI en formación, actualmente en transición hacia el área tecnológica tras una experiencia en laboratorio industrial. Tengo gran interés en backend, bases de datos y aplicaciones escalables.\n\nEstoy mejorando constantemente mis habilidades en C#, Python y JavaScript, desarrollando proyectos que combinan fundamentos sólidos con resolución práctica de problemas. Busco oportunidades para crecer como desarrollador."
+  },
+  "sections": {
+    "skills": {
+      "title": "Habilidades",
+      "description": "Estas son las principales tecnologías que he estado estudiando y aplicando en proyectos."
+    },
+    "projects": {
+      "title": "Proyectos",
+      "subtitle": "Mis trabajos recientes — Haz clic para ver el repositorio"
+    },
+    "about": {
+      "title": "Sobre mí"
+    },
+    "experience": {
+      "title": "Experiencia y Educación"
+    },
+    "contact": {
+      "title": "Contacto"
+    }
+  },
+  "projects": [
+    {
+      "title": "Buenos Aires Explorer",
+      "description": "Aplicación de escritorio para organizar puntos de interés en Buenos Aires con rutas, coordenadas e imágenes.",
+      "tag": "Full Stack"
+    },
+    {
+      "title": "Portafolio de Desarrollador",
+      "description": "Este sitio web construido desde cero para mostrar mis habilidades y proyectos.",
+      "tag": "Frontend"
+    },
+    {
+      "title": "Proyecto de Seguridad en Aviación",
+      "description": "Proyecto de visualización de datos que simula un centro de control aeronáutico.",
+      "tag": "Backend"
+    }
+  ],
+  "about": {
+    "name": "Thiago da Silva",
+    "role": "Estudiante de Ingeniería en Computación",
+    "quote": "Soy un desarrollador curioso y dedicado, con capacidad de aprendizaje rápido y adaptación a nuevos desafíos."
+  },
+  "experience": [
+    {
+      "date": "2025 - Presente",
+      "title": "Estudiante de Ingeniería en Computación",
+      "place": "UNIVESP",
+      "description": "Formación enfocada en desarrollo de software y bases de datos."
+    },
+    {
+      "date": "2025 - Presente",
+      "title": "Técnico en Informática",
+      "place": "SENAC",
+      "description": "Experiencia en hardware, redes y soporte técnico."
+    },
+    {
+      "date": "2023 - 2025",
+      "title": "Operador Técnico de Laboratorio",
+      "place": "Tenaris",
+      "description": "Experiencia en laboratorio industrial con enfoque en calidad y precisión."
+    }
+  ],
+  "contact": {
+    "text": "No dudes en ponerte en contacto. Estoy buscando oportunidades en tecnología.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "button": "Contactar"
+    }
+  }
+}

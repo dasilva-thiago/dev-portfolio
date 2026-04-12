@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "skills": "Habilidades",
+    "about": "Sobre Mim",
+    "experience": "Experiência",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Olá, eu sou o Thiago",
+    "description": "Sou estudante de Engenharia da Computação e Técnico em TI em formação, atualmente em transição para a área de tecnologia após experiência profissional em ambiente de laboratório industrial. Tenho grande interesse em desenvolvimento backend, bancos de dados e na construção de aplicações escaláveis.\n\nEstou constantemente aprimorando minhas habilidades em C#, Python e JavaScript, enquanto desenvolvo projetos que combinam fundamentos sólidos de programação com resolução prática de problemas. Busco oportunidades onde possa crescer como desenvolvedor e contribuir com dedicação, curiosidade e uma forte mentalidade de aprendizado."
+  },
+  "sections": {
+    "skills": {
+      "title": "Habilidades",
+      "description": "Estas são as principais tecnologias que venho estudando e aplicando em projetos, com foco em desenvolvimento backend e frontend, resolução de problemas e construção de uma base sólida em engenharia de software."
+    },
+    "projects": {
+      "title": "Projetos",
+      "subtitle": "Meus trabalhos recentes — Clique para o repositório no GitHub"
+    },
+    "about": {
+      "title": "Sobre Mim"
+    },
+    "experience": {
+      "title": "Experiência & Educação"
+    },
+    "contact": {
+      "title": "Contato"
+    }
+  },
+  "projects": [
+    {
+      "title": "Buenos Aires Explorer",
+      "description": "Uma aplicação desktop para organização de pontos de interesse em Buenos Aires, com suporte para cadastro de locais, busca automática de coordenadas, pré-visualização de imagens, cálculo de distâncias e planejamento de rotas de visita.",
+      "tag": "Full Stack"
+    },
+    {
+      "title": "Portfólio de Desenvolvedor",
+      "description": "Este próprio site de portfólio — construído do zero, apresenta minhas habilidades, projetos e experiências. Está em constante evolução com novas funcionalidades e melhorias à medida que cresço como desenvolvedor.",
+      "tag": "Frontend"
+    },
+    {
+      "title": "Projeto de Segurança na Aviação",
+      "description": "Um projeto de visualização de dados que simula uma sala de controle operacional aeronáutica, monitorando incidentes, tendências e níveis de criticidade em tempo real utilizando dados simulados.",
+      "tag": "Backend"
+    }
+  ],
+  "about": {
+    "name": "Thiago da Silva",
+    "role": "Estudante de Engenharia da Computação",
+    "quote": "Sou um desenvolvedor dedicado e curioso no início da minha carreira, com grande capacidade de aprender rapidamente e me adaptar a novos desafios. Minha experiência em um ambiente de laboratório técnico me ajudou a desenvolver disciplina, atenção aos detalhes e habilidades de resolução de problemas — qualidades que hoje aplico no desenvolvimento de software."
+  },
+  "experience": [
+    {
+      "date": "2025 - Presente",
+      "title": "Estudante de Engenharia da Computação",
+      "place": "UNIVESP",
+      "description": "Atualmente cursando Engenharia da Computação, com foco em desenvolvimento de software, bancos de dados e construção de uma base sólida em linguagens como C#, Python e JavaScript."
+    },
+    {
+      "date": "2025 - Presente",
+      "title": "Técnico em Informática",
+      "place": "SENAC",
+      "description": "Experiência prática em manutenção de hardware, redes e suporte a software, combinando formação técnica com graduação em engenharia."
+    },
+    {
+      "date": "2023 - 2025",
+      "title": "Operador Técnico de Laboratório",
+      "place": "Tenaris",
+      "description": "Atuação em ambiente de laboratório industrial multinacional com altos padrões de qualidade, desenvolvendo pensamento analítico, precisão e resolução estruturada de problemas aplicados hoje no desenvolvimento de software."
+    }
+  ],
+  "contact": {
+    "text": "Fique à vontade para entrar em contato! Estou em busca de estágio e oportunidades na área de tecnologia. Se quiser trocar ideias ou discutir projetos, será um prazer conversar.",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "button": "Entrar em Contato"
+    }
+  }
+}

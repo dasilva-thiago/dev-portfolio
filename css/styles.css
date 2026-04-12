@@ -112,6 +112,38 @@ nav .right a span {
     transition: color .2s ease;
 }
 
+/* Language Toggle */
+
+.lang-switcher{
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.lang-switcher .lang-btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    background: none;
+    border: none;
+    border-right: 1.5px solid var(--border-color);
+    color: var(--muted-color);
+    cursor: pointer;
+    transition: all .2s ease;
+    line-height:1.8;
+}
+
+.lang-switcher .lang-btn:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.lang-switcher .lang-btn.active {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
 /* section 1: Hero Section */
 .hero-section{
     display:flex;
