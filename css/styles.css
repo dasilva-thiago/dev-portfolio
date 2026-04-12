@@ -263,7 +263,9 @@ nav .right a span {
     border-radius: 16px;
 }
 
-
+.project-card:not(:has(.project-image)) .project-info {
+    padding: 40px;
+}
 
 .project-tag {
     display: inline-block;

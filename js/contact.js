@@ -3,9 +3,20 @@ const form = document.querySelector('#contact-form');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const message = document.querySelector('#message').value;
+    const name = document.querySelector('#name').value.trim();
+    const email = document.querySelector('#email').value.trim();
+    const message = document.querySelector('#message').value.trim();
+
+    if (!name || !email || !message) {
+    alert('Please fill in all fields before sending.');
+    return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
 
     const button = form.querySelector('button');
     button.textContent = 'Sending...';
