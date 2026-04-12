@@ -1,3 +1,4 @@
+const API_URL = 'https://dev-portfolio-production-4d77.up.railway.app';
 const form = document.querySelector('#contact-form');
 
 form.addEventListener('submit', async (e) => {
@@ -23,7 +24,7 @@ form.addEventListener('submit', async (e) => {
     button.disabled = true;
 
     try {
-        const response = await fetch('https://dev-portfolio-production-4d77.up.railway.app/send-email', {
+        const response = await fetch(`${API_URL}/send-email`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, message })
