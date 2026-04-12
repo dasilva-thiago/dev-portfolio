@@ -397,11 +397,12 @@ nav .right a span {
 .about-section h2 {
     font-size: 35px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .about-section .group {
     display: flex;
-    align-items: center;
+    align-items: flex-start; 
     gap: 50px;
 }
 
@@ -412,6 +413,7 @@ nav .right a span {
 
 .about-section .group .text {
     flex: 8;
+    padding-top: 60px;
 }
 
 .about-section .group .person-details img {
