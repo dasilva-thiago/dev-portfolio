@@ -115,8 +115,7 @@
                 <img src="assets/img/profile_edit1.webp" 
                 alt="Thiago da Silva Profile Picture"
                 width="231"
-                height="300"
-                fetchpriority="high"/>
+                height="300"/>
             </div>
         </section>
 
@@ -324,20 +323,24 @@
                     <p data-i18n="contact.text">Feel free to get in touch! I'm currently looking for internship and other opportunities in technology, especially in software development. If you have a project, opportunity, or just want to connect and exchange ideas, I'd be happy to talk. You can reach me through this form or via email and LinkedIn. Let's work together. Send me a message — I'll get back to you soon.</p>
                 </div>
 
-                <form id="contact-form">
-                    <label for="name" data-i18n="contact.form.name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+            <form id="contact-form">
+                <label for="name" data-i18n="contact.form.name">Name</label>
+                <input type="text" id="name" name="name" required 
+                    data-i18n="contact.form.name_placeholder" placeholder="Your Name">
 
-                    <label for="email" data-i18n="contact.form.email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="your_email@example.com">
+                <label for="email" data-i18n="contact.form.email">Email</label>
+                <input type="email" id="email" name="email" required 
+                    data-i18n="contact.form.email_placeholder" placeholder="your_email@example.com">
 
-                    <label for="message" data-i18n="contact.form.message">Message</label>
-                    <textarea id="message" name="message" cols="30" rows="10" required placeholder="Your Message"></textarea>
+                <label for="message" data-i18n="contact.form.message">Message</label>
+                <textarea id="message" name="message" cols="30" rows="10" required 
+                        data-i18n="contact.form.message_placeholder" placeholder="Your Message"></textarea>
 
-                    <button type="submit" data-i18n="contact.form.button">Get in Touch</button>
-                </form>
-            </div>
-        </section>
+                <button type="submit" data-i18n="contact.form.button">Get in Touch</button>
+
+            </form>
+        </div>
+    </section>
 
     </main>
 

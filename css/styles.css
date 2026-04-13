@@ -5,6 +5,14 @@
     --white-color: #fff;
     --border-color: #d3d3d3;
     --muted-color: #555;
+
+    --feedback-success-text: #1a6b3c;
+    --feedback-success-bg: #d4edda;
+    --feedback-success-border: #b8ddc8;
+
+    --feedback-error-text: #842029;
+    --feedback-error-bg: #f8d7da;
+    --feedback-error-border: #f1aeb5;
 }
 
 body.dark-mode {
@@ -14,6 +22,14 @@ body.dark-mode {
     --white-color: #1e2128;
     --border-color: #2e3038;
     --muted-color: #d1d1d1;
+
+    --feedback-success-text: #6fcf97;
+    --feedback-success-bg: #0d2b1a;
+    --feedback-success-border: #1e5c35;
+
+    --feedback-error-text: #f1aeb5;
+    --feedback-error-bg: #2c0f12;
+    --feedback-error-border: #6b1f26;
 }
 * {
     margin: 0;
@@ -612,6 +628,29 @@ nav .right a span {
     filter: brightness(.9);
     transform: translateY(-1px);    
     box-shadow: 0 4px 12px rgba(74, 118, 238, 0.3);
+}
+
+/* Feedback message */
+#form-feedback {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 4px;
+    border-left: 3px solid transparent;
+    line-height: 1.5;
+}
+
+#form-feedback.success {
+    color: var(--feedback-success-text);
+    background-color: var(--feedback-success-bg);
+    border-left-color: var(--feedback-success-border);
+}
+
+#form-feedback.error {
+    color: var(--feedback-error-text);
+    background-color: var(--feedback-error-bg);
+    border-left-color: var(--feedback-error-border);
 }
 
 /* Footer */

@@ -74,9 +74,19 @@
     "text": "Fique à vontade para entrar em contato! Estou em busca de estágio e oportunidades na área de tecnologia. Se quiser trocar ideias ou discutir projetos, será um prazer conversar.",
     "form": {
       "name": "Nome",
+      "name_placeholder": "Seu Nome",
       "email": "Email",
+      "email_placeholder": "seu_email@exemplo.com",
       "message": "Mensagem",
+      "message_placeholder": "Sua Mensagem",
       "button": "Entrar em Contato"
-    }
+    },
+    "feedback": {
+    "emptyFields": "Por favor, preencha todos os campos antes de enviar.",
+    "invalidEmail": "Por favor, insira um endereço de email válido.",
+    "success": "Mensagem recebida! Responderei o mais breve possível.",
+    "failed": "Falha ao enviar. Tente novamente mais tarde.",
+    "error": "Ocorreu um erro. Tente novamente mais tarde."
+    } 
   }
 }

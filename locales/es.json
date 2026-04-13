@@ -73,10 +73,21 @@
   "contact": {
     "text": "No dudes en ponerte en contacto. Estoy buscando oportunidades en tecnología.",
     "form": {
-      "name": "Nombre",
-      "email": "Email",
-      "message": "Mensaje",
-      "button": "Contactar"
+    "name": "Nombre",
+    "name_placeholder": "Tu Nombre",
+    "email": "Email",
+    "email_placeholder": "tu_email@ejemplo.com",
+    "message": "Mensaje",
+    "message_placeholder": "Tu Mensaje",
+    "button": "Contactar"
+    },
+
+    "feedback": {
+    "emptyFields": "Por favor, completa todos los campos antes de enviar.",
+    "invalidEmail": "Por favor, ingresa un email válido.",
+    "success": "¡Mensaje recibido! Te responderé lo antes posible.",
+    "failed": "Error al enviar. Inténtalo de nuevo más tarde.",
+    "error": "Ocurrió un error. Inténtalo de nuevo más tarde."
     }
   }
 }

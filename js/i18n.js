@@ -13,7 +13,11 @@ let currentLang = localStorage.getItem('lang') || detectBrowserLang();
 function saveDefaults() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         if (!el.hasAttribute('data-i18n-default')) {
-            el.setAttribute('data-i18n-default', el.textContent.trim());
+            const defaultValue = (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') 
+                ? el.getAttribute('placeholder') 
+                : el.textContent.trim();
+            
+            el.setAttribute('data-i18n-default', defaultValue);
         }
     });
 }
@@ -41,22 +45,31 @@ function getNestedValue(obj, keyPath) {
 // apply language to the page - no reload
 async function applyLanguage(lang) {
     try {
-        if (lang === DEFAULT_LANG) {
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                el.textContent = el.getAttribute('data-i18n-default');
-            });
-        } else {
-            const translations = await loadTranslations(lang);
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key   = el.getAttribute('data-i18n');
-                const value = getNestedValue(translations, key);
-                if (value) el.textContent = value;
-            });
+        let translations = null;
+        if (lang !== DEFAULT_LANG) {
+            translations = await loadTranslations(lang);
         }
 
-        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            let value;
 
+            if (lang === DEFAULT_LANG) {
+                value = el.getAttribute('data-i18n-default');
+            } else {
+                value = getNestedValue(translations, key);
+            }
+
+            if (value) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.setAttribute('placeholder', value);
+                } else {
+                    el.textContent = value;
+                }
+            }
+        });
+
+        document.documentElement.lang = lang;
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
