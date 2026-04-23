@@ -30,6 +30,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Google tag (gtag.js) -->
@@ -83,7 +85,7 @@
     <main>
 
         <!-- hero section -->
-        <section class="hero-section">
+        <section class="hero-section" data-aos="fade-up">
             <div class="text">
                 <h2 data-i18n="hero.title">Hi, I'm Thiago</h2>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">Full Stack Developer • C# • Python • JavaScript • HTML + CSS</p>
@@ -127,7 +129,7 @@
 
         <!-- skills section -->
         <!-- keys: sections.skills.title / sections.skills.description -->
-        <section id="skills" class="skills-section">
+        <section id="skills" class="skills-section" data-aos="fade-up">
             <h2 data-i18n="sections.skills.title">Skills</h2>
             <div class="text" data-i18n="sections.skills.description">
                 These are the main technologies I have been studying and applying in projects, focusing on backend and frontend development, problem-solving, and building a solid foundation in software engineering.
@@ -164,7 +166,7 @@
 
         <!-- projects section -->
         <!-- keys: sections.projects.title / projects.0.tag / projects.0.title / projects.0.description -->
-        <section id="projects" class="projects-section">
+        <section id="projects" class="projects-section" data-aos="fade-up">
             <h2 data-i18n="sections.projects.title">Projects</h2>
             <p class="section-subtitle" data-i18n="sections.projects.subtitle">My recent work - Click for Github Repository</p>
 
@@ -260,7 +262,7 @@
 
         <!-- about section -->
         <!-- keys: sections.about.title / about.role / about.quote -->
-        <section id="about" class="about-section">
+        <section id="about" class="about-section" data-aos="fade-up">
             <h2 data-i18n="sections.about.title">About Me</h2>
 
             <div class="group">
@@ -284,7 +286,7 @@
             <div class="timeline">
 
                 <!-- experience[0] -->
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2025 — 2030</span>
@@ -295,7 +297,7 @@
                 </div>
 
                 <!-- experience[1] -->
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2025 — 2027</span>
@@ -306,7 +308,7 @@
                 </div>
 
                 <!-- experience[2] -->
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2023 — 2025</span>
@@ -321,7 +323,7 @@
 
         <!-- contact section -->
         <!-- keys: sections.contact.title / contact.text / contact.form.name / contact.form.email / contact.form.message / contact.form.button -->
-        <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section" data-aos="fade-up">
             <h2 data-i18n="sections.contact.title">Contact</h2>
 
             <div class="group">
@@ -376,6 +378,15 @@
     <script src="js/darkMode.js" defer></script>
     <script src="js/contact.js" defer></script>
     <script src="js/i18n.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 600,
+        once: true,
+        offset: 80
+    });
+</script>
 
 </body>
 </html>
