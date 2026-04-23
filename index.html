@@ -20,11 +20,9 @@
 
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -48,6 +46,12 @@
 
 </head>
 <body>
+        <!-- Aurora background layer -->
+    <div class="aurora-bg" aria-hidden="true">
+        <div class="aurora-orb aurora-orb--1"></div>
+        <div class="aurora-orb aurora-orb--2"></div>
+        <div class="aurora-orb aurora-orb--3"></div>
+    </div>
 
     <!-- navbar -->
     <nav>
@@ -392,6 +396,51 @@
         duration: 600,
         once: true,
         offset: 80
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+    // Hero entrance — sequência em cascata
+    gsap.set('.hero-section .text h2, .hero-section .text .hero-subtitle, .hero-bullets li, .hero-section .text .links, .hero-section .headshot', {
+        opacity: 0,
+        y: 24
+    });
+
+    gsap.to('.hero-section .headshot', {
+        opacity: 1, y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        delay: 0.1
+    });
+
+    gsap.to('.hero-section .text h2', {
+        opacity: 1, y: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        delay: 0.25
+    });
+
+    gsap.to('.hero-section .text .hero-subtitle', {
+        opacity: 1, y: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        delay: 0.4
+    });
+
+    gsap.to('.hero-bullets li', {
+        opacity: 1, y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        stagger: 0.1,   // cada bullet entra 100ms depois do anterior
+        delay: 0.55
+    });
+
+    gsap.to('.hero-section .text .links', {
+        opacity: 1, y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        delay: 1.05
     });
 </script>
 
