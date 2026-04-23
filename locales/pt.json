@@ -61,23 +61,23 @@
       "date": "2025 - 2030",
       "title": "Estudante de Engenharia da Computação",
       "place": "UNIVESP",
-      "description": "Atualmente cursando Engenharia da Computação, com foco em desenvolvimento de software, bancos de dados e construção de uma base sólida em linguagens como C#, Python e JavaScript."
+      "description": "Atualmente cursando Engenharia da Computação, com foco em desenvolvimento de software, bancos de dados e na construção de uma base sólida em linguagens de programação como C#, Python e JavaScript. Atuo ativamente em projetos para aplicar o conhecimento teórico em situações práticas."
     },
     {
       "date": "2025 - 2027",
       "title": "Técnico em Informática",
       "place": "SENAC",
-      "description": "Experiência prática em manutenção de hardware, redes e suporte a software, combinando formação técnica com graduação em engenharia."
+      "description": "Adquirindo experiência prática em manutenção de hardware, administração de redes e suporte de software. Ao conciliar a graduação em Engenharia da Computação com o curso técnico em Informática, busco uma formação completa na área, integrando conhecimento teórico com habilidades práticas."
     },
     {
       "date": "2023 - 2025",
       "title": "Operador Técnico de Laboratório",
       "place": "Tenaris",
-      "description": "Atuação em ambiente de laboratório industrial multinacional com altos padrões de qualidade, desenvolvendo pensamento analítico, precisão e resolução estruturada de problemas aplicados hoje no desenvolvimento de software."
+      "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Desenvolvi forte pensamento analítico, atenção aos detalhes e uma abordagem estruturada para resolução de problemas, lidando com procedimentos técnicos e validação de dados. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão na criação de soluções robustas."
     }
   ],
   "contact": {
-    "text": "Fique à vontade para entrar em contato! Estou em busca de estágio e oportunidades na área de tecnologia. Se quiser trocar ideias ou discutir projetos, será um prazer conversar.",
+    "text": "Sinta-se à vontade para entrar em contato! Atualmente estou em busca de estágio e outras oportunidades na área de tecnologia, especialmente em desenvolvimento de software. Se você tem um projeto, uma oportunidade ou apenas quer se conectar e trocar ideias, ficarei feliz em conversar. Você pode falar comigo por meio deste formulário, por e-mail ou pelo LinkedIn. Vamos trabalhar juntos. Envie uma mensagem — responderei em breve.",
     "form": {
       "name": "Nome",
       "name_placeholder": "Seu Nome",

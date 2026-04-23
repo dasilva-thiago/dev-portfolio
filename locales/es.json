@@ -54,30 +54,30 @@
   "about": {
     "name": "Thiago da Silva",
     "role": "Estudiante de Ingeniería en Computación",
-    "quote": "Soy un desarrollador curioso y dedicado, con capacidad de aprendizaje rápido y adaptación a nuevos desafíos."
+    "quote": "Soy un desarrollador dedicado y curioso, en las primeras etapas de mi carrera, con una gran capacidad para aprender rápidamente y adaptarme a nuevos desafíos. Mi experiencia en un entorno técnico de laboratorio me permitió desarrollar disciplina, atención al detalle y habilidades de resolución de problemas — cualidades que hoy aplico en el desarrollo de software."
   },
   "experience": [
     {
       "date": "2025 - Presente",
       "title": "Estudiante de Ingeniería en Computación",
       "place": "UNIVESP",
-      "description": "Formación enfocada en desarrollo de software y bases de datos."
+      "description": "Actualmente cursando Ingeniería en Computación, con enfoque en desarrollo de software, bases de datos y en la construcción de una base sólida en lenguajes de programación como C#, Python y JavaScript. Trabajo activamente en proyectos para aplicar el conocimiento teórico en situaciones prácticas."
     },
     {
       "date": "2025 - Presente",
       "title": "Técnico en Informática",
       "place": "SENAC",
-      "description": "Experiencia en hardware, redes y soporte técnico."
+      "description": "Adquiriendo experiencia práctica en mantenimiento de hardware, administración de redes y soporte de software. Al combinar la carrera de Ingeniería en Computación con el curso técnico en Informática, busco una formación integral en el área, uniendo conocimientos teóricos con habilidades prácticas."
     },
     {
       "date": "2023 - 2025",
       "title": "Operador Técnico de Laboratorio",
       "place": "Tenaris",
-      "description": "Experiencia en laboratorio industrial con enfoque en calidad y precisión."
+      "description": "Trabajé en un entorno de laboratorio industrial multinacional, cumpliendo altos estándares de precisión, control de calidad y confiabilidad de procesos. Desarrollé un fuerte pensamiento analítico, atención al detalle y un enfoque estructurado para la resolución de problemas, trabajando con procedimientos técnicos y validación de datos. Esta experiencia construyó una base sólida para mi transición hacia el desarrollo de software, donde aplico la misma disciplina, razonamiento lógico y compromiso con la precisión en el diseño e implementación de soluciones robustas."
     }
   ],
   "contact": {
-    "text": "No dudes en ponerte en contacto. Estoy buscando oportunidades en tecnología.",
+    "text": "¡No dudes en ponerte en contacto! Actualmente estoy buscando prácticas y otras oportunidades en el área de tecnología, especialmente en desarrollo de software. Si tienes un proyecto, una oportunidad o simplemente quieres conectar e intercambiar ideas, estaré encantado de conversar. Puedes contactarme a través de este formulario, por correo electrónico o por LinkedIn. Trabajemos juntos. Envíame un mensaje — te responderé pronto.",
     "form": {
     "name": "Nombre",
     "name_placeholder": "Tu Nombre",
