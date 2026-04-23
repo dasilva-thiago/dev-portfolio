@@ -7,8 +7,14 @@
   },
   "hero": {
     "title": "Hola, soy Thiago",
-    "description": "Soy estudiante de Ingeniería en Computación y Técnico en TI en formación, actualmente en transición hacia el área tecnológica tras una experiencia en laboratorio industrial. Tengo gran interés en backend, bases de datos y aplicaciones escalables.\n\nEstoy mejorando constantemente mis habilidades en C#, Python y JavaScript, desarrollando proyectos que combinan fundamentos sólidos con resolución práctica de problemas. Busco oportunidades para crecer como desarrollador."
-  },
+    "subtitle": "Desarrollador Full Stack • C# • Python • JavaScript • HTML + CSS",
+    "bullets": [
+        "Estudiante de Ingeniería en Computación en UNIVESP y Técnico en TI en SENAC",
+        "2 años de experiencia profesional en laboratorio industrial multinacional",
+        "Desarrollando proyectos con C#, Python, Node.js y APIs REST",
+        "En busca de pasantías y oportunidades en desarrollo de software"
+    ]
+},
   "sections": {
     "skills": {
       "title": "Habilidades",
