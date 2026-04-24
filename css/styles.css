@@ -77,7 +77,6 @@ body.dark-mode {
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -90,6 +89,9 @@ body {
     color: var(--text-color);
     max-width: 1400px;
     margin: 0 auto;
+
+    overflow-x: hidden;
+    position: relative;
 }
 h1, h2, h3, h4 {
     font-family: var(--font-body);
@@ -246,18 +248,26 @@ nav .right a span {
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
+
+    isolation: isolate; 
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform: translate3d(0, 0, 0);
 }
 
 .aurora-orb {
     position: absolute;
     border-radius: 50%;
     filter: blur(var(--aurora-blur-lg));
-    opacity: 0;
+    opacity: 1;
     animation: aurora-fade-in 1.2s ease forwards;
 
     will-change: transform, opacity;
     -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    transform: translateZ(0); 
+
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* Orb 1 — blue, upper right corner*/
@@ -508,9 +518,16 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
     overflow: visible;
 }
 
+#projectsCarousel {
+    isolation: isolate;
+}
+
 .projects-section {
     padding: 0 50px;
     margin-bottom: 100px;
+    contain: paint;
+    position: relative;
+    z-index: 1;
 }
 
 .projects-section h2 {
@@ -1158,7 +1175,10 @@ footer .footer-links a:hover {
     .project-card {
     flex-direction: column;
     padding: 25px;
-    min-height: auto;
+
+    min-height: 480px;
+    height: 100%;
+    justify-content: center;
     }
 
     .project-info {
@@ -1172,6 +1192,15 @@ footer .footer-links a:hover {
 
     .projects-section .carousel-control-prev { left: 0; }
     .projects-section .carousel-control-next { right: 0; }
+
+    #projectsCarousel .carousel-inner {
+    min-height: 480px;
+    }
+
+
+    #projectsCarousel .carousel-item {
+        height: 100%;
+    }
 
     /* about */
     .about-section .group {
@@ -1276,10 +1305,6 @@ footer .footer-links a:hover {
         padding: 10px 12px;
     }
 
-     .aurora-bg {
-        position: absolute;
-    }
-
     .aurora-orb {
         .aurora-orb { filter: blur(var(--aurora-blur-sm)); }
         will-change: opacity; 
@@ -1356,8 +1381,8 @@ footer .footer-links a:hover {
         padding: 0 20px;
     }
 
-    .projects-section .carousel-control-prev { left: -22px; }
-    .projects-section .carousel-control-next { right: -22px; }
+    .projects-section .carousel-control-prev { left: 0; }
+    .projects-section .carousel-control-next { right: 0; }
 
     /* section 4: About */
     .about-section{
