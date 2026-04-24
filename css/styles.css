@@ -1306,30 +1306,38 @@ footer .footer-links a:hover {
     }
 
     .aurora-orb {
-        .aurora-orb { filter: blur(var(--aurora-blur-sm)); }
-        will-change: opacity; 
+        filter: blur(30px) !important;
+        will-change: transform, opacity;
     }
 
     .aurora-orb--1 {
         width: 280px;
         height: 280px;
-        top: 0;
+        top: -5%;
         right: -10%;
-        opacity: 0.18;           
-        animation: none;         
+        opacity: 0.4; 
+        animation: aurora-drift-1 20s ease-in-out infinite alternate;
     }
 
     .aurora-orb--2 {
         width: 240px;
         height: 240px;
-        bottom: 15%;
+        bottom: 10%;
         left: -10%;
-        opacity: 0.12;
-        animation: none;
+        opacity: 0.3;
+        animation: aurora-drift-2 22s ease-in-out infinite alternate;
+    }
+
+    body.dark-mode .aurora-orb--1 {
+        opacity: 0.5;
+    }
+    
+    body.dark-mode .aurora-orb--2 {
+        opacity: 0.4;
     }
 
     .aurora-orb--3 {
-        display: none;          
+        display: none;
     }
 
     /*section 1 hero*/
