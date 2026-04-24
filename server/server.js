@@ -22,15 +22,15 @@ app.use(limiter);
 app.use(express.json());
 
 // Simple sanitization function to prevent basic XSS attacks
-function sanitize(str, maxLenght = 500) {
+function sanitize(str, maxLength = 500) { 
   if (typeof str !== 'string') return '';
   return str
+    .replace(/&/g, '&amp;')  
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#x27;')
-    .substring(0, maxLenght);
+    .substring(0, maxLength);
 }
 
 app.post('/send-email', limiter, async (req, res) => {

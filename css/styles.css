@@ -50,6 +50,7 @@
     --aurora-blur-light: 100px;
 }
 
+html.dark-mode,
 body.dark-mode {
     --text-color: #f0f0f0;
     --link-color: #7a9ff5;
@@ -86,6 +87,7 @@ body {
     -webkit-font-smoothing: antialiased;
 
     background-color: var(--background-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
     color: var(--text-color);
     max-width: 1400px;
     margin: 0 auto;
@@ -93,6 +95,12 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+
+.section {
+    padding-inline: clamp(20px, 5vw, 50px);
+    margin-bottom: 100px;
+}
+
 h1, h2, h3, h4 {
     font-family: var(--font-body);
     font-weight: 600;
@@ -254,6 +262,10 @@ nav .right a span {
     perspective: 1000px;
     transform: translate3d(0, 0, 0);
 }
+    .aurora-orb,
+    img {
+        transition: none;
+    }
 
 .aurora-orb {
     position: absolute;
@@ -335,13 +347,11 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 .hero-section{
     display:flex;
     justify-content: space-between;
-    padding: 0 50px;
     margin: 50px 0;
     gap: 40px;
-    margin-bottom: 100px;
 }
 
-.hero-section .text h2 {
+.hero-section .text h1 {
     font-size: 45px; 
 
 }
@@ -389,7 +399,7 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 .hero-section .text .links a {
     display: inline-block;
     padding: 5px 10px;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--link-color);
     border-radius: 5px;
     transition: .1s;
     margin-right: 10px;
@@ -398,7 +408,10 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 
 .hero-section .text .links a:hover {
     color: var(--text-color);
+    transform: translateY(-4px);
     border: 2px solid var(--text-color);
+    border-color: color-mix(in srgb, var(--text-color) 50%, transparent);
+    box-shadow: 0 8px 24px var(--shadow-link-sm);
 }
 
 .hero-section .text {
@@ -466,11 +479,6 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 
 /* Section 2: Skills */
 
-.skills-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
-
 .skills-section h2 {
     font-size: 35px;
     text-align: center;
@@ -493,6 +501,9 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
     align-items: center;
     gap: 10px;
 
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+
     width: 200px;
     padding: 10px 20px;
     border: 1.5px solid var(--border-color);
@@ -511,6 +522,12 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
     font-weight: 600;
 }
 
+.skills-section .cells .cell:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    box-shadow: 0 8px 24px var(--shadow-link-sm);
+}
+
 /* Section 3: Projects */
 
 #projectsCarousel,
@@ -523,8 +540,6 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 }
 
 .projects-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
     contain: paint;
     position: relative;
     z-index: 1;
@@ -708,10 +723,6 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 }
 
 /* Section 4: About */
-.about-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
 
 .about-section h2 {
     font-size: 35px;
@@ -753,10 +764,6 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 } 
 
 /* Experience & Education */
-.experience-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
 
 .experience-section h2 {
     font-size: 35px;
@@ -826,11 +833,6 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 }
 
 /* Section 5: Contact */
-
-.contact-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
 
 .contact-section h2 {
     font-size: 35px;
@@ -935,7 +937,7 @@ body:not(.dark-mode) .aurora-orb--3 { opacity: 0.08; }
 /* Footer */
 footer {
     text-align: center;
-    padding: 40px 50px;
+    padding-block: 40px;
     color: var(--muted-color);
     font-size: 14px;
     border-top: 1.5px solid var(--border-color);
@@ -985,7 +987,6 @@ footer .footer-links a:hover {
 
     /* ── Hero ── */
     .hero-section {
-        padding: 0 30px;
         gap: 24px;
         margin-bottom: 80px;
     }
@@ -1005,9 +1006,6 @@ footer .footer-links a:hover {
     }
 
     /* ── Skills ── */
-    .skills-section {
-        padding: 0 30px;
-    }
 
     .skills-section .cells .cell {
         width: 170px;
@@ -1015,9 +1013,6 @@ footer .footer-links a:hover {
     }
 
     /* ── Projects ── */
-    .projects-section {
-        padding: 0 30px;
-    }
 
     .project-card {
         gap: 30px;
@@ -1033,9 +1028,6 @@ footer .footer-links a:hover {
     }
 
     /* ── About ── */
-    .about-section {
-        padding: 0 30px;
-    }
 
     .about-section .group {
         gap: 30px;
@@ -1046,14 +1038,8 @@ footer .footer-links a:hover {
     }
 
     /* ── Experience ── */
-    .experience-section {
-        padding: 0 30px;
-    }
 
     /* ── Contact ── */
-    .contact-section {
-        padding: 0 30px;
-    }
 
     .contact-section .group {
         gap: 40px;
@@ -1061,7 +1047,7 @@ footer .footer-links a:hover {
 
     /* ── Footer ── */
     footer {
-        padding: 30px;
+        padding-block: 30px;
     }
 
     /* ── Aurora ── */
@@ -1112,7 +1098,6 @@ footer .footer-links a:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 0 30px;
         margin-top: 20px;
         margin-bottom: 60px;
     }
@@ -1146,9 +1131,9 @@ footer .footer-links a:hover {
     }
 
     /* Aurora mobile*/
-    .aurora-orb {
-        .aurora-orb { filter: blur(var(--aurora-blur-md)); }   
-        will-change: opacity;    
+   .aurora-orb {
+    filter: blur(var(--aurora-blur-md));
+    will-change: opacity;
     }
 
     .aurora-orb--1 {
@@ -1342,7 +1327,6 @@ footer .footer-links a:hover {
 
     /*section 1 hero*/
    .hero-section {
-    padding: 0 20px;
     margin-top: 16px;
     }
 
@@ -1372,9 +1356,6 @@ footer .footer-links a:hover {
     }
 
     /* Section 2: Skills */
-    .skills-section {
-        padding: 0 20px;
-    }
     .skills-section .cells .cell span {
         font-size: 16px;
     }
@@ -1385,17 +1366,10 @@ footer .footer-links a:hover {
     padding: 0;
     }
 
-    .projects-section {
-        padding: 0 20px;
-    }
-
     .projects-section .carousel-control-prev { left: 0; }
     .projects-section .carousel-control-next { right: 0; }
 
     /* section 4: About */
-    .about-section{
-        padding: 0 20px;
-    }
 
     .about-section .group {
         flex-direction: column;
@@ -1415,14 +1389,8 @@ footer .footer-links a:hover {
         text-align: center;
     }
 
-    .about-section h2 {
-        margin-bottom: 20px;
-    }
-
     /* experience & education */
-    .experience-section {
-            padding: 0 20px;
-        }
+
         
     /* section 5: Contact */
     .contact-section {
