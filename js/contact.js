@@ -1,12 +1,19 @@
-const API_URL = 'https://dev-portfolio-production-4d77.up.railway.app';
+const API_URL = 'https://api.web3forms.com/submit';
+const ACCESS_KEY = '4d21fb04-9824-401d-8bad-03cf53e79abf';
 const form = document.querySelector('#contact-form');
 
+/**
+ * Retrieves localized feedback messages.
+ * Falls back to English if the translation is missing.
+ */
 function getMsg(key) {
     const fullKey = 'contact.feedback.' + key;
+    
     if (typeof currentLang !== 'undefined' && currentLang !== 'en' && translationCache[currentLang]) {
         const value = getNestedValue(translationCache[currentLang], fullKey);
         if (value) return value;
     }
+
     const defaults = {
         emptyFields: 'Please fill in all fields before sending.',
         invalidEmail: 'Please enter a valid email address.',
@@ -17,6 +24,9 @@ function getMsg(key) {
     return defaults[key];
 }
 
+/**
+ * Displays feedback messages to the user below the form.
+ */
 function showFeedback(message, type) {
     let feedback = form.querySelector('#form-feedback');
     if (!feedback) {
@@ -25,7 +35,7 @@ function showFeedback(message, type) {
         form.appendChild(feedback);
     }
     feedback.textContent = message;
-    feedback.className = type;
+    feedback.className = type; // Expects 'success' or 'error' CSS classes
 }
 
 form.addEventListener('submit', async (e) => {
@@ -35,6 +45,7 @@ form.addEventListener('submit', async (e) => {
     const email = document.querySelector('#email').value.trim();
     const message = document.querySelector('#message').value.trim();
 
+    // Basic validation
     if (!name || !email || !message) {
         showFeedback(getMsg('emptyFields'), 'error');
         return;
@@ -47,29 +58,39 @@ form.addEventListener('submit', async (e) => {
     }
 
     const button = form.querySelector('button');
+    const originalBtnText = button.textContent;
     button.textContent = '...';
     button.disabled = true;
 
     try {
-        const response = await fetch(`${API_URL}/send-email`, {
+        const response = await fetch(API_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, message })
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ 
+                access_key: ACCESS_KEY,
+                name: name, 
+                email: email, 
+                message: message,
+                subject: `New Portfolio Message from ${name}`
+            })
         });
 
-        const data = await response.json();
+        const result = await response.json();
 
-        if (data.success) {
+        if (result.success) {
             showFeedback(getMsg('success'), 'success');
             form.reset();
         } else {
             showFeedback(getMsg('failed'), 'error');
         }
     } catch (error) {
-        console.error('Error sending message:', error);
+        console.error('Submission Error:', error);
         showFeedback(getMsg('error'), 'error');
     } finally {
-        button.textContent = getMsg('button') || 'Get in Touch';
+        button.textContent = originalBtnText;
         button.disabled = false;
     }
 });
