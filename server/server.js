@@ -15,9 +15,12 @@ const limiter = rateLimit({
   message: { success: false, message: 'Too many requests. Please try again after 15 minutes.' }
 });
 
-app.use(cors({
-  origin: ['https://www.dasilva-thiago.dev', 'https://dasilva-thiago.dev']
-}));
+const allowedOrigins = [
+    'https://www.dasilva-thiago.dev',
+    'https://dasilva-thiago.dev',
+    ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:5500', 'http://127.0.0.1:5500'] : [])
+];
+app.use(cors({ origin: allowedOrigins }));
 app.use(limiter);
 app.use(express.json());
 
@@ -33,7 +36,7 @@ function sanitize(str, maxLength = 500) {
     .substring(0, maxLength);
 }
 
-app.post('/send-email', limiter, async (req, res) => {
+app.post('/send-email', async (req, res) => {
     const name    = sanitize(req.body.name, 100);
     const email   = sanitize(req.body.email, 100);
     const message = sanitize(req.body.message, 2000);

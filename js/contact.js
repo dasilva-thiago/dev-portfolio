@@ -8,8 +8,14 @@ const form = document.querySelector('#contact-form');
  */
 function getMsg(key) {
     const fullKey = 'contact.feedback.' + key;
-    
-    if (typeof currentLang !== 'undefined' && currentLang !== 'en' && translationCache[currentLang]) {
+
+    if (
+        typeof currentLang !== 'undefined' &&
+        typeof translationCache !== 'undefined' &&
+        typeof getNestedValue !== 'undefined' &&
+        currentLang !== 'en' &&
+        translationCache[currentLang]
+    ) {
         const value = getNestedValue(translationCache[currentLang], fullKey);
         if (value) return value;
     }
@@ -21,6 +27,7 @@ function getMsg(key) {
         failed: 'Failed to send message. Please try again later.',
         error: 'An error occurred. Please try again later.'
     };
+    
     return defaults[key];
 }
 
@@ -71,10 +78,11 @@ form.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify({ 
                 access_key: ACCESS_KEY,
-                name: name, 
+                from_name: "Contato - Portfolio", 
+                subject: `Nova mensagem de ${name}`,
+                name: name,
                 email: email, 
                 message: message,
-                subject: `New Portfolio Message from ${name}`
             })
         });
 
