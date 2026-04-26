@@ -9,12 +9,12 @@
     "title": "Olá, eu sou o Thiago",
     "subtitle": "Desenvolvedor Full Stack • C# • Python • JavaScript • HTML + CSS",
     "bullets": [
-        "Estudante de Engenharia da Computação na UNIVESP e Técnico em Informática pelo SENAC",
-        "2 anos de experiência profissional no laboratório industrial da multinacional Tenaris",
-        "Desenvolvendo projetos com C#, Python, Node.js e APIs REST",
-        "Buscando estágio e oportunidades em desenvolvimento de software"
+      "Estudante de Engenharia da Computação na UNIVESP e Técnico em Informática pelo SENAC",
+      "2 anos de experiência profissional no laboratório industrial da multinacional Tenaris",
+      "Desenvolvendo projetos com C#, Python, Node.js e APIs REST",
+      "Buscando estágio e oportunidades em desenvolvimento de software"
     ]
-},
+  },
   "sections": {
     "skills": {
       "title": "Habilidades",
@@ -49,8 +49,20 @@
       "title": "Projeto de Segurança na Aviação",
       "description": "Um projeto de visualização de dados que simula uma sala de controle operacional aeronáutica, monitorando incidentes, tendências e níveis de criticidade em tempo real utilizando dados simulados.",
       "tag": "Backend"
+    },
+    {
+      "title": "Projeto de Localização de Segurança Industrial",
+      "description": "Identifiquei uma lacuna crítica de comunicação nos procedimentos de segurança de máquinas, causada pelo uso exclusivo de etiquetas em inglês em um ambiente de língua portuguesa. Conduzi uma análise de causa raiz, pesquisei a terminologia técnica adequada e liderei a tradução e padronização de todas as etiquetas de segurança. Também coordenei a produção e implementação no laboratório, resultando em melhoria significativa na segurança operacional e zero recorrência de incidentes semelhantes após a implantação.",
+      "tag": "Ambiente de Trabalho",
+      "tech": {
+        "0": "Localização Técnica",
+        "1": "Segurança Industrial",
+        "2": "Análise de Causa Raiz",
+        "3": "Melhoria de Processos",
+        "4": "Comunicação Multilíngue"
+      }
     }
-  ],
+  ], 
   "about": {
     "name": "Thiago da Silva",
     "role": "Estudante de Engenharia da Computação",
@@ -86,13 +98,14 @@
       "message": "Mensagem",
       "message_placeholder": "Sua Mensagem",
       "button": "Entrar em Contato"
-    },
+    }, 
     "feedback": {
-    "emptyFields": "Por favor, preencha todos os campos antes de enviar.",
-    "invalidEmail": "Por favor, insira um endereço de email válido.",
-    "success": "Mensagem recebida! Responderei o mais breve possível.",
-    "failed": "Falha ao enviar. Tente novamente mais tarde.",
-    "error": "Ocorreu um erro. Tente novamente mais tarde."
-    } 
-  }
+      "emptyFields": "Por favor, preencha todos os campos antes de enviar.",
+      "invalidEmail": "Por favor, insira um endereço de email válido.",
+      "success": "Mensagem recebida! Responderei o mais breve possível.",
+      "failed": "Falha ao enviar. Tente novamente mais tarde.",
+      "error": "Ocorreu um erro. Tente novamente mais tarde."
+    }
+  },
+  "projectsGithubBtn": "Ver no GitHub"   
 }

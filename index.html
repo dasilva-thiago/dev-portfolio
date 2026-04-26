@@ -210,14 +210,15 @@
                         aria-label="Project 2"></button>
                     <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"
                         aria-label="Project 3"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"
+                        aria-label="Project 4"></button>
                 </div>
 
                 <div class="carousel-inner">
 
                     <!-- Project 1 — projects[0] -->
                     <div class="carousel-item active">
-                        <a href="https://github.com/dasilva-thiago/BuenosAiresExp" target="_blank"
-                            rel="noopener noreferrer" class="project-card">
+                        <div class="project-card">
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.0.tag">Full Stack</span>
                                 <h3 data-i18n="projects.0.title">Buenos Aires Explorer</h3>
@@ -231,18 +232,25 @@
                                     <span>SQLite</span>
                                     <span>Windows Forms</span>
                                 </div>
+
+                                <div class="project-actions">
+                                    <a href="https://github.com/dasilva-thiago/BuenosAiresExp" target="_blank"
+                                        rel="noopener noreferrer" class="btn-github">
+                                        <i class="fa-brands fa-github"></i>
+                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                                    </a>
+                                </div>
                             </div>
                             <div class="project-image">
                                 <img src="assets/img/BAexp_screenshot.webp" alt="BAexp Screenshot" width="600"
                                     height="400" loading="lazy" />
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Project 2 — projects[1] -->
                     <div class="carousel-item">
-                        <a href="https://github.com/dasilva-thiago/dev-portfolio" target="_blank"
-                            rel="noopener noreferrer" class="project-card no-image">
+                        <div class="project-card no-image">
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.1.tag">Frontend</span>
                                 <h3 data-i18n="projects.1.title">Developer Portfolio</h3>
@@ -255,14 +263,20 @@
                                     <span>JavaScript</span>
                                     <span>Bootstrap</span>
                                 </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dasilva-thiago/dev-portfolio" target="_blank"
+                                        rel="noopener noreferrer" class="btn-github">
+                                        <i class="fa-brands fa-github"></i>
+                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                                    </a>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Project 3 — projects[2] -->
                     <div class="carousel-item">
-                        <a href="https://github.com/dasilva-thiago/aviation_safety_project" target="_blank"
-                            rel="noopener noreferrer" class="project-card">
+                        <div class="project-card">
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.2.tag">Backend</span>
                                 <h3 data-i18n="projects.2.title">Aviation Safety Project</h3>
@@ -276,12 +290,48 @@
                                     <span>NumPy</span>
                                     <span>OpenPyXL</span>
                                 </div>
+
+                                <div class="project-actions">
+                                    <a href="https://github.com/dasilva-thiago/aviation_safety_project" target="_blank"
+                                        rel="noopener noreferrer" class="btn-github">
+                                        <i class="fa-brands fa-github"></i>
+                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                                    </a>
+                                </div>
                             </div>
                             <div class="project-image">
                                 <img src="assets/img/Aviation_Safety_Project_screenshot.webp"
                                     alt="Aviation Safety Project Screenshot" width="600" height="400" loading="lazy" />
                             </div>
-                        </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 — projects[3] -->
+                    <div class="carousel-item">
+                        <div class="project-card project-card--stacked">
+                            <div class="project-info">
+                                <span class="project-tag" data-i18n="projects.3.tag">Workplace</span>
+                                <h3 data-i18n="projects.3.title">Industrial Safety Localization Project</h3>
+                                <p data-i18n="projects.3.description">Identified a critical communication gap in machine
+                                    safety procedures due to English-only labeling in a Portuguese-speaking environment.
+                                    Conducted a root cause analysis, researched precise technical terminology, and led
+                                    the end-to-end translation and standardization of safety labels. Coordinated
+                                    production and implementation across the laboratory, significantly improving
+                                    operational safety and resulting in zero similar incidents after deployment.</p>
+                                <div class="project-tech">
+                                    <span data-i18n="projects.3.tech.0">Technical Localization</span>
+                                    <span data-i18n="projects.3.tech.1">Industrial Safety</span>
+                                    <span data-i18n="projects.3.tech.2">Root Cause Analysis</span>
+                                    <span data-i18n="projects.3.tech.3">Process Improvement</span>
+                                    <span data-i18n="projects.3.tech.4">Cross-language Communication</span>
+                                </div>
+
+                            </div>
+                            <div class="project-image">
+                                <img src="assets/img/safety_labels_en_pt.webp" alt="Safety Labels Translation EN to PT"
+                                    width="600" height="294" loading="lazy" />
+                            </div>
+                        </div>
                     </div>
 
                 </div><!-- /carousel-inner -->

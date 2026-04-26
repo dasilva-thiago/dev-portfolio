@@ -9,12 +9,12 @@
     "title": "Hola, soy Thiago",
     "subtitle": "Desarrollador Full Stack • C# • Python • JavaScript • HTML + CSS",
     "bullets": [
-        "Estudiante de Ingeniería en Computación en UNIVESP y Técnico en TI en SENAC",
-        "2 años de experiencia profesional en laboratorio industrial multinacional",
-        "Desarrollando proyectos con C#, Python, Node.js y APIs REST",
-        "En busca de pasantías y oportunidades en desarrollo de software"
+      "Estudiante de Ingeniería en Computación en UNIVESP y Técnico en TI en SENAC",
+      "2 años de experiencia profesional en laboratorio industrial multinacional",
+      "Desarrollando proyectos con C#, Python, Node.js y APIs REST",
+      "En busca de pasantías y oportunidades en desarrollo de software"
     ]
-},
+  },
   "sections": {
     "skills": {
       "title": "Habilidades",
@@ -49,6 +49,18 @@
       "title": "Proyecto de Seguridad en Aviación",
       "description": "Proyecto de visualización de datos que simula un centro de control aeronáutico.",
       "tag": "Backend"
+    },
+    {
+      "title": "Proyecto de Localización en Seguridad Industrial",
+      "description": "Identifiqué una brecha crítica de comunicación en los procedimientos de seguridad de maquinaria, causada por el uso exclusivo de etiquetas en inglés en un entorno de habla portuguesa. Realicé un análisis de causa raíz, investigué la terminología técnica adecuada y lideré la traducción y estandarización de todas las etiquetas de seguridad. También coordiné su producción e implementación en el laboratorio, logrando una mejora significativa en la seguridad operativa y cero recurrencias de incidentes similares tras la implementación.",
+      "tag": "Entorno Laboral",
+      "tech": {
+        "0": "Localización Técnica",
+        "1": "Seguridad Industrial",
+        "2": "Análisis de Causa Raíz",
+        "3": "Mejora de Procesos",
+        "4": "Comunicación Multilingüe"
+      }
     }
   ],
   "about": {
@@ -79,21 +91,21 @@
   "contact": {
     "text": "¡No dudes en ponerte en contacto! Actualmente estoy buscando prácticas y otras oportunidades en el área de tecnología, especialmente en desarrollo de software. Si tienes un proyecto, una oportunidad o simplemente quieres conectar e intercambiar ideas, estaré encantado de conversar. Puedes contactarme a través de este formulario, por correo electrónico o por LinkedIn. Trabajemos juntos. Envíame un mensaje — te responderé pronto.",
     "form": {
-    "name": "Nombre",
-    "name_placeholder": "Tu Nombre",
-    "email": "Email",
-    "email_placeholder": "tu_email@ejemplo.com",
-    "message": "Mensaje",
-    "message_placeholder": "Tu Mensaje",
-    "button": "Contactar"
+      "name": "Nombre",
+      "name_placeholder": "Tu Nombre",
+      "email": "Email",
+      "email_placeholder": "tu_email@ejemplo.com",
+      "message": "Mensaje",
+      "message_placeholder": "Tu Mensaje",
+      "button": "Contactar"
     },
-
     "feedback": {
-    "emptyFields": "Por favor, completa todos los campos antes de enviar.",
-    "invalidEmail": "Por favor, ingresa un email válido.",
-    "success": "¡Mensaje recibido! Te responderé lo antes posible.",
-    "failed": "Error al enviar. Inténtalo de nuevo más tarde.",
-    "error": "Ocurrió un error. Inténtalo de nuevo más tarde."
+      "emptyFields": "Por favor, completa todos los campos antes de enviar.",
+      "invalidEmail": "Por favor, ingresa un email válido.",
+      "success": "¡Mensaje recibido! Te responderé lo antes posible.",
+      "failed": "Error al enviar. Inténtalo de nuevo más tarde.",
+      "error": "Ocurrió un error. Inténtalo de nuevo más tarde."
     }
-  }
+  },
+  "projectsGithubBtn": "Ver en GitHub"   
 }

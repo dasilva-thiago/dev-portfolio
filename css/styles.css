@@ -594,9 +594,47 @@ body:not(.dark-mode) .aurora-orb--3 {
     color: var(--text-color);
 }
 
+/* Project Actions — GitHub button */
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: transparent;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease,
+                background-color 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.btn-github:hover {
+    color: var(--link-color);
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--link-color) 6%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-link-sm);
+}
+
+.btn-github i {
+    font-size: 16px;
+}
+
 /*PROJECT CARDS — MICRO-INTERACTIONS */
 
 .project-card {
+    cursor: default;
     display: flex;
     align-items: center;
     gap: 50px;
@@ -604,7 +642,6 @@ body:not(.dark-mode) .aurora-orb--3 {
     min-height: 418px;
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
     position: relative;
     overflow: hidden;
 
@@ -652,6 +689,34 @@ body:not(.dark-mode) .aurora-orb--3 {
     opacity: 1;
 }
 
+/* 
+   Project Card —  vertical (project 4)
+*/
+.project-card--stacked {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card--stacked .project-info {
+    padding: 36px 40px 0 40px;
+    width: 100%;
+}
+
+.project-card--stacked .project-image {
+    width: 100%;
+    height: auto;
+    padding: 0 32px 28px 32px;
+}
+
+.project-card--stacked .project-image img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
 .project-info {
     flex: 1;
     padding: 36px 24px 36px 40px;
@@ -665,6 +730,7 @@ body:not(.dark-mode) .aurora-orb--3 {
     align-items: center;
     height: 100%;
     overflow: hidden;
+    padding: 24px 28px 24px 0;
 }
 
 .project-image img {

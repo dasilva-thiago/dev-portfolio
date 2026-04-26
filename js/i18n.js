@@ -29,7 +29,7 @@ async function loadTranslations(lang) {
         return translationCache[lang];
     }
 
-   const res = await fetch(`./locales/${lang}.json`);
+  const res = await fetch(`./locales/${lang}.json?v=2`);
     if (!res.ok) throw new Error(`Arquivo i18n/${lang}.json não encontrado`);
 
     const data = await res.json();
