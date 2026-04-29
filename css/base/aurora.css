@@ -1,0 +1,218 @@
+/*AURORA BACKGROUND */
+
+.aurora-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+
+    isolation: isolate;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform: translate3d(0, 0, 0);
+}
+
+.aurora-orb {
+    transition: none;
+}
+
+.aurora-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(var(--aurora-blur-lg));
+    opacity: 1;
+    animation: aurora-fade-in 1.2s ease forwards;
+
+    will-change: transform, opacity;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Orb 1 — blue, upper right corner*/
+.aurora-orb--1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle at center, var(--aurora-orb1), transparent 70%);
+    top: -15%;
+    right: -10%;
+    animation-delay: 0.2s;
+    animation: aurora-fade-in 1.2s ease 0.2s forwards,
+        aurora-drift-1 18s ease-in-out 1.4s infinite alternate;
+}
+
+/* Orb 2 — violet, lower left corner */
+.aurora-orb--2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at center, var(--aurora-orb2), transparent 70%);
+    bottom: 5%;
+    left: -8%;
+    animation: aurora-fade-in 1.2s ease 0.5s forwards,
+        aurora-drift-2 22s ease-in-out 1.7s infinite alternate;
+}
+
+/* Orb 3 — soft cyan, center */
+.aurora-orb--3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, var(--aurora-orb3), transparent 70%);
+    top: 40%;
+    left: 40%;
+    animation: aurora-fade-in 1.2s ease 0.8s forwards,
+        aurora-drift-3 25s ease-in-out 2s infinite alternate;
+}
+
+@keyframes aurora-fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes aurora-drift-1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-40px, 30px) scale(1.05);
+    }
+
+    100% {
+        transform: translate(20px, -50px) scale(0.97);
+    }
+}
+
+@keyframes aurora-drift-2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(50px, -30px) scale(1.08);
+    }
+
+    100% {
+        transform: translate(-20px, 40px) scale(0.95);
+    }
+}
+
+@keyframes aurora-drift-3 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-60px, -40px);
+    }
+}
+
+/* Dark mode: orb opacity */
+body:not(.dark-mode) .aurora-orb {
+    filter: blur(var(--aurora-blur-light));
+}
+
+body:not(.dark-mode) .aurora-orb--1 {
+    opacity: 0.12;
+}
+
+body:not(.dark-mode) .aurora-orb--2 {
+    opacity: 0.10;
+}
+
+body:not(.dark-mode) .aurora-orb--3 {
+    opacity: 0.08;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aurora-orb {
+        animation: aurora-fade-in 0.1s ease forwards !important;
+        will-change: auto;
+    }
+
+    .aurora-orb--1,
+    .aurora-orb--2,
+    .aurora-orb--3 {
+        animation: aurora-fade-in 0.1s ease forwards !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .aurora-orb--1 {
+        width: 550px;
+        height: 550px;
+    }
+
+    .aurora-orb--2 {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 740px) {
+    /* Aurora mobile*/
+    .aurora-orb {
+        filter: blur(var(--aurora-blur-md));
+        will-change: opacity;
+    }
+
+    .aurora-orb--1 {
+        width: 400px;
+        height: 400px;
+        top: -10%;
+        right: -15%;
+        animation: aurora-fade-in 1.2s ease 0.2s forwards !important;
+    }
+
+    .aurora-orb--2 {
+        width: 350px;
+        height: 350px;
+        bottom: 10%;
+        left: -15%;
+        animation: aurora-fade-in 1.2s ease 0.5s forwards !important;
+    }
+
+    .aurora-orb--3 {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .aurora-orb {
+        filter: blur(30px) !important;
+        will-change: transform, opacity;
+    }
+
+    .aurora-orb--1 {
+        width: 280px;
+        height: 280px;
+        top: -5%;
+        right: -10%;
+        opacity: 0.4;
+        animation: aurora-drift-1 20s ease-in-out infinite alternate;
+    }
+
+    .aurora-orb--2 {
+        width: 240px;
+        height: 240px;
+        bottom: 10%;
+        left: -10%;
+        opacity: 0.3;
+        animation: aurora-drift-2 22s ease-in-out infinite alternate;
+    }
+
+    body.dark-mode .aurora-orb--1 {
+        opacity: 0.5;
+    }
+
+    body.dark-mode .aurora-orb--2 {
+        opacity: 0.4;
+    }
+
+    .aurora-orb--3 {
+        display: none;
+    }
+}

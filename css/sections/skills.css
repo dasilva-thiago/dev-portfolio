@@ -1,0 +1,63 @@
+/* Section 2: Skills */
+
+.skills-section h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.skills-section .text {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills-section .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-section .cells .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+
+    width: 200px;
+    padding: 10px 20px;
+    border: 1.5px solid var(--border-color);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.skills-section .cells .cell img {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.skills-section .cells .cell span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.skills-section .cells .cell:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    box-shadow: 0 8px 24px var(--shadow-link-sm);
+}
+
+@media (max-width: 850px) {
+    .skills-section .cells .cell {
+        width: 170px;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-section .cells .cell span {
+        font-size: 16px;
+    }
+}

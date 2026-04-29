@@ -1,0 +1,226 @@
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 50px;
+    height: 80px;
+
+}
+
+nav .left a {
+    color: var(--text-color);
+    font-size: 26px;
+    font-weight: 600;
+}
+
+nav .right a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    min-width: 44px;
+    min-height: 44px;
+    transition: transform .2s ease;
+    color: var(--text-color);
+    margin: 0 10px;
+}
+
+nav .right a:hover {
+    color: var(--link-color);
+    transition: color .2s ease;
+}
+
+nav .right {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+nav .right button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+nav .right a span {
+    margin-left: 5px;
+}
+
+/* Dark mode toggle */
+.dark-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform .2s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+}
+
+.dark-toggle:hover {
+    transform: rotate(20deg);
+    color: var(--link-color);
+    transition: color .2s ease;
+}
+
+/* Language Toggle */
+
+.lang-switcher {
+    display: flex;
+    height: 38px;
+    align-items: center;
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.lang-switcher .lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0px 10px;
+    background: none;
+    border: none;
+    border-right: 1.5px solid var(--border-color);
+    cursor: pointer;
+    transition: all .2s ease;
+    opacity: 0.45;
+}
+
+.lang-switcher .lang-btn:hover {
+    background-color: var(--border-color);
+    opacity: 0.8;
+}
+
+.lang-switcher .lang-btn.active {
+    background-color: var(--text-color);
+    opacity: 1;
+}
+
+.lang-switcher .lang-btn .fi {
+    width: 22px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+@media (max-width: 850px) {
+    nav {
+        padding: 0 30px;
+        height: 70px;
+    }
+
+    nav .left a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 740px) {
+    nav {
+        padding: 16px 20px;
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+    }
+
+    nav .left a {
+        font-size: 20px;
+    }
+
+    nav .right {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav .right a span {
+        display: none;
+    }
+
+    nav .right a:last-child {
+        color: var(--text-color);
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 20px;
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: 60px;
+        gap: 15px;
+    }
+
+    nav .left a {
+        font-size: 22px;
+        white-space: nowrap;
+    }
+
+    nav .right {
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .lang-switcher {
+        margin-left: 5px;
+    }
+
+    nav .right a {
+        font-size: 28px;
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    nav .right a,
+    nav .right button,
+    .lang-switcher .lang-btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav .right a span {
+        display: none;
+    }
+
+    nav .right a:last-child {
+        color: var(--text-color);
+        background-color: transparent;
+        padding: 0;
+    }
+
+    nav .right .dark-toggle {
+        font-size: 26px;
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    .lang-switcher {
+        height: 44px;
+    }
+
+    .lang-switcher .lang-btn {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}

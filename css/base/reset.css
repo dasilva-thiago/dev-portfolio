@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    /* safe fallbacks  */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    background-color: var(--background-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: var(--text-color);
+    max-width: 1400px;
+    margin: 0 auto;
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+.section {
+    padding-inline: clamp(20px, 5vw, 50px);
+    margin-bottom: 100px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.project-tech span,
+.timeline-date,
+.project-tag {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.05em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}

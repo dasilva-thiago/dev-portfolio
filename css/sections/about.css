@@ -1,0 +1,89 @@
+/* Section 4: About */
+
+.about-section h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.about-section .group {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.about-section .group .person-details {
+    text-align: center;
+    flex: 2;
+}
+
+.about-section .group .text {
+    flex: 8;
+    padding-top: 60px;
+}
+
+.about-section .group .person-details img {
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.about-section .group .person-details p {
+    font-weight: 600;
+}
+
+.about-section .group .person-details p:last-child {
+    font-weight: normal;
+
+}
+
+@media (max-width: 850px) {
+    .about-section .group {
+        gap: 30px;
+    }
+
+    .about-section .group .text {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 740px) {
+    .about-section .group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section .group .person-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section .group .text {
+        text-align: center;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-section .group {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-section .group .person-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section .group .text {
+        padding-top: 0;
+        text-align: center;
+    }
+}

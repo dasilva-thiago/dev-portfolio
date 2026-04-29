@@ -1,0 +1,330 @@
+/* Section 3: Projects */
+
+#projectsCarousel,
+#projectsCarousel .carousel-inner {
+    overflow: visible;
+}
+
+#projectsCarousel {
+    isolation: isolate;
+}
+
+.projects-section {
+    contain: paint;
+    position: relative;
+    z-index: 1;
+}
+
+.projects-section h2 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects-section .section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+/* Project Actions — GitHub button */
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease,
+                background-color 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.btn-github:hover {
+    color: var(--link-color);
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--link-color) 6%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-link-sm);
+}
+
+.btn-github i {
+    font-size: 16px;
+}
+
+/*PROJECT CARDS — MICRO-INTERACTIONS */
+
+.project-card {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 16px;
+    min-height: 418px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+
+    background: color-mix(in srgb, var(--white-color) 80%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid color-mix(in srgb, var(--border-color) 60%, transparent);
+
+    box-shadow:
+        0 4px 24px var(--shadow-dark-sm),
+        inset 0 1px 0 var(--shadow-light-sm);
+
+    transition:
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Shimmer overlay hover */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            transparent 40%,
+            color-mix(in srgb, var(--link-color) 6%, transparent) 60%,
+            transparent 80%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--link-color) 40%, transparent);
+    box-shadow:
+        0 12px 40px var(--shadow-link-sm),
+        0 4px 16px var(--shadow-dark-md),
+        inset 0 1px 0 var(--shadow-light-md);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* 
+   Project Card — vertical (project 4)
+*/
+.project-card--stacked {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card--stacked .project-info {
+    padding: 36px 40px 0 40px;
+    width: 100%;
+}
+
+.project-card--stacked .project-image {
+    width: 100%;
+    height: auto;
+    padding: 0 32px 28px 32px;
+}
+
+.project-card--stacked .project-image img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.project-info {
+    flex: 1;
+    padding: 36px 24px 36px 40px;
+    /* top | right | bottom | left */
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    padding: 24px 28px 24px 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.project-card:not(:has(.project-image)) .project-info {
+    padding: 40px 48px;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: var(--link-color);
+    color: var(--background-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: var(--text-color);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tech span {
+    background-color: var(--background-color);
+    border: 1.5px solid var(--border-color);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* setas do carousel */
+.projects-section .carousel-control-prev,
+.projects-section .carousel-control-next {
+    width: 36px;
+    height: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+
+    border-color: transparent;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 14px;
+
+    position: absolute;
+}
+
+.projects-section .carousel-control-prev:hover,
+.projects-section .carousel-control-next:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    transition: all .2s ease;
+}
+
+
+.projects-section .carousel-control-prev {
+    left: -50px;
+}
+
+.projects-section .carousel-control-next {
+    right: -50px;
+}
+
+/* pontinhos indicadores */
+.projects-section .carousel-indicators [data-bs-target] {
+    background-color: var(--text-color);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    opacity: 0.3;
+}
+
+.projects-section .carousel-indicators .active {
+    opacity: 1;
+}
+
+@media (max-width: 850px) {
+    .project-card {
+        gap: 30px;
+        min-height: 360px;
+    }
+
+    .project-info {
+        padding: 28px 20px 28px 28px;
+    }
+
+    .project-info h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 740px) {
+    .project-card {
+        flex-direction: column;
+        padding: 25px;
+
+        min-height: 480px;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .project-info {
+        padding: 0;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .projects-section .carousel-control-prev {
+        left: 0;
+    }
+
+    .projects-section .carousel-control-next {
+        right: 0;
+    }
+
+    #projectsCarousel .carousel-inner {
+        min-height: 480px;
+    }
+
+
+    #projectsCarousel .carousel-item {
+        height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-info {
+        padding: 0;
+    }
+
+    .projects-section .carousel-control-prev {
+        left: 0;
+    }
+
+    .projects-section .carousel-control-next {
+        right: 0;
+    }
+}

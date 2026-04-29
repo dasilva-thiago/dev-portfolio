@@ -1,0 +1,71 @@
+:root {
+    /* colors */
+    --text-color: #1a1c20;
+    --link-color: #4a76ee;
+    --background-color: #eeeff1;
+    --white-color: #fff;
+    --border-color: #d3d3d3;
+    --muted-color: #555;
+
+    /* typography */
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 2.8rem;
+
+    /* feedback messages */
+    --feedback-success-text: #1a6b3c;
+    --feedback-success-bg: #d4edda;
+    --feedback-success-border: #b8ddc8;
+    --feedback-error-text: #842029;
+    --feedback-error-bg: #f8d7da;
+    --feedback-error-border: #f1aeb5;
+
+    /* shadows */
+    --shadow-link-focus: rgba(74, 118, 238, 0.12);
+    --shadow-link-sm: rgba(74, 118, 238, 0.15);
+    --shadow-link-md: rgba(74, 118, 238, 0.25);
+    --shadow-link-lg: rgba(74, 118, 238, 0.35);
+    --shadow-link-btn: rgba(74, 118, 238, 0.30);
+    --shadow-dark-sm: rgba(0, 0, 0, 0.06);
+    --shadow-dark-md: rgba(0, 0, 0, 0.08);
+    --shadow-light-sm: rgba(255, 255, 255, 0.10);
+    --shadow-light-md: rgba(255, 255, 255, 0.15);
+
+    /* Aurora  */
+    --aurora-orb1: #4a76ee55;
+    --aurora-orb2: #7c3aed44;
+    --aurora-orb3: #06b6d433;
+    --aurora-glow: #4a76ee66;
+    --aurora-blur-lg: 90px;
+    --aurora-blur-md: 60px;
+    --aurora-blur-sm: 40px;
+    --aurora-blur-light: 100px;
+}
+
+html.dark-mode,
+body.dark-mode {
+    --text-color: #f0f0f0;
+    --link-color: #7a9ff5;
+    --background-color: #16181d;
+    --white-color: #1e2128;
+    --border-color: #2e3038;
+    --muted-color: #d1d1d1;
+
+    --feedback-success-text: #6fcf97;
+    --feedback-success-bg: #0d2b1a;
+    --feedback-success-border: #1e5c35;
+    --feedback-error-text: #f1aeb5;
+    --feedback-error-bg: #2c0f12;
+    --feedback-error-border: #6b1f26;
+
+    --shadow-dark-sm: rgba(0, 0, 0, 0.15);
+    --shadow-dark-md: rgba(0, 0, 0, 0.20);
+}
