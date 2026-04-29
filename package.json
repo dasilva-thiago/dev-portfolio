@@ -23,5 +23,9 @@
   "homepage": "https://github.com/dasilva-thiago/dev-portfolio#readme",
   "devDependencies": {
     "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.15.0"
   }
 }

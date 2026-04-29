@@ -1,3 +1,5 @@
+import { currentLang, translationCache, getNestedValue } from './i18n.js';
+
 const API_URL = 'https://api.web3forms.com/submit';
 const ACCESS_KEY = '4d21fb04-9824-401d-8bad-03cf53e79abf';
 const form = document.querySelector('#contact-form');

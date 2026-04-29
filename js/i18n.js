@@ -1,6 +1,6 @@
 const DEFAULT_LANG = 'en';
 const SUPPORTED_LANGS = ['en', 'pt', 'es'];
-const translationCache = {};
+export const translationCache = {};
 
 // slice (0,2) to get the language code without region (e.g., 'en-US' -> 'en')
 function detectBrowserLang() {
@@ -8,7 +8,7 @@ function detectBrowserLang() {
     return SUPPORTED_LANGS.includes(browserLang) ? browserLang : DEFAULT_LANG;
 }
 // priority: localStorage > browser settings > default (english)
-let currentLang = localStorage.getItem('lang') || detectBrowserLang();
+export let currentLang = localStorage.getItem('lang') || detectBrowserLang();
 
 function saveDefaults() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -37,8 +37,9 @@ async function loadTranslations(lang) {
     return data;
 }
 
+
 // nested keys support (e.g., 'home.title' -> { home: { title: '...' } })
-function getNestedValue(obj, keyPath) {
+export function getNestedValue(obj, keyPath) {
     return keyPath.split('.').reduce((acc, key) => acc?.[key], obj);
 }
 
