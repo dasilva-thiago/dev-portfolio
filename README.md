@@ -1,4 +1,5 @@
 # Thiago da Silva — Developer Portfolio
+
 A modern, responsive, and accessible developer portfolio built from scratch, designed to showcase real-world projects, technical skills, and continuous professional growth.
 
 **Live:** [dasilva-thiago.dev](https://www.dasilva-thiago.dev)
@@ -11,6 +12,7 @@ This portfolio was designed to solve a real problem: presenting my technical ski
 I built everything from scratch to strengthen my understanding of frontend architecture, backend integration, and user experience design.
 
 ---
+
 ## UI Overview
 
 ### Desktop
@@ -39,7 +41,7 @@ I built everything from scratch to strengthen my understanding of frontend archi
 - **Multilingual (i18n)** — English, Portuguese, and Spanish with dynamic JSON loading and browser language auto-detection
 - **Responsive design** — mobile-first layout with custom breakpoints at 600px, 740px, and 850px
 - **Project carousel** — Bootstrap-powered with keyboard and touch support
-- **Contact form** — connected to Web3Forms with client-side validation, email regex check, and user feedback
+- **Contact form** — connected to Web3Forms with client-side validation, email regex check, and localized user feedback
 - **Scroll animations** — AOS for section reveals and GSAP for the hero entrance cascade
 - **Aurora background** — animated radial gradient orbs with GPU-accelerated motion, respects `prefers-reduced-motion`
 
@@ -48,19 +50,22 @@ I built everything from scratch to strengthen my understanding of frontend archi
 ## Tech Stack
 
 ### Frontend
+
 | Technology | Purpose |
 |---|---|
 | HTML5 / CSS3 | Structure and styling |
-| JavaScript (vanilla) | Dark mode, i18n, form submission, animations |
+| JavaScript (vanilla, ES modules) | Dark mode, i18n, form submission, animations |
 | Bootstrap 5 | Carousel, responsive grid |
 | Font Awesome 7 | Icons |
 | GSAP 3 | Hero entrance animation |
 | AOS 2 | Scroll-triggered section animations |
 | Web3Forms | Contact form email delivery |
+| Vite 8 | Build tool and local dev server |
 
 ### Backend (`/server`)
+
 > The `/server` directory contains a fully functional REST API built as a backend architecture demonstration. It is not currently deployed — the contact form uses Web3Forms for email delivery.
- 
+
 | Technology | Purpose |
 |---|---|
 | Node.js + Express 5 | REST API |
@@ -76,46 +81,66 @@ I built everything from scratch to strengthen my understanding of frontend archi
 ```
 dev-portfolio/
 ├── index.html
+├── vite.config.js
+├── package.json
 ├── css/
-│   └── styles.css
+│   ├── styles.css            # Root import — assembles all partials
+│   ├── base/
+│   │   ├── aurora.css        # Animated background orbs
+│   │   ├── reset.css         # Global reset and base typography
+│   │   └── variables.css     # CSS custom properties (light + dark theme)
+│   ├── layout/
+│   │   ├── footer.css
+│   │   └── navbar.css
+│   └── sections/
+│       ├── about.css
+│       ├── contact.css
+│       ├── experience.css
+│       ├── hero.css
+│       ├── projects.css
+│       └── skills.css
 ├── js/
-│   ├── animations.js    # GSAP hero entrance + AOS init + footer year
-│   ├── contact.js       # Form validation and Web3Forms submission
-│   ├── darkMode.js      # Dark mode toggle and localStorage persistence
-│   └── i18n.js          # Language switching with dynamic JSON loading
-├── locales/
-│   ├── pt.json          # Portuguese translations
-│   └── es.json          # Spanish translations
+│   ├── main.js              # Entry point — imports CSS and all JS modules
+│   ├── animations.js        # GSAP hero entrance + AOS init + footer year
+│   ├── contact.js           # Form validation and Web3Forms submission
+│   ├── darkMode.js          # Dark mode toggle and localStorage persistence
+│   └── i18n.js              # Language switching with dynamic JSON loading
+├── public/
+│   └── locales/
+│       ├── pt.json          # Portuguese translations
+│       └── es.json          # Spanish translations
 ├── assets/
-│   ├── img/             # Profile photos, project screenshots
-│   └── icons/           # Favicon
+│   ├── img/                 # Profile photos, project screenshots
+│   └── icons/               # Favicon
 └── server/
-    ├── server.js        # Express API — rate limiting, sanitization, Resend
+    ├── server.js            # Express API — rate limiting, sanitization, Resend
     └── package.json
 ```
 
 ---
 
 ## Contact Form — How It Works
- 
+
 The contact form uses [Web3Forms](https://web3forms.com), a serverless email delivery service with a public access key. No backend is required.
- 
+
 Client-side flow:
+
 1. Input validation — checks for empty fields and valid email format
 2. Submits JSON to `https://api.web3forms.com/submit`
 3. Displays localized feedback to the user — success or error, in the active language
+
 Localized feedback messages are defined in `locales/pt.json` and `locales/es.json` under `contact.feedback`, and fall back to English defaults if a translation is missing.
- 
+
 ---
 
 ## i18n — How Translations Work
- 
+
 Language priority on load: `localStorage` → browser language → English (default).
- 
+
 - English text lives directly in the HTML as `data-i18n-default` values — no JSON fetch needed
-- Portuguese and Spanish are loaded dynamically from `locales/` and cached in memory
+- Portuguese and Spanish are loaded dynamically from `public/locales/` and cached in memory
 - Switching language updates the page instantly with no reload
-- All UI elements use `data-i18n` keys for targeting, including form placeholders
+- All UI elements use `data-i18n` keys for targeting, including form placeholders and hero bullet points
 
 ---
 
@@ -124,8 +149,9 @@ Language priority on load: `localStorage` → browser language → English (defa
 | Project | Stack | Description |
 |---|---|---|
 | [Buenos Aires Explorer](https://github.com/dasilva-thiago/BuenosAiresExp) | C#, .NET, SQLite, Windows Forms | Desktop app for organizing points of interest with route planning and coordinate lookup |
-| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Bootstrap | This website |
+| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Bootstrap, Vite | This website |
 | [Aviation Safety Project](https://github.com/dasilva-thiago/aviation_safety_project) | Python, Power BI, Pandas, NumPy, OpenPyXL | Data visualization simulating an aeronautical control room |
+| Industrial Safety Localization | Technical writing, process improvement | Led end-to-end translation and standardization of machine safety labels at Tenaris |
 
 ---
 
@@ -148,4 +174,4 @@ I am currently seeking internship opportunities where I can contribute, learn fa
 
 ---
 
-<p align="center">Made with dedication by Thiago da Silva • Pindamonhangaba, SP, Brazil</p>
+<p align="center">Made by Thiago da Silva • Pindamonhangaba, SP, Brazil</p>
