@@ -52,7 +52,7 @@
     },
     {
       "title": "Proyecto de Localización en Seguridad Industrial",
-      "description": "Identifiqué una brecha crítica de comunicación en los procedimientos de seguridad de maquinaria, causada por el uso exclusivo de etiquetas en inglés en un entorno de habla portuguesa. Realicé un análisis de causa raíz, investigué la terminología técnica adecuada y lideré la traducción y estandarización de todas las etiquetas de seguridad. También coordiné su producción e implementación en el laboratorio, logrando una mejora significativa en la seguridad operativa y cero recurrencias de incidentes similares tras la implementación.",
+      "description": "Identifiqué una falla crítica de comunicación en seguridad debido al uso exclusivo de etiquetas en inglés en un entorno de habla portuguesa. Lideré el análisis de causa raíz, la traducción técnica y la estandarización integral de las señalizaciones, coordinando su implementación en el laboratorio, lo que mejoró significativamente la seguridad operativa y eliminó incidentes similares tras su implementación.",
       "tag": "Entorno Laboral",
       "tech": {
         "0": "Localización Técnica",
@@ -107,5 +107,7 @@
       "error": "Ocurrió un error. Inténtalo de nuevo más tarde."
     }
   },
-  "projectsGithubBtn": "Ver en GitHub"   
+  "projectsGithubBtn": "Ver en GitHub",
+  "projects-toggle-text": "Mostrar Todos los Proyectos",
+  "projects-toggle-back": "Volver al Carrusel"
 }

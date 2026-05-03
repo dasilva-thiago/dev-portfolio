@@ -310,12 +310,7 @@
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.3.tag">Workplace</span>
                                 <h3 data-i18n="projects.3.title">Industrial Safety Localization Project</h3>
-                                <p data-i18n="projects.3.description">Identified a critical communication gap in machine
-                                    safety procedures due to English-only labeling in a Portuguese-speaking environment.
-                                    Conducted a root cause analysis, researched precise technical terminology, and led
-                                    the end-to-end translation and standardization of safety labels. Coordinated
-                                    production and implementation across the laboratory, significantly improving
-                                    operational safety and resulting in zero similar incidents after deployment.</p>
+                                <p data-i18n="projects.3.description">Identified a critical safety communication gap caused by English-only machine labels in a Portuguese-speaking environment. Led root cause analysis, technical translation, and standardization of safety labels end-to-end, coordinating implementation across the lab—resulting in significantly improved safety and zero similar incidents post-deployment.</p>
                                 <div class="project-tech">
                                     <span data-i18n="projects.3.tech.0">Technical Localization</span>
                                     <span data-i18n="projects.3.tech.1">Industrial Safety</span>
@@ -344,6 +339,21 @@
                 </button>
 
             </div><!-- /carousel -->
+
+            <!-- Show All toggle -->
+            <div class="projects-toggle">
+                <button id="projects-toggle-btn" class="btn-show-all" aria-expanded="false"
+                    aria-controls="projects-grid">
+                    <i class="fa-solid fa-grip" id="projects-toggle-icon"></i>
+                    <span id="projects-toggle-text" data-i18n="projects-toggle-text">Show All Projects</span>
+                </button>
+            </div>
+
+            <!-- Grid view — populado por projects.js -->
+            <div id="projects-grid" class="projects-grid" aria-hidden="true"></div>
+
+        </section>
+
         </section>
 
         <!-- about section -->
