@@ -1,15 +1,15 @@
 import { currentLang, translationCache, getNestedValue } from './i18n.js';
 
-const carousel   = document.getElementById('projectsCarousel');
-const grid       = document.getElementById('projects-grid');
-const toggleBtn  = document.getElementById('projects-toggle-btn');
+const carousel = document.getElementById('projectsCarousel');
+const grid = document.getElementById('projects-grid');
+const toggleBtn = document.getElementById('projects-toggle-btn');
 const toggleIcon = document.getElementById('projects-toggle-icon');
 const toggleText = document.getElementById('projects-toggle-text');
 
 let isGridMode = false;
 
 function setToggleText(i18nKey, defaultEnText) {
-    
+
     toggleText.setAttribute('data-i18n', i18nKey);
     toggleText.setAttribute('data-i18n-default', defaultEnText);
 
@@ -34,9 +34,11 @@ function switchToGrid() {
     buildGrid();
 
     // stops the carousel cycle to prevent automatic sliding while in grid mode
-    const bsCarousel = bootstrap.Carousel.getInstance(carousel);
-    if (bsCarousel) bsCarousel.pause();
-
+    function getCarouselInstance() {
+        if (typeof bootstrap === 'undefined') return null;
+        return bootstrap.Carousel.getInstance(carousel);
+    }
+    
     carousel.classList.add('projects-carousel--hidden');
     grid.classList.add('projects-grid--visible');
     grid.removeAttribute('aria-hidden');

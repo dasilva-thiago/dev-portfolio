@@ -62,18 +62,6 @@ I built everything from scratch to strengthen my understanding of frontend archi
 | Web3Forms | Contact form email delivery |
 | Vite 8 | Build tool and local dev server |
 
-### Backend (`/server`)
-
-> The `/server` directory contains a fully functional REST API built as a backend architecture demonstration. It is not currently deployed — the contact form uses Web3Forms for email delivery.
-
-| Technology | Purpose |
-|---|---|
-| Node.js + Express 5 | REST API |
-| Resend | Email delivery (configured, not currently deployed) |
-| express-rate-limit | Abuse prevention — 5 requests per 15 min per IP |
-| dotenv | Environment variable management |
-| cors | Origin allowlist |
-
 ---
 
 ## Project Structure
@@ -112,10 +100,6 @@ dev-portfolio/
 ├── assets/
 │   ├── img/                 # Profile photos, project screenshots
 │   └── icons/               # Favicon
-└── server/
-    ├── server.js            # Express API — rate limiting, sanitization, Resend
-    └── package.json
-```
 
 ---
 
