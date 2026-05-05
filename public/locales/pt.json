@@ -37,22 +37,22 @@
   "projects": [
     {
       "title": "Buenos Aires Explorer",
-      "description": "Uma aplicação desktop para organização de pontos de interesse em Buenos Aires, com suporte para cadastro de locais, busca automática de coordenadas, pré-visualização de imagens, cálculo de distâncias e planejamento de rotas de visita.",
+      "description": "Desenvolvido em C# com Windows Forms, usando SQLite como banco de dados relacional embarcado para persistência local. Integrei uma API de geocoding para resolução automática de coordenadas e implementei cálculoo de distância para gerar rotas de visita otimizadas - sem depender de frameworks de UI externoos.",
       "tag": "Full Stack"
     },
     {
       "title": "Portfólio de Desenvolvedor",
-      "description": "Este mesmo site de portfólio — construído do zero, apresenta minhas habilidades, projetos e experiências. Está em constante evolução com novas funcionalidades e melhorias à medida que cresço como desenvolvedor.",
+      "description": "Construído do zero com JavaScript vanilla e Vite — sem frameworks frontend. Implementei um sistema de i18n customizado com carregamento dinâmico de JSON, detecção de idioma do navegador e caching em memória. O modo escuro usa um script inline síncrono para evitar FOUC, e o CSS é estruturado como parciais modulares montados em tempo de build.",
       "tag": "Frontend"
     },
     {
       "title": "Projeto de Segurança na Aviação",
-      "description": "Um projeto de visualização de dados que simula uma sala de controle operacional aeronáutica, monitorando incidentes, tendências e níveis de criticidade em tempo real utilizando dados simulados.",
+      "description": "Construí um pipeline de dados em Python usando Pandas para transformação e normalização de registros simulados de incidentes aeronáuticos, exportados via OpenPyXL, e visualizados no Power BI. Separei deliberadamente geração, processamento e apresentação de dados em camadas distintas para manter cada preocupação independentemente sustentável.",
       "tag": "Backend"
     },
     {
       "title": "Projeto de Localização de Segurança Industrial",
-      "description": "Identifiquei uma falha crítica de comunicação em segurança devido a etiquetas de máquinas apenas em inglês em um ambiente de língua portuguesa. Conduzi a análise de causa raiz, tradução técnica e padronização completa das sinalizações, coordenando a implementação no laboratório — o que elevou significativamente a segurança operacional e eliminou a recorrência de incidentes semelhantes.",
+      "description": "Identifiquei uma falha de documentação em um ambiente industrial e liderei todo o processo corretivo: análise de causa raiz, tradução técnica e rollout padronizado pelo laboratório. Apliquei o mesmo pensamento sistemático usado na depuração — isolar o problema, rastrear a causa, implementar e validar a correção.",
       "tag": "Ambiente de Trabalho",
       "tech": {
         "0": "Localização Técnica",

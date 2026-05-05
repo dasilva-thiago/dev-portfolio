@@ -216,18 +216,21 @@
 
                     <!-- Project 1 — projects[0] -->
                     <div class="carousel-item active">
-                        <div class="project-card">
+                        <div class="project-card project-card--stacked">
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.0.tag">Full Stack</span>
                                 <h3 data-i18n="projects.0.title">Buenos Aires Explorer</h3>
-                                <p data-i18n="projects.0.description">A desktop application for organizing points of
-                                    interest in Buenos Aires, with support for location registration, automatic
-                                    coordinate lookup, image previews, distance calculation, and visit route planning.
+                                <p data-i18n="projects.0.description">Built with C# and Windows Forms, backed by SQLite
+                                    as an embedded relational
+                                    database for local persistence. Integrated a geocoding API to automate
+                                    coordinate resolution and implemented distance calculation to generate
+                                    optimized visit routes — without relying on external UI frameworks.
                                 </p>
                                 <div class="project-tech">
                                     <span>C#</span>
                                     <span>.NET</span>
                                     <span>SQLite</span>
+                                    <span>Nominatim</span>
                                     <span>Windows Forms</span>
                                 </div>
 
@@ -252,9 +255,11 @@
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.1.tag">Frontend</span>
                                 <h3 data-i18n="projects.1.title">Developer Portfolio</h3>
-                                <p data-i18n="projects.1.description">This portfolio website itself - built from
-                                    scratch, it showcases my skills, projects, and experience. Continuously evolving
-                                    with new features and improvements added as I grow as a developer.</p>
+                                <p data-i18n="projects.1.description">Built from scratch with vanilla JS and Vite — no
+                                    frontend framework. Implemented
+                                    a custom i18n system with dynamic JSON loading, browser language detection, and
+                                    in-memory caching. Dark mode uses a synchronous inline script to prevent FOUC,
+                                    and CSS is structured as modular partials assembled at build time.</p>
                                 <div class="project-tech">
                                     <span>HTML</span>
                                     <span>CSS</span>
@@ -274,13 +279,16 @@
 
                     <!-- Project 3 — projects[2] -->
                     <div class="carousel-item">
-                        <div class="project-card">
+                        <div class="project-card project-card--stacked">
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.2.tag">Backend</span>
                                 <h3 data-i18n="projects.2.title">Aviation Safety Project</h3>
-                                <p data-i18n="projects.2.description">A data visualization project, simulating an
-                                    aeronautical operational control room that monitors incidents, trends and
-                                    criticality levels in real time using simulated data.</p>
+                                <p data-i18n="projects.2.description">Built a Python data pipeline using Pandas for
+                                    transformation and normalization
+                                    of simulated aeronautical incident records, exported via OpenPyXL, and
+                                    visualized in Power BI. Deliberately separated data generation, processing,
+                                    and presentation into distinct layers to keep each concern independently
+                                    maintainable.</p>
                                 <div class="project-tech">
                                     <span>Python</span>
                                     <span>Power BI</span>
@@ -310,7 +318,11 @@
                             <div class="project-info">
                                 <span class="project-tag" data-i18n="projects.3.tag">Workplace</span>
                                 <h3 data-i18n="projects.3.title">Industrial Safety Localization Project</h3>
-                                <p data-i18n="projects.3.description">Identified a critical safety communication gap caused by English-only machine labels in a Portuguese-speaking environment. Led root cause analysis, technical translation, and standardization of safety labels end-to-end, coordinating implementation across the lab—resulting in significantly improved safety and zero similar incidents post-deployment.</p>
+                                <p data-i18n="projects.3.description">Identified a documentation failure in a industrial environment
+                                    and led the full corrective process: root cause analysis, technical
+                                    translation, and standardized rollout across the lab. Applied the same
+                                    systematic thinking used in debugging — isolate the problem, trace the
+                                    cause, implement and validate the fix.</p>
                                 <div class="project-tech">
                                     <span data-i18n="projects.3.tech.0">Technical Localization</span>
                                     <span data-i18n="projects.3.tech.1">Industrial Safety</span>

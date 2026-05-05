@@ -37,22 +37,22 @@
   "projects": [
     {
       "title": "Buenos Aires Explorer",
-      "description": "Aplicación de escritorio para organizar puntos de interés en Buenos Aires con rutas, coordenadas e imágenes.",
+      "description": "Desarrollado en C# con Windows Forms, usando SQLite como base de datos relacional embebida para persistencia local. Integré una API de geocoding para resolución automática de coordenadas e implementé cálculo de distancia para generar rutas de visita optimizadas - sin depender de frameworks de UI externos.",
       "tag": "Full Stack"
     },
     {
       "title": "Portafolio de Desarrollador",
-      "description": "Este sitio web construido desde cero para mostrar mis habilidades y proyectos.",
+      "description": "Construido desde cero con JavaScript vanilla y Vite — sin frameworks frontend. Implementé un sistema de i18n personalizado con carga dinámica de JSON, detección de idioma del navegador y caching en memoria. El modo oscuro usa un script inline síncrono para evitar FOUC, y el CSS está estructurado como parciales modulares montados en tiempo de build.",
       "tag": "Frontend"
     },
     {
       "title": "Proyecto de Seguridad en Aviación",
-      "description": "Proyecto de visualización de datos que simula un centro de control aeronáutico.",
+      "description": "Construí un pipeline de datos en Python usando Pandas para transformación y normalización de registros simulados de incidentes aeronáuticos, exportados via OpenPyXL, y visualizados en Power BI. Separei deliberadamente geração, processamento e apresentação de dados em camadas distintas para manter cada preocupação independentemente sustentável.",
       "tag": "Backend"
     },
     {
       "title": "Proyecto de Localización en Seguridad Industrial",
-      "description": "Identifiqué una falla crítica de comunicación en seguridad debido al uso exclusivo de etiquetas en inglés en un entorno de habla portuguesa. Lideré el análisis de causa raíz, la traducción técnica y la estandarización integral de las señalizaciones, coordinando su implementación en el laboratorio, lo que mejoró significativamente la seguridad operativa y eliminó incidentes similares tras su implementación.",
+      "description": "Identifiqué una falla de documentación en un entorno industrial y lideré todo el proceso correctivo: análisis de causa raíz, traducción técnica y rollout estandarizado por el laboratorio. Apliqué el mismo pensamiento sistemático usado en depuración — aislar el problema, rastrear la causa, implementar y validar la corrección.",
       "tag": "Entorno Laboral",
       "tech": {
         "0": "Localización Técnica",
