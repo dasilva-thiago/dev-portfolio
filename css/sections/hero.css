@@ -198,6 +198,30 @@
     }
 }
 
+/* CV Button */
+.hero-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 2px solid var(--link-color);
+    border-radius: 5px;
+    background: var(--link-color);
+    color: var(--white-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.hero-cv-btn:hover {
+    filter: brightness(.9);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-link-md);
+}
+
 @media (max-width: 600px) {
     .hero-section {
         margin-top: 16px;
