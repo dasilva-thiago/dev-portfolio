@@ -15,6 +15,12 @@ nav .left a {
     font-weight: 600;
 }
 
+nav .right .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 nav .right a {
     display: flex;
     align-items: center;
@@ -29,7 +35,6 @@ nav .right a {
 
 nav .right a:hover {
     color: var(--link-color);
-    transition: color .2s ease;
 }
 
 nav .right {
@@ -37,17 +42,6 @@ nav .right {
     align-items: center;
     flex-wrap: nowrap;
     gap: 12px;
-}
-
-nav .right button {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-color);
-    font-size: 20px;
-    padding: 0 10px;
 }
 
 nav .right a span {
@@ -149,20 +143,20 @@ body.high-contrast .contrast-toggle {
     }
 
     nav .right {
+        flex-direction: column;
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    nav .right .nav-actions {
+        display: flex;
+        justify-content: center;
         gap: 8px;
     }
 
     nav .right a span {
         display: none;
-    }
-
-    nav .right a:last-child {
-        color: var(--text-color);
-        background-color: transparent;
-        padding: 0;
     }
 }
 
@@ -176,19 +170,28 @@ body.high-contrast .contrast-toggle {
     }
 
     nav .left a {
-        font-size: 22px;
+        font-size: 30px;
         white-space: nowrap;
+        letter-spacing: -0.5px;
     }
 
     nav .right {
+        flex-direction: column;
         gap: 10px;
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap;
+    }
+
+    nav .right .nav-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        flex-wrap: nowrap;
     }
 
     .lang-switcher {
-        margin-left: 5px;
+        margin-left: 0;
     }
 
     nav .right a {
@@ -208,12 +211,6 @@ body.high-contrast .contrast-toggle {
 
     nav .right a span {
         display: none;
-    }
-
-    nav .right a:last-child {
-        color: var(--text-color);
-        background-color: transparent;
-        padding: 0;
     }
 
     nav .right .dark-toggle, nav .right .contrast-toggle {
