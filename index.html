@@ -9,6 +9,9 @@
         if (localStorage.getItem('darkMode') === 'true') {
             document.documentElement.classList.add('dark-mode');
         }
+        if (localStorage.getItem('highContrast') === 'true') {
+            document.documentElement.classList.add('high-contrast');
+        }
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,6 +94,10 @@
 
             <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">
                 <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="contrast-toggle" id="contrast-toggle" aria-label="Toggle high contrast mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
             </button>
 
             <div class="btn-group lang-switcher" role="group" aria-label="Language selector">

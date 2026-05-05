@@ -69,3 +69,35 @@ body.dark-mode {
     --shadow-dark-sm: rgba(0, 0, 0, 0.15);
     --shadow-dark-md: rgba(0, 0, 0, 0.20);
 }
+
+/* High Contrast Mode overrides */
+html.high-contrast, body.high-contrast {
+    --text-color: #ffffff;
+    --link-color: #ffff00;
+    --background-color: #000000;
+    --white-color: #000000;
+    --border-color: #ffffff;
+    --muted-color: #dddddd;
+
+    /* feedback messages: high contrast */
+    --feedback-success-text: #000000;
+    --feedback-success-bg: #00ff00;
+    --feedback-success-border: #00ff00;
+    --feedback-error-text: #ffffff;
+    --feedback-error-bg: #ff0000;
+    --feedback-error-border: #ff0000;
+
+    --shadow-link-focus: transparent;
+    --shadow-link-sm: transparent;
+    --shadow-link-md: transparent;
+    --shadow-link-lg: transparent;
+    --shadow-link-btn: transparent;
+    --shadow-dark-sm: transparent;
+    --shadow-dark-md: transparent;
+    --shadow-light-sm: transparent;
+    --shadow-light-md: transparent;
+}
+
+body.high-contrast .aurora-bg {
+    display: none;
+}

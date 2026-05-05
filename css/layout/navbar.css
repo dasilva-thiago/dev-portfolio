@@ -55,7 +55,7 @@ nav .right a span {
 }
 
 /* Dark mode toggle */
-.dark-toggle {
+.dark-toggle, .contrast-toggle {
     background: none;
     border: none;
     cursor: pointer;
@@ -71,10 +71,17 @@ nav .right a span {
     padding: 0;
 }
 
-.dark-toggle:hover {
-    transform: rotate(20deg);
+.dark-toggle:hover, .contrast-toggle:hover {
     color: var(--link-color);
     transition: color .2s ease;
+}
+
+.dark-toggle:hover{
+    transform: rotate(20deg);
+}
+
+body.high-contrast .contrast-toggle {
+    color: var(--link-color);
 }
 
 /* Language Toggle */
@@ -209,7 +216,7 @@ nav .right a span {
         padding: 0;
     }
 
-    nav .right .dark-toggle {
+    nav .right .dark-toggle, nav .right .contrast-toggle {
         font-size: 26px;
         min-width: 48px;
         min-height: 48px;

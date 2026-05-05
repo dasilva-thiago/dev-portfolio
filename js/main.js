@@ -3,6 +3,7 @@ import '../css/styles.css';
 
 // Importing JavaScript modules for various functionalities
 import './darkMode.js';
+import './contrastMode.js';
 import './i18n.js';
 import './contact.js';
 import './animations.js';
