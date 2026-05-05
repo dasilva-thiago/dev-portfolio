@@ -63,6 +63,10 @@
 </head>
 
 <body>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link" data-i18n="skip_link">Skip to main content</a>
+
     <!-- Aurora background layer -->
     <div class="aurora-bg" aria-hidden="true">
         <div class="aurora-orb aurora-orb--1"></div>
@@ -114,7 +118,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
 
         <!-- hero section -->
         <section class="hero-section section" data-aos="fade-up">
@@ -223,7 +227,7 @@
                         aria-label="Project 4"></button>
                 </div>
 
-                <div class="carousel-inner">
+                <div class="carousel-inner" aria-live="polite">
 
                     <!-- Project 1 — projects[0] -->
                     <div class="carousel-item active">
