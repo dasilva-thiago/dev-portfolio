@@ -37,10 +37,10 @@ I built everything from scratch to strengthen my understanding of frontend archi
 
 ## Features
 
-- **Dark mode** — toggles with a single click, persists via `localStorage`
-- **Multilingual (i18n)** — English, Portuguese, and Spanish with dynamic JSON loading and browser language auto-detection
+- **Dark mode** — toggles with a single click, persists via `localStorage`; uses a synchronous inline script to prevent FOUC before render
+- **Multilingual (i18n)** — English, Portuguese, and Spanish with dynamic JSON loading, in-memory caching, and browser language auto-detection; no external i18n library
 - **Responsive design** — mobile-first layout with custom breakpoints at 600px, 740px, and 850px
-- **Project carousel** — Bootstrap-powered with keyboard and touch support
+- **Project carousel** — Bootstrap-powered with keyboard and touch support, plus a grid toggle view
 - **Contact form** — connected to Web3Forms with client-side validation, email regex check, and localized user feedback
 - **Scroll animations** — AOS for section reveals and GSAP for the hero entrance cascade
 - **Aurora background** — animated radial gradient orbs with GPU-accelerated motion, respects `prefers-reduced-motion`
@@ -48,8 +48,6 @@ I built everything from scratch to strengthen my understanding of frontend archi
 ---
 
 ## Tech Stack
-
-### Frontend
 
 | Technology | Purpose |
 |---|---|
@@ -92,7 +90,8 @@ dev-portfolio/
 │   ├── animations.js        # GSAP hero entrance + AOS init + footer year
 │   ├── contact.js           # Form validation and Web3Forms submission
 │   ├── darkMode.js          # Dark mode toggle and localStorage persistence
-│   └── i18n.js              # Language switching with dynamic JSON loading
+│   ├── i18n.js              # Language switching with dynamic JSON loading
+│   └── projects.js          # Carousel ↔ grid toggle logic
 ├── public/
 │   └── locales/
 │       ├── pt.json          # Portuguese translations
@@ -100,14 +99,14 @@ dev-portfolio/
 ├── assets/
 │   ├── img/                 # Profile photos, project screenshots
 │   └── icons/               # Favicon
-
+```
 ---
 
 ## Contact Form — How It Works
 
 The contact form uses [Web3Forms](https://web3forms.com), a serverless email delivery service with a public access key. No backend is required.
 
-Client-side flow:
+**Client-side flow:**
 
 1. Input validation — checks for empty fields and valid email format
 2. Submits JSON to `https://api.web3forms.com/submit`
@@ -132,20 +131,10 @@ Language priority on load: `localStorage` → browser language → English (defa
 
 | Project | Stack | Description |
 |---|---|---|
-| [Buenos Aires Explorer](https://github.com/dasilva-thiago/BuenosAiresExp) | C#, .NET, SQLite, Windows Forms | Desktop app for organizing points of interest with route planning and coordinate lookup |
-| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Bootstrap, Vite | This website |
-| [Aviation Safety Project](https://github.com/dasilva-thiago/aviation_safety_project) | Python, Power BI, Pandas, NumPy, OpenPyXL | Data visualization simulating an aeronautical control room |
-| Industrial Safety Localization | Technical writing, process improvement | Led end-to-end translation and standardization of machine safety labels at Tenaris |
-
----
-
-## About Me
-
-I am a Computer Engineering student focused on backend development, databases, and building real-world applications.
-
-After working in an industrial laboratory environment, I transitioned into tech to pursue a career aligned with problem-solving, software engineering, and continuous learning.
-
-I am currently seeking internship opportunities where I can contribute, learn fast, and grow as a developer.
+| [Buenos Aires Explorer](https://github.com/dasilva-thiago/BuenosAiresExp) | C#, .NET, SQLite, Windows Forms | Desktop app for organizing points of interest with geocoding API integration, distance calculation, and route planning |
+| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Bootstrap, Vite | This website — custom i18n system, FOUC-safe dark mode, modular CSS architecture |
+| [Aviation Safety Project](https://github.com/dasilva-thiago/aviation_safety_project) | Python, Pandas, NumPy, OpenPyXL, Power BI | Data pipeline with layered architecture: generation → transformation → export → visualization |
+| Industrial Safety Localization | Root cause analysis, technical documentation | Identified a multilingual documentation gap at Tenaris and led the full corrective process end-to-end |
 
 ---
 
