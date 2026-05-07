@@ -45,8 +45,11 @@ async function applyLanguage(lang) {
         if (lang !== DEFAULT_LANG) {
             translations = await loadTranslations(lang);
         }
+        const targets = document.querySelectorAll('[data-i18n]');
+        targets.forEach(el => el.classList.add('lang-fade'));
+        await new Promise(resolve => setTimeout(resolve, 150));
 
-        document.querySelectorAll('[data-i18n]').forEach(el => {
+        targets.forEach(el => {
             const key = el.getAttribute('data-i18n');
             let value;
 
@@ -65,6 +68,10 @@ async function applyLanguage(lang) {
             }
         });
 
+        requestAnimationFrame(() => {
+            targets.forEach(el => el.classList.remove('lang-fade'));
+        });
+
         document.documentElement.lang = lang;
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
@@ -74,6 +81,9 @@ async function applyLanguage(lang) {
         currentLang = lang;
 
     } catch (err) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            el.classList.remove('lang-fade');
+        });
         console.error('[i18n] Erro ao aplicar idioma:', err);
     }
 }

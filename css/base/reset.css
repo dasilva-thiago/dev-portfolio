@@ -82,3 +82,12 @@ a {
     top: 0;
     outline: 3px solid var(--text-color);
 }
+
+.lang-fade {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+[data-i18n] {
+    transition: opacity 0.15s ease;
+}
