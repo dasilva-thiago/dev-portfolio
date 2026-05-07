@@ -38,7 +38,7 @@
   "projects": [
     {
       "title": "Buenos Aires Explorer",
-      "description": "Desenvolvido em C# com Windows Forms, usando SQLite como banco de dados relacional embarcado para persistência local. Integrei uma API de geocoding para resolução automática de coordenadas e implementei cálculoo de distância para gerar rotas de visita otimizadas - sem depender de frameworks de UI externoos.",
+      "description": "Desenvolvido em C# com Windows Forms, usando SQLite como banco de dados relacional embarcado para persistência local. Integrei uma API de geocoding para resolução automática de coordenadas e implementei cálculo de distância para gerar rotas de visita otimizadas - sem depender de frameworks de UI externos.",
       "tag": "Full Stack"
     },
     {
@@ -52,15 +52,15 @@
       "tag": "Backend"
     },
     {
-      "title": "Projeto de Localização de Segurança Industrial",
-      "description": "Identifiquei uma falha de documentação em um ambiente industrial e liderei todo o processo corretivo: análise de causa raiz, tradução técnica e rollout padronizado pelo laboratório. Apliquei o mesmo pensamento sistemático usado na depuração — isolar o problema, rastrear a causa, implementar e validar a correção.",
-      "tag": "Ambiente de Trabalho",
-      "tech": {
-        "0": "Localização Técnica",
-        "1": "Segurança Industrial",
-        "2": "Análise de Causa Raiz",
-        "3": "Melhoria de Processos",
-        "4": "Comunicação Multilíngue"
+    "title": "Travel Explorer",
+    "description": "Ainda em desenvolvimento, é uma evolução do projeto Buenos Aires Explorer, agora com um escopo mais amplo: uma plataforma web global com rotas otimizadas e integração de estabelecimentos e serviços.",
+    "tag": "FULL STACK",
+    "tech": {
+      "0": "HTML",
+      "1": "CSS",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "React"
       }
     }
   ],
@@ -87,8 +87,21 @@
       "title": "Operador Técnico de Laboratório",
       "place": "Tenaris",
       "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas."
+    } 
+  ],
+
+  "initiative": [
+    {
+      "title": "Localização de Segurança Industrial",
+      "description": "Identifiquei uma falha de documentação em um ambiente industrial e liderei todo o processo corretivo: análise de causa raiz, tradução técnica e implementação padronizada em todo o laboratório. Apliquei o mesmo pensamento sistemático usado em debugging — isolar o problema, rastrear a causa, implementar e validar a correção.",
+      "tech": [
+        "Localização Técnica",
+        "Análise de Causa Raiz",
+        "Melhoria de Processos"
+      ]
     }
   ],
+  
   "contact": {
     "text": "Sinta-se à vontade para entrar em contato! Atualmente busco oportunidades de estágio na área de tecnologia, especialmente em desenvolvimento de software. Se tiver um projeto, oportunidade ou quiser trocar ideias, ficarei feliz em conversar. Você pode falar comigo por este formulário, e-mail ou LinkedIn — responderei em breve.",
     "form": {

@@ -1,15 +1,19 @@
 import { currentLang, translationCache, getNestedValue } from './i18n.js';
 
-const carousel = document.getElementById('projectsCarousel');
-const grid = document.getElementById('projects-grid');
+const carousel  = document.getElementById('projectsCarousel');
+const grid      = document.getElementById('projects-grid');
 const toggleBtn = document.getElementById('projects-toggle-btn');
 const toggleIcon = document.getElementById('projects-toggle-icon');
 const toggleText = document.getElementById('projects-toggle-text');
 
 let isGridMode = false;
 
-function setToggleText(i18nKey, defaultEnText) {
+function getCarouselInstance() {
+    if (typeof bootstrap === 'undefined') return null;
+    return bootstrap.Carousel.getInstance(carousel);
+}
 
+function setToggleText(i18nKey, defaultEnText) {
     toggleText.setAttribute('data-i18n', i18nKey);
     toggleText.setAttribute('data-i18n-default', defaultEnText);
 
@@ -22,7 +26,6 @@ function setToggleText(i18nKey, defaultEnText) {
 
 function buildGrid() {
     if (grid.children.length > 0) return;
-
     carousel.querySelectorAll('.carousel-item').forEach(item => {
         const card = item.querySelector('.project-card');
         if (!card) return;
@@ -33,12 +36,9 @@ function buildGrid() {
 function switchToGrid() {
     buildGrid();
 
-    // stops the carousel cycle to prevent automatic sliding while in grid mode
-    function getCarouselInstance() {
-        if (typeof bootstrap === 'undefined') return null;
-        return bootstrap.Carousel.getInstance(carousel);
-    }
-    
+    const bsCarousel = getCarouselInstance();
+    if (bsCarousel) bsCarousel.pause();
+
     carousel.classList.add('projects-carousel--hidden');
     grid.classList.add('projects-grid--visible');
     grid.removeAttribute('aria-hidden');
@@ -55,8 +55,7 @@ function switchToCarousel() {
     grid.classList.remove('projects-grid--visible');
     grid.setAttribute('aria-hidden', 'true');
 
-    // resumes the carousel cycle
-    const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+    const bsCarousel = getCarouselInstance();
     if (bsCarousel) bsCarousel.cycle();
 
     toggleIcon.classList.replace('fa-chevron-left', 'fa-grip');

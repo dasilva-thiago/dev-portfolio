@@ -52,15 +52,15 @@
       "tag": "Backend"
     },
     {
-      "title": "Proyecto de Localización en Seguridad Industrial",
-      "description": "Identifiqué una falla de documentación en un entorno industrial y lideré todo el proceso correctivo: análisis de causa raíz, traducción técnica y rollout estandarizado por el laboratorio. Apliqué el mismo pensamiento sistemático usado en depuración — aislar el problema, rastrear la causa, implementar y validar la corrección.",
-      "tag": "Entorno Laboral",
-      "tech": {
-        "0": "Localización Técnica",
-        "1": "Seguridad Industrial",
-        "2": "Análisis de Causa Raíz",
-        "3": "Mejora de Procesos",
-        "4": "Comunicación Multilingüe"
+    "title": "Travel Explorer",
+    "description": "Aún en desarrollo, es una evolución del proyecto Buenos Aires Explorer, ahora con un alcance más amplio: una plataforma web global con rutas optimizadas e integración de negocios y servicios.",
+    "tag": "FULL STACK",
+    "tech": {
+      "0": "HTML",
+      "1": "CSS",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "React"
       }
     }
   ],
@@ -87,6 +87,17 @@
       "title": "Operador Técnico de Laboratorio",
       "place": "Tenaris",
       "description": "Trabajé en un entorno de laboratorio industrial multinacional, cumpliendo altos estándares de precisión, control de calidad y confiabilidad de procesos. Esta experiencia construyó una base sólida para mi transición hacia el desarrollo de software, donde aplico la misma disciplina, razonamiento lógico y compromiso con la precisión en el desarrollo de soluciones robustas."
+    }
+  ],
+  "initiative": [
+    {
+      "title": "Localización de Seguridad Industrial",
+      "description": "Identifiqué un fallo de documentación en un entorno industrial y lideré todo el proceso correctivo: análisis de causa raíz, traducción técnica e implementación estandarizada en todo el laboratorio. Apliqué el mismo pensamiento sistemático utilizado en debugging — aislar el problema, rastrear la causa, implementar y validar la solución.",
+      "tech": [
+        "Localización Técnica",
+        "Análisis de Causa Raíz",
+        "Mejora de Procesos"
+      ]
     }
   ],
   "contact": {

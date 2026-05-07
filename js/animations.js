@@ -1,3 +1,4 @@
+import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { gsap } from 'gsap';
 // Footer — current year
