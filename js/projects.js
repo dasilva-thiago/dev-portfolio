@@ -1,4 +1,5 @@
 import { getCurrentLang, translationCache, getNestedValue } from './i18n.js';
+import { gsap } from 'gsap';
 
 const carousel  = document.getElementById('projectsCarousel');
 const grid      = document.getElementById('projects-grid');
@@ -35,37 +36,83 @@ function buildGrid() {
 }
 
 function switchToGrid() {
+    toggleBtn.disabled = true;
+
     buildGrid();
 
     const bsCarousel = getCarouselInstance();
     if (bsCarousel) bsCarousel.pause();
 
-    carousel.classList.add('projects-carousel--hidden');
-    grid.classList.add('projects-grid--visible');
-    grid.removeAttribute('aria-hidden');
+    gsap.to(carousel, {
+        opacity: 0,
+        duration: 0.2,
+        ease: 'power1.in',
+        onComplete: () => {
+            carousel.classList.add('projects-carousel--hidden');
+            gsap.set(carousel, { opacity: 1 });
+
+            grid.classList.add('projects-grid--visible');
+            grid.removeAttribute('aria-hidden');
+
+            gsap.from('.projects-grid .project-card', {
+                opacity: 0,
+                y: 24,
+                duration: 0.4,
+                stagger: 0.08,
+                ease: 'power2.out',
+                clearProps: 'all',
+                onComplete: () => {
+                    toggleBtn.disabled = false;
+                }
+            });
+        }
+    });
 
     toggleIcon.classList.replace('fa-grip', 'fa-chevron-left');
     setToggleText('projects-toggle-back', 'Back to Carousel');
     toggleBtn.setAttribute('aria-expanded', 'true');
-
     isGridMode = true;
 }
 
 function switchToCarousel() {
-    carousel.classList.remove('projects-carousel--hidden');
-    grid.classList.remove('projects-grid--visible');
-    grid.setAttribute('aria-hidden', 'true');
+    toggleBtn.disabled = true;
 
-    const bsCarousel = getCarouselInstance();
-    if (bsCarousel) bsCarousel.cycle();
+    gsap.to('.projects-grid .project-card', {
+        opacity: 0,
+        y: 24,
+        duration: 0.25,
+        stagger: 0.04,
+        ease: 'power1.in',
+        onComplete: () => {
+            grid.classList.remove('projects-grid--visible');
+            grid.setAttribute('aria-hidden', 'true');
+
+            carousel.classList.remove('projects-carousel--hidden');
+
+            gsap.fromTo(carousel,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: 'power1.out',
+                    onComplete: () => {
+                        toggleBtn.disabled = false;
+                    }
+                }
+            );
+
+            const bsCarousel = getCarouselInstance();
+            if (bsCarousel) bsCarousel.cycle();
+        }
+    });
 
     toggleIcon.classList.replace('fa-chevron-left', 'fa-grip');
     setToggleText('projects-toggle-text', 'Show All Projects');
     toggleBtn.setAttribute('aria-expanded', 'false');
-
     isGridMode = false;
 }
 
 toggleBtn.addEventListener('click', () => {
+    if (toggleBtn.disabled) return;
     isGridMode ? switchToCarousel() : switchToGrid();
 });
