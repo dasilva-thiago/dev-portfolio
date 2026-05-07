@@ -2,6 +2,7 @@
 import '../css/styles.css';
 
 // Importing JavaScript modules for various functionalities
+import './icons.js'; 
 import './darkMode.js';
 import './contrastMode.js';
 import './i18n.js';

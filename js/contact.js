@@ -50,6 +50,14 @@ function showFeedback(message, type) {
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Honeypot check to prevent spam bots from submitting the form
+     const honeypot = form.querySelector('input[name="_honey"]');
+    if (honeypot && honeypot.value !== '') {
+        showFeedback(getMsg('success'), 'success'); // silent fail to avoid tipping off bots
+        form.reset();
+        return;
+    }
+
     const name = document.querySelector('#name').value.trim();
     const email = document.querySelector('#email').value.trim();
     const message = document.querySelector('#message').value.trim();

@@ -79,6 +79,14 @@
     gap: 12px;
 }
 
+.initiative-header i,
+.initiative-header svg {
+    color: var(--link-color) !important;
+    fill: var(--link-color);
+    font-size: 16px;
+    width: 16px;
+}
+
 .initiative-header {
     display: flex;
     align-items: center;

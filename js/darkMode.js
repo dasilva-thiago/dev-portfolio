@@ -19,3 +19,12 @@ if (isInitiallyDark) {
     document.body.classList.add('dark-mode');
 }
 updateIcon(isInitiallyDark);
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (localStorage.getItem('darkMode') !== null) return;
+
+    const isDark = e.matches;
+    document.body.classList.toggle('dark-mode', isDark);
+    document.documentElement.classList.toggle('dark-mode', isDark);
+    updateIcon(isDark);
+});
