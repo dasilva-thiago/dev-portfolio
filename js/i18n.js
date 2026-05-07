@@ -2,48 +2,43 @@ const DEFAULT_LANG = 'en';
 const SUPPORTED_LANGS = ['en', 'pt', 'es'];
 export const translationCache = {};
 
-// slice (0,2) to get the language code without region (e.g., 'en-US' -> 'en')
 function detectBrowserLang() {
-    const browserLang = navigator.language?.slice(0,2);
+    const browserLang = navigator.language?.slice(0, 2);
     return SUPPORTED_LANGS.includes(browserLang) ? browserLang : DEFAULT_LANG;
 }
-// priority: localStorage > browser settings > default (english)
-export let currentLang = localStorage.getItem('lang') || detectBrowserLang();
+
+let currentLang = DEFAULT_LANG;
+
+export function getCurrentLang() {
+    return currentLang;
+}
 
 function saveDefaults() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         if (!el.hasAttribute('data-i18n-default')) {
-            const defaultValue = (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') 
-                ? el.getAttribute('placeholder') 
+            const defaultValue = (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')
+                ? el.getAttribute('placeholder')
                 : el.textContent.trim();
-            
             el.setAttribute('data-i18n-default', defaultValue);
         }
     });
 }
 
-// dinamic json loading
-// cache translations to avoid multiple fetches
 async function loadTranslations(lang) {
-    if (translationCache[lang]) {
-        return translationCache[lang];
-    }
+    if (translationCache[lang]) return translationCache[lang];
 
-  const res = await fetch(`/locales/${lang}.json?v=${Date.now()}`);
-    if (!res.ok) throw new Error(`Arquivo i18n/${lang}.json não encontrado`);
+    const res = await fetch(`/locales/${lang}.json`);
+    if (!res.ok) throw new Error(`i18n: falha ao carregar ${lang}.json`);
 
     const data = await res.json();
     translationCache[lang] = data;
     return data;
 }
 
-
-// nested keys support (e.g., 'home.title' -> { home: { title: '...' } })
 export function getNestedValue(obj, keyPath) {
     return keyPath.split('.').reduce((acc, key) => acc?.[key], obj);
 }
 
-// apply language to the page - no reload
 async function applyLanguage(lang) {
     try {
         let translations = null;
@@ -83,14 +78,25 @@ async function applyLanguage(lang) {
     }
 }
 
-// button event listener
+saveDefaults();
+
+const savedLang = localStorage.getItem('lang');
+
+if (savedLang && savedLang !== DEFAULT_LANG && SUPPORTED_LANGS.includes(savedLang)) {
+    applyLanguage(savedLang);
+} else {
+
+    const initialLang = savedLang || DEFAULT_LANG;
+    currentLang = initialLang;
+    document.documentElement.lang = initialLang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === initialLang);
+    });
+}
+
 document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');
         if (lang !== currentLang) applyLanguage(lang);
     });
 });
-
-// initialize
-saveDefaults();
-applyLanguage(currentLang); 

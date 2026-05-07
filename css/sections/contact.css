@@ -100,6 +100,31 @@
     border-left-color: var(--feedback-error-border);
 }
 
+.contact-section .group form button[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.contact-section .group form button .btn-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: btn-spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+@keyframes btn-spin {
+    to { transform: rotate(360deg); }
+}
+
 @media (max-width: 850px) {
     .contact-section .group {
         gap: 40px;

@@ -1,4 +1,4 @@
-import { currentLang, translationCache, getNestedValue } from './i18n.js';
+import { getCurrentLang, translationCache, getNestedValue } from './i18n.js';
 
 const API_URL = 'https://api.web3forms.com/submit';
 const ACCESS_KEY = '4d21fb04-9824-401d-8bad-03cf53e79abf';
@@ -10,15 +10,10 @@ const form = document.querySelector('#contact-form');
  */
 function getMsg(key) {
     const fullKey = 'contact.feedback.' + key;
+    const lang = getCurrentLang();
 
-    if (
-        typeof currentLang !== 'undefined' &&
-        typeof translationCache !== 'undefined' &&
-        typeof getNestedValue !== 'undefined' &&
-        currentLang !== 'en' &&
-        translationCache[currentLang]
-    ) {
-        const value = getNestedValue(translationCache[currentLang], fullKey);
+    if (lang !== 'en' && translationCache[lang]) {
+        const value = getNestedValue(translationCache[lang], fullKey);
         if (value) return value;
     }
 
@@ -29,7 +24,7 @@ function getMsg(key) {
         failed: 'Failed to send message. Please try again later.',
         error: 'An error occurred. Please try again later.'
     };
-    
+
     return defaults[key];
 }
 
@@ -51,7 +46,7 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Honeypot check to prevent spam bots from submitting the form
-     const honeypot = form.querySelector('input[name="_honey"]');
+    const honeypot = form.querySelector('input[name="_honey"]');
     if (honeypot && honeypot.value !== '') {
         showFeedback(getMsg('success'), 'success'); // silent fail to avoid tipping off bots
         form.reset();
@@ -74,24 +69,27 @@ form.addEventListener('submit', async (e) => {
         return;
     }
 
-    const button = form.querySelector('button');
-    const originalBtnText = button.textContent;
-    button.textContent = '...';
+    const button = form.querySelector('button[type="submit"]');
+    const originalBtnHTML = button.innerHTML;
+
+    // loading state
     button.disabled = true;
+    button.innerHTML = `<span class="btn-spinner" aria-hidden="true"></span> Sending...`;
+
 
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 access_key: ACCESS_KEY,
-                from_name: "Contato - Portfolio", 
+                from_name: "Contato - Portfolio",
                 subject: `Nova mensagem de ${name}`,
                 name: name,
-                email: email, 
+                email: email,
                 message: message,
             })
         });
@@ -108,7 +106,8 @@ form.addEventListener('submit', async (e) => {
         console.error('Submission Error:', error);
         showFeedback(getMsg('error'), 'error');
     } finally {
-        button.textContent = originalBtnText;
+        // reset button state
         button.disabled = false;
+        button.innerHTML = originalBtnHTML;
     }
 });

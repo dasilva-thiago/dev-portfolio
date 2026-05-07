@@ -1,4 +1,4 @@
-import { currentLang, translationCache, getNestedValue } from './i18n.js';
+import { getCurrentLang, translationCache, getNestedValue } from './i18n.js';
 
 const carousel  = document.getElementById('projectsCarousel');
 const grid      = document.getElementById('projects-grid');
@@ -17,10 +17,11 @@ function setToggleText(i18nKey, defaultEnText) {
     toggleText.setAttribute('data-i18n', i18nKey);
     toggleText.setAttribute('data-i18n-default', defaultEnText);
 
-    if (currentLang === 'en' || !translationCache[currentLang]) {
+    const lang = getCurrentLang();
+    if (lang === 'en' || !translationCache[lang]) {
         toggleText.textContent = defaultEnText;
     } else {
-        toggleText.textContent = getNestedValue(translationCache[currentLang], i18nKey) || defaultEnText;
+        toggleText.textContent = getNestedValue(translationCache[lang], i18nKey) || defaultEnText;
     }
 }
 
