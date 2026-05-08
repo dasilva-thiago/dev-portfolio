@@ -96,12 +96,17 @@ if (savedLang && savedLang !== DEFAULT_LANG && SUPPORTED_LANGS.includes(savedLan
     applyLanguage(savedLang);
 } else {
 
-    const initialLang = savedLang || DEFAULT_LANG;
-    currentLang = initialLang;
-    document.documentElement.lang = initialLang;
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === initialLang);
-    });
+    const initialLang = savedLang || detectBrowserLang();
+
+    if (initialLang !== DEFAULT_LANG) {
+        applyLanguage(initialLang);
+    } else {
+        currentLang = initialLang;
+        document.documentElement.lang = initialLang;
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === initialLang);
+        });
+    }
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
