@@ -62,7 +62,12 @@
       "3": "TypeScript",
       "4": "React"
       }
-    }
+    },
+    {
+      "title": "Portfólio de Educadora",
+      "description": "Portfólio artesanal para uma pedagoga. Implementei um Cubo Mágico 3D totalmente interativo usando apenas CSS perspective e transform-style: preserve-3d, com rotação por arrastar, inércia por toque e uma animação de embaralhamento no carregamento. O modo escuro funciona com um único atributo data-theme propagado por um sistema de variáveis CSS.",
+      "tag": "FRONT END"
+      }
   ],
   "about": {
     "name": "Thiago da Silva",

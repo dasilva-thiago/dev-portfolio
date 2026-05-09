@@ -62,7 +62,12 @@
       "3": "TypeScript",
       "4": "React"
       }
-    }
+    },
+    {
+      "title": "Portafolio de Educadora",
+      "description": "Portafolio artesanal para una pedagoga — sin frameworks. Implementé un Cubo Rubik 3D completamente interactivo usando solo CSS perspective y transform-style: preserve-3d, con rotación al arrastrar, inercia táctil y una animación de mezcla al cargar. El modo oscuro opera con un único atributo data-theme propagado a través de un sistema de variables CSS.",
+      "tag": "FRONT END"
+      }
   ],
   "about": {
     "name": "Thiago da Silva",
