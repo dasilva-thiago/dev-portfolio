@@ -1,4 +1,8 @@
 /* Section 2: Skills */
+.skills-section {
+    padding: 65px 20px;
+    cursor: default;
+}
 
 .skills-section h2 {
     font-size: 35px;

@@ -1,4 +1,8 @@
 /* Section 5: Contact */
+.contact-section{
+    cursor: default;
+    padding: 60px 20px;
+}
 
 .contact-section h2 {
     font-size: 35px;

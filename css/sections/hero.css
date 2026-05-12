@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin: 50px 0;
     gap: 40px;
+    cursor: default;
 }
 
 .hero-section .text h1 {

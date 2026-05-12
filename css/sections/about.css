@@ -1,4 +1,7 @@
 /* Section 4: About */
+.about-section{
+    cursor: default;
+}
 
 .about-section h2 {
     font-size: 35px;

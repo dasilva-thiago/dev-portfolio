@@ -1,4 +1,8 @@
 /* Experience & Education */
+.experience-section {
+    padding: 60px 20px;
+    cursor: default;
+}
 
 .experience-section h2 {
     font-size: 35px;
