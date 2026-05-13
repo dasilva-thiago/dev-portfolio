@@ -4,6 +4,22 @@ const API_URL = 'https://api.web3forms.com/submit';
 const ACCESS_KEY = '4d21fb04-9824-401d-8bad-03cf53e79abf';
 const form = document.querySelector('#contact-form');
 
+// Character counter for message field
+const messageField = document.querySelector('#message');
+const charCounter = document.createElement('span');
+charCounter.className = 'char-counter';
+charCounter.textContent = '0 / 2000';
+messageField.insertAdjacentElement('afterend', charCounter);
+
+messageField.addEventListener('input', () => {
+    const len = messageField.value.length;
+    charCounter.textContent = `${len} / 2000`;
+    charCounter.classList.toggle('char-counter--1000', len >= 1000);
+    charCounter.classList.toggle('char-counter--1500', len >= 1500);
+    charCounter.classList.toggle('char-counter--1800', len >= 1800);
+    charCounter.classList.toggle('char-counter--2000', len >= 2000);
+});
+
 /**
  * Retrieves localized feedback messages.
  * Falls back to English if the translation is missing.
@@ -99,6 +115,8 @@ form.addEventListener('submit', async (e) => {
         if (result.success) {
             showFeedback(getMsg('success'), 'success');
             form.reset();
+            charCounter.textContent = '0 / 2000';
+            charCounter.classList.remove('char-counter--near', 'char-counter--full');
         } else {
             showFeedback(getMsg('failed'), 'error');
         }

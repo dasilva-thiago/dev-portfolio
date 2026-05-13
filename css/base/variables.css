@@ -28,6 +28,11 @@
     --feedback-error-bg: #f8d7da;
     --feedback-error-border: #f1aeb5;
 
+    /* char counter colors */
+    --char-counter-1000: #8a6300;
+    --char-counter-1500: #7a4800;
+    --char-counter-1800: #662b00;
+    
     /* shadows */
     --shadow-link-focus: rgba(74, 118, 238, 0.12);
     --shadow-link-sm: rgba(74, 118, 238, 0.15);
@@ -66,12 +71,18 @@ body.dark-mode {
     --feedback-error-bg: #2c0f12;
     --feedback-error-border: #6b1f26;
 
+    /* char counter colors */
+    --char-counter-1000: #ffda6a;
+    --char-counter-1500: #ffb732;
+    --char-counter-1800: #fa8c16;
+
     --shadow-dark-sm: rgba(0, 0, 0, 0.15);
     --shadow-dark-md: rgba(0, 0, 0, 0.20);
 }
 
 /* High Contrast Mode overrides */
-html.high-contrast, body.high-contrast {
+html.high-contrast,
+body.high-contrast {
     --text-color: #ffffff;
     --link-color: #ffff00;
     --background-color: #000000;

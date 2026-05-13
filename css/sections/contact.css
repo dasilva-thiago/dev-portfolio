@@ -125,6 +125,37 @@
     flex-shrink: 0;
 }
 
+/* Character Counter */
+.char-counter {
+    font-size: 12px;
+    color: var(--muted-color);
+    text-align: right;
+    margin-top: -12px;
+    margin-bottom: 16px;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.char-counter--1000 {
+    color: var(--char-counter-1000);
+    font-weight: 400;
+}
+
+.char-counter--1500 {
+    color: var(--char-counter-1500);
+    font-weight: 400;
+}
+
+.char-counter--1800 {
+    color: var(--char-counter-1800);
+    font-weight: 500;
+}
+
+.char-counter--2000 {
+    color: var(--feedback-error-text);
+    font-weight: 600;
+}
+
 @keyframes btn-spin {
     to { transform: rotate(360deg); }
 }
