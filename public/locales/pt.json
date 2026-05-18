@@ -87,12 +87,20 @@
       "place": "SENAC",
       "description": "Ao cursar o Técnico em Informática, busco uma formação completa na área, integrando conhecimento teórico com habilidades práticas. Estou adquirindo experiência em manutenção de hardware, administração de redes, desenvolvimento de projetos e suporte de software."
     },
+
+        {
+      "date": "2026 - Presente",
+      "title": "Estagiário de Tecnologia Educacional e TI",
+      "place": "SEDUC-SP - Secretaria da Educação do Estado de São Paulo",
+      "description": "Atuando em iniciativas de tecnologia educacional e projetos de transformação digital em ambientes escolares públicos, trabalhando com gerenciamento de plataformas, operações de tecnologia, acessibilidade digital e integração de ferramentas digitais em atividades acadêmicas e administrativas."
+    }, 
+    
     {
       "date": "2023 - 2025",
       "title": "Operador Técnico de Laboratório",
       "place": "Tenaris",
       "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas."
-    } 
+    }
   ],
 
   "initiative": [
