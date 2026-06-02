@@ -2,16 +2,13 @@
 .hero-section {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0;
+    align-items: center;
+    min-height: calc(100vh - 110px); /* viewport menos a navbar */
+    margin: 0;
+    padding-block: 60px;
     gap: 40px;
     cursor: default;
 }
-
-.hero-section .text h1 {
-    font-size: 45px;
-
-}
-
 .hero-subtitle {
     font-size: 16px;
     font-weight: 600;
@@ -80,6 +77,13 @@
     display: flex;
     justify-content: right;
 }
+
+.hero-section .text h1 {
+    font-size: 45px;
+    position: relative;
+    top: -8px;
+}
+
 
 /* HERO SECTION — PHOTO INTEGRATION */
 

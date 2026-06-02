@@ -2,10 +2,27 @@
     /* colors */
     --text-color: #1a1c20;
     --link-color: #4a76ee;
-    --background-color: #eeeff1;
+    --background-color: #f5e6a3;
+    --background-mid: #faf3c0;
+    --background-light: #fdf8e1;
+
     --white-color: #fff;
     --border-color: #d3d3d3;
     --muted-color: #555;
+
+    /* Notebook paper */
+    --notebook-line-color: #b8d4e8;
+    --notebook-line-height: 42px;
+    --notebook-margin-color: #e8a0a0;
+    --notebook-margin-offset: 0px;
+
+    --notebook-margin-left-color: #e85d4a;
+    --notebook-margin-right-color: rgba(180, 210, 235, 0.7);
+
+    --notebook-margin-left-offset: 80px;
+    --navbar-left-offset: 84px;
+    --notebook-margin-right-offset: 80px;
+    --navbar-right-offset: 82px;
 
     /* typography */
     --font-body: 'DM Sans', system-ui, sans-serif;
@@ -32,7 +49,7 @@
     --char-counter-1000: #8a6300;
     --char-counter-1500: #7a4800;
     --char-counter-1800: #662b00;
-    
+
     /* shadows */
     --shadow-link-focus: rgba(74, 118, 238, 0.12);
     --shadow-link-sm: rgba(74, 118, 238, 0.15);
@@ -78,6 +95,12 @@ body.dark-mode {
 
     --shadow-dark-sm: rgba(0, 0, 0, 0.15);
     --shadow-dark-md: rgba(0, 0, 0, 0.20);
+
+    --notebook-line-color: transparent;
+    --notebook-margin-color: transparent;
+    --notebook-line-color: transparent;
+    --notebook-margin-left-color: transparent;
+    --notebook-margin-right-color: transparent;
 }
 
 /* High Contrast Mode overrides */
@@ -107,6 +130,12 @@ body.high-contrast {
     --shadow-dark-md: transparent;
     --shadow-light-sm: transparent;
     --shadow-light-md: transparent;
+
+    --notebook-line-color: transparent;
+    --notebook-margin-color: transparent;
+    --notebook-line-color: transparent;
+    --notebook-margin-left-color: transparent;
+    --notebook-margin-right-color: transparent;
 }
 
 body.high-contrast .aurora-bg {

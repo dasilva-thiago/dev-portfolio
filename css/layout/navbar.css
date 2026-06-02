@@ -1,26 +1,25 @@
 /* Navbar styles */
 nav {
-    width: 95%;
-    margin: 15px auto;
+    position: fixed;
+    top: 0;
+    left: var(--navbar-left-offset);
+    right: var(--navbar-right-offset);
+    height: 84px;
+    padding: 0 40px;
+    box-sizing: border-box;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    background-color: var(--white-color);
-    background-color: color-mix(in srgb, var(--white-color) 85%, transparent);
+    background-color: color-mix(in srgb, var(--background-mid) 95%, transparent);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 4px 12px var(--shadow-dark-sm);
-    padding: 0 50px;
-    height: 80px;
-    box-sizing: border-box;
-    border-radius: 25px;
-
-    position: sticky;
-    top: 15px;
+    box-shadow: 0 2px 8px var(--shadow-dark-sm);
+    border-bottom: 1px solid var(--border-color);
 
     z-index: 100;
+    border-radius: 0;
 }
 
 nav .left a {
@@ -72,7 +71,8 @@ nav .right span {
 }
 
 /* Dark mode toggle */
-.dark-toggle, .contrast-toggle {
+.dark-toggle,
+.contrast-toggle {
     background: none;
     border: none;
     cursor: pointer;
@@ -88,7 +88,8 @@ nav .right span {
     padding: 0;
 }
 
-.dark-toggle:hover, .contrast-toggle:hover {
+.dark-toggle:hover,
+.contrast-toggle:hover {
     color: var(--link-color);
 }
 
@@ -239,7 +240,8 @@ body.high-contrast .contrast-toggle {
         display: none;
     }
 
-    nav .right .dark-toggle, nav .right .contrast-toggle {
+    nav .right .dark-toggle,
+    nav .right .contrast-toggle {
         font-size: 26px;
         min-width: 48px;
         min-height: 48px;

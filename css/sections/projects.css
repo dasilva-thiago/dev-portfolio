@@ -80,7 +80,7 @@
     position: relative;
     overflow: hidden;
 
-    background: color-mix(in srgb, var(--white-color) 80%, transparent);
+    background: color-mix(in srgb, var(--background-light) 80%, transparent);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 

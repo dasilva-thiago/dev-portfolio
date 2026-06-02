@@ -6,6 +6,40 @@
 
 html {
     scroll-behavior: smooth;
+
+    background-color: var(--background-color);
+    background-image: linear-gradient(
+        transparent calc(var(--notebook-line-height) - 1px),
+        var(--notebook-line-color) calc(var(--notebook-line-height) - 1px)
+    );
+    background-size: 100% var(--notebook-line-height);
+    position: relative;
+}
+
+/* margem vermelha esquerda */
+html::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: var(--notebook-margin-left-offset);
+    width: 2px;
+    height: 100%;
+    background-color: var(--notebook-margin-left-color);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* margem azul direita */
+html::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: var(--notebook-margin-right-offset);
+    width: 1px;
+    height: 100%;
+    background-color: var(--notebook-margin-right-color);
+    z-index: 0;
+    pointer-events: none;
 }
 
 body {
@@ -14,7 +48,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 
-    background-color: var(--background-color);
+    background-color: transparent;
     transition: background-color 0.5s ease, color 0.5s ease;
     color: var(--text-color);
     max-width: 1400px;
@@ -22,6 +56,8 @@ body {
 
     overflow-x: hidden;
     position: relative;
+
+    padding-top: 67px;
 }
 
 .section {
