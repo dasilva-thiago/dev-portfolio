@@ -11,7 +11,8 @@ import {
     faChevronRight,
     faGrip,
     faFileLines,
-    faDiagramProject
+    faDiagramProject,
+    faUser
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -30,6 +31,7 @@ library.add(
     faFileLines,
     faGithub,
     faLinkedin,
-    faDiagramProject
+    faDiagramProject,
+    faUser
 );
 dom.watch();
