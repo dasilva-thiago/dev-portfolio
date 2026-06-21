@@ -264,6 +264,24 @@
     opacity: 1;
 }
 
+/* Micro-interação de entrada de cena no hover do card */
+.project-card .project-tag {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover .project-tag {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--link-color) 30%, transparent);
+}
+
+.project-card .project-info h3 {
+    transition: color 0.2s ease;
+}
+
+.project-card:hover .project-info h3 {
+    color: var(--link-color);
+}
+
 @media (max-width: 850px) {
     .project-card {
         gap: 30px;

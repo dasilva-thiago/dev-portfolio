@@ -91,3 +91,22 @@ a {
 [data-i18n] {
     transition: opacity 0.15s ease;
 }
+
+.section {
+    scroll-margin-top: 24px;
+}
+
+.skills-section,
+.projects-section,
+.about-section,
+.experience-section,
+.contact-section {
+    padding-block: clamp(80px, 10vh, 140px);
+}
+
+.skills-section,
+.projects-section,
+.about-section,
+.experience-section {
+    border-top: 1px solid color-mix(in srgb, var(--border-color) 50%, transparent);
+}

@@ -1,8 +1,11 @@
 /* section 1: Hero Section */
 .hero-section {
     display: flex;
-    justify-content: space-between;
-    margin: 50px 0;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 110px);
+    margin: 0;
+    padding-block: 60px;
     gap: 40px;
     cursor: default;
 }
@@ -75,13 +78,13 @@
     flex: 5;
 }
 
+/* HERO SECTION — PHOTO INTEGRATION - begin
+
 .hero-section .headshot {
     flex: 2;
     display: flex;
     justify-content: right;
 }
-
-/* HERO SECTION — PHOTO INTEGRATION */
 
 .hero-section .headshot {
     position: relative;
@@ -91,7 +94,7 @@
     align-items: center;
 }
 
-/* light halo behind the photo */
+
 .hero-section .headshot::before {
     content: '';
     position: absolute;
@@ -103,6 +106,8 @@
     z-index: 0;
     animation: headshot-glow 4s ease-in-out infinite alternate;
 }
+
+/* HERO SECTION — PHOTO INTEGRATION - end */
 
 @keyframes headshot-glow {
     0% {
