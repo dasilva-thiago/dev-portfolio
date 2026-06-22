@@ -10,3 +10,4 @@ import './contact.js';
 import './animations.js';
 import './projects.js'; 
 import './cv.js';
+import './langDropdown.js';
