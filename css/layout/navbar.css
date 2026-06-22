@@ -48,12 +48,6 @@ nav {
     opacity: 1;
 }
 
-.nav-icon.active,
-.nav-icon--active {
-    background-color: color-mix(in srgb, var(--text-color) 10%, transparent);
-    opacity: 1;
-}
-
 .nav-sep{
     width: 0.5px;
     height: 22px;
@@ -161,4 +155,52 @@ nav {
 
 .nav-icon:hover::after {
     opacity: 1;
+}
+
+/* Sol — light mode */
+body:not(.dark-mode) #dark-toggle {
+    color: #f59e0b;
+    background: transparent;
+    box-shadow: 0 0 0 1.5px var(--border-color);
+    opacity: 1;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+}
+
+body:not(.dark-mode) #dark-toggle:hover {
+    background: rgba(251, 191, 36, 0.08);
+    box-shadow: 0 0 0 1.5px #f59e0b;
+}
+
+/* Lua — dark mode */
+body.dark-mode #dark-toggle {
+    color: #a78bfa;
+    background: transparent;
+    box-shadow: 0 0 0 1.5px var(--border-color);
+    opacity: 1;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+}
+
+body.dark-mode #dark-toggle:hover {
+    background: rgba(124, 58, 237, 0.08);
+    box-shadow: 0 0 0 1.5px #a78bfa;
+}
+
+/* High contrast active */
+body.high-contrast #contrast-toggle {
+    color: #34d399;
+    background: transparent;
+    box-shadow: 0 0 0 1.5px var(--border-color);
+    opacity: 1;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+}
+
+body.high-contrast #contrast-toggle:hover {
+    background: rgba(52, 211, 153, 0.08);
+    box-shadow: 0 0 0 1.5px #34d399;
 }

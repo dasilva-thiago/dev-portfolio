@@ -11,7 +11,7 @@
     cursor: default;
     box-sizing: border-box;
     text-align: center;
-    margin-top: 90px;
+    margin-top: 40px;
 }
 
 .hero-section .text {
@@ -23,16 +23,56 @@
     align-items: center;
 }
 
-.hero-section .text h1 {
-    font-size: 45px;
-
+.hero-greeting {
+    font-size: 18px;
+    color: var(--font-body);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
 }
 
+.hero-section .text h1 {
+    font-size: 85px;
+    line-height: 1.2;      
+    padding-bottom: 15px;  
+    animation: hero-shimmer 4s linear infinite;  
+}
+
+/* animated title (h1) */
+
+body.dark-mode .hero-section .text h1 {
+    background: linear-gradient(135deg, #e0e0e0 0%, #7a9ff5 40%, #a78bfa 60%, #e0e0e0 100%);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body:not(.dark-mode) .hero-section .text h1 {
+    background: linear-gradient(135deg, #e0e0e0 0%, #7a9ff5 40%, #a78bfa 60%, #e0e0e0 100%);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes hero-shimmer {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-section .text h1 {
+        animation: none;
+        background: none;
+        -webkit-text-fill-color: var(--text-color);
+    }
+}
+
+
 .hero-subtitle {
-    font-size: 16px;
+    font-size: 32px;
     font-weight: 600;
-    color: var(--link-color);
-    margin-top: 8px;
+    color: var(--muted-color);
     letter-spacing: 0.3px;
 }
 
@@ -82,7 +122,7 @@
     display: inline-block;
     padding: 5px 10px;
     border: 2px solid var(--link-color);
-    border-radius: 25px;
+    border-radius: 8px;
     transition: .1s;
     margin-right: 15px;
     margin-bottom: 10px;
@@ -168,6 +208,19 @@
         0 25px 70px var(--shadow-link-lg);
 }
 
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--link-color);
+    animation: cursor-blink 0.75s step-end infinite;
+    font-weight: 300;
+    margin-left: 1px;
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
 @media (max-width: 850px) {
     .hero-section {
         gap: 24px;
@@ -234,7 +287,7 @@
     gap: 6px;
     padding: 5px 10px;
     border: 2px solid var(--link-color);
-    border-radius: 25px;
+    border-radius: 8px;
     background: var(--link-color);
     color: var(--white-color);
     font-family: var(--font-body);

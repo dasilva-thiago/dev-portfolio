@@ -15,7 +15,7 @@ function updateThemeColor(isDark) {
 function updateIcon(isDark) {
     const existing = darkToggle.querySelector('svg') || darkToggle.querySelector('i');
     const newIcon = document.createElement('i');
-    newIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    newIcon.className = isDark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
     if (existing) {
         darkToggle.replaceChild(newIcon, existing);
     } else {
