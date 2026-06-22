@@ -36,6 +36,11 @@
     letter-spacing: 0.3px;
 }
 
+.hero-section .text h1,
+.hero-subtitle {
+    align-self: center;
+}
+
 .hero-bullets {
     list-style: none;
     margin-top: 20px;
