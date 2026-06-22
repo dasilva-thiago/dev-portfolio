@@ -1,9 +1,9 @@
 const target = document.getElementById('typewriter-target');
 
 const phrases = [
-    'full stack developer',
-    'IT support technician',
-    'computer engineering student',
+    'a full stack developer',
+    'an IT support technician',
+    'a computer engineering student',
 ];
 
 const TYPE_SPEED   = 75;
