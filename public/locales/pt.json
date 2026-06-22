@@ -5,12 +5,24 @@
     "about": "Sobre Mim",
     "experience": "Experiência",
     "contact": "Entre em Contato",
-    "cv": "Currículo"
+    "cv": "Currículo",
+    
+    "aria": {
+      "home": "Início",
+      "skills": "Habilidades",
+      "about": "Sobre",
+      "experience": "Experiência",
+      "contact": "Contato",
+      "darkToggle": "Alternar modo escuro",
+      "contrastToggle": "Alternar alto contraste",
+      "cv": "Ver currículo",
+      "language": "Idioma"
+    }
   },
   "hero": {
     "greeting": "olá, seja bem-vindo ao meu portfólio!",
     "title": "sou thiago,",
-       "typewriter": [
+    "typewriter": [
       "um desenvolvedor full stack",
       "um técnico de suporte em TI",
       "um estudante de engenharia da computação"

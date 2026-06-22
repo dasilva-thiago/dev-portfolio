@@ -22,6 +22,13 @@ function saveDefaults() {
             el.setAttribute('data-i18n-default', defaultValue);
         }
     });
+
+    // salva o aria-label padrão (inglês) de cada elemento com data-i18n-aria
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        if (!el.hasAttribute('data-i18n-aria-default')) {
+            el.setAttribute('data-i18n-aria-default', el.getAttribute('aria-label') ?? '');
+        }
+    });
 }
 
 async function loadTranslations(lang) {
@@ -66,6 +73,15 @@ async function applyLanguage(lang) {
                     el.textContent = value;
                 }
             }
+        });
+
+        // atualiza aria-label de todos os elementos com data-i18n-aria
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+            const key = el.getAttribute('data-i18n-aria');
+            const value = lang === DEFAULT_LANG
+                ? el.getAttribute('data-i18n-aria-default')
+                : getNestedValue(translations, key);
+            if (value) el.setAttribute('aria-label', value);
         });
 
         requestAnimationFrame(() => {

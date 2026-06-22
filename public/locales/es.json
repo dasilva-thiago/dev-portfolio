@@ -5,7 +5,19 @@
     "about": "Sobre mí",
     "experience": "Experiencia",
     "contact": "Ponerse en contacto",
-    "cv": "CV"
+    "cv": "CV",
+    
+    "aria": {
+      "home": "Inicio",
+      "skills": "Habilidades",
+      "about": "Sobre mí",
+      "experience": "Experiencia",
+      "contact": "Contacto",
+      "darkToggle": "Alternar modo oscuro",
+      "contrastToggle": "Alternar alto contraste",
+      "cv": "Ver CV",
+      "language": "Idioma"
+    }
   },
   "hero": {
     "greeting": "¡hola, bienvenido a mi portafolio!",
