@@ -1,13 +1,15 @@
 {
   "nav": {
+    "projects": "Consulta mis trabajos",
     "skills": "Habilidades",
     "about": "Sobre mí",
     "experience": "Experiencia",
-    "contact": "Contacto",
+    "contact": "Ponerse en contacto",
     "cv": "CV"
   },
   "hero": {
-    "title": "Hola, soy Thiago",
+    "greeting": "¡hola, bienvenido a mi portafolio!",
+    "title": "soy thiago",
     "subtitle": "Desarrollador Full Stack • C# • Python • JavaScript • HTML + CSS",
     "bullets": [
       "Estudiante de Ingeniería en Computación en UNIVESP y Técnico en TI en SENAC",
