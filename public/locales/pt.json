@@ -8,9 +8,13 @@
     "cv": "Currículo"
   },
   "hero": {
-    "greeting": "olá, seja bem-vindo ao meu portfólio!", 
-    "title": "sou thiago",
-    "subtitle": "Desenvolvedor Full Stack • C# • Python • JavaScript • HTML + CSS",
+    "greeting": "olá, seja bem-vindo ao meu portfólio!",
+    "title": "sou thiago,",
+       "typewriter": [
+      "um desenvolvedor full stack",
+      "um técnico de suporte em TI",
+      "um estudante de engenharia da computação"
+    ],
     "bullets": [
       "Estudante de Engenharia da Computação na UNIVESP e Técnico em Informática pelo SENAC",
       "2 anos de experiência profissional no laboratório industrial da multinacional Tenaris",
@@ -54,22 +58,22 @@
       "tag": "Backend"
     },
     {
-    "title": "Travel Explorer",
-    "description": "Ainda em desenvolvimento, é uma evolução do projeto Buenos Aires Explorer, agora com um escopo mais amplo: uma plataforma web global com rotas otimizadas e integração de estabelecimentos e serviços.",
-    "tag": "FULL STACK",
-    "tech": {
-      "0": "HTML",
-      "1": "CSS",
-      "2": "JavaScript",
-      "3": "TypeScript",
-      "4": "React"
+      "title": "Travel Explorer",
+      "description": "Ainda em desenvolvimento, é uma evolução do projeto Buenos Aires Explorer, agora com um escopo mais amplo: uma plataforma web global com rotas otimizadas e integração de estabelecimentos e serviços.",
+      "tag": "FULL STACK",
+      "tech": {
+        "0": "HTML",
+        "1": "CSS",
+        "2": "JavaScript",
+        "3": "TypeScript",
+        "4": "React"
       }
     },
     {
       "title": "Portfólio de Educadora",
       "description": "Portfólio artesanal para uma pedagoga. Implementei um Cubo Mágico 3D totalmente interativo usando apenas CSS perspective e transform-style: preserve-3d, com rotação por arrastar, inércia por toque e uma animação de embaralhamento no carregamento. O modo escuro funciona com um único atributo data-theme propagado por um sistema de variáveis CSS.",
       "tag": "FRONT END"
-      }
+    }
   ],
   "about": {
     "name": "Thiago da Silva",
@@ -89,14 +93,12 @@
       "place": "SENAC",
       "description": "Ao cursar o Técnico em Informática, busco uma formação completa na área, integrando conhecimento teórico com habilidades práticas. Estou adquirindo experiência em manutenção de hardware, administração de redes, desenvolvimento de projetos e suporte de software."
     },
-
-        {
+    {
       "date": "2026 - Presente",
       "title": "Estagiário de Tecnologia Educacional e TI",
       "place": "SEDUC-SP - Secretaria da Educação do Estado de São Paulo",
       "description": "Atuando em iniciativas de tecnologia educacional e projetos de transformação digital em ambientes escolares públicos, trabalhando com gerenciamento de plataformas, operações de tecnologia, acessibilidade digital e integração de ferramentas digitais em atividades acadêmicas e administrativas."
-    }, 
-    
+    },
     {
       "date": "2023 - 2025",
       "title": "Operador Técnico de Laboratório",
@@ -104,7 +106,6 @@
       "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas."
     }
   ],
-
   "initiative": [
     {
       "title": "Localização de Segurança Industrial",
@@ -116,7 +117,6 @@
       ]
     }
   ],
-  
   "contact": {
     "text": "Sinta-se à vontade para entrar em contato! Atualmente busco oportunidades de estágio na área de tecnologia, especialmente em desenvolvimento de software. Se tiver um projeto, oportunidade ou quiser trocar ideias, ficarei feliz em conversar. Você pode falar comigo por este formulário, e-mail ou LinkedIn — responderei em breve.",
     "form": {

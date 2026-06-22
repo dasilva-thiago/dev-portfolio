@@ -9,8 +9,12 @@
   },
   "hero": {
     "greeting": "¡hola, bienvenido a mi portafolio!",
-    "title": "soy thiago",
-    "subtitle": "Desarrollador Full Stack • C# • Python • JavaScript • HTML + CSS",
+    "title": "soy thiago,",
+    "typewriter": [
+      "un desarrollador full stack",
+      "un técnico de soporte en TI",
+      "un estudiante de ingeniería en computación"
+    ],
     "bullets": [
       "Estudiante de Ingeniería en Computación en UNIVESP y Técnico en TI en SENAC",
       "2 años de experiencia profesional en laboratorio industrial multinacional",
@@ -54,22 +58,22 @@
       "tag": "Backend"
     },
     {
-    "title": "Travel Explorer",
-    "description": "Aún en desarrollo, es una evolución del proyecto Buenos Aires Explorer, ahora con un alcance más amplio: una plataforma web global con rutas optimizadas e integración de negocios y servicios.",
-    "tag": "FULL STACK",
-    "tech": {
-      "0": "HTML",
-      "1": "CSS",
-      "2": "JavaScript",
-      "3": "TypeScript",
-      "4": "React"
+      "title": "Travel Explorer",
+      "description": "Aún en desarrollo, es una evolución del proyecto Buenos Aires Explorer, ahora con un alcance más amplio: una plataforma web global con rutas optimizadas e integración de negocios y servicios.",
+      "tag": "FULL STACK",
+      "tech": {
+        "0": "HTML",
+        "1": "CSS",
+        "2": "JavaScript",
+        "3": "TypeScript",
+        "4": "React"
       }
     },
     {
       "title": "Portafolio de Educadora",
       "description": "Portafolio artesanal para una pedagoga — sin frameworks. Implementé un Cubo Rubik 3D completamente interactivo usando solo CSS perspective y transform-style: preserve-3d, con rotación al arrastrar, inercia táctil y una animación de mezcla al cargar. El modo oscuro opera con un único atributo data-theme propagado a través de un sistema de variables CSS.",
       "tag": "FRONT END"
-      }
+    }
   ],
   "about": {
     "name": "Thiago da Silva",
@@ -89,12 +93,12 @@
       "place": "SENAC",
       "description": "Al estudiar el curso técnico en Informática, busco una formación integral en el área, combinando conocimientos teóricos con habilidades prácticas. Estoy adquiriendo experiencia en mantenimiento de hardware, administración de redes, desarrollo de proyectos y soporte de software."
     },
-        {
+    {
       "date": "2026 - Presente",
       "title": "Practicante de Tecnología Educativa y TI",
       "place": "SEDUC-SP - Secretaría de Educación del Estado de São Paulo",
       "description": "Participando en iniciativas de tecnología educativa y proyectos de transformación digital en entornos escolares públicos, trabajando con gestión de plataformas, operaciones tecnológicas, accesibilidad digital e integración de herramientas digitales en actividades académicas y administrativas."
-    }, 
+    },
     {
       "date": "2023 - 2025",
       "title": "Operador Técnico de Laboratorio",

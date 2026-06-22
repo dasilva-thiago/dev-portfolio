@@ -1,6 +1,8 @@
+import { getCurrentLang, translationCache } from './i18n.js';
+
 const target = document.getElementById('typewriter-target');
 
-const phrases = [
+const PHRASES_EN = [
     'a full stack developer',
     'an IT support technician',
     'a computer engineering student',
@@ -15,8 +17,15 @@ let phraseIndex = 0;
 let charIndex   = 0;
 let isDeleting  = false;
 
+function getPhrases() {
+    const lang = getCurrentLang();
+    const phrases = translationCache[lang]?.hero?.typewriter;
+    return Array.isArray(phrases) && phrases.length ? phrases : PHRASES_EN;
+}
+
 function tick() {
-    const current = phrases[phraseIndex];
+    const phrases = getPhrases();
+    const current = phrases[phraseIndex % phrases.length];
 
     if (isDeleting) {
         charIndex--;

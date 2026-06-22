@@ -31,3 +31,8 @@ document.addEventListener('click', () => {
     trigger.setAttribute('aria-expanded', 'false');
     dropdown.setAttribute('aria-hidden', 'true');
 });
+
+// Sync flag on page load from localStorage
+const savedLang = localStorage.getItem('lang') || 'en';
+const savedFlag = flagMap[savedLang] ?? flagMap['en'];
+activeFlag.className = `fi ${savedFlag}`;
