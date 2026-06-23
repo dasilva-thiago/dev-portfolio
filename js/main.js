@@ -13,3 +13,4 @@ import './ui/cv.js';
 import './ui/langDropdown.js';
 import './ui/typewriter.js';
 import './ui/mobileNav.js';
+import './ui/navbarScroll.js';
