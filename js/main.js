@@ -12,3 +12,4 @@ import './projects.js';
 import './cv.js';
 import './langDropdown.js';
 import './typewriter.js';
+import './mobileNav.js';

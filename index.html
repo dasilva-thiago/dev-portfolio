@@ -146,9 +146,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- Flag Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css"
         integrity="aQuvIWWIbpu/mSqULLDiUveyYiPoJzPKAWjUmGJ+Elm+N/LJhzfZqsutsfw870JS" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
+
+    <!-- Hamburger Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGS2RCHEQ5"></script>
@@ -231,7 +236,80 @@
                 </div>
             </div>
         </div>
+
     </nav>
+
+    <button class="hamburger-wrapper hamburger hamburger--squeeze" type="button" id="mobile-menu-btn" aria-label="Menu"
+        aria-controls="mobile-nav" aria-expanded="false">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav-overlay" aria-hidden="true">
+        <div class="mobile-nav-drawer">
+            <div class="mobile-nav-links">
+                <a href="#" class="mobile-nav-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span data-i18n="nav.aria.home">Home</span>
+                </a>
+                <a href="#skills" class="mobile-nav-link">
+                    <i class="fa-solid fa-code"></i>
+                    <span data-i18n="nav.aria.skills">Skills</span>
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <i class="fa-solid fa-pen"></i>
+                    <span data-i18n="nav.aria.about">About</span>
+                </a>
+                <a href="#experience" class="mobile-nav-link">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span data-i18n="nav.aria.experience">Experience</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span data-i18n="nav.aria.contact">Contact</span>
+                </a>
+            </div>
+
+            <div class="mobile-nav-divider"></div>
+
+            <button class="mobile-nav-cv" id="mobile-cv-btn">
+                <i class="fa-solid fa-file-lines"></i>
+                <span data-i18n="nav.cv">Resume</span>
+            </button>
+
+            <div class="mobile-nav-divider"></div>
+
+            <div class="mobile-nav-controls">
+                <span data-i18n="nav.mobile.theme">Theme</span>
+                <div class="mobile-nav-controls-row">
+                    <button class="mobile-icon-btn" id="mobile-dark-toggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="mobile-icon-btn" id="mobile-contrast-toggle" aria-label="Toggle high contrast">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mobile-nav-divider"></div>
+
+            <div class="mobile-nav-controls">
+                <span data-i18n="nav.aria.language">Language</span>
+                <div class="mobile-nav-controls-row">
+                    <button class="lang-opt mobile-lang-opt" data-lang="en" aria-label="English">
+                        <span class="fi fi-us"></span>
+                    </button>
+                    <button class="lang-opt mobile-lang-opt" data-lang="pt" aria-label="Português">
+                        <span class="fi fi-br"></span>
+                    </button>
+                    <button class="lang-opt mobile-lang-opt" data-lang="es" aria-label="Español">
+                        <span class="fi fi-es"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main id="main-content">
 

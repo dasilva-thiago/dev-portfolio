@@ -6,7 +6,6 @@
     "experience": "Experiência",
     "contact": "Entre em Contato",
     "cv": "Currículo",
-    
     "aria": {
       "home": "Início",
       "skills": "Habilidades",
@@ -17,6 +16,9 @@
       "contrastToggle": "Alternar alto contraste",
       "cv": "Ver currículo",
       "language": "Idioma"
+    },
+    "mobile": {
+      "theme": "Temas"
     }
   },
   "hero": {

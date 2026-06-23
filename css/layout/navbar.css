@@ -206,3 +206,9 @@ body.high-contrast #contrast-toggle:hover {
     background: rgba(52, 211, 153, 0.08);
     box-shadow: 0 0 0 1.5px #34d399;
 }
+
+@media (max-width: 1024px) {
+    nav {
+        display: none;
+    }
+}

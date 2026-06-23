@@ -17,6 +17,9 @@
       "contrastToggle": "Alternar alto contraste",
       "cv": "Ver CV",
       "language": "Idioma"
+    },
+    "mobile": {
+    "theme": "Temas"
     }
   },
   "hero": {
