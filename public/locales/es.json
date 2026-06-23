@@ -15,7 +15,7 @@
       "contact": "Contacto",
       "darkToggle": "Temas",
       "contrastToggle": "Alto contraste",
-      "cv": "Ver CV",
+      "cv": "CV",
       "language": "Idioma"
     },
     "mobile": {
@@ -28,7 +28,7 @@
     "typewriter": [
       "un desarrollador full stack",
       "un técnico de soporte en TI",
-      "un estudiante de ingeniería en computación"
+      "ingeniería en computación"
     ],
     "description": [
       "Construyo software y resuelvo problemas. Me apasiona aprender, crear aplicaciones web y desarrollar soluciones backend confiables."

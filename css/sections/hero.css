@@ -255,6 +255,14 @@ body.high-contrast .hero-section .text h1 {
 
 @media (max-width: 1024px) {
 
+    .hero-section {
+        min-height: calc(100vh - 90px);
+    }
+
+    .hero-section .text {
+        max-width: 700px;
+    }
+
     .hero-section .text h1 {
         font-size: 72px;
     }
@@ -264,18 +272,33 @@ body.high-contrast .hero-section .text h1 {
     }
 
     .hero-description {
-        max-width: 600px;
+        max-width: 620px;
+        font-size: 1.05rem;
     }
 }
 
+
 @media (max-width: 768px) {
 
+    .hero-section {
+        min-height: calc(100svh - 80px);
+    }
+
+    .hero-section .text {
+        max-width: 90%;
+    }
+
+    .hero-greeting {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
     .hero-section .text h1 {
-        font-size: 58px;
+        font-size: 64px;
     }
 
     .hero-subtitle {
-        font-size: 22px;
+        font-size: 26px;
     }
 
     .hero-description {
@@ -285,42 +308,44 @@ body.high-contrast .hero-section .text h1 {
     }
 
     .hero-section .text .links {
-        margin-top: 24px;
-        gap: 8px;
-    }
-
-    .hero-section .text .links a,
-    .hero-cv-btn {
-        font-size: 14px;
-        margin-right: 0;
+        margin-top: 32px;
+        gap: 10px;
     }
 }
+
 
 @media (max-width: 600px) {
 
+    .hero-section {
+        min-height: calc(100svh - 80px);
+    }
+
     .hero-greeting {
-        font-size: 14px;
-        margin-bottom: 16px;
+        font-size: 13px;
+        margin-bottom: 14px;
     }
 
     .hero-section .text h1 {
-        font-size: 46px;
-        padding-bottom: 10px;
+        font-size: 58px;
     }
 
     .hero-subtitle {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .hero-description {
-        max-width: 420px;
-        font-size: 0.95rem;
+        max-width: 400px;
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-top: 24px;
     }
 
     .hero-section .text .links {
-        margin-top: 20px;
+        margin-top: 40px;
+        gap: 10px;
     }
 }
+
 
 @media (max-width: 480px) {
 
@@ -334,16 +359,17 @@ body.high-contrast .hero-section .text h1 {
     }
 
     .hero-section .text h1 {
-        font-size: 38px;
+        font-size: 52px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .hero-description {
+        margin-top: 28px;
         max-width: 340px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.6;
     }
 
@@ -351,7 +377,7 @@ body.high-contrast .hero-section .text h1 {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        margin-top: 18px;
+        margin-top: 42px;
     }
 
     .hero-section .text .links a,
@@ -361,18 +387,25 @@ body.high-contrast .hero-section .text h1 {
         margin: 0;
     }
 }
-@media (max-width: 400px) {
+
+
+@media (max-width: 360px) {
 
     .hero-section .text h1 {
-        font-size: 34px;
+        font-size: 44px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
+        font-size: 19px;
     }
 
     .hero-description {
         max-width: 300px;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-section .text .links a,
+    .hero-cv-btn {
+        width: 200px;
     }
 }
