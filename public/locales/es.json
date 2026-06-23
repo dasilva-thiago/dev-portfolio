@@ -30,11 +30,8 @@
       "un técnico de soporte en TI",
       "un estudiante de ingeniería en computación"
     ],
-    "bullets": [
-      "Estudiante de Ingeniería en Computación en UNIVESP y Técnico en TI en SENAC",
-      "2 años de experiencia profesional en laboratorio industrial multinacional",
-      "Desarrollando proyectos con C#, Python, Node.js y APIs REST",
-      "En busca de pasantías y oportunidades en desarrollo de software"
+    "description": [
+      "Construyo software y resuelvo problemas. Me apasiona aprender, crear aplicaciones web y desarrollar soluciones backend confiables."
     ]
   },
   "sections": {

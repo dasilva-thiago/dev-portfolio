@@ -1,17 +1,10 @@
 /* section 1: Hero Section */
 .hero-section {
+    min-height: calc(100vh - 110px);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 110px);
-    margin: 0;
-    padding-block: 60px;
-    gap: 16px;
-    cursor: default;
-    box-sizing: border-box;
     text-align: center;
-    margin-top: 120px;
 }
 
 .hero-section .text {
@@ -82,12 +75,12 @@ body:not(.dark-mode) .hero-section .text h1 {
 }
 
 .hero-description {
-    display: block;
-    max-width: 700px;
+    max-width: 650px;
     margin-top: 1rem;
     color: var(--muted-color);
     font-size: 1.1rem;
     line-height: 1.8;
+    text-align: center;
 }
 
 /* .hero-bullets {
@@ -261,23 +254,21 @@ body.high-contrast .hero-section .text h1 {
 }
 
 @media (max-width: 1024px) {
-    .hero-section {
-        margin-top: 80px;
-        padding-block: 40px;
-    }
 
     .hero-section .text h1 {
         font-size: 72px;
     }
+
+    .hero-subtitle {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        max-width: 600px;
+    }
 }
 
-@media (max-width: 850px) {
-    .hero-section {
-        gap: 12px;
-        margin-top: 60px;
-        padding-block: 30px;
-        min-height: calc(100vh - 80px);
-    }
+@media (max-width: 768px) {
 
     .hero-section .text h1 {
         font-size: 58px;
@@ -287,117 +278,101 @@ body.high-contrast .hero-section .text h1 {
         font-size: 22px;
     }
 
-    .hero-bullets li {
-        font-size: 14px;
-        margin-bottom: 4px;
-    }
-}
-
-@media (max-width: 740px) {
-    .hero-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-top: 40px;
-        padding-block: 20px;
-        gap: 8px;
-        min-height: calc(100svh - 60px);
-    }
-
-    .hero-section .text h1 {
-        font-size: 52px;
-        padding-bottom: 8px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-
-    .hero-section .text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .hero-bullets {
-        text-align: left;
-        align-self: flex-start;
-        width: 100%;
-        gap: 6px;
-    }
-
-    .hero-bullets li {
-        font-size: 13px;
-        margin-bottom: 2px;
-        line-height: 1.4;
+    .hero-description {
+        max-width: 520px;
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
     .hero-section .text .links {
-        justify-content: center;
-        margin-top: 20px;
+        margin-top: 24px;
         gap: 8px;
     }
 
     .hero-section .text .links a,
     .hero-cv-btn {
-        font-size: 13px;
-        padding: 4px 10px;
-        margin-right: 6px;
-        margin-bottom: 6px;
+        font-size: 14px;
+        margin-right: 0;
     }
 }
 
 @media (max-width: 600px) {
-    .hero-section {
-        margin-top: 20px;
-        padding-block: 16px;
-        gap: 6px;
+
+    .hero-greeting {
+        font-size: 14px;
+        margin-bottom: 16px;
     }
 
     .hero-section .text h1 {
-        font-size: 42px;
+        font-size: 46px;
+        padding-bottom: 10px;
     }
 
     .hero-subtitle {
-        font-size: 17px;
+        font-size: 22px;
     }
 
-    .hero-bullets li {
-        font-size: 12px;
+    .hero-description {
+        max-width: 420px;
+        font-size: 0.95rem;
     }
 
     .hero-section .text .links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 16px;
-    }
-
-    .hero-section .text .links a {
-        margin-right: 0;
-    }
-
-    .hero-bullets {
-        text-align: left;
+        margin-top: 20px;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+
+    .hero-section {
+        min-height: calc(100svh - 80px);
+    }
+
+    .hero-greeting {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
     .hero-section .text h1 {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     .hero-subtitle {
-        font-size: 15px;
+        font-size: 18px;
     }
 
-    .hero-bullets {
-        display: none;
+    .hero-description {
+        max-width: 340px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .hero-section .text .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .hero-section .text .links a,
+    .hero-cv-btn {
+        width: 220px;
+        justify-content: center;
+        margin: 0;
+    }
+}
+@media (max-width: 400px) {
+
+    .hero-section .text h1 {
+        font-size: 34px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-description {
+        max-width: 300px;
+        font-size: 0.85rem;
     }
 }

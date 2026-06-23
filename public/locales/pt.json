@@ -29,11 +29,8 @@
       "um técnico de suporte em TI",
       "um estudante de engenharia da computação"
     ],
-    "bullets": [
-      "Estudante de Engenharia da Computação na UNIVESP e Técnico em Informática pelo SENAC",
-      "2 anos de experiência profissional no laboratório industrial da multinacional Tenaris",
-      "Desenvolvendo projetos com C#, Python, Node.js e APIs REST",
-      "Buscando estágio e oportunidades em desenvolvimento de software"
+    "description": [
+      "Gosto de desenvolver software e resolver problemas. Sou apaixonado por aprender, criar aplicações web e desenvolver soluções backend confiáveis."
     ]
   },
   "sections": {
