@@ -136,6 +136,30 @@ body:not(.dark-mode) .hero-section .text h1 {
     box-shadow: 0 8px 24px var(--shadow-link-sm);
 }
 
+/* CV Button */
+.hero-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 2px solid var(--link-color);
+    border-radius: 8px;
+    background: var(--link-color);
+    color: var(--white-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.hero-cv-btn:hover {
+    filter: brightness(.9);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-link-md);
+}
+
 .hero-section .text {
     flex: 5;
 }
@@ -227,24 +251,36 @@ body.high-contrast .hero-section .text h1 {
     animation: none;
 }
 
+@media (max-width: 1024px) {
+    .hero-section {
+        margin-top: 80px;
+        padding-block: 40px;
+    }
+
+    .hero-section .text h1 {
+        font-size: 72px;
+    }
+}
+
 @media (max-width: 850px) {
     .hero-section {
-        gap: 24px;
-        margin-bottom: 80px;
+        gap: 12px;
+        margin-top: 60px;
+        padding-block: 30px;
+        min-height: calc(100vh - 80px);
     }
 
-    .hero-section .text h2 {
-        font-size: 36px;
+    .hero-section .text h1 {
+        font-size: 58px;
     }
 
-    .hero-section .headshot img {
-        width: 210px;
-        height: 210px;
+    .hero-subtitle {
+        font-size: 22px;
     }
 
-    .hero-section .headshot::before {
-        width: 260px;
-        height: 260px;
+    .hero-bullets li {
+        font-size: 14px;
+        margin-bottom: 4px;
     }
 }
 
@@ -253,19 +289,23 @@ body.high-contrast .hero-section .text h1 {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 20px;
-        margin-bottom: 60px;
+        margin-top: 40px;
+        padding-block: 20px;
+        gap: 8px;
+        min-height: calc(100svh - 60px);
     }
 
-    .hero-section .headshot {
-        justify-content: center;
-        order: -1;
-        margin-bottom: 24px;
+    .hero-section .text h1 {
+        font-size: 52px;
+        padding-bottom: 8px;
     }
 
-    .hero-section .headshot img {
-        width: 200px;
-        height: 200px;
+    .hero-subtitle {
+        font-size: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 
     .hero-section .text {
@@ -279,57 +319,55 @@ body.high-contrast .hero-section .text h1 {
         text-align: left;
         align-self: flex-start;
         width: 100%;
+        gap: 6px;
+    }
+
+    .hero-bullets li {
+        font-size: 13px;
+        margin-bottom: 2px;
+        line-height: 1.4;
     }
 
     .hero-section .text .links {
         justify-content: center;
+        margin-top: 20px;
+        gap: 8px;
     }
-}
 
-/* CV Button */
-.hero-cv-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 10px;
-    border: 2px solid var(--link-color);
-    border-radius: 8px;
-    background: var(--link-color);
-    color: var(--white-color);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: .1s;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.hero-cv-btn:hover {
-    filter: brightness(.9);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px var(--shadow-link-md);
+    .hero-section .text .links a,
+    .hero-cv-btn {
+        font-size: 13px;
+        padding: 4px 10px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
 }
 
 @media (max-width: 600px) {
     .hero-section {
-        margin-top: 16px;
+        margin-top: 20px;
+        padding-block: 16px;
+        gap: 6px;
     }
 
-    .hero-section .headshot img {
-        width: 170px;
-        height: 170px;
+    .hero-section .text h1 {
+        font-size: 42px;
     }
 
-    .hero-section .text h2 {
-        font-size: 30px;
+    .hero-subtitle {
+        font-size: 17px;
+    }
+
+    .hero-bullets li {
+        font-size: 12px;
     }
 
     .hero-section .text .links {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-right: 0;
+        gap: 8px;
+        margin-top: 16px;
     }
 
     .hero-section .text .links a {
@@ -338,5 +376,19 @@ body.high-contrast .hero-section .text h1 {
 
     .hero-bullets {
         text-align: left;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-section .text h1 {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-bullets {
+        display: none;
     }
 }
