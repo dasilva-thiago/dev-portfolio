@@ -1,4 +1,4 @@
-import { getCurrentLang, translationCache } from './i18n.js';
+import { getCurrentLang, translationCache } from '../core/i18n.js';
 
 const target = document.getElementById('typewriter-target');
 

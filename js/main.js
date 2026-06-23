@@ -2,14 +2,14 @@
 import '../css/styles.css';
 
 // Importing JavaScript modules for various functionalities
-import './icons.js'; 
-import './darkMode.js';
-import './contrastMode.js';
-import './i18n.js';
-import './contact.js';
-import './animations.js';
-import './projects.js'; 
-import './cv.js';
-import './langDropdown.js';
-import './typewriter.js';
-import './mobileNav.js';
+import './core/icons.js'; 
+import './core/darkMode.js';
+import './core/contrastMode.js';
+import './core/i18n.js';
+import './ui/contact.js';
+import './ui/animations.js';
+import './ui/projects.js'; 
+import './ui/cv.js';
+import './ui/langDropdown.js';
+import './ui/typewriter.js';
+import './ui/mobileNav.js';

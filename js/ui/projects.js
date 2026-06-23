@@ -1,4 +1,4 @@
-import { getCurrentLang, translationCache, getNestedValue } from './i18n.js';
+import { getCurrentLang, translationCache, getNestedValue } from '../core/i18n.js';
 import { gsap } from 'gsap';
 
 const carousel  = document.getElementById('projectsCarousel');
