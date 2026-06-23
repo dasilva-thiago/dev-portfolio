@@ -81,7 +81,16 @@ body:not(.dark-mode) .hero-section .text h1 {
     align-self: center;
 }
 
-.hero-bullets {
+.hero-description {
+    display: block;
+    max-width: 700px;
+    margin-top: 1rem;
+    color: var(--muted-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* .hero-bullets {
     list-style: none;
     margin-top: 20px;
     margin-bottom: 4px;
@@ -109,7 +118,7 @@ body:not(.dark-mode) .hero-section .text h1 {
     margin-top: 6px;               
     flex-shrink: 0;
     position: static; 
-}
+} */
 
 .hero-section .text .links {
     margin-top: 35px;
