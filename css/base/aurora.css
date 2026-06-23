@@ -3,14 +3,22 @@
 .aurora-bg {
     position: fixed;
     inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
     z-index: -1;
-    overflow: hidden;
+
+    overflow: clip;
+
     pointer-events: none;
 
     isolation: isolate;
+
     backface-visibility: hidden;
-    perspective: 1000px;
     transform: translate3d(0, 0, 0);
+
+    contain: layout paint;
 }
 
 .aurora-orb {
@@ -153,6 +161,7 @@ body:not(.dark-mode) .aurora-orb--3 {
 }
 
 @media (max-width: 740px) {
+
     /* Aurora mobile*/
     .aurora-orb {
         filter: blur(var(--aurora-blur-md));
@@ -190,7 +199,7 @@ body:not(.dark-mode) .aurora-orb--3 {
         width: 280px;
         height: 280px;
         top: -5%;
-        right: -10%;
+        right: -5%;
         opacity: 0.4;
         animation: aurora-drift-1 20s ease-in-out infinite alternate;
     }
@@ -199,7 +208,7 @@ body:not(.dark-mode) .aurora-orb--3 {
         width: 240px;
         height: 240px;
         bottom: 10%;
-        left: -10%;
+        left: -5%;
         opacity: 0.3;
         animation: aurora-drift-2 22s ease-in-out infinite alternate;
     }
