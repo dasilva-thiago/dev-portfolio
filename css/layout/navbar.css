@@ -7,7 +7,7 @@ nav {
     justify-content: center;
     margin-bottom: 15px;
 }
-
+/* pill navbar styling */
 .pill-nav {
     display: inline-flex;
     align-items: center;
