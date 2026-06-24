@@ -333,4 +333,9 @@
     .about-modal {
         padding: 20px;
     }
+
+    .about-left .about-quote, .mt-large {
+        align-items: center;
+        text-align: center;
+    }
 }
