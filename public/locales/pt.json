@@ -89,7 +89,8 @@
   "about": {
     "name": "Thiago da Silva",
     "role": "Estudante de Engenharia da Computação",
-    "quote": "Sou um desenvolvedor dedicado e curioso no início da minha carreira, com grande capacidade de aprender rapidamente e me adaptar a novos desafios. Minha experiência em um ambiente de laboratório técnico me ajudou a desenvolver disciplina, atenção aos detalhes e habilidades de resolução de problemas — qualidades que hoje aplico no desenvolvimento de software."
+    "quote": "Sou um desenvolvedor dedicado e curioso no início da minha carreira, com grande capacidade de aprender rapidamente e me adaptar a novos desafios.",
+    "mt-large": "Minha experiência em um ambiente de laboratório técnico me ajudou a desenvolver disciplina, atenção aos detalhes e habilidades de resolução de problemas — qualidades que hoje aplico no desenvolvimento de software."
   },
   "experience": [
     {
