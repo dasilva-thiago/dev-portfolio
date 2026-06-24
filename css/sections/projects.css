@@ -215,6 +215,14 @@
     padding: 3px 12px;
     font-size: 12px;
     font-weight: 400;
+    cursor: default;
+}
+
+.project-tech span:hover {
+    background-color: color-mix(in srgb, var(--link-color) 6%, transparent);
+    transition: background-color 0.2s ease;
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 12px var(--shadow-link-sm);
 }
 
 /* setas do carousel */
