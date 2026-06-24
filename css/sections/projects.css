@@ -211,11 +211,10 @@
 
 .project-tech span {
     background-color: var(--background-color);
-    border: 1.5px solid var(--border-color);
+    border-left: 2px solid var(--link-color);
     padding: 3px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 400;
 }
 
 /* setas do carousel */
