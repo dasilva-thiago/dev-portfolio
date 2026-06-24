@@ -9,6 +9,16 @@
     text-align: center;
 }
 
+.about-section h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
 .about-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -146,9 +156,9 @@
     align-items: center;
     justify-content: center;
     color: var(--link-color);
-    font-size: 14px;
+    font-size: 22px;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 15px;
 }
 
 .about-card-content {
@@ -176,6 +186,7 @@
 
 .about-card-place {
     font-size: 14px;
+    font-weight: 600;
     color: var(--muted-color);
 }
 
@@ -268,14 +279,14 @@
 }
 
 .about-modal-title {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 3px;
 }
 
 .about-modal-sub {
-    font-size: 13px;
+    font-size: 18px;
     color: var(--link-color);
 }
 
@@ -296,7 +307,7 @@
 }
 
 .about-modal-body {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.7;
     color: var(--muted-color);
     margin-bottom: 14px;

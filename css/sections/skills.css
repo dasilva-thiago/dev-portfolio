@@ -9,6 +9,16 @@
     text-align: center;
 }
 
+.skills-section h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
 .skills-section .text {
     margin-bottom: 20px;
     text-align: center;

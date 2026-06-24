@@ -1,35 +1,52 @@
-/* Section 5: Contact */
-.contact-section{
+.contact-section {
     cursor: default;
     padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact-section h2 {
     font-size: 35px;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
+    text-align: center;
+    position: relative;
 }
 
-.contact-section .group {
+.contact-section h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+.contact-intro {
+    max-width: 560px;
+    text-align: center;
+    color: var(--muted-color);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 40px;
+}
+
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 560px;
     display: flex;
-    gap: 80px;
-    align-items: flex-start;
+    flex-direction: column;
 }
 
-.contact-section .group .text {
-    flex: 4;
-    margin-top: 0px;
-}
-
-.contact-section .group form {
-    flex: 5;
+.contact-form-wrapper form {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    min-width: 0;
 }
 
-.contact-section .group form label {
-    font-size: 13px;
+.contact-form-wrapper form label {
+    font-size: 12px;
     font-weight: 600;
     color: var(--muted-color);
     text-transform: uppercase;
@@ -37,49 +54,84 @@
     margin-bottom: 2px;
 }
 
-.contact-section .group form input,
-.contact-section .group form textarea {
+.contact-form-wrapper form input,
+.contact-form-wrapper form textarea {
     font-family: var(--font-body);
     font-size: 15px;
     color: var(--text-color);
     background-color: var(--white-color);
     border: 1.5px solid var(--border-color);
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 16px;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
     outline: none;
     resize: none;
     transition: border-color .2s ease, box-shadow .2s ease;
     width: 100%;
-    min-width: 0;
     box-sizing: border-box;
 }
 
-.contact-section .group form input:focus,
-.contact-section .group form textarea:focus {
+.contact-form-wrapper form input:focus,
+.contact-form-wrapper form textarea:focus {
     border-color: var(--link-color);
     box-shadow: 0 0 0 3px var(--shadow-link-focus);
 }
 
-.contact-section .group form button {
+.contact-form-wrapper form button[type="submit"] {
     font-size: 15px;
     font-family: var(--font-body);
     font-weight: 600;
     color: var(--white-color);
     background-color: var(--link-color);
     border: none;
-    height: 50px;
-    border-radius: 8px;
+    height: 52px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all .2s ease;
     letter-spacing: 0.3px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.contact-section .group form button:hover {
+.contact-form-wrapper form button[type="submit"]:hover {
     filter: brightness(.9);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px var(--shadow-link-btn);
 }
+
+/* CV button below form */
+.contact-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 12px 28px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .2s ease, color .2s ease,
+        background-color .2s ease, transform .2s ease,
+        box-shadow .2s ease;
+    align-self: center;
+}
+
+.contact-cv-btn:hover {
+    color: var(--link-color);
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--link-color) 6%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-link-sm);
+}
+
 
 /* Feedback message */
 #form-feedback {
@@ -104,7 +156,7 @@
     border-left-color: var(--feedback-error-border);
 }
 
-.contact-section .group form button[disabled] {
+.contact-form-wrapper form button[type="submit"][disabled] {
     opacity: 0.65;
     cursor: not-allowed;
     transform: none;
@@ -112,7 +164,7 @@
     filter: none;
 }
 
-.contact-section .group form button .btn-spinner {
+.contact-form-wrapper form button .btn-spinner {
     display: inline-block;
     width: 14px;
     height: 14px;
@@ -121,7 +173,6 @@
     border-radius: 50%;
     animation: btn-spin 0.7s linear infinite;
     vertical-align: middle;
-    margin-right: 6px;
     flex-shrink: 0;
 }
 
@@ -130,8 +181,8 @@
     font-size: 12px;
     color: var(--muted-color);
     text-align: right;
-    margin-top: -12px;
-    margin-bottom: 16px;
+    margin-top: -14px;
+    margin-bottom: 18px;
     display: block;
     transition: color 0.2s ease;
 }
@@ -160,61 +211,12 @@
     to { transform: rotate(360deg); }
 }
 
-@media (max-width: 850px) {
-    .contact-section .group {
-        gap: 40px;
-    }
-}
-
-@media (max-width: 740px) {
-    .contact-section h2 {
-        text-align: center;
-    }
-
-    .contact-section .group {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-section .group .text {
-        text-align: center;
-        width: 100%;
-    }
-
-    .contact-section .group form {
-        width: 100%;
-    }
-}
-
 @media (max-width: 600px) {
     .contact-section {
-        text-align: center;
+        padding: 60px 16px;
     }
 
-    .contact-section .group {
-        align-items: center;
-    }
-
-    .contact-section .group text {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .contact-section .group form {
-        width: 100%;
-        max-width: 400px;
-        align-items: center;
-    }
-
-    .contact-section .group form label {
-        text-align: center;
-        width: 100%;
-    }
-
-    .contact-section .group form input,
-    .contact-section .group form textarea,
-    .contact-section .group form button {
-        max-width: 100%;
-        width: 100%;
+    .contact-intro {
+        font-size: 0.95rem;
     }
 }

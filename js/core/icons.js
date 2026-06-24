@@ -19,7 +19,8 @@ import {
     faBuilding,
     faFlask,
     faXmark,
-    faArrowRight
+    faArrowRight,
+    faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -46,6 +47,7 @@ library.add(
     faBuilding,
     faFlask,
     faXmark,
-    faArrowRight
+    faArrowRight,
+    faPaperPlane
 );
 dom.watch();

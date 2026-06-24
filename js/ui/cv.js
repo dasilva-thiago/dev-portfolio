@@ -14,3 +14,13 @@ if (cvBtn) {
         window.open(url, '_blank', 'noopener,noreferrer');
     });
 }
+
+const contactCvBtn = document.getElementById('contact-cv-btn');
+
+if (contactCvBtn) {
+    contactCvBtn.addEventListener('click', () => {
+        const lang = document.documentElement.lang || 'en';
+        const url = CV_LINKS[lang] ?? CV_LINKS['en'];
+        window.open(url, '_blank', 'noopener,noreferrer');
+    });
+}

@@ -704,17 +704,16 @@
         <section id="contact" class="contact-section section" data-aos="fade-up">
             <h2 data-i18n="sections.contact.title">Contact</h2>
 
-            <div class="group">
-                <div class="text">
-                    <p data-i18n="contact.text">Feel free to reach out! I'm currently seeking internship opportunities
-                        in technology, especially in software development. If you have a project, opportunity, or just
-                        want to connect, I’d be glad to talk. Contact me through this form, email, or LinkedIn — I’ll
-                        get back to you soon.</p>
-                </div>
+            <p class="contact-intro" data-i18n="contact.text">
+                Feel free to reach out! I'm currently seeking internship opportunities
+                in technology, especially in software development. If you have a project,
+                opportunity, or just want to connect, I'd be glad to talk. Contact me
+                through this form, email, or LinkedIn — I'll get back to you soon.
+            </p>
 
+            <div class="contact-form-wrapper">
                 <form id="contact-form">
 
-                    <!-- web3Forms honeypot -->
                     <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
                         style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
 
@@ -727,12 +726,20 @@
                         data-i18n="contact.form.email_placeholder" placeholder="your_email@example.com">
 
                     <label for="message" data-i18n="contact.form.message">Message</label>
-                    <textarea id="message" name="message" cols="30" rows="10" required maxlength="2000"
+                    <textarea id="message" name="message" cols="30" rows="8" required maxlength="2000"
                         data-i18n="contact.form.message_placeholder" placeholder="Your Message"></textarea>
 
-                    <button type="submit" data-i18n="contact.form.button">Get in Touch</button>
+                    <button type="submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span data-i18n="contact.form.button">Get in Touch</span>
+                    </button>
 
                 </form>
+
+                <button class="contact-cv-btn" id="contact-cv-btn">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span data-i18n="nav.cv">Resume</span>
+                </button>
             </div>
         </section>
 

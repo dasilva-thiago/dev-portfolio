@@ -179,27 +179,14 @@ gsap.from('.contact-section h2', {
     clearProps: 'all',
 });
 
-gsap.from('.contact-section .group .text', {
+gsap.from('.contact-form-wrapper', {
     scrollTrigger: {
-        trigger: '.contact-section .group',
+        trigger: '.contact-section',
         start: 'top 82%',
         once: true,
     },
     opacity: 0,
-    x: -28,
-    duration: 0.7,
-    ease: 'power3.out',
-    clearProps: 'all',
-});
-
-gsap.from('.contact-section form', {
-    scrollTrigger: {
-        trigger: '.contact-section .group',
-        start: 'top 82%',
-        once: true,
-    },
-    opacity: 0,
-    x: 28,
+    y: 24,
     duration: 0.7,
     ease: 'power3.out',
     clearProps: 'all',
