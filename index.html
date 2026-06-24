@@ -361,26 +361,143 @@
 
         </section>
 
-        <!-- about section -->
-        <!-- keys: sections.about.title / about.role / about.quote -->
+        <!-- about section — unified with experience -->
         <section id="about" class="about-section section" data-aos="fade-up">
             <h2 data-i18n="sections.about.title">About Me</h2>
 
-            <div class="group">
-                <div class="person-details">
-                    <img src="assets/img/about_picture1.webp" alt="Thiago da Silva Profile Picture" width="200"
-                        height="200" loading="lazy" />
-                    <p>Thiago da Silva</p>
-                    <p data-i18n="about.role">Computer Engineering Student</p>
+            <div class="about-split">
+
+                <div class="about-left">
+                    <div class="about-identity">
+                        <img src="assets/img/about_picture1.webp" alt="Thiago da Silva" width="80" height="80"
+                            loading="lazy" />
+                        <div>
+                            <p class="about-name">Thiago da Silva</p>
+                            <p class="about-role" data-i18n="about.role">Computer Engineering Student</p>
+                        </div>
+                    </div>
+
+                    <p class="about-quote" data-i18n="about.quote">
+                        I am a <span class="about-dedicated-curious">dedicated and curious developer</span> in the early
+                        stages of my career, with a strong ability to
+                        learn quickly and adapt to new challenges.
+
+                    <p class="mt-large" data-i18n="mt-large">My background in a technical laboratory environment
+                        helped me develop discipline, attention to detail, and problem-solving skills — qualities I now
+                        apply in software development.</p>
+                    </p>
                 </div>
 
-                <div class="text" data-i18n="about.quote">
-                    "I am a dedicated and curious developer in the early stages of my career, with a strong ability to
-                    learn quickly and adapt to new challenges. My background in a technical laboratory environment
-                    helped me develop discipline, attention to detail, and problem-solving skills — qualities I now
-                    apply in software development."
+                <div class="about-right">
+
+                    <p class="about-group-label" data-i18n="sections.about.education">Education</p>
+
+                    <div class="about-card">
+                        <div class="about-card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="about-card-content">
+                            <span class="about-card-date" data-i18n="experience.0.date">2025 — 2030</span>
+                            <p class="about-card-title" data-i18n="experience.0.title">Computer Engineering Student</p>
+                            <p class="about-card-place" data-i18n="experience.0.place">UNIVESP</p>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-card-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="about-card-content">
+                            <span class="about-card-date" data-i18n="experience.1.date">2025 — 2027</span>
+                            <p class="about-card-title" data-i18n="experience.1.title">IT Technician</p>
+                            <p class="about-card-place" data-i18n="experience.1.place">SENAC</p>
+                        </div>
+                    </div>
+
+                    <p class="about-group-label" data-i18n="sections.about.experience">Experience</p>
+
+                    <button class="about-card about-card--expandable" data-modal="seduc" aria-expanded="false">
+                        <div class="about-card-icon"><i class="fa-solid fa-building"></i></div>
+                        <div class="about-card-content">
+                            <span class="about-card-date" data-i18n="experience.2.date">2026 — Present</span>
+                            <p class="about-card-title" data-i18n="experience.2.title">Educational Technology & IT
+                                Intern</p>
+                            <p class="about-card-place" data-i18n="experience.2.place">SEDUC-SP</p>
+                            <p class="about-card-more"><i class="fa-solid fa-arrow-right"></i> <span
+                                    data-i18n="about.seeMore">see more</span></p>
+                        </div>
+                    </button>
+
+                    <button class="about-card about-card--expandable" data-modal="tenaris" aria-expanded="false">
+                        <div class="about-card-icon"><i class="fa-solid fa-flask"></i></div>
+                        <div class="about-card-content">
+                            <span class="about-card-date">2023 — 2025</span>
+                            <p class="about-card-title" data-i18n="experience.3.title">Technical Laboratory Operator</p>
+                            <p class="about-card-place" data-i18n="experience.3.place">TENARIS</p>
+                            <p class="about-card-more"><i class="fa-solid fa-arrow-right"></i> <span
+                                    data-i18n="about.seeMore">see more</span></p>
+                        </div>
+                    </button>
+
                 </div>
             </div>
+
+            <!-- detail modals -->
+            <div class="about-modal-overlay" id="about-modal-overlay" aria-hidden="true">
+                <div class="about-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                    <button class="about-modal-close" id="about-modal-close" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div id="modal-seduc" class="about-modal-content" hidden>
+                        <div class="about-modal-header">
+                            <div class="about-card-icon"><i class="fa-solid fa-building"></i></div>
+                            <div>
+                                <p class="about-modal-title" id="modal-title" data-i18n="experience.2.title">Educational
+                                    Technology & IT Intern</p>
+                                <p class="about-modal-sub" data-i18n="experience.2.place">SEDUC-SP</p>
+                            </div>
+                        </div>
+                        <p class="about-modal-body" data-i18n="experience.2.description">Contributing to educational
+                            technology initiatives and digital transformation projects within public school
+                            environments, working with platform management, technology operations, digital
+                            accessibility, and the integration of digital tools into academic and administrative
+                            activities.</p>
+                        <div class="project-tech">
+                            <span>Platform Management</span>
+                            <span>Digital Accessibility</span>
+                            <span>EdTech</span>
+                        </div>
+                    </div>
+
+                    <div id="modal-tenaris" class="about-modal-content" hidden>
+                        <div class="about-modal-header">
+                            <div class="about-card-icon"><i class="fa-solid fa-flask"></i></div>
+                            <div>
+                                <p class="about-modal-title" id="modal-title" data-i18n="experience.3.title">Technical
+                                    Laboratory Operator</p>
+                                <p class="about-modal-sub" data-i18n="experience.3.place">Tenaris</p>
+                            </div>
+                        </div>
+                        <p class="about-modal-body" data-i18n="experience.3.description">Worked in a multinational
+                            industrial laboratory environment, operating within high standards of precision, quality
+                            control, and process reliability. This experience built a solid foundation for my transition
+                            into software development, where I apply the same discipline, logical reasoning, and
+                            commitment to accuracy in designing and implementing robust solutions.</p>
+                        <hr class="about-modal-divider">
+                        <p class="about-modal-initiative-label" data-i18n="initiative.0.title">Industrial Safety
+                            Localization</p>
+                        <p class="about-modal-body" data-i18n="initiative.0.description">Identified a documentation
+                            failure in an industrial environment and led the full corrective process: root cause
+                            analysis, technical translation, and standardized rollout across the lab.</p>
+                        <img src="assets/img/safety_labels_en_pt.webp" alt="Industrial safety labels translation"
+                            class="about-modal-img" loading="lazy">
+                        <div class="project-tech">
+                            <span data-i18n="initiative.0.tech.0">Technical Localization</span>
+                            <span data-i18n="initiative.0.tech.1">Root Cause Analysis</span>
+                            <span data-i18n="initiative.0.tech.2">Process Improvement</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
 
         <!-- skills section -->
@@ -635,100 +752,6 @@
             <!-- Grid view — populado por projects.js -->
             <div id="projects-grid" class="projects-grid" aria-hidden="true"></div>
 
-        </section>
-
-        <!-- experience section -->
-        <!-- keys: sections.experience.title / experience.0.title / experience.0.place / experience.0.description -->
-        <section id="experience" class="experience-section section">
-            <h2 data-i18n="sections.experience.title">Experience & Education</h2>
-
-            <div class="timeline">
-
-                <!-- experience[0] -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025 — 2030</span>
-                        <h3 data-i18n="experience.0.title">Computer Engineering Student</h3>
-                        <p class="timeline-place" data-i18n="experience.0.place">UNIVESP - Virtual University of São
-                            Paulo</p>
-                        <p data-i18n="experience.0.description">Currently pursuing a degree in Computer Engineering,
-                            focusing on software development, databases, and building a strong foundation in
-                            programming, actively working on projects to apply theoretical knowledge in practical
-                            scenarios.</p>
-                    </div>
-                </div>
-
-                <!-- experience[1] -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025 — 2027</span>
-                        <h3 data-i18n="experience.1.title">IT Technician</h3>
-                        <p class="timeline-place" data-i18n="experience.1.place">SENAC - National Service for Commercial
-                            Training</p>
-                        <p data-i18n="experience.1.description">By studying a technical course in Information
-                            Technology, I am pursuing a well-rounded education in the field, mixing both theoretical
-                            knowledge with practical skills, gaining hands-on experience in hardware maintenance,
-                            network administration, project development, and software support.</p>
-                    </div>
-                </div>
-
-                <!-- experience[2] -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date" data-i18n="experience.2.date">2026 - Present</span>
-                        <h3 data-i18n="experience.2.title">Educational Technology & IT Intern</h3>
-                        <p class="timeline-place" data-i18n="experience.2.place">SEDUC-SP - São Paulo State Department
-                            of Education</p>
-                        <p data-i18n="experience.2.description">Contributing to educational technology initiatives and
-                            digital transformation projects within public school environments, working with platform
-                            management, technology operations, digital accessibility, and the integration of digital
-                            tools into academic and administrative activities.</p>
-                    </div>
-
-                </div>
-
-                <!-- experience[3] -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2023 — 2025</span>
-                        <h3 data-i18n="experience.3.title">Technical Laboratory Operator</h3>
-                        <p class="timeline-place" data-i18n="experience.3.place">Tenaris</p>
-                        <p data-i18n="experience.3.description">Worked in a multinational industrial laboratory
-                            environment, operating within high standards of precision, quality control, and process
-                            reliability. This experience built a solid foundation for my transition into software
-                            development, where I apply the same discipline, logical reasoning, and commitment to
-                            accuracy in designing and implementing robust solutions.</p>
-                    </div>
-
-                </div>
-                <div class="timeline-initiative" data-aos="fade-up" data-aos-delay="150">
-                    <div class="initiative-header">
-                        <i class="fa-solid fa-diagram-project"></i>
-                        <h4 data-i18n="initiative.0.title">Industrial Safety Localization</h4>
-                    </div>
-
-                    <p data-i18n="initiative.0.description">Identified a documentation failure in a
-                        industrial environment and led the full corrective process: root cause analysis, technical
-                        translation, and standardized rollout across the lab. Applied the same systematic thinking
-                        used in debugging — isolate the problem, trace the cause, implement and validate the fix.
-                    </p>
-
-                    <img src="assets/img/safety_labels_en_pt.webp"
-                        alt="Industrial safety labels translation from English to Portuguese" class="initiative-img"
-                        loading="lazy">
-
-                    <div class="project-tech">
-                        <span data-i18n="initiative.0.tech.0">Technical Localization</span>
-                        <span data-i18n="initiative.0.tech.1">Root Cause Analysis</span>
-                        <span data-i18n="initiative.0.tech.2">Process Improvement</span>
-                    </div>
-                </div>
-            </div>
-            </div>
         </section>
 
         <!-- contact section -->

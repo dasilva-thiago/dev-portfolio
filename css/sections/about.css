@@ -1,92 +1,336 @@
-/* Section 4: About */
-.about-section{
+/* left section: about me - identity and quote */
+.about-section {
     cursor: default;
 }
 
 .about-section h2 {
     font-size: 35px;
-    margin-bottom: 30px;
+    margin-bottom: 76px;
     text-align: center;
 }
 
-.about-section .group {
+.about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-identity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.about-identity img {
+    margin-top: 15px;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid color-mix(in srgb, var(--link-color) 50%, transparent);
+    flex-shrink: 0;
+
+    box-shadow:
+        0 0 0 3px var(--background-color),
+        0 0 0 5px color-mix(in srgb, var(--link-color) 40%, transparent),
+        0 20px 60px var(--shadow-link-md);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-identity img:hover {
+    transform: scale(1.03);
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 0 3px var(--background-color),
+        0 0 0 5px color-mix(in srgb, var(--link-color) 40%, transparent),
+        0 20px 60px var(--shadow-link-lg);
+
+}
+
+.about-name {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 3px;
+}
+
+.about-role {
+    font-size: 13px;
+    color: var(--link-color);
+    font-weight: 500;
+}
+
+.about-left .about-quote, .mt-large {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--muted-color);
+    text-align: left;
+    max-width: 475px;
+}
+
+.about-left .about-dedicated-curious {
+    font-weight: 600;
+    color: var(--link-color);
+}
+
+/* right section: experience and education */
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 75%;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.about-group-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted-color);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 8px 0 2px;
+}
+
+.about-right .about-group-label:first-child {
+    padding-top: 0;
+}
+
+.about-card {
+    background-color: var(--white-color);
+    border: 0.5px solid var(--border-color);
+    border-radius: 10px;
+    padding: 16px 18px;
     display: flex;
     align-items: flex-start;
-    gap: 50px;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    cursor: default;
 }
 
-.about-section .group .person-details {
-    text-align: center;
-    flex: 2;
+.about-card:hover {
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    box-shadow: 0 4px 16px var(--shadow-link-sm);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.about-section .group .text {
-    flex: 8;
-    padding-top: 60px;
+.about-card--expandable {
+    cursor: pointer;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    background: none;
 }
 
-.about-section .group .person-details img {
-    width: 200px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
+.about-card--expandable:hover {
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    box-shadow: 0 4px 16px var(--shadow-link-sm);
 }
 
-.about-section .group .person-details p {
+.about-card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: color-mix(in srgb, var(--link-color) 10%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--link-color);
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.about-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-card-date {
+    display: block;
+    font-size: 11px;
     font-weight: 600;
+    color: var(--link-color);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    font-family: var(--font-mono);
 }
 
-.about-section .group .person-details p:last-child {
-    font-weight: normal;
+.about-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2px;
+}
 
+.about-card-place {
+    font-size: 14px;
+    color: var(--muted-color);
+}
+
+.about-card-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--link-color);
+    margin-top: 7px;
+    transition: gap 0.15s ease;
+}
+
+.about-card--expandable:hover .about-card-more {
+    gap: 8px;
+}
+
+.about-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 24px 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.about-modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.about-modal {
+    background-color: var(--white-color);
+    border: 0.5px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(12px);
+    transition: transform 0.2s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.about-modal-overlay.is-open .about-modal {
+    transform: translateY(0);
+}
+
+.about-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border-color);
+    background: transparent;
+    color: var(--muted-color);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.about-modal-close:hover {
+    background-color: color-mix(in srgb, var(--text-color) 8%, transparent);
+    color: var(--text-color);
+}
+
+.about-modal-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding-right: 32px;
+}
+
+.about-modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 3px;
+}
+
+.about-modal-sub {
+    font-size: 13px;
+    color: var(--link-color);
+}
+
+.about-modal-divider {
+    border: none;
+    border-top: 0.5px solid var(--border-color);
+    margin: 16px 0;
+}
+
+.about-modal-initiative-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--link-color);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    font-family: var(--font-mono);
+}
+
+.about-modal-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted-color);
+    margin-bottom: 14px;
+}
+
+.about-modal-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 0.5px solid var(--border-color);
+    margin: 12px 0 14px;
+    display: block;
 }
 
 @media (max-width: 850px) {
-    .about-section .group {
-        gap: 30px;
-    }
-
-    .about-section .group .text {
-        padding-top: 30px;
+    .about-split {
+        gap: 32px;
     }
 }
 
 @media (max-width: 740px) {
-    .about-section .group {
-        flex-direction: column;
-        align-items: center;
+    .about-split {
+        grid-template-columns: 1fr;
     }
 
-    .about-section .group .person-details {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+    .about-left {
         align-items: center;
-    }
-
-    .about-section .group .text {
         text-align: center;
-        padding-top: 0;
+    }
+
+    .about-identity {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
-@media (max-width: 600px) {
-    .about-section .group {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .about-section .group .person-details {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-section .group .text {
-        padding-top: 0;
-        text-align: center;
+@media (max-width: 480px) {
+    .about-modal {
+        padding: 20px;
     }
 }

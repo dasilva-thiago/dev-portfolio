@@ -13,7 +13,13 @@ import {
     faFileLines,
     faDiagramProject,
     faUser,
-    faHouse
+    faHouse,
+    faUserGraduate,
+    faCertificate,
+    faBuilding,
+    faFlask,
+    faXmark,
+    faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -34,6 +40,12 @@ library.add(
     faLinkedin,
     faDiagramProject,
     faUser,
-    faHouse
+    faHouse,
+    faUserGraduate,
+    faCertificate,
+    faBuilding,
+    faFlask,
+    faXmark,
+    faArrowRight
 );
 dom.watch();
