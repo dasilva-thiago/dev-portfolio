@@ -198,18 +198,18 @@
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(10px);  
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
-    align-items: flex-start;
+    align-items: center;      
     justify-content: center;
-    padding: 80px 24px 24px;
+    padding: 72px 24px 40px;             
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
+    overflow-y: auto;          
 }
-
 .about-modal-overlay.is-open {
     opacity: 1;
     pointer-events: all;
@@ -225,8 +225,8 @@
     position: relative;
     transform: translateY(12px);
     transition: transform 0.2s ease;
-    max-height: 90vh;
-    overflow-y: auto;
+    flex-shrink: 0;       
+    margin: auto;
 }
 
 .about-modal-overlay.is-open .about-modal {
@@ -234,21 +234,24 @@
 }
 
 .about-modal-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 30px;
-    height: 30px;
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 0.5px solid var(--border-color);
     background: transparent;
     color: var(--muted-color);
-    font-size: 14px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.15s ease, color 0.15s ease;
+    z-index: 10000;
 }
 
 .about-modal-close:hover {
@@ -332,6 +335,7 @@
 @media (max-width: 480px) {
     .about-modal {
         padding: 20px;
+        border-radius: 12px;
     }
 
     .about-left .about-quote, .mt-large {
