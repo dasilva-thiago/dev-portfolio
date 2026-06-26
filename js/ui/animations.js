@@ -29,11 +29,11 @@ gsap.set([
 ], { opacity: 0, y: 32 });
 
 heroTl
-    .to('.hero-section .headshot',             { opacity: 1, y: 0, duration: 0.9, delay: 0.1 })
-    .to('.hero-section .text h1',              { opacity: 1, y: 0, duration: 0.75 }, '-=0.6')
-    .to('.hero-section .text .hero-subtitle',  { opacity: 1, y: 0, duration: 0.6 }, '-=0.45')
-    .to('.hero-bullets li',                    { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }, '-=0.35')
-    .to('.hero-section .text .links',          { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
+    .to('.hero-section .headshot', { opacity: 1, y: 0, duration: 0.9, delay: 0.1 })
+    .to('.hero-section .text h1', { opacity: 1, y: 0, duration: 0.75 }, '-=0.6')
+    .to('.hero-section .text .hero-subtitle', { opacity: 1, y: 0, duration: 0.6 }, '-=0.45')
+    .to('.hero-bullets li', { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }, '-=0.35')
+    .to('.hero-section .text .links', { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
 
 // ─── PARALLAX (desktop only) ───────────────────────────────────
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -61,27 +61,8 @@ if (!prefersReducedMotion && window.innerWidth > 740) {
     });
 }
 
-// ─── SKILLS — Stagger ──────────────────────────────────────────────
-gsap.from('.skills-section .cell', {
-    scrollTrigger: {
-        trigger: '.skills-section',
-        start: 'top 80%',
-        once: true,
-    },
-    opacity: 0,
-    y: 28,
-    scale: 0.95,
-    duration: 0.5,
-    stagger: {
-        amount: 0.45,
-        from: 'start',
-    },
-    ease: 'power2.out',
-    clearProps: 'all',
-});
-
-// ─── SKILLS heading reveal ────────────────────────────────────────────────────
-gsap.from('.skills-section h2, .skills-section .text', {
+// ─── SKILLS — heading + description reveal ────────────────────────
+gsap.from('.skills-section h2, .skills-description', {
     scrollTrigger: {
         trigger: '.skills-section',
         start: 'top 85%',
@@ -93,6 +74,49 @@ gsap.from('.skills-section h2, .skills-section .text', {
     stagger: 0.12,
     ease: 'power2.out',
     clearProps: 'all',
+});
+
+// ─── SKILLS — icon cards stagger ─────────────────────────────────
+gsap.from('.skill-icon-card', {
+    scrollTrigger: {
+        trigger: '.skills-icon-grid',
+        start: 'top 82%',
+        once: true,
+    },
+    opacity: 0,
+    y: 24,
+    scale: 0.92,
+    duration: 0.5,
+    stagger: {
+        amount: 0.4,
+        from: 'start',
+    },
+    ease: 'power2.out',
+    clearProps: 'all',
+});
+
+// ─── SKILLS — runway bars (fill animation on scroll) ─────────────
+ScrollTrigger.create({
+    trigger: '.skills-runway-stack',
+    start: 'top 82%',
+    once: true,
+    onEnter: () => {
+        document.querySelectorAll('.skill-runway-fill').forEach((fill, i) => {
+            const target = fill.style.getPropertyValue('--skill-pct') || '50%';
+            gsap.fromTo(fill,
+                { width: '0%' },
+                {
+                    width: target,
+                    duration: 1.2,
+                    delay: i * 0.18,
+                    ease: 'power3.out',
+                    onComplete: () => {
+                        fill.classList.add('is-animated');
+                    }
+                }
+            );
+        });
+    }
 });
 
 // ─── PROJECTS — section reveal  ───────────────────────────────────────────────

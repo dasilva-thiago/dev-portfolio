@@ -1,6 +1,7 @@
-/* Section 2: Skills */
+/* ─── Skills Section ──────────────────────────────────────────── */
 .skills-section {
-    padding: 65px 20px;
+    padding-block: clamp(80px, 10vh, 140px);
+    padding-inline: clamp(20px, 5vw, 50px);
     cursor: default;
 }
 
@@ -19,59 +20,355 @@
     margin: 10px auto 0;
 }
 
-.skills-section .text {
-    margin-bottom: 20px;
+.skills-description {
     text-align: center;
+    color: var(--muted-color);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-bottom: 40px;
 }
 
-.skills-section .cells {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+/* ── Group label ─────────────────────────────────────────────── */
+.skills-group-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--font-mono);
+    margin-bottom: 16px;
 }
 
-.skills-section .cells .cell {
+/* ════════════════════════════════════════════════════════════════
+   CONSOLIDATED — icon grid
+════════════════════════════════════════════════════════════════ */
+.skills-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+/* individual card */
+.skill-icon-card {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    padding: 18px 10px 14px;
+    background-color: var(--white-color);
+    border: 0.5px solid var(--border-color);
+    border-radius: 14px;
     cursor: default;
-
-    width: 200px;
-    padding: 10px 20px;
-    border: 1.5px solid var(--border-color);
-    margin: 10px;
-    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.skills-section .cells .cell img {
-    width: 30px;
-    height: 30px;
-    border-radius: 2px;
+/* shimmer sweep on hover */
+.skill-icon-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        130deg,
+        transparent 35%,
+        color-mix(in srgb, var(--link-color) 8%, transparent) 55%,
+        transparent 75%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
 }
 
-.skills-section .cells .cell span {
-    font-size: 18px;
+.skill-icon-card:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--link-color) 45%, transparent);
+    box-shadow:
+        0 10px 30px color-mix(in srgb, var(--link-color) 12%, transparent),
+        0 2px 8px color-mix(in srgb, var(--link-color) 8%, transparent);
+}
+
+.skill-icon-card:hover::before {
+    opacity: 1;
+}
+
+/* icon wrapper — monochrome tinted to site palette */
+.skill-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color-mix(in srgb, var(--link-color) 8%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--link-color) 18%, transparent);
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.skill-icon-card:hover .skill-icon-wrap {
+    background-color: color-mix(in srgb, var(--link-color) 16%, transparent);
+    border-color: color-mix(in srgb, var(--link-color) 35%, transparent);
+}
+
+/* SVG icon — tinted to site blue, reveals color on hover */
+.skill-icon-wrap svg {
+    width: 26px;
+    height: 26px;
+    color: var(--link-color);
+    opacity: 0.55;
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.skill-icon-card:hover .skill-icon-wrap svg {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* label */
+.skill-icon-name {
+    font-size: 11px;
     font-weight: 600;
+    color: var(--muted-color);
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
-.skills-section .cells .cell:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
-    box-shadow: 0 8px 24px var(--shadow-link-sm);
+.skill-icon-card:hover .skill-icon-name {
+    color: var(--link-color);
 }
 
+/* ── Separator ───────────────────────────────────────────────── */
+.skills-sep {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 8px 0 24px;
+}
+
+.skills-sep-line {
+    flex: 1;
+    height: 0.5px;
+    background-color: var(--border-color);
+}
+
+.skills-sep-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--font-mono);
+    flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   EVOLVING — runway bars
+════════════════════════════════════════════════════════════════ */
+.skills-runway-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* row: icon + info */
+.skill-runway-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* small tinted icon */
+.skill-runway-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color-mix(in srgb, var(--link-color) 6%, transparent);
+    border: 0.5px solid color-mix(in srgb, var(--link-color) 18%, transparent);
+    flex-shrink: 0;
+}
+
+.skill-runway-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--link-color);
+    opacity: 0.6;
+}
+
+/* info column */
+.skill-runway-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.skill-runway-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.skill-runway-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.skill-runway-pct {
+    font-size: 11px;
+    color: var(--muted-color);
+    font-family: var(--font-mono);
+}
+
+/* track — the runway */
+.skill-runway-track {
+    position: relative;
+    height: 7px;
+    background-color: color-mix(in srgb, var(--border-color) 60%, transparent);
+    border-radius: 4px;
+    overflow: visible;
+}
+
+/* runway stripes texture */
+.skill-runway-track::before {
+    content: '';
+    position: absolute;
+    inset: 1.5px 0;
+    border-radius: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 10px,
+        color-mix(in srgb, var(--link-color) 5%, transparent) 10px,
+        color-mix(in srgb, var(--link-color) 5%, transparent) 12px
+    );
+    pointer-events: none;
+}
+
+/* fill — animated by GSAP via CSS custom property */
+.skill-runway-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 7px;
+    width: 0%;                  /* GSAP animates this to --skill-pct */
+    border-radius: 4px;
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--link-color) 50%, transparent),
+        var(--link-color)
+    );
+    transition: none;
+    overflow: visible;
+}
+
+/* pulsing glow dot at the tip */
+.skill-runway-fill::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--link-color);
+    opacity: 0;
+    animation: skill-pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* plane icon at the tip */
+.skill-runway-plane {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-55%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: skill-float 2.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.skill-runway-plane svg {
+    width: 16px;
+    height: 16px;
+    color: var(--link-color);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--link-color) 60%, transparent));
+}
+
+/* ── Keyframes ───────────────────────────────────────────────── */
+@keyframes skill-pulse {
+    0%, 100% { opacity: 0;   transform: translateY(-50%) scale(0.5); }
+    50%       { opacity: 0.4; transform: translateY(-50%) scale(1.6); }
+}
+
+@keyframes skill-float {
+    0%, 100% { transform: translateY(-55%); }
+    50%       { transform: translateY(-70%); }
+}
+
+/* hide plane until bar is animated (GSAP adds .is-animated) */
+.skill-runway-fill .skill-runway-plane {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.skill-runway-fill.is-animated .skill-runway-plane {
+    opacity: 1;
+}
+.skill-runway-fill.is-animated::after {
+    animation: skill-pulse 2s ease-in-out infinite;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .skill-runway-fill::after,
+    .skill-runway-plane { animation: none; }
+    .skill-runway-fill  { transition: width 0.3s ease; }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 850px) {
-    .skills-section .cells .cell {
-        width: 170px;
-        padding: 10px 14px;
+    .skills-icon-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    .skills-section .cells .cell span {
-        font-size: 16px;
+    .skills-icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .skill-icon-wrap {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-icon-wrap svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .skill-icon-name {
+        font-size: 10px;
     }
 }
