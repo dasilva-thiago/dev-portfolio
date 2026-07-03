@@ -1,6 +1,5 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import {
-    faEnvelope,
     faMoon,
     faSun,
     faCircleHalfStroke,
@@ -10,7 +9,6 @@ import {
     faChevronLeft,
     faChevronRight,
     faGrip,
-    faFileLines,
     faDiagramProject,
     faUser,
     faHouse,
@@ -21,12 +19,24 @@ import {
     faXmark,
     faArrowRight,
     faPaperPlane,
+    faEnvelope as faEnvelopeSolid,
+    faFileLines as faFileLinesSolid
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { 
+    faEnvelope, 
+    faFileLines 
+} from '@fortawesome/free-regular-svg-icons';
+import { 
+    faGithub, 
+    faLinkedin, 
+    faLinkedinIn 
+} from '@fortawesome/free-brands-svg-icons';
 
-// icons currently used in the project
 library.add(
+    faEnvelopeSolid,
+    faFileLinesSolid,
     faEnvelope,
+    faFileLines,
     faMoon,
     faSun,
     faCircleHalfStroke,
@@ -36,9 +46,9 @@ library.add(
     faChevronLeft,
     faChevronRight,
     faGrip,
-    faFileLines,
     faGithub,
     faLinkedin,
+    faLinkedinIn,
     faDiagramProject,
     faUser,
     faHouse,

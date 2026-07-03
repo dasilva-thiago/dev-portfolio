@@ -208,7 +208,7 @@
 
             <div class="nav-sep"></div>
 
-            <button class="nav-icon" id="cv-btn" aria-label="View CV" data-i18n-aria="nav.aria.cv">
+            <button class="nav-icon cv-trigger" id="cv-btn" aria-label="View CV" data-i18n-aria="nav.aria.cv">
                 <i class="fa-solid fa-file-lines"></i>
             </button>
 
@@ -326,22 +326,34 @@
                     </p>
                 </div>
 
-                <div class="links" data-aos="fade-up" data-aos-delay="100">
+                <div class="hero-social-links" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://github.com/dasilva-thiago" target="_blank" rel="noopener noreferrer"
+                        class="social-circle-icon" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dasilva-thiago/" target="_blank" rel="noopener noreferrer"
+                        class="social-circle-icon" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:thiagosilva785@gmail.com" class="social-circle-icon" aria-label="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <button type="button" id="hero-cv-icon" class="social-circle-icon cv-trigger" aria-label="View CV"
+                        data-i18n-aria="nav.aria.cv">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </button>
+                </div>
 
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="150">
                     <a href="#projects" class="hero-work-button">
                         <i class="fa-solid fa-briefcase"></i>
                         <span data-i18n="nav.projects">View My Work</span>
                     </a>
 
-                    <a href="#contact">
+                    <a href="#contact" class="hero-contact-button">
                         <i class="fa-solid fa-envelope"></i>
                         <span data-i18n="nav.contact">Get in Touch</span>
                     </a>
-
-                    <button id="cv-btn" class="hero-cv-btn" aria-label="CV">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <span data-i18n="nav.cv">Resume</span>
-                    </button>
                 </div>
             </div>
 
@@ -836,7 +848,7 @@
 
                 </form>
 
-                <button class="contact-cv-btn" id="contact-cv-btn">
+                <button class="contact-cv-btn cv-trigger" id="contact-cv-btn" aria-label="Resume/CV">
                     <i class="fa-solid fa-file-lines"></i>
                     <span data-i18n="nav.cv">Resume</span>
                 </button>

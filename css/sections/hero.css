@@ -26,9 +26,9 @@
 
 .hero-section .text h1 {
     font-size: 85px;
-    line-height: 1.2;      
-    padding-bottom: 15px;  
-    animation: hero-shimmer 4s linear infinite;  
+    line-height: 1.2;
+    padding-bottom: 15px;
+    animation: hero-shimmer 4s linear infinite;
 }
 
 /* animated title (h1) */
@@ -50,8 +50,13 @@ body:not(.dark-mode) .hero-section .text h1 {
 }
 
 @keyframes hero-shimmer {
-    0%   { background-position: 0% center; }
-    100% { background-position: 200% center; }
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -114,14 +119,55 @@ body:not(.dark-mode) .hero-section .text h1 {
     position: static; 
 } */
 
+.hero-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.social-circle-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0.5px solid var(--social-icon-border);
+    border-radius: 50%;
+    color: var(--social-icon-color);
+    background-color: var(--social-icon-bg);
+    font-size: 1.1rem;
+    transition: transform 0.5s ease, box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.social-circle-icon:hover {
+    transform: translateY(-3px) scale(1.2);
+    color: var(--white-color);
+    background-color: var(--link-color);
+    border-color: color-mix(in srgb, var(--link-color) 45%, transparent);
+    box-shadow:
+        0 0 0 2px var(--background-color),
+        0 0 0 4px var(--link-color),
+        0 10px 30px color-mix(in srgb, var(--link-color) 12%, transparent),
+        0 2px 8px color-mix(in srgb, var(--link-color) 8%, transparent);
+}
+
 .hero-section .text .links {
-    margin-top: 35px;
+    margin-top: 0 !important;
+}
+
+.hero-buttons {
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.hero-section .text .links a {
+.hero-contact-button {
     display: inline-block;
     padding: 5px 10px;
     border: 2px solid var(--link-color);
@@ -131,7 +177,7 @@ body:not(.dark-mode) .hero-section .text h1 {
     margin-bottom: 10px;
 }
 
-.hero-section .text .links a:hover {
+.hero-contact-button:hover {
     filter: brightness(.9);
     color: var(--text-color);
     transform: translateY(-4px);
@@ -162,30 +208,6 @@ body:not(.dark-mode) .hero-section .text h1 {
     transform: translateY(-4px);
     border: 2px solid var(--text-color);
     border-color: color-mix(in srgb, var(--text-color) 50%, transparent);
-    box-shadow: 0 8px 24px var(--shadow-link-md);
-}
-
-/* CV Button */
-.hero-cv-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 10px;
-    border: 2px solid var(--link-color);
-    border-radius: 8px;
-    background: var(--link-color);
-    color: var(--white-color);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: .1s;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.hero-cv-btn:hover {
-    filter: brightness(.9);
-    transform: translateY(-4px);
     box-shadow: 0 8px 24px var(--shadow-link-md);
 }
 
@@ -270,8 +292,15 @@ body:not(.dark-mode) .hero-section .text h1 {
 }
 
 @keyframes cursor-blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 body.high-contrast .hero-section .text h1 {

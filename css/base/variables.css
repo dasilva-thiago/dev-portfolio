@@ -7,6 +7,10 @@
     --border-color: #d3d3d3;
     --muted-color: #555;
 
+    --social-icon-color: #6c757d;
+    --social-icon-border: rgba(74, 118, 238, 0.15);
+    --social-icon-bg: rgba(255, 255, 255, 0.4); 
+
     /* typography */
     --font-body: 'DM Sans', system-ui, sans-serif;
     --font-mono: 'DM Mono', 'Courier New', monospace;
@@ -32,7 +36,7 @@
     --char-counter-1000: #8a6300;
     --char-counter-1500: #7a4800;
     --char-counter-1800: #662b00;
-    
+
     /* shadows */
     --shadow-link-focus: rgba(74, 118, 238, 0.12);
     --shadow-link-sm: rgba(74, 118, 238, 0.15);
@@ -64,6 +68,10 @@ body.dark-mode {
     --border-color: #2e3038;
     --muted-color: #d1d1d1;
 
+    --social-icon-color: #a0aec0;
+    --social-icon-border: rgba(122, 159, 245, 0.2);
+    --social-icon-bg: rgba(30, 33, 40, 0.4);
+
     --feedback-success-text: #6fcf97;
     --feedback-success-bg: #0d2b1a;
     --feedback-success-border: #1e5c35;
@@ -88,7 +96,11 @@ body.high-contrast {
     --background-color: #000000;
     --white-color: #000000;
     --border-color: #ffffff;
-    --muted-color: #dddddd;
+    --border-color: #ffffff;
+
+    --social-icon-color: #ffffff;
+    --social-icon-border: #ffffff;
+    --social-icon-bg: transparent;
 
     /* feedback messages: high contrast */
     --feedback-success-text: #000000;
