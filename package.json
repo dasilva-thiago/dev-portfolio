@@ -4,14 +4,14 @@
   "description": "A modern, responsive, and accessible developer portfolio built from scratch, designed to showcase real-world projects, technical skills, and continuous professional growth.",
   "main": "index.js",
   "type": "module",
-"scripts": {
+  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "prebuild": "node scripts/update-sitemap.js",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dasilva-thiago/dev-portfolio.git"
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.2.8",
+    "@fontsource-variable/syne": "^5.2.7",
     "@fontsource/dm-mono": "^5.2.7",
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",

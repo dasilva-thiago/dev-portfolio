@@ -25,6 +25,7 @@
 }
 
 .hero-section .text h1 {
+    font-family: var(--font-hero);
     font-size: 85px;
     line-height: 1.2;
     padding-bottom: 15px;
@@ -73,6 +74,7 @@ body:not(.dark-mode) .hero-section .text h1 {
     font-weight: 600;
     color: var(--muted-color);
     letter-spacing: 0.3px;
+    font-style: italic;
 }
 
 .hero-section .text h1,

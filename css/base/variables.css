@@ -14,6 +14,7 @@
     /* typography */
     --font-body: 'DM Sans', system-ui, sans-serif;
     --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-hero: 'Syne Variable', 'DM Sans', system-ui, sans-serif;
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
