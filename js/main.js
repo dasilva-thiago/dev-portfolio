@@ -8,7 +8,6 @@ import './core/contrastMode.js';
 import './core/i18n.js';
 import './ui/contact.js';
 import './ui/animations.js';
-import './ui/projects.js'; 
 import './ui/cv.js';
 import './ui/langDropdown.js';
 import './ui/typewriter.js';

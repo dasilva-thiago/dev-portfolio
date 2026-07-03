@@ -132,11 +132,37 @@ body:not(.dark-mode) .hero-section .text h1 {
 }
 
 .hero-section .text .links a:hover {
+    filter: brightness(.9);
     color: var(--text-color);
     transform: translateY(-4px);
     border: 2px solid var(--text-color);
     border-color: color-mix(in srgb, var(--text-color) 50%, transparent);
     box-shadow: 0 8px 24px var(--shadow-link-sm);
+}
+
+.hero-work-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 2px solid var(--link-color);
+    border-radius: 8px;
+    background: var(--link-color);
+    color: var(--white-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.hero-work-button:hover {
+    filter: brightness(.9);
+    transform: translateY(-4px);
+    border: 2px solid var(--text-color);
+    border-color: color-mix(in srgb, var(--text-color) 50%, transparent);
+    box-shadow: 0 8px 24px var(--shadow-link-md);
 }
 
 /* CV Button */

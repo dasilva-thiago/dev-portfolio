@@ -141,11 +141,6 @@
 
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <link rel="preload" as="image" href="assets/img/profile_edit1.webp" fetchpriority="high">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <!-- Flag Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css"
         integrity="aQuvIWWIbpu/mSqULLDiUveyYiPoJzPKAWjUmGJ+Elm+N/LJhzfZqsutsfw870JS" crossorigin="anonymous"
@@ -333,7 +328,7 @@
 
                 <div class="links" data-aos="fade-up" data-aos-delay="100">
 
-                    <a href="#projects">
+                    <a href="#projects" class="hero-work-button">
                         <i class="fa-solid fa-briefcase"></i>
                         <span data-i18n="nav.projects">View My Work</span>
                     </a>
@@ -652,213 +647,157 @@
             <p class="section-subtitle" data-i18n="sections.projects.subtitle">My recent work - Click for Github
                 Repository</p>
 
-            <div id="projectsCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false"
-                aria-label="Projects Carousel">
+            <div class="projects-showcase">
 
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active"
-                        aria-label="Project 1"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"
-                        aria-label="Project 2"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"
-                        aria-label="Project 3"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"
-                        aria-label="Project 4"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4"
-                        aria-label="Project 5"></button>
+                <!-- Destaque — projects[0] -->
+                <article class="project-card project-card--featured">
+                    <div class="project-image">
+                        <img src="assets/img/BAexp_screenshot.webp" alt="BAexp Screenshot" width="600" height="400"
+                            loading="lazy" />
+                    </div>
+                    <div class="project-info">
+                        <span class="project-index">01</span>
+                        <span class="project-tag" data-i18n="projects.0.tag">Full Stack</span>
+                        <h3 data-i18n="projects.0.title">Buenos Aires Explorer</h3>
+                        <p data-i18n="projects.0.description">Built with C# and Windows Forms, backed by SQLite
+                            as an embedded relational database for local persistence. Integrated a geocoding API
+                            to automate coordinate resolution and implemented distance calculation to generate
+                            optimized visit routes — without relying on external UI frameworks.</p>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>SQLite</span>
+                            <span>Nominatim</span>
+                            <span>Windows Forms</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/dasilva-thiago/BuenosAiresExp" target="_blank"
+                                rel="noopener noreferrer" class="btn-github">
+                                <i class="fa-brands fa-github"></i>
+                                <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Secundário — projects[3] (Travel Explorer) -->
+                <article class="project-card project-card--secondary">
+                    <div class="project-image">
+                        <img src="assets/img/Texp_logo.webp" alt="Travel Explorer Logo" width="600" height="294"
+                            loading="lazy" />
+                    </div>
+                    <div class="project-info">
+                        <span class="project-index">02</span>
+                        <span class="project-tag" data-i18n="projects.3.tag">FULL STACK</span>
+                        <h3 data-i18n="projects.3.title">Travel Explorer</h3>
+                        <p data-i18n="projects.3.description">Still in development, it is an evolution of the
+                            Buenos Aires Explorer project, now focusing on a broader scope — a worldwide web
+                            platform with optimized routing and business integration.</p>
+                        <div class="project-tech">
+                            <span data-i18n="projects.3.tech.2">JavaScript</span>
+                            <span data-i18n="projects.3.tech.3">TypeScript</span>
+                            <span data-i18n="projects.3.tech.4">React</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/dasilva-thiago/TravelExplorer" target="_blank"
+                                rel="noopener noreferrer" class="btn-github">
+                                <i class="fa-brands fa-github"></i>
+                                <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="projects-grid-secondary">
+
+                    <!-- projects[1] (Developer Portfolio) -->
+                    <article class="project-card project-card--compact">
+                        <div class="project-image">
+                            <img src="assets/img/preview.png" alt="Developer Portfolio Screenshot" width="600"
+                                height="400" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <span class="project-index">03</span>
+                            <span class="project-tag" data-i18n="projects.1.tag">Frontend</span>
+                            <h3 data-i18n="projects.1.title">Developer Portfolio</h3>
+                            <p data-i18n="projects.1.description">Built from scratch with vanilla JS and Vite — no
+                                frontend framework. Implemented a custom i18n system with dynamic JSON loading, browser
+                                language detection, and in-memory caching. Dark mode uses a synchronous inline script to
+                                prevent FOUC, and CSS is structured as modular partials assembled at build time.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Vite</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/dasilva-thiago/dev-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="btn-github">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- projects[2] (Aviation Safety) -->
+                    <article class="project-card project-card--compact">
+                        <div class="project-image">
+                            <img src="assets/img/Aviation_Safety_Project_screenshot.webp"
+                                alt="Aviation Safety Project Screenshot" width="600" height="400" loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <span class="project-index">04</span>
+                            <span class="project-tag" data-i18n="projects.2.tag">Backend</span>
+                            <h3 data-i18n="projects.2.title">Aviation Safety Project</h3>
+                            <p data-i18n="projects.2.description">Built a Python data pipeline using Pandas for
+                                transformation and normalization of simulated aeronautical incident records, exported
+                                via OpenPyXL, and visualized in Power BI.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Power BI</span>
+                                <span>Pandas</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/dasilva-thiago/aviation_safety_project" target="_blank"
+                                    rel="noopener noreferrer" class="btn-github">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- projects[4] (Educator Portfolio) -->
+                    <article class="project-card project-card--compact">
+                        <div class="project-image">
+                            <img src="assets/img/evelyn_website.webp" alt="Evelyn's Website" width="600" height="337"
+                                loading="lazy" />
+                        </div>
+                        <div class="project-info">
+                            <span class="project-index">05</span>
+                            <span class="project-tag" data-i18n="projects.4.tag">FRONT END</span>
+                            <h3 data-i18n="projects.4.title">Educator Portfolio</h3>
+                            <p data-i18n="projects.4.description">Built a handcrafted portfolio for a professional
+                                educator, featuring a fully interactive 3D Rubik's Cube built with pure CSS
+                                perspective and transform-style: preserve-3d.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/dasilva-thiago/evelyn-website" target="_blank"
+                                    rel="noopener noreferrer" class="btn-github">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span data-i18n="projectsGithubBtn">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
-
-                <div class="carousel-inner" aria-live="polite">
-
-                    <!-- Project 1 — projects[0] -->
-                    <div class="carousel-item active">
-                        <div class="project-card project-card--stacked">
-                            <div class="project-info">
-                                <span class="project-tag" data-i18n="projects.0.tag">Full Stack</span>
-                                <h3 data-i18n="projects.0.title">Buenos Aires Explorer</h3>
-                                <p data-i18n="projects.0.description">Built with C# and Windows Forms, backed by SQLite
-                                    as an embedded relational
-                                    database for local persistence. Integrated a geocoding API to automate
-                                    coordinate resolution and implemented distance calculation to generate
-                                    optimized visit routes — without relying on external UI frameworks.
-                                </p>
-                                <div class="project-tech">
-                                    <span>C#</span>
-                                    <span>.NET</span>
-                                    <span>SQLite</span>
-                                    <span>Nominatim</span>
-                                    <span>Windows Forms</span>
-                                </div>
-
-                                <div class="project-actions">
-                                    <a href="https://github.com/dasilva-thiago/BuenosAiresExp" target="_blank"
-                                        rel="noopener noreferrer" class="btn-github">
-                                        <i class="fa-brands fa-github"></i>
-                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-image">
-                                <img src="assets/img/BAexp_screenshot.webp" alt="BAexp Screenshot" width="600"
-                                    height="400" loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 — projects[1] -->
-                    <div class="carousel-item">
-                        <div class="project-card no-image">
-                            <div class="project-info">
-                                <span class="project-tag" data-i18n="projects.1.tag">Frontend</span>
-                                <h3 data-i18n="projects.1.title">Developer Portfolio</h3>
-                                <p data-i18n="projects.1.description">Built from scratch with vanilla JS and Vite — no
-                                    frontend framework. Implemented
-                                    a custom i18n system with dynamic JSON loading, browser language detection, and
-                                    in-memory caching. Dark mode uses a synchronous inline script to prevent FOUC,
-                                    and CSS is structured as modular partials assembled at build time.</p>
-                                <div class="project-tech">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>Bootstrap</span>
-                                </div>
-                                <div class="project-actions">
-                                    <a href="https://github.com/dasilva-thiago/dev-portfolio" target="_blank"
-                                        rel="noopener noreferrer" class="btn-github">
-                                        <i class="fa-brands fa-github"></i>
-                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 — projects[2] -->
-                    <div class="carousel-item">
-                        <div class="project-card">
-                            <div class="project-info">
-                                <span class="project-tag" data-i18n="projects.2.tag">Backend</span>
-                                <h3 data-i18n="projects.2.title">Aviation Safety Project</h3>
-                                <p data-i18n="projects.2.description">Built a Python data pipeline using Pandas for
-                                    transformation and normalization
-                                    of simulated aeronautical incident records, exported via OpenPyXL, and
-                                    visualized in Power BI. Deliberately separated data generation, processing,
-                                    and presentation into distinct layers to keep each concern independently
-                                    maintainable.</p>
-                                <div class="project-tech">
-                                    <span>Python</span>
-                                    <span>Power BI</span>
-                                    <span>Pandas</span>
-                                    <span>NumPy</span>
-                                    <span>OpenPyXL</span>
-                                </div>
-
-                                <div class="project-actions">
-                                    <a href="https://github.com/dasilva-thiago/aviation_safety_project" target="_blank"
-                                        rel="noopener noreferrer" class="btn-github">
-                                        <i class="fa-brands fa-github"></i>
-                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-image">
-                                <img src="assets/img/Aviation_Safety_Project_screenshot.webp"
-                                    alt="Aviation Safety Project Screenshot" width="600" height="400" loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 — projects[3] -->
-                    <div class="carousel-item">
-                        <div class="project-card project-card--stacked">
-                            <div class="project-info">
-                                <span class="project-tag" data-i18n="projects.3.tag">FULL STACK</span>
-                                <h3 data-i18n="projects.3.title">Travel Explorer</h3>
-                                <p data-i18n="projects.3.description">Still in development, it is an evolution of the
-                                    Buenos Aires Explorer project, now focusing on a broader scope, a worldwide web
-                                    platform with optimized routing and business integration</p>
-                                <div class="project-tech">
-                                    <span data-i18n="projects.3.tech.0">HTML</span>
-                                    <span data-i18n="projects.3.tech.1">CSS</span>
-                                    <span data-i18n="projects.3.tech.2">JavaScript</span>
-                                    <span data-i18n="projects.3.tech.3">TypeScript</span>
-                                    <span data-i18n="projects.3.tech.4">React</span>
-                                </div>
-
-                                <div class="project-actions">
-                                    <a href="https://github.com/dasilva-thiago/TravelExplorer" target="_blank"
-                                        rel="noopener noreferrer" class="btn-github">
-                                        <i class="fa-brands fa-github"></i>
-                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="project-image">
-                                <img src="assets/img/Texp_logo.webp" alt="Travel Explorer Logo" width="600" height="294"
-                                    loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 — projects[4] -->
-                    <div class="carousel-item">
-                        <div class="project-card project-card">
-                            <div class="project-info">
-                                <span class="project-tag" data-i18n="projects.4.tag">FRONT END</span>
-                                <h3 data-i18n="projects.4.title">Educator Portfolio</h3>
-                                <p data-i18n="projects.4.description">Built a handcrafted portfolio for a professional
-                                    educator. Implemented a fully interactive 3D Rubik's Cube using only CSS perspective
-                                    and transform-style: preserve-3d, with drag-to-rotate, touch inertia, and a scripted
-                                    scramble on load. Dark mode runs on a single data-theme attribute cascading through
-                                    a CSS custom properties design system.</p>
-                                <div class="project-tech">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                </div>
-
-                                <div class="project-actions">
-                                    <a href="https://github.com/dasilva-thiago/evelyn-website" target="_blank"
-                                        rel="noopener noreferrer" class="btn-github">
-                                        <i class="fa-brands fa-github"></i>
-                                        <span data-i18n="projectsGithubBtn">View on GitHub</span>
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="project-image">
-                                <img src="assets/img/evelyn_website.webp" alt="Evelyn's Website" width="600"
-                                    height="337" loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- /carousel-inner -->
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel"
-                    data-bs-slide="prev" aria-label="Previous Project">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
-                    data-bs-slide="next" aria-label="Next Project">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-            </div><!-- /carousel -->
-
-            <!-- Show All toggle -->
-            <div class="projects-toggle">
-                <button id="projects-toggle-btn" class="btn-show-all" aria-expanded="false"
-                    aria-controls="projects-grid">
-                    <i class="fa-solid fa-grip" id="projects-toggle-icon"></i>
-                    <span id="projects-toggle-text" data-i18n="projects-toggle-text">Show All Projects</span>
-                </button>
             </div>
-
-            <!-- Grid view — populado por projects.js -->
-            <div id="projects-grid" class="projects-grid" aria-hidden="true"></div>
-
         </section>
 
         <!-- contact section -->
@@ -867,10 +806,9 @@
             <h2 data-i18n="sections.contact.title">Contact</h2>
 
             <p class="contact-intro" data-i18n="contact.text">
-                Feel free to reach out! I'm currently seeking internship opportunities
+                Feel free to reach out! I'm currently seeking opportunities
                 in technology, especially in software development. If you have a project,
-                opportunity, or just want to connect, I'd be glad to talk. Contact me
-                through this form, email, or LinkedIn — I'll get back to you soon.
+                opportunity, or just want to connect, I'd be glad to talk — I'll get back to you soon.
             </p>
 
             <div class="contact-form-wrapper">
@@ -978,10 +916,6 @@
 
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
-        defer></script>
 
     <script type="module" src="/js/main.js"></script>
 
