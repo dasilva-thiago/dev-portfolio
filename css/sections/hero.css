@@ -84,7 +84,7 @@ body:not(.dark-mode) .hero-section .text h1 {
 
 .hero-description {
     max-width: 650px;
-    margin-top: 1rem;
+    margin-top: 2rem;
     color: var(--muted-color);
     font-size: 1.1rem;
     line-height: 1.8;
