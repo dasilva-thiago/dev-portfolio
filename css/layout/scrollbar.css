@@ -1,0 +1,12 @@
+/* scrollbar styles */
+
+::-webkit-scrollbar{
+    background: var(--social-icon-bg);
+    width: 10px;
+    opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(135deg, #e0e0e0 0%, #7a9ff5 40%, #a78bfa 60%, #e0e0e0 100%);
+    border-radius: 100px;
+}
