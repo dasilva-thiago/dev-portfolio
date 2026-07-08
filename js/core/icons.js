@@ -19,6 +19,7 @@ import {
     faXmark,
     faArrowRight,
     faPaperPlane,
+    faTools,
     faEnvelope as faEnvelopeSolid,
     faFileLines as faFileLinesSolid
 } from '@fortawesome/free-solid-svg-icons';
@@ -58,6 +59,7 @@ library.add(
     faFlask,
     faXmark,
     faArrowRight,
-    faPaperPlane
+    faPaperPlane,
+    faTools
 );
 dom.watch();
