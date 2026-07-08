@@ -1,12 +1,33 @@
 /* scrollbar styles */
-
-::-webkit-scrollbar{
-    background: var(--social-icon-bg);
-    width: 10px;
-    opacity: 0.5;
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0) !important;
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
     background: linear-gradient(135deg, #e0e0e0 0%, #7a9ff5 40%, #a78bfa 60%, #e0e0e0 100%);
     border-radius: 100px;
+
+    border: 2px solid var(--social-icon-bg);
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #5a87fa 40%, #8e62fa 60%, #ffffff 100%);
+    border: 1.5px solid var(--social-icon-bg);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #c2c2c2 0%, #466fe6 40%, #6f42e6 60%, #c2c2c2 100%);
+    border: 1.5px solid var(--social-icon-bg);
 }

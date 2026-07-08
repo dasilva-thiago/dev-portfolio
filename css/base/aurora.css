@@ -81,17 +81,9 @@
 }
 
 @keyframes aurora-drift-1 {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(-40px, 30px) scale(1.05);
-    }
-
-    100% {
-        transform: translate(20px, -50px) scale(0.97);
-    }
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 30px); }
+    100% { transform: translate(20px, -50px); }
 }
 
 @keyframes aurora-drift-2 {
@@ -165,7 +157,7 @@ body:not(.dark-mode) .aurora-orb--3 {
     /* Aurora mobile*/
     .aurora-orb {
         filter: blur(var(--aurora-blur-md));
-        will-change: opacity;
+        will-change: transform, opacity;
     }
 
     .aurora-orb--1 {
