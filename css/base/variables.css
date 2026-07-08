@@ -5,11 +5,12 @@
     --background-color: #eeeff1;
     --white-color: #fff;
     --border-color: #d3d3d3;
-    --muted-color: #555;
+    --muted-color: color-mix(in srgb, #555555 60%, var(--link-color) 40%);
+    --muted-font-weight: 500;
 
     --social-icon-color: #6c757d;
     --social-icon-border: rgba(74, 118, 238, 0.15);
-    --social-icon-bg: rgba(255, 255, 255, 0.4); 
+    --social-icon-bg: rgba(255, 255, 255, 0.4);
 
     /* typography */
     --font-body: 'DM Sans', system-ui, sans-serif;
@@ -67,7 +68,8 @@ body.dark-mode {
     --background-color: #16181d;
     --white-color: #1e2128;
     --border-color: #2e3038;
-    --muted-color: #d1d1d1;
+    --muted-color: color-mix(in srgb, #d1d1d1 60%, var(--link-color) 40%);
+    --muted-font-weight: 500;
 
     --social-icon-color: #a0aec0;
     --social-icon-border: rgba(122, 159, 245, 0.2);
@@ -98,6 +100,8 @@ body.high-contrast {
     --white-color: #000000;
     --border-color: #ffffff;
     --border-color: #ffffff;
+    --muted-color: #ffffff;
+    --muted-font-weight: 500;
 
     --social-icon-color: #ffffff;
     --social-icon-border: #ffffff;

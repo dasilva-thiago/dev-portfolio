@@ -3,6 +3,7 @@ footer {
     text-align: center;
     padding-block: 40px;
     color: var(--muted-color);
+    font-weight: var(--muted-font-weight);
     font-size: 14px;
     border-top: 1.5px solid var(--border-color);
     cursor: default;
