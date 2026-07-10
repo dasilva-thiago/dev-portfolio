@@ -30,6 +30,7 @@
     font-size: 1rem;
     line-height: 1.75;
     margin-bottom: 40px;
+    font-weight: var(--muted-font-weight);
 }
 
 .contact-form-wrapper {

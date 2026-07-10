@@ -25,7 +25,8 @@
 .projects-section .section-subtitle {
     text-align: center;
     margin-bottom: 40px;
-    color: var(--text-color);
+    color: var(--muted-color);
+    font-weight: var(--muted-font-weight);
 }
 
 .project-actions {
@@ -189,10 +190,11 @@
 }
 
 .project-info p {
-    color: var(--text-color);
+    color: var(--muted-color);
     margin-bottom: 16px;
     line-height: 1.6;
     font-size: 14.5px;
+    font-weight: var(--muted-font-weight);
 }
 
 .project-tech {
