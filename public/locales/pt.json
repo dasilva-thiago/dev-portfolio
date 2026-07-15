@@ -81,9 +81,9 @@
       }
     },
     {
-      "title": "Portfólio de Educadora",
-      "description": "Portfólio artesanal para uma pedagoga. Implementei um Cubo Mágico 3D totalmente interativo usando apenas CSS perspective e transform-style: preserve-3d, com rotação por arrastar, inércia por toque e uma animação de embaralhamento no carregamento. O modo escuro funciona com um único atributo data-theme propagado por um sistema de variáveis CSS.",
-      "tag": "FRONT END"
+      "title": "eduAssets",
+      "description": "Sistema de empréstimo e controle de inventário de equipamentos escolares, desenvolvido com JavaScript puro no frontend e Node.js, Prisma e PostgreSQL no backend. Conta com painéis dedicados para registro de empréstimos, devoluções e controle de equipamentos, apoiados por um sistema próprio de tokens de design em CSS e uma arquitetura baseada em componentes.",
+      "tag": "FULL STACK"
     }
   ],
   "about": {

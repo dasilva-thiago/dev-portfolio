@@ -82,9 +82,9 @@
       }
     },
     {
-      "title": "Portafolio de Educadora",
-      "description": "Portafolio artesanal para una pedagoga — sin frameworks. Implementé un Cubo Rubik 3D completamente interactivo usando solo CSS perspective y transform-style: preserve-3d, con rotación al arrastrar, inercia táctil y una animación de mezcla al cargar. El modo oscuro opera con un único atributo data-theme propagado a través de un sistema de variables CSS.",
-      "tag": "FRONT END"
+      "title": "eduAssets",
+      "description": "Sistema de préstamo y control de inventario de equipos escolares, desarrollado con JavaScript puro en el frontend y Node.js, Prisma y PostgreSQL en el backend. Incluye paneles dedicados para el registro de préstamos, devoluciones y control de equipos, respaldados por un sistema propio de tokens de diseño en CSS y una arquitectura basada en componentes.",
+      "tag": "FULL STACK"
     }
   ],
   "about": {
