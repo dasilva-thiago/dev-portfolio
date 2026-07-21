@@ -3,7 +3,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const sitemapPath = resolve(__dirname, '../sitemap.xml');
+const sitemapPath = resolve(__dirname, '../public/sitemap.xml');
 
 const today = new Date().toISOString().slice(0, 10); // formato YYYY-MM-DD
 
