@@ -19,13 +19,13 @@ The project has gone through several iterations — starting as a Bootstrap-base
 ### Desktop
 
 <p align="center">
-  <img src="assets/img/preview.png" alt="Portfolio Preview — Desktop" width="800">
+  <img src="src/assets/img/preview.png" alt="Portfolio Preview — Desktop" width="800">
 </p>
 
 ### Mobile
 
 <p align="center">
-  <img src="assets/img/preview_mobile.png" alt="Portfolio Preview — Mobile" width="300">
+  <img src="src/assets/img/preview_mobile.png" alt="Portfolio Preview — Mobile" width="300">
 </p>
 
 ---
