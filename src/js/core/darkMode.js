@@ -2,8 +2,8 @@ const darkToggle = document.getElementById('dark-toggle');
 const themeColorMeta = document.getElementById('theme-color-meta');
 
 const THEME_COLORS = {
-    light: '#4a76ee', // --link-color light mode
-    dark:  '#7a9ff5', // --link-color dark mode
+    light: '#faf6ec', // --background-color light mode
+    dark: '#16130d', // --background-color dark mode
 };
 
 function updateThemeColor(isDark) {

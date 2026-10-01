@@ -1,7 +1,6 @@
 @import './base/fonts.css';
 @import './base/variables.css';
 @import './base/reset.css';
-@import './base/aurora.css';
 @import './layout/navbar.css';
 @import './layout/footer.css';
 @import './sections/hero.css';

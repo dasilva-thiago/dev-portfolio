@@ -19,7 +19,7 @@
 
 .hero-greeting {
     font-size: 18px;
-    color: var(--font-body);
+    color: var(--muted-color);
     letter-spacing: 0.5px;
     margin-bottom: 20px;
 }
@@ -29,45 +29,9 @@
     font-size: 85px;
     line-height: 1.2;
     padding-bottom: 15px;
-    animation: hero-shimmer 4s linear infinite;
+    color: var(--text-color);
+
 }
-
-/* animated title (h1) */
-
-body.dark-mode .hero-section .text h1 {
-    background: linear-gradient(135deg, #e0e0e0 0%, #7a9ff5 40%, #a78bfa 60%, #e0e0e0 100%);
-    background-size: 300% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-body:not(.dark-mode) .hero-section .text h1 {
-    background: linear-gradient(135deg, #e0e0e0 0%, #7a9ff5 40%, #a78bfa 60%, #e0e0e0 100%);
-    background-size: 300% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-@keyframes hero-shimmer {
-    0% {
-        background-position: 0% center;
-    }
-
-    100% {
-        background-position: 200% center;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero-section .text h1 {
-        animation: none;
-        background: none;
-        -webkit-text-fill-color: var(--text-color);
-    }
-}
-
 
 .hero-subtitle {
     font-size: 32px;
@@ -136,7 +100,7 @@ body:not(.dark-mode) .hero-section .text h1 {
     align-items: center;
     width: 32px;
     height: 32px;
-    border: 0.5px solid var(--social-icon-border);
+    border: 1px solid var(--social-icon-border);
     border-radius: 50%;
     color: var(--social-icon-color);
     background-color: var(--social-icon-bg);
@@ -144,6 +108,10 @@ body:not(.dark-mode) .hero-section .text h1 {
     transition: transform 0.5s ease, box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
     text-decoration: none;
     cursor: pointer;
+}
+
+body.high-contrast .hero-section .text h1 {
+    color: var(--link-color);
 }
 
 .social-circle-icon:hover {
@@ -193,10 +161,10 @@ body:not(.dark-mode) .hero-section .text h1 {
     align-items: center;
     gap: 6px;
     padding: 5px 10px;
-    border: 2px solid var(--link-color);
+    border: 2px solid var(--fill-color);
     border-radius: 8px;
-    background: var(--link-color);
-    color: var(--white-color);
+    background: var(--fill-color);
+    color: var(--on-fill);
     font-family: var(--font-body);
     font-size: 1rem;
     cursor: pointer;
@@ -217,36 +185,6 @@ body:not(.dark-mode) .hero-section .text h1 {
     flex: 5;
 }
 
-/* HERO SECTION — PHOTO INTEGRATION - begin
-
-.hero-section .headshot {
-    flex: 2;
-    display: flex;
-    justify-content: right;
-}
-
-.hero-section .headshot {
-    position: relative;
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.hero-section .headshot::before {
-    content: '';
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, var(--aurora-glow), transparent 65%);
-    filter: blur(var(--aurora-blur-sm));
-    z-index: 0;
-    animation: headshot-glow 4s ease-in-out infinite alternate;
-}
-
-/* HERO SECTION — PHOTO INTEGRATION - end */
 
 @keyframes headshot-glow {
     0% {
@@ -260,30 +198,6 @@ body:not(.dark-mode) .hero-section .text h1 {
     }
 }
 
-/* .hero-section .headshot img {
-    position: relative;
-    z-index: 1;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-
-    
-    box-shadow:
-        0 0 0 3px var(--background-color),
-        0 0 0 5px color-mix(in srgb, var(--link-color) 40%, transparent),
-        0 20px 60px var(--shadow-link-md);
-
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.hero-section .headshot img:hover {
-    transform: scale(1.03);
-    box-shadow:
-        0 0 0 3px var(--background-color),
-        0 0 0 5px var(--link-color),
-        0 25px 70px var(--shadow-link-lg);
-} */
 
 .typewriter-cursor {
     display: inline-block;

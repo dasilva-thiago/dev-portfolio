@@ -35,31 +35,6 @@ heroTl
     .to('.hero-bullets li', { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }, '-=0.35')
     .to('.hero-section .text .links', { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
 
-// ─── PARALLAX (desktop only) ───────────────────────────────────
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (!prefersReducedMotion && window.innerWidth > 740) {
-    gsap.to('.aurora-orb--1', {
-        yPercent: -18,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.5,
-        },
-    });
-    gsap.to('.aurora-orb--2', {
-        yPercent: 12,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 2,
-        },
-    });
-}
 
 // ─── SKILLS — heading + description reveal ────────────────────────
 gsap.from('.skills-section h2, .skills-description', {

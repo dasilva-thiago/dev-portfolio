@@ -17,7 +17,7 @@
     display: block;
     width: 48px;
     height: 3px;
-    background-color: var(--link-color);
+    background-color: var(--fill-color);
     border-radius: 2px;
     margin: 10px auto 0;
 }
@@ -41,7 +41,7 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border: 1.5px solid var(--border-color);
+    border: 1.5px solid var(--border-strong);
     border-radius: 8px;
     font-size: var(--text-sm);
     font-weight: 600;
@@ -91,11 +91,10 @@
     position: relative;
     overflow: hidden;
 
-    background: color-mix(in srgb, var(--white-color) 80%, transparent);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--white-color);
     backdrop-filter: blur(10px);
 
-    border: 1px solid color-mix(in srgb, var(--border-color) 60%, transparent);
+    border: 1px solid var(--border-color);
 
     box-shadow:
         0 4px 24px var(--shadow-dark-sm),
@@ -107,20 +106,6 @@
         border-color 0.35s ease;
 }
 
-.project-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg,
-            transparent 40%,
-            color-mix(in srgb, var(--link-color) 6%, transparent) 60%,
-            transparent 80%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-    z-index: 1;
-}
-
 .project-card:hover {
     transform: translateY(-6px);
     border-color: color-mix(in srgb, var(--link-color) 40%, transparent);
@@ -128,10 +113,6 @@
         0 12px 40px var(--shadow-link-sm),
         0 4px 16px var(--shadow-dark-md),
         inset 0 1px 0 var(--shadow-light-md);
-}
-
-.project-card:hover::before {
-    opacity: 1;
 }
 
 .project-image {
@@ -173,8 +154,8 @@
 .project-tag {
     display: inline-block;
     width: fit-content;
-    background-color: var(--link-color);
-    color: var(--background-color);
+    background-color: var(--fill-color);
+    color: var(--on-fill);
     padding: 3px 10px;
     border-radius: 20px;
     font-size: 12px;
@@ -206,7 +187,8 @@
 
 .project-tech span {
     background-color: var(--background-color);
-    border-left: 2px solid var(--link-color);
+    border: 1px solid var(--border-color);
+    border-left: 2px solid var(--accent-secondary);
     padding: 3px 12px;
     font-size: 13px;
     font-weight: 400;
@@ -224,14 +206,11 @@
 .project-card--featured {
     border: 1.5px solid color-mix(in srgb, var(--link-color) 55%, transparent);
     box-shadow:
-        0 0 0 4px color-mix(in srgb, var(--link-color) 12%, transparent),
-        0 20px 50px var(--shadow-link-md);
+        0 8px 24px var(--shadow-dark-md);
 }
 
 .project-card--featured:hover {
-    box-shadow:
-        0 0 0 4px color-mix(in srgb, var(--link-color) 20%, transparent),
-        0 24px 60px var(--shadow-link-lg);
+    box-shadow: 0 12px 32px var(--shadow-dark-md);
 }
 
 .project-card--featured .project-info {
