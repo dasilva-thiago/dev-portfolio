@@ -43,7 +43,7 @@
 /* ── Consolidated icon grid ── */
 .skills-icon-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 36px;
 }
@@ -327,41 +327,6 @@
     transition: none;
 }
 
-/* ── Plane icon ── */
-.skill-runway-plane {
-    position: absolute;
-    right: -24px;
-    top: 50%;
-    transform: translateY(-130%) rotate(-18deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.skill-runway-fill.is-animated .skill-runway-plane {
-    opacity: 1;
-    animation: plane-float 2.2s ease-in-out infinite;
-}
-
-.skill-runway-item:hover .skill-runway-fill.is-animated .skill-runway-plane {
-    animation: plane-float-hover 1.6s ease-in-out infinite;
-}
-
-.skill-runway-plane svg {
-    width: 18px;
-    height: 18px;
-    color: var(--link-color);
-    transition: transform 0.25s ease;
-    transform: scaleX(-1) rotate(-85deg);
-}
-
-.skill-runway-item:hover .skill-runway-plane svg {
-    transform: scaleX(-1) scale(1.15) rotate(-90deg);
-}
-
 /* ── Keyframes ── */
 @keyframes bar-shimmer {
     0% {
@@ -397,36 +362,9 @@
     }
 }
 
-@keyframes plane-float {
-
-    0%,
-    100% {
-        transform: translateY(-130%) rotate(-18deg);
-    }
-
-    50% {
-        transform: translateY(-155%) rotate(-14deg);
-    }
-}
-
-@keyframes plane-float-hover {
-
-    0%,
-    100% {
-        transform: translateY(-140%) rotate(-22deg);
-    }
-
-    50% {
-        transform: translateY(-170%) rotate(-12deg);
-    }
-}
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-
-    .skill-runway-plane {
-        animation: none !important;
-    }
 
     .skill-runway-item {
         transition: border-color 0.2s ease, box-shadow 0.2s ease;

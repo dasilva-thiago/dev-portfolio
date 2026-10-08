@@ -157,7 +157,7 @@
     background-color: var(--fill-color);
     color: var(--on-fill);
     padding: 3px 10px;
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 12px;
