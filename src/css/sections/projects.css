@@ -66,6 +66,37 @@
     font-size: 16px;
 }
 
+.btn-access {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1.5px solid var(--fill-color);
+    border-radius: 8px;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--on-fill);
+    background-color: var(--fill-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-access:hover {
+    filter: brightness(0.94);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-link-sm);
+}
+
+.btn-access:focus-visible {
+    outline: 3px solid var(--link-color);
+    outline-offset: 3px;
+}
+
+.btn-access i {
+    font-size: 16px;
+}
+
 /* ── Showcase grid ── */
 .projects-showcase {
     display: grid;
