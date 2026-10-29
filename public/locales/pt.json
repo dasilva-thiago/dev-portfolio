@@ -152,5 +152,6 @@
   "projectsGithubBtn": "Ver no GitHub",
   "projects-toggle-text": "Mostrar Todos os Projetos",
   "projects-toggle-back": "Voltar para o Carrossel",
-  "skip_link": "Pular para o conteúdo principal"
+  "skip_link": "Pular para o conteúdo principal",
+  "projectsAccessBtn": "Acessar o sistema"
 }

@@ -6,7 +6,6 @@
     "experience": "Experiencia",
     "contact": "Ponerse en contacto",
     "cv": "CV",
-    
     "aria": {
       "home": "Inicio",
       "skills": "Habilidades",
@@ -19,7 +18,7 @@
       "language": "Idioma"
     },
     "mobile": {
-    "theme": "Temas"
+      "theme": "Temas"
     }
   },
   "hero": {
@@ -153,5 +152,6 @@
   "projectsGithubBtn": "Ver en GitHub",
   "projects-toggle-text": "Mostrar Todos los Proyectos",
   "projects-toggle-back": "Volver al Carrusel",
-  "skip_link": "Saltar al contenido principal"
+  "skip_link": "Saltar al contenido principal",
+  "projectsAccessBtn": "Acceder al sistema"
 }
