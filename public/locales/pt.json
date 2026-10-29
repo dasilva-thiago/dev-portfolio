@@ -82,7 +82,7 @@
     },
     {
       "title": "eduAssets",
-      "description": "Sistema de empréstimo e controle de inventário de equipamentos escolares, desenvolvido com JavaScript puro no frontend e Node.js, Prisma e PostgreSQL no backend. Conta com painéis dedicados para registro de empréstimos, devoluções e controle de equipamentos, apoiados por um sistema próprio de tokens de design em CSS e uma arquitetura baseada em componentes.",
+      "description": "Sistema full-stack para gestão de equipamentos escolares, com frontend em TypeScript e Vite e API Node.js construída com Express 5, Prisma e Zod. Usa PostgreSQL na Neon e oferece suporte opcional a hardware RFID.",
       "tag": "FULL STACK"
     }
   ],
