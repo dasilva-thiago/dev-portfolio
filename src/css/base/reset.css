@@ -7,6 +7,9 @@
 html {
     scroll-behavior: smooth;
     overflow-anchor: none;
+    /* Fill the full viewport on ultrawide — body is max 1400px centered */
+    background-color: var(--background-color);
+    transition: background-color 0.5s ease;
 }
 
 body {
@@ -23,7 +26,6 @@ body {
 
     overflow-x: hidden;
     position: relative;
-    
 }
 
 .section {

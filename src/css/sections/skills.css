@@ -376,6 +376,18 @@
 }
 
 /* ── Responsive ── */
+@media (min-width: 1200px) {
+    .skills-icon-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .skills-icon-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 @media (max-width: 850px) {
     .skills-icon-grid {
         grid-template-columns: repeat(4, 1fr);

@@ -26,11 +26,10 @@
 
 .hero-section .text h1 {
     font-family: var(--font-hero);
-    font-size: 85px;
+    font-size: clamp(52px, 6.5vw, 96px);
     line-height: 1.2;
     padding-bottom: 15px;
     color: var(--text-color);
-
 }
 
 .hero-subtitle {
@@ -235,10 +234,6 @@ body.high-contrast .hero-section .text h1 {
         max-width: 700px;
     }
 
-    .hero-section .text h1 {
-        font-size: 72px;
-    }
-
     .hero-subtitle {
         font-size: 28px;
     }
@@ -263,10 +258,6 @@ body.high-contrast .hero-section .text h1 {
     .hero-greeting {
         font-size: 15px;
         margin-bottom: 16px;
-    }
-
-    .hero-section .text h1 {
-        font-size: 64px;
     }
 
     .hero-subtitle {
@@ -295,10 +286,6 @@ body.high-contrast .hero-section .text h1 {
     .hero-greeting {
         font-size: 13px;
         margin-bottom: 14px;
-    }
-
-    .hero-section .text h1 {
-        font-size: 58px;
     }
 
     .hero-subtitle {
@@ -330,10 +317,6 @@ body.high-contrast .hero-section .text h1 {
         margin-bottom: 12px;
     }
 
-    .hero-section .text h1 {
-        font-size: 52px;
-    }
-
     .hero-subtitle {
         font-size: 22px;
     }
@@ -362,10 +345,6 @@ body.high-contrast .hero-section .text h1 {
 
 
 @media (max-width: 360px) {
-
-    .hero-section .text h1 {
-        font-size: 44px;
-    }
 
     .hero-subtitle {
         font-size: 19px;
