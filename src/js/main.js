@@ -14,3 +14,4 @@ import './ui/typewriter.js';
 import './ui/mobileNav.js';
 import './ui/about.js';
 import './ui/navbarScroll.js';
+import './ui/projectRouter.js';

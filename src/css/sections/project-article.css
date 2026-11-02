@@ -1,0 +1,238 @@
+/* ── Overlay ── */
+.project-article-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--background-color);
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(14px);
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-article-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+body.article-open {
+    overflow: hidden;
+}
+
+/* ── Back button: fixed to overlay (overlay has transform = containing block) ── */
+.project-article-back {
+    position: fixed;
+    top: 1rem;
+    left: clamp(1.25rem, 5vw, 2.5rem);
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 7px 14px;
+    background: color-mix(in srgb, var(--white-color) 92%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px var(--shadow-dark-sm);
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.project-article-back i {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+.project-article-back:hover {
+    color: var(--link-color);
+    border-color: color-mix(in srgb, var(--link-color) 50%, transparent);
+    background: color-mix(in srgb, var(--link-color) 6%, var(--white-color));
+}
+
+.project-article-back:hover i {
+    transform: translateX(-3px);
+}
+
+.project-article-back:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+}
+
+/* ── Hero ── */
+.project-article-hero {
+    position: relative;
+    width: 100%;
+    height: clamp(220px, 48vh, 480px);
+    overflow: hidden;
+    background: var(--white-color);
+}
+
+.project-article-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* Single gradient: slight fade at top + full fade at bottom → background */
+.project-article-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--background-color) 15%, transparent) 0%,
+        transparent 25%,
+        transparent 45%,
+        color-mix(in srgb, var(--background-color) 65%, transparent) 75%,
+        var(--background-color) 100%
+    );
+    pointer-events: none;
+}
+
+/* ── Inner container: caps width so ultrawide looks editorial ── */
+.project-article-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ── Article body ── */
+.project-article-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem) 6rem;
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+/* ── Header: tag + title, tight to hero bottom ── */
+.project-article-header {
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-article-header .project-tag {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+/* h1 uses Syne (font-hero) — it IS the display title, equivalent to the hero h1 */
+.project-article-header h1 {
+    font-family: var(--font-hero);
+    font-size: clamp(2.2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+/* ── Links row ── */
+.project-article-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ── Intro ── */
+.project-article-intro {
+    margin-bottom: 3rem;
+}
+
+.project-article-intro p {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: var(--muted-font-weight);
+    color: var(--muted-color);
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+}
+
+.project-article-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Sections ── */
+.project-article-section {
+    margin-bottom: 2.75rem;
+}
+
+/* h2 uses DM Sans (font-body) per design system — Syne only for hero h1 */
+.project-article-section h2 {
+    font-family: var(--font-body);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.project-article-section h2::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: var(--fill-color);
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-article-section p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--muted-font-weight);
+    color: var(--muted-color);
+    line-height: 1.75;
+    margin: 0 0 1rem;
+}
+
+.project-article-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .project-article-overlay {
+        transition: opacity 0.15s ease;
+        transform: none;
+    }
+    .project-article-back i {
+        transition: none;
+    }
+}
+
+/* ── High contrast: remove gradient, reinforce borders ── */
+html.high-contrast .project-article-hero::after {
+    display: none;
+}
+
+html.high-contrast .project-article-back {
+    background: var(--background-color);
+    box-shadow: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+    .project-article-body {
+        padding-bottom: 4rem;
+    }
+
+    .project-article-back {
+        top: 0.75rem;
+        padding: 6px 12px;
+    }
+}

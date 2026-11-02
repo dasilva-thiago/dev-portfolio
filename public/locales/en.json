@@ -1,0 +1,78 @@
+{
+  "projectArticles": {
+    "back": "Back",
+    "eduassets": {
+      "intro": "eduAssets is a full-stack school equipment management system built to solve a real problem: tracking hundreds of hardware assets with no reliable system in place. It combines a TypeScript/Vite frontend with a Node.js API backed by Express 5, Prisma, and PostgreSQL on Neon — with optional RFID hardware support for automated asset scanning.",
+      "sections": [
+        {
+          "heading": "The Problem",
+          "body": "School environments often rely on spreadsheets or manual logs to track IT equipment — laptops, projectors, tablets. This leads to lost assets, unclear responsibility, and time-consuming audits.\n\nI wanted to build something that actually solved this, not just demonstrate CRUD operations."
+        },
+        {
+          "heading": "Architecture",
+          "body": "The frontend is feature-first: each feature (assets, loans, users) has its own directory with its components, services, and types. The API uses Express 5 with Prisma as the ORM and Zod for runtime validation, deployed on an Oracle Cloud VPS behind Nginx in a Docker container."
+        },
+        {
+          "heading": "What I Learned",
+          "body": "This project taught me to plan an architecture before writing code. Making early decisions — like the feature-first structure and the clear separation between frontend and API — prevented costly refactors throughout development."
+        }
+      ]
+    },
+    "buenos-aires-explorer": {
+      "intro": "Buenos Aires Explorer is a desktop application built in C# with Windows Forms for planning tourist itineraries around the city. It uses SQLite as an embedded database and integrates the Nominatim geocoding API to automatically resolve addresses to coordinates.",
+      "sections": [
+        {
+          "heading": "The Challenge",
+          "body": "The goal was to build a functional application without relying on external UI frameworks or paid services. All routing logic and distance calculation was implemented from scratch, with SQLite for local persistence."
+        },
+        {
+          "heading": "Technical Highlights",
+          "body": "The Nominatim integration converts place names to geographic coordinates automatically. The routing algorithm calculates a visit order based on distances, generating an optimized itinerary directly on the client."
+        }
+      ]
+    },
+    "dev-portfolio": {
+      "intro": "This portfolio was built from scratch with vanilla JavaScript and Vite — no frontend framework. It was a deliberate exercise: understand the mechanisms underneath before depending on abstractions.",
+      "sections": [
+        {
+          "heading": "Custom i18n System",
+          "body": "Instead of using an internationalization library, I built my own system with dynamic JSON loading, browser language detection, and in-memory caching. Language switching applies translations with a smooth CSS transition."
+        },
+        {
+          "heading": "Dark Mode Without Flash",
+          "body": "Dark mode uses a synchronous inline script in the <head> to apply the class before the first render — preventing the flash of unstyled content (FOUC). It's one of the parts I'm most proud of in the project."
+        },
+        {
+          "heading": "CSS Architecture",
+          "body": "CSS is organized as modular partials imported at build time by Vite. Each section has its own file, and theme variables (colors, typography, shadows) are centralized in a single variables file."
+        }
+      ]
+    },
+    "aviation-safety": {
+      "intro": "A Python data pipeline that processes simulated aeronautical incident records, applies transformations and normalizations with Pandas, exports results via OpenPyXL, and generates visualizations in Power BI.",
+      "sections": [
+        {
+          "heading": "The Pipeline",
+          "body": "I deliberately separated the data generation, processing, and presentation stages into distinct layers. Each pipeline stage is independent — making each part easier to test, maintain, and evolve."
+        },
+        {
+          "heading": "Visualizations",
+          "body": "The processed data feeds a Power BI dashboard with metrics on the frequency, type, and severity of simulated incidents. The goal was to practice communicating data clearly to a non-technical audience."
+        }
+      ]
+    },
+    "travel-explorer": {
+      "intro": "Travel Explorer is the evolution of Buenos Aires Explorer — a global web platform for planning tourist itineraries with optimized routes and integration with local businesses and services. Still in development.",
+      "sections": [
+        {
+          "heading": "The Vision",
+          "body": "While Buenos Aires Explorer was a desktop app focused on one city, Travel Explorer is a web platform with no geographic boundaries. The goal is to offer travel planning with optimized routes for any destination."
+        },
+        {
+          "heading": "Stack and Progress",
+          "body": "The project uses React and TypeScript on the frontend. Architecture and scope are still being defined — this is a long-term project developed in parallel with my web development learning."
+        }
+      ]
+    }
+  }
+}

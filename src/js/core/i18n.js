@@ -96,6 +96,8 @@ async function applyLanguage(lang) {
         localStorage.setItem('lang', lang);
         currentLang = lang;
 
+        document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
+
     } catch (err) {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             el.classList.remove('lang-fade');

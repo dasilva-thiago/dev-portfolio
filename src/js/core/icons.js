@@ -18,6 +18,7 @@ import {
     faFlask,
     faXmark,
     faArrowRight,
+    faArrowLeft,
     faPaperPlane,
     faTools,
     faEnvelope as faEnvelopeSolid,
@@ -59,6 +60,7 @@ library.add(
     faFlask,
     faXmark,
     faArrowRight,
+    faArrowLeft,
     faPaperPlane,
     faTools
 );

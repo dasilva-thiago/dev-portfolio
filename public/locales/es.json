@@ -40,7 +40,7 @@
     },
     "projects": {
       "title": "Proyectos",
-      "subtitle": "Mis trabajos recientes — Haz clic para ver el repositorio"
+      "subtitle": "Mis trabajos recientes — Haz clic para saber más"
     },
     "about": {
       "title": "Sobre mí"
@@ -153,5 +153,81 @@
   "projects-toggle-text": "Mostrar Todos los Proyectos",
   "projects-toggle-back": "Volver al Carrusel",
   "skip_link": "Saltar al contenido principal",
-  "projectsAccessBtn": "Acceder al sistema"
+  "projectsAccessBtn": "Acceder al sistema",
+  "projectArticles": {
+    "back": "Volver",
+    "eduassets": {
+      "intro": "eduAssets es un sistema full-stack de gestión de equipos escolares construido para resolver un problema real: rastrear cientos de activos de hardware sin ningún sistema confiable. Combina un frontend en TypeScript con Vite y una API Node.js con Express 5, Prisma y PostgreSQL en Neon — con soporte opcional de hardware RFID para escaneo automático de activos.",
+      "sections": [
+        {
+          "heading": "El Problema",
+          "body": "Los entornos escolares suelen depender de hojas de cálculo o registros manuales para controlar equipos de TI — portátiles, proyectores, tabletas. Esto genera activos perdidos, responsabilidades poco claras y auditorías lentas.\n\nQuería construir algo que realmente resolviera este problema, no solo demostrar operaciones CRUD."
+        },
+        {
+          "heading": "Arquitectura",
+          "body": "El frontend está organizado por funcionalidad: cada feature (activos, préstamos, usuarios) tiene su propio directorio con componentes, servicios y tipos. La API usa Express 5 con Prisma como ORM y Zod para validación en tiempo de ejecución, desplegada en un VPS de Oracle Cloud detrás de Nginx en un contenedor Docker."
+        },
+        {
+          "heading": "Lo que Aprendí",
+          "body": "Este proyecto me enseñó a planificar una arquitectura antes de escribir código. Tomar decisiones tempranas — como la estructura feature-first y la separación clara entre frontend y API — evitó refactorizaciones costosas durante el desarrollo."
+        }
+      ]
+    },
+    "buenos-aires-explorer": {
+      "intro": "Buenos Aires Explorer es una aplicación de escritorio desarrollada en C# con Windows Forms para planificar itinerarios turísticos por la ciudad. Utiliza SQLite como base de datos embebida e integra la API de geocodificación Nominatim para resolver direcciones en coordenadas automáticamente.",
+      "sections": [
+        {
+          "heading": "El Desafío",
+          "body": "El objetivo era construir una aplicación funcional sin depender de frameworks externos de UI ni servicios de pago. Toda la lógica de enrutamiento y cálculo de distancias fue implementada desde cero, con SQLite para persistencia local."
+        },
+        {
+          "heading": "Aspectos Técnicos",
+          "body": "La integración con Nominatim convierte nombres de lugares en coordenadas geográficas automáticamente. El algoritmo de rutas calcula el orden de visita basándose en distancias, generando un itinerario optimizado directamente en el cliente."
+        }
+      ]
+    },
+    "dev-portfolio": {
+      "intro": "Este portafolio fue construido desde cero con JavaScript vanilla y Vite — sin ningún framework frontend. Fue un ejercicio deliberado: entender los mecanismos subyacentes antes de depender de abstracciones.",
+      "sections": [
+        {
+          "heading": "Sistema i18n Personalizado",
+          "body": "En lugar de usar una biblioteca de internacionalización, construí mi propio sistema con carga dinámica de JSON, detección del idioma del navegador y caché en memoria. El cambio de idioma aplica las traducciones con una transición suave en CSS."
+        },
+        {
+          "heading": "Modo Oscuro sin Parpadeo",
+          "body": "El modo oscuro usa un script síncrono inline en el <head> para aplicar la clase antes del primer render — evitando el destello de contenido sin estilos (FOUC). Es una de las partes del proyecto de las que más me enorgullezco."
+        },
+        {
+          "heading": "Arquitectura CSS",
+          "body": "El CSS está organizado como parciales modulares importados en tiempo de compilación por Vite. Cada sección tiene su propio archivo, y las variables de tema (colores, tipografía, sombras) están centralizadas en un único archivo de variables."
+        }
+      ]
+    },
+    "aviation-safety": {
+      "intro": "Un pipeline de datos en Python que procesa registros simulados de incidentes aeronáuticos, aplica transformaciones y normalizaciones con Pandas, exporta los resultados mediante OpenPyXL y genera visualizaciones en Power BI.",
+      "sections": [
+        {
+          "heading": "El Pipeline",
+          "body": "Separé deliberadamente las etapas de generación, procesamiento y presentación de datos en capas distintas. Cada etapa del pipeline es independiente — facilitando las pruebas, el mantenimiento y la evolución de cada parte."
+        },
+        {
+          "heading": "Visualizaciones",
+          "body": "Los datos procesados alimentan un dashboard en Power BI con métricas sobre la frecuencia, tipo y severidad de los incidentes simulados. El objetivo era practicar la comunicación de datos de forma clara para una audiencia no técnica."
+        }
+      ]
+    },
+    "travel-explorer": {
+      "intro": "Travel Explorer es la evolución de Buenos Aires Explorer — una plataforma web global para planificar itinerarios turísticos con rutas optimizadas e integración con establecimientos y servicios locales. Aún en desarrollo.",
+      "sections": [
+        {
+          "heading": "La Visión",
+          "body": "Mientras Buenos Aires Explorer era una aplicación de escritorio enfocada en una ciudad, Travel Explorer es una plataforma web sin fronteras geográficas. El objetivo es ofrecer planificación de viajes con rutas optimizadas para cualquier destino."
+        },
+        {
+          "heading": "Stack y Progreso",
+          "body": "El proyecto usa React y TypeScript en el frontend. La arquitectura y el alcance aún se están definiendo — este es un proyecto a largo plazo desarrollado en paralelo con mi aprendizaje en desarrollo web."
+        }
+      ]
+    }
+  }
 }
