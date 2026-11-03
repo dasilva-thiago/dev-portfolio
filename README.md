@@ -34,14 +34,16 @@ The project has gone through several iterations — starting as a Bootstrap-base
 
 - **Custom design system** — aurora animated background, glassmorphism surfaces, CSS custom properties throughout, no utility-class framework
 - **Dark mode & high contrast mode** — both toggle independently, persist via `localStorage`, and use a synchronous inline script in `<head>` to prevent FOUC before first paint
-- **Multilingual (i18n)** — English, Portuguese, and Spanish, built with a custom system (no external library). English lives directly in the HTML via `data-i18n-default` as the source of truth; Portuguese and Spanish are lazy-loaded from JSON only on explicit language selection and cached in memory
-- **Responsive navigation** — desktop pill navbar that hides on scroll past the hero section and reveals via a hover trigger zone (`IntersectionObserver`-based); a separate right-sliding drawer with overlay/blur for mobile, built independently rather than as a breakpoint variant of the desktop nav
-- **Unified About + Experience section** — split-screen layout (identity/bio on the left, education/experience cards on the right), with expandable modal cards for detailed entries (e.g. internship, past role) using `data-modal` + `aria-expanded`
-- **Skills section** — a consolidated icon grid for core technologies and an animated "runway" progress-bar group for technologies currently being learned, with GSAP-driven fill animation triggered on scroll
-- **Project showcase** — a static, curated grid (featured, secondary, and compact cards), replacing the earlier carousel-based layout
+- **Multilingual (i18n)** — English, Portuguese, and Spanish, built with a custom system (no external library). English lives in the HTML via `data-i18n` attributes and in `locales/en.json` for dynamic content; Portuguese and Spanish are lazy-loaded from JSON only on explicit language selection and cached in memory
+- **Project article pages** — each project card navigates to a dedicated article overlay at `/#projects/<slug>` (e.g. `/#projects/eduassets`). The overlay uses hash-based routing via `projectRouter.js`, renders translated content from the locale JSON files, and re-renders on language change without a reload
+- **Responsive navigation** — desktop pill navbar that hides on scroll past the hero and reveals via a hover trigger zone; a separate right-sliding drawer with overlay/blur for mobile
+- **Unified About + Experience section** — split-screen layout (identity/bio on the left, education/experience cards on the right), with expandable modal cards for detailed entries using `data-modal` + `aria-expanded`
+- **Skills section** — a consolidated icon grid for core technologies (scales from 3 to 5 columns across breakpoints) and an animated "runway" progress-bar group for technologies currently being learned, with GSAP-driven fill animation triggered on scroll
+- **Project showcase** — a curated grid (featured, secondary, and compact cards), with every card clickable to open its article overlay
 - **Contact form** — Web3Forms integration with client-side validation, honeypot spam protection, a live character counter, and localized success/error feedback
 - **Scroll animations** — GSAP + ScrollTrigger for entrance and reveal animations, AOS for lightweight section fade-ins; the two are kept on separate elements to avoid conflicts
 - **Aurora background** — animated radial-gradient orbs with GPU-accelerated motion and parallax on scroll, respects `prefers-reduced-motion`
+- **Ultrawide responsiveness** — `html` element carries the background color so the full viewport is covered beyond the 1400px body; skills grid and hero typography scale up at wide breakpoints
 - **SEO & structured data** — JSON-LD (`ProfilePage`, `Person`, `WebSite`), `sitemap.xml` with an automated `lastmod` update script, and `robots.txt`
 - **Security** — strict Content-Security-Policy defined in `index.html`
 - **Analytics** — Google Analytics via `gtag.js`
@@ -59,7 +61,7 @@ The project has gone through several iterations — starting as a Bootstrap-base
 | GSAP 3 + ScrollTrigger | Hero entrance, scroll-triggered reveals, skills bar animation |
 | AOS 2 | Lightweight scroll fade-ins on select sections |
 | Font Awesome (`@fortawesome/fontawesome-svg-core`) | Icons, tree-shaken as an npm subset rather than the full CDN package |
-| Fontsource (DM Sans, DM Mono) | Self-hosted typography, no Google Fonts CDN dependency |
+| Fontsource (DM Sans, DM Mono, Syne) | Self-hosted typography — Syne for the hero h1, DM Sans for body, DM Mono for labels and code |
 | flag-icons (CDN) | Flag icons for the language switcher |
 | Web3Forms | Contact form email delivery |
 | Vitest | Unit testing |
@@ -76,50 +78,78 @@ dev-portfolio/
 ├── robots.txt
 ├── sitemap.xml
 ├── scripts/
-│   └── update-sitemap.js     # Updates sitemap lastmod on build
-├── css/
-│   ├── styles.css            # Root import — assembles all partials
-│   ├── base/
-│   │   ├── fonts.css         # Fontsource imports
-│   │   ├── variables.css     # CSS custom properties (light, dark, high-contrast)
-│   │   ├── reset.css         # Global reset and base typography
-│   │   └── aurora.css        # Animated background orbs
-│   ├── layout/
-│   │   ├── navbar.css        # Desktop pill navbar + hide/reveal behavior
-│   │   ├── footer.css
-│   │   └── mobile-nav.css    # Mobile hamburger drawer
-│   └── sections/
-│       ├── hero.css
-│       ├── about.css         # About + Experience (unified)
-│       ├── skills.css        # Icon grid + runway progress bars
-│       ├── projects.css
-│       └── contact.css
-├── js/
-│   ├── main.js                # Entry point — imports CSS and all JS modules
-│   ├── core/
-│   │   ├── icons.js           # Font Awesome subset registration
-│   │   ├── darkMode.js
-│   │   ├── contrastMode.js
-│   │   └── i18n.js
-│   ├── ui/
-│   │   ├── animations.js      # GSAP + ScrollTrigger + AOS init
-│   │   ├── contact.js         # Form validation and Web3Forms submission
-│   │   ├── cv.js               # CV download links per language
-│   │   ├── langDropdown.js
-│   │   ├── typewriter.js
-│   │   ├── mobileNav.js
-│   │   ├── about.js            # Expandable modal cards
-│   │   └── navbarScroll.js     # Hide-on-scroll trigger
-│   └── __tests__/
-│       └── i18n.test.js
+│   └── update-sitemap.js        # Updates sitemap lastmod on build
 ├── public/
 │   └── locales/
+│       ├── en.json              # English content for dynamic/article sections
 │       ├── pt.json
 │       └── es.json
-└── assets/
-    ├── img/
-    └── icons/
+└── src/
+    ├── assets/
+    │   └── img/
+    ├── css/
+    │   ├── styles.css           # Root import — assembles all partials
+    │   ├── base/
+    │   │   ├── fonts.css        # Fontsource imports
+    │   │   ├── variables.css    # CSS custom properties (light, dark, high-contrast)
+    │   │   ├── reset.css        # Global reset, base typography, ultrawide html background
+    │   │   └── aurora.css       # Animated background orbs
+    │   ├── layout/
+    │   │   ├── navbar.css       # Desktop pill navbar + hide/reveal behavior
+    │   │   ├── footer.css
+    │   │   ├── mobile-nav.css   # Mobile hamburger drawer
+    │   │   └── scrollbar.css
+    │   └── sections/
+    │       ├── hero.css
+    │       ├── about.css        # About + Experience (unified)
+    │       ├── skills.css       # Icon grid + runway progress bars
+    │       ├── projects.css
+    │       ├── project-article.css  # Article overlay for project pages
+    │       └── contact.css
+    └── js/
+        ├── main.js              # Entry point — imports CSS and all JS modules
+        ├── core/
+        │   ├── icons.js         # Font Awesome subset registration
+        │   ├── darkMode.js
+        │   ├── contrastMode.js
+        │   └── i18n.js          # Custom i18n system + langchange event
+        ├── ui/
+        │   ├── animations.js    # GSAP + ScrollTrigger + AOS init
+        │   ├── contact.js       # Form validation and Web3Forms submission
+        │   ├── cv.js            # CV download links per language
+        │   ├── langDropdown.js
+        │   ├── typewriter.js
+        │   ├── mobileNav.js
+        │   ├── about.js         # Expandable modal cards
+        │   ├── navbarScroll.js  # Hide-on-scroll trigger
+        │   └── projectRouter.js # Hash-based routing for project article pages
+        └── __tests__/
+            └── i18n.test.js
 ```
+
+---
+
+## Project Article Pages
+
+Each project card opens a full-page article overlay routed by URL hash:
+
+```
+/#projects/eduassets
+/#projects/buenos-aires-explorer
+/#projects/dev-portfolio
+/#projects/aviation-safety
+/#projects/travel-explorer
+```
+
+The overlay is rendered by `projectRouter.js`, which:
+
+1. Listens to `hashchange` and the initial page load hash
+2. Lazily fetches the locale JSON for the active language (cached in memory after first fetch)
+3. Renders the article with intro, sections, and project links
+4. Re-renders in place when the user switches language (listens to the `langchange` custom event dispatched by `i18n.js`)
+5. Navigates back to `/#projects` when the back button is clicked or the hash changes
+
+Article content is stored under `projectArticles.<slug>` in each locale JSON file.
 
 ---
 
@@ -142,10 +172,10 @@ Localized feedback messages are defined in `locales/pt.json` and `locales/es.jso
 
 Language priority on load: `localStorage` → browser language → English (default).
 
-- English text lives directly in the HTML as `data-i18n-default` values — no JSON fetch needed
+- English text lives in the HTML via `data-i18n` attributes for static content, and in `public/locales/en.json` for dynamic content (project articles)
 - Portuguese and Spanish are fetched from `public/locales/` only when explicitly selected, and cached in memory for the rest of the session
 - Switching language updates the page instantly with no reload, including form placeholders and `aria-label` attributes
-- All translatable elements use `data-i18n` (or `data-i18n-aria`) keys for targeting
+- `i18n.js` dispatches a `langchange` custom event after each language switch, which modules like `projectRouter.js` listen to for re-rendering
 
 ---
 
@@ -153,12 +183,11 @@ Language priority on load: `localStorage` → browser language → English (defa
 
 | Project | Stack | Description |
 |---|---|---|
+| [eduAssets](https://github.com/dasilva-thiago/edu-assets) | TypeScript, Vite, Node.js, Express 5, Prisma, PostgreSQL (Neon), Zod | Full-stack system for managing school hardware assets, with optional RFID support and a feature-first frontend architecture |
 | [Buenos Aires Explorer](https://github.com/dasilva-thiago/BuenosAiresExp) | C#, .NET, SQLite, Windows Forms | Desktop app for organizing points of interest with geocoding API integration, distance calculation, and route planning |
-| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Vite | This website — custom i18n system, FOUC-safe dark mode, modular CSS architecture |
+| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Vite | This website — custom i18n system, FOUC-safe dark mode, hash-based project article pages, modular CSS architecture |
 | [Aviation Safety Project](https://github.com/dasilva-thiago/aviation_safety_project) | Python, Pandas, NumPy, OpenPyXL, Power BI | Data pipeline with layered architecture: generation → transformation → export → visualization |
-| [Travel Explorer](https://github.com/dasilva-thiago/TravelExplorer) | HTML, CSS, JavaScript, TypeScript, React | In development — an evolution of Buenos Aires Explorer with a global scope, optimized routing, and business integration |
-| [Educator Portfolio](https://github.com/dasilva-thiago/evelyn-website) | HTML, CSS, JavaScript | Handcrafted portfolio for a professional educator, featuring a fully interactive 3D Rubik's Cube built with pure CSS `perspective` and `transform-style: preserve-3d` |
-| Industrial Safety Localization | Root cause analysis, technical documentation | Identified a multilingual documentation gap at Tenaris and led the full corrective process end-to-end |
+| [Travel Explorer](https://github.com/dasilva-thiago/TravelExplorer) | HTML, CSS, JavaScript, TypeScript, React | In development — evolution of Buenos Aires Explorer with global scope, optimized routing, and business integration |
 
 ---
 
