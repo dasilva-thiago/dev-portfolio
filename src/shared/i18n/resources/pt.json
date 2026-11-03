@@ -1,0 +1,286 @@
+{
+  "nav": {
+    "projects": "Confira Meus Trabalhos",
+    "contact": "Entre em Contato",
+    "cv": "Currículo",
+    "aria": {
+      "home": "Início",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "contact": "Contato",
+      "darkToggle": "Temas",
+      "contrastToggle": "Alto contraste",
+      "cv": "Currículo",
+      "language": "Idioma"
+    },
+    "mobile": {
+      "theme": "Temas"
+    }
+  },
+  "a11y": {
+    "skipLink": "Pular para o conteúdo principal",
+    "menu": "Menu",
+    "close": "Fechar",
+    "toggleDark": "Alternar modo escuro",
+    "toggleContrast": "Alternar alto contraste",
+    "resume": "Currículo",
+    "mainNavigation": "Navegação principal"
+  },
+  "hero": {
+    "greeting": "olá, seja bem-vindo ao meu portfólio!",
+    "title": "sou thiago,",
+    "typewriter": [
+      "um desenvolvedor full stack",
+      "um técnico de suporte em TI",
+      "estudante eng. computação"
+    ],
+    "description": "Desenvolvo software com foco em resolver problemas reais e manter as coisas simples."
+  },
+  "sections": {
+    "about": {
+      "title": "Sobre Mim",
+      "education": "Educação",
+      "experience": "Experiência"
+    },
+    "skills": {
+      "title": "Habilidades",
+      "description": "Estas são as principais tecnologias que venho estudando e aplicando em projetos, com foco em desenvolvimento backend e frontend, resolução de problemas e construção de uma base sólida em engenharia de software.",
+      "consolidated": "Consolidadas",
+      "evolving": "em evolução"
+    },
+    "projects": {
+      "title": "Projetos",
+      "subtitle": "Meus trabalhos recentes — Clique para saber mais"
+    },
+    "contact": {
+      "title": "Contato"
+    }
+  },
+  "about": {
+    "role": "Estudante de Engenharia da Computação",
+    "quote": "Sou um <em>desenvolvedor dedicado e curioso</em> no início da minha carreira, com grande capacidade de aprender rapidamente e me adaptar a novos desafios.",
+    "bio": "Minha experiência tanto em laboratório técnico quanto em suporte de TI me ajudou a desenvolver disciplina, atenção aos detalhes e habilidades de resolução de problemas — qualidades que impulsionam meu crescimento como desenvolvedor de software.",
+    "seeMore": "veja mais"
+  },
+  "experience": {
+    "univesp": {
+      "date": "2025 - 2030",
+      "title": "Estudante de Engenharia da Computação",
+      "place": "UNIVESP"
+    },
+    "senac": {
+      "date": "2025 - 2027",
+      "title": "Técnico em Informática",
+      "place": "SENAC"
+    },
+    "seduc": {
+      "date": "2026 - Presente",
+      "title": "Estagiário de Tecnologia Educacional e TI",
+      "place": "SEDUC-SP - Secretaria da Educação do Estado de São Paulo",
+      "description": "Atuando em iniciativas de tecnologia educacional e projetos de transformação digital em ambientes escolares públicos, trabalhando com gerenciamento de plataformas, operações de tecnologia, acessibilidade digital e integração de ferramentas digitais em atividades acadêmicas e administrativas.",
+      "tags": [
+        "Gestão de Plataformas",
+        "Acessibilidade Digital"
+      ]
+    },
+    "tenaris": {
+      "date": "2023 - 2025",
+      "title": "Operador Técnico de Laboratório",
+      "place": "Tenaris",
+      "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas."
+    }
+  },
+  "initiative": {
+    "industrialSafety": {
+      "title": "Localização de Segurança Industrial",
+      "description": "Identifiquei uma falha de documentação em um ambiente industrial e liderei todo o processo corretivo: análise de causa raiz, tradução técnica e implementação padronizada em todo o laboratório. Apliquei o mesmo pensamento sistemático usado em debugging — isolar o problema, rastrear a causa, implementar e validar a correção.",
+      "imageAlt": "Tradução de etiquetas de segurança industrial",
+      "tags": [
+        "Análise de Causa Raiz",
+        "Melhoria de Processos"
+      ]
+    }
+  },
+  "buttons": {
+    "github": "Ver no GitHub",
+    "access": "Acessar o sistema"
+  },
+  "projectArticle": {
+    "back": "Voltar"
+  },
+  "projects": {
+    "eduassets": {
+      "tag": "FULL STACK",
+      "title": "eduAssets",
+      "alt": "Banner do eduAssets",
+      "description": "Sistema full-stack para gestão de equipamentos escolares, com frontend em TypeScript e Vite e API Node.js construída com Express 5, Prisma e Zod. Usa PostgreSQL na Neon e oferece suporte opcional a hardware RFID.",
+      "article": {
+        "intro": [
+          "O eduAssets é um sistema de gestão de equipamentos escolares desenvolvido para resolver um problema real: rastrear centenas de itens de hardware sem nenhum controle confiável. Combina um frontend em TypeScript com Vite e uma API Node.js com Express 5, Prisma e PostgreSQL no Neon — com suporte opcional a hardware RFID para leitura automática de patrimônios."
+        ],
+        "sections": [
+          {
+            "heading": "O Problema",
+            "paragraphs": [
+              "Ambientes escolares frequentemente dependem de planilhas ou registros manuais para controlar equipamentos de TI — notebooks, projetores, tablets. Isso resulta em patrimônios perdidos, responsabilidade difusa e auditorias demoradas.",
+              "Queria construir algo que resolvesse o problema de verdade, não apenas uma demonstração de CRUD."
+            ]
+          },
+          {
+            "heading": "Arquitetura",
+            "paragraphs": [
+              "O frontend é organizado por feature: cada funcionalidade (ativos, empréstimos, usuários) tem seu próprio diretório com componentes, serviços e tipos. A API usa Express 5 com Prisma como ORM e Zod para validação em runtime, hospedada em um VPS na Oracle Cloud atrás do Nginx em container Docker."
+            ]
+          },
+          {
+            "heading": "O que aprendi",
+            "paragraphs": [
+              "Este projeto foi onde aprendi a planejar uma arquitetura antes de escrever código. Tomar decisões cedo — como a estrutura feature-first e a separação entre frontend e API — evitou refatorações custosas ao longo do desenvolvimento."
+            ]
+          }
+        ]
+      }
+    },
+    "buenos-aires-explorer": {
+      "tag": "Full Stack",
+      "title": "Buenos Aires Explorer",
+      "alt": "Captura de tela do Buenos Aires Explorer",
+      "description": "Desenvolvido em C# com Windows Forms, usando SQLite como banco de dados relacional embarcado para persistência local. Integrei uma API de geocoding para resolução automática de coordenadas e implementei cálculo de distância para gerar rotas de visita otimizadas - sem depender de frameworks de UI externos.",
+      "article": {
+        "intro": [
+          "Buenos Aires Explorer é um aplicativo desktop desenvolvido em C# com Windows Forms que permite planejar roteiros turísticos pela cidade. Utiliza SQLite como banco de dados embarcado e integra a API Nominatim para geocodificação automática de endereços."
+        ],
+        "sections": [
+          {
+            "heading": "O Desafio",
+            "paragraphs": [
+              "O objetivo era construir um aplicativo funcional sem depender de frameworks externos de UI ou serviços pagos. Toda a lógica de roteamento e cálculo de distâncias foi implementada do zero, com SQLite para persistência local."
+            ]
+          },
+          {
+            "heading": "Destaques Técnicos",
+            "paragraphs": [
+              "A integração com Nominatim permite converter nomes de lugares em coordenadas geográficas automaticamente. O algoritmo de rota calcula a ordem de visitação com base em distâncias, gerando um itinerário otimizado diretamente no cliente."
+            ]
+          }
+        ]
+      }
+    },
+    "dev-portfolio": {
+      "tag": "Frontend",
+      "title": "Portfólio de Desenvolvedor",
+      "alt": "Captura de tela do Portfólio de Desenvolvedor",
+      "description": "Reconstruído de um site em JavaScript vanilla para React, TypeScript e Tailwind CSS com React Router, com todas as páginas pré-renderizadas em HTML estático nos três idiomas. Metadados de SEO por página, Content-Security-Policy baseada em hashes, temas escuro e de alto contraste sem flash e testes de ponta a ponta com verificações automáticas de acessibilidade.",
+      "article": {
+        "intro": [
+          "Este portfólio começou como um site escrito à mão em JavaScript vanilla. Ele foi migrado em fases planejadas e testadas para React, TypeScript e Tailwind CSS — mantendo o mesmo design e transformando cada projeto em uma página real, com endereço, prévia de compartilhamento e metadados de busca próprios."
+        ],
+        "sections": [
+          {
+            "heading": "Arquitetura",
+            "paragraphs": [
+              "O React Router roda em modo framework com a renderização no servidor desligada: todas as páginas — a inicial e cada projeto, em inglês, português e espanhol — são pré-renderizadas como HTML estático no build e depois hidratadas no navegador. Não há servidor em execução para manter.",
+              "O código é organizado por responsabilidade (app, pages, widgets, features, entities, shared), e um teste faz o build falhar se uma camada inferior importar uma superior."
+            ]
+          },
+          {
+            "heading": "Idiomas e SEO",
+            "paragraphs": [
+              "O idioma faz parte da URL (/, /pt, /es). Cada página tem título, descrição, endereço canônico, alternativas hreflang, prévia para redes sociais e dados estruturados próprios, e o sitemap é gerado a partir dos mesmos dados das rotas.",
+              "Todo o texto fica em arquivos JSON tipados: uma chave escrita errado falha na checagem de tipos, e testes garantem que os três idiomas tenham sempre a mesma estrutura."
+            ]
+          },
+          {
+            "heading": "Segurança, acessibilidade e desempenho",
+            "paragraphs": [
+              "Uma Content-Security-Policy é gerada para cada página com o hash de cada script inline, então nenhum código inline roda sem ter sido incluído no build. Um pequeno script no head aplica o tema e o idioma salvos antes da primeira pintura — sem flash de tema errado.",
+              "As animações respeitam a preferência de movimento reduzido e só carregam quando o navegador está ocioso; a primeira visita baixa cerca de 140 kB de JavaScript. Uma suíte Playwright cobre rotas, idiomas, temas, o formulário de contato e verificações automáticas de acessibilidade."
+            ]
+          }
+        ]
+      }
+    },
+    "aviation-safety": {
+      "tag": "Backend",
+      "title": "Projeto de Segurança na Aviação",
+      "alt": "Captura de tela do Projeto de Segurança na Aviação",
+      "description": "Construí um pipeline de dados em Python usando Pandas para transformação e normalização de registros simulados de incidentes aeronáuticos, exportados via OpenPyXL, e visualizados no Power BI. Separei deliberadamente geração, processamento e apresentação de dados em camadas distintas para manter cada preocupação independentemente sustentável.",
+      "article": {
+        "intro": [
+          "Um pipeline de dados em Python que processa registros simulados de incidentes aeronáuticos, aplica transformações e normalizações com Pandas, exporta os resultados via OpenPyXL e gera visualizações no Power BI."
+        ],
+        "sections": [
+          {
+            "heading": "O Pipeline",
+            "paragraphs": [
+              "Separei deliberadamente as etapas de geração, processamento e apresentação dos dados em camadas distintas. Cada estágio do pipeline é independente — facilitando testes, manutenção e evolução futura de cada parte."
+            ]
+          },
+          {
+            "heading": "Visualizações",
+            "paragraphs": [
+              "Os dados processados alimentam um dashboard no Power BI com métricas sobre frequência, tipo e severidade dos incidentes simulados. O objetivo era praticar a comunicação de dados de forma clara para uma audiência não técnica."
+            ]
+          }
+        ]
+      }
+    },
+    "travel-explorer": {
+      "tag": "FULL STACK",
+      "title": "Travel Explorer",
+      "alt": "Logo do Travel Explorer",
+      "description": "Ainda em desenvolvimento, é uma evolução do projeto Buenos Aires Explorer, agora com um escopo mais amplo: uma plataforma web global com rotas otimizadas e integração de estabelecimentos e serviços.",
+      "article": {
+        "intro": [
+          "Travel Explorer é a evolução do Buenos Aires Explorer — uma plataforma web global para planejamento de roteiros turísticos com rotas otimizadas e integração com estabelecimentos e serviços locais. Ainda em desenvolvimento."
+        ],
+        "sections": [
+          {
+            "heading": "A Visão",
+            "paragraphs": [
+              "Enquanto o Buenos Aires Explorer era um aplicativo desktop focado em uma cidade, o Travel Explorer é uma plataforma web sem fronteiras geográficas. O objetivo é oferecer planejamento de viagens com rotas otimizadas para qualquer destino."
+            ]
+          },
+          {
+            "heading": "Stack e Progresso",
+            "paragraphs": [
+              "O projeto usa React e TypeScript no frontend. A arquitetura e o escopo ainda estão sendo definidos — este é um projeto de longo prazo desenvolvido em paralelo com meu aprendizado em desenvolvimento web."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "contact": {
+    "intro": "Sinta-se à vontade para entrar em contato! Atualmente busco oportunidades de estágio na área de tecnologia, especialmente em desenvolvimento de software. Se tiver um projeto, oportunidade ou quiser trocar ideias, ficarei feliz em conversar. Você pode falar comigo por este formulário, e-mail ou LinkedIn — responderei em breve.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Seu Nome",
+      "email": "Email",
+      "emailPlaceholder": "seu_email@exemplo.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Sua Mensagem",
+      "button": "Entrar em Contato",
+      "sending": "Enviando..."
+    },
+    "feedback": {
+      "emptyFields": "Por favor, preencha todos os campos antes de enviar.",
+      "invalidEmail": "Por favor, insira um endereço de email válido.",
+      "success": "Mensagem recebida! Responderei o mais breve possível.",
+      "failed": "Falha ao enviar. Tente novamente mais tarde.",
+      "error": "Ocorreu um erro. Tente novamente mais tarde."
+    }
+  },
+  "meta": {
+    "homeTitle": "Thiago da Silva | Desenvolvedor Full Stack",
+    "homeDescription": "Portfólio de Thiago da Silva, estudante de Engenharia da Computação com foco em desenvolvimento backend, C#, Python e JavaScript. Aberto a estágios e oportunidades em tecnologia.",
+    "personDescription": "Estudante de Engenharia da Computação e Técnico em Informática que desenvolve aplicações reais com C#, Python, JavaScript e Node.js.",
+    "jobTitle": "Estudante de Engenharia da Computação"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "A página que você procura não existe ou foi movida.",
+    "home": "Voltar para a página inicial"
+  }
+}

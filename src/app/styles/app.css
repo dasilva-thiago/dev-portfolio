@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/dm-sans/wght-italic.css";
+@import "@fontsource-variable/syne";
+@import "@fontsource/dm-mono/400.css";
+@import "@fontsource/dm-mono/500.css";
+@import "@fortawesome/fontawesome-svg-core/styles.css" layer(base);
+@import "../../shared/styles/tokens.css";
+@import "../../widgets/site-nav/hamburger.css" layer(components);
+@import "../../features/experience-details/dialog.css" layer(components);
+@import "../../shared/styles/scrollbar.css" layer(components);
+
+/* max-bpN is `width < N+1px`, i.e. the legacy `max-width: Npx`; min-bpN is `width >= Npx`. */
+@theme {
+  --breakpoint-bp360: 361px;
+  --breakpoint-bp480: 481px;
+  --breakpoint-bp600: 601px;
+  --breakpoint-bp640: 641px;
+  --breakpoint-bp740: 741px;
+  --breakpoint-bp768: 769px;
+  --breakpoint-bp850: 851px;
+  --breakpoint-bp1024: 1025px;
+  --breakpoint-bp1200: 1200px;
+  --breakpoint-bp1400: 1400px;
+}
+
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+@custom-variant hc (&:where(.high-contrast, .high-contrast *));
+
+@theme inline {
+  --color-text: var(--text-color);
+  --color-muted: var(--muted-color);
+  --color-link: var(--link-color);
+  --color-fill: var(--fill-color);
+  --color-on-fill: var(--on-fill);
+  --color-surface: var(--white-color);
+  --color-page: var(--background-color);
+  --color-line: var(--border-color);
+  --color-line-strong: var(--border-strong);
+  --color-accent: var(--accent-secondary);
+  --color-logo-bg: #0d1420;
+  --color-social: var(--social-icon-color);
+  --color-social-border: var(--social-icon-border);
+  --color-social-bg: var(--social-icon-bg);
+
+  --animate-cursor-blink: cursor-blink 0.75s step-end infinite;
+  --animate-spin-fast: spin-fast 0.7s linear infinite;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin-fast {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+html {
+  line-height: normal;
+  scroll-behavior: smooth;
+  overflow-anchor: none;
+  background-color: var(--background-color);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+  font-family: var(--font-body);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Set by the pre-paint script while it replaces this document with the localized one. */
+html[data-redirecting] body {
+  visibility: hidden;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}

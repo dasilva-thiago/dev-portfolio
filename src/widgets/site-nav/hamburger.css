@@ -1,0 +1,43 @@
+/* Hamburger icon and its "squeeze" morph: three stacked bars driven by pseudo-elements. */
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 1.5px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease, top 0.3s ease;
+}
+
+.hamburger-inner {
+    top: 50%;
+    margin-top: -2px;
+    transform: translateY(-50%);
+}
+
+.hamburger-inner::before {
+    content: '';
+    top: -6px;
+}
+
+.hamburger-inner::after {
+    content: '';
+    top: 6px;
+}
+
+.hamburger-wrapper.is-active .hamburger-inner {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger-wrapper.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+}
+
+.hamburger-wrapper.is-active .hamburger-inner::after {
+    top: 0;
+    transform: rotate(-90deg);
+}

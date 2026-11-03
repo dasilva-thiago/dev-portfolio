@@ -1,214 +1,114 @@
 # Thiago da Silva — Developer Portfolio
 
-A modern, responsive, and accessible developer portfolio built from scratch with vanilla JavaScript, showcasing real-world projects, technical skills, and professional experience.
+A multilingual, accessible developer portfolio built with React, TypeScript and Tailwind CSS, pre-rendered to static HTML for every route.
 
 **Live:** [dasilva-thiago.dev](https://www.dasilva-thiago.dev)
 
 ---
 
-## Motivation
+## Highlights
 
-This portfolio was built to solve a concrete problem: presenting technical skills, projects, and contact information in a clear, professional, and accessible way to recruiters and collaborators.
-
-The project has gone through several iterations — starting as a Bootstrap-based static site and evolving into a custom design system with modular CSS, GSAP-driven animations, and a fully custom i18n implementation. Every architectural decision was made to strengthen my understanding of frontend structure, accessibility, and build tooling, without relying on frontend frameworks.
-
----
-
-## UI Overview
-
-### Desktop
-
-<p align="center">
-  <img src="src/assets/img/preview.png" alt="Portfolio Preview — Desktop" width="800">
-</p>
-
-### Mobile
-
-<p align="center">
-  <img src="src/assets/img/preview_mobile.png" alt="Portfolio Preview — Mobile" width="300">
-</p>
+- **Static output, real routes.** Every page is pre-rendered at build time with React Router (`ssr: false` + `prerender`): the home page and the five project pages, each in English, Portuguese and Spanish, plus a real `404.html`. No runtime server, no client-only shell for crawlers.
+- **Clean, localized URLs.** `/`, `/pt`, `/es` and `/projects/<slug>` under each locale. Language is part of the URL; switching language is a navigation that keeps the page and the scroll position.
+- **Per-page SEO.** Title, description, canonical URL, `hreflang` alternates, Open Graph and Twitter cards, JSON-LD (`ProfilePage` / `Person` / `WebSite` on the home page, `SoftwareSourceCode` / `BreadcrumbList` on project pages), and a `sitemap.xml` generated from the same route data.
+- **Strict Content-Security-Policy.** Delivered per page as a `<meta>` tag; every inline script is allow-listed by SHA-256 hash computed at build time. No `'unsafe-inline'` or `'unsafe-eval'` for scripts.
+- **No flash of the wrong theme or language.** A tiny synchronous script in `<head>` applies the stored/system theme and sends a first-time visitor at `/` to `/pt` or `/es` before anything paints.
+- **Accessibility.** Dark mode and high-contrast mode (independent), native `<dialog>` for the experience details, keyboard-operable navigation, `prefers-reduced-motion` respected by every animation, automated axe checks on every theme and locale.
+- **Small by design.** About 139 kB of JavaScript (gzip) on first load; animation code is loaded on idle time; icons are tree-shaken data rendered as inline SVG; images are WebP.
 
 ---
 
-## Features
-
-- **Custom design system** — aurora animated background, glassmorphism surfaces, CSS custom properties throughout, no utility-class framework
-- **Dark mode & high contrast mode** — both toggle independently, persist via `localStorage`, and use a synchronous inline script in `<head>` to prevent FOUC before first paint
-- **Multilingual (i18n)** — English, Portuguese, and Spanish, built with a custom system (no external library). English lives in the HTML via `data-i18n` attributes and in `locales/en.json` for dynamic content; Portuguese and Spanish are lazy-loaded from JSON only on explicit language selection and cached in memory
-- **Project article pages** — each project card navigates to a dedicated article overlay at `/#projects/<slug>` (e.g. `/#projects/eduassets`). The overlay uses hash-based routing via `projectRouter.js`, renders translated content from the locale JSON files, and re-renders on language change without a reload
-- **Responsive navigation** — desktop pill navbar that hides on scroll past the hero and reveals via a hover trigger zone; a separate right-sliding drawer with overlay/blur for mobile
-- **Unified About + Experience section** — split-screen layout (identity/bio on the left, education/experience cards on the right), with expandable modal cards for detailed entries using `data-modal` + `aria-expanded`
-- **Skills section** — a consolidated icon grid for core technologies (scales from 3 to 5 columns across breakpoints) and an animated "runway" progress-bar group for technologies currently being learned, with GSAP-driven fill animation triggered on scroll
-- **Project showcase** — a curated grid (featured, secondary, and compact cards), with every card clickable to open its article overlay
-- **Contact form** — Web3Forms integration with client-side validation, honeypot spam protection, a live character counter, and localized success/error feedback
-- **Scroll animations** — GSAP + ScrollTrigger for entrance and reveal animations, AOS for lightweight section fade-ins; the two are kept on separate elements to avoid conflicts
-- **Aurora background** — animated radial-gradient orbs with GPU-accelerated motion and parallax on scroll, respects `prefers-reduced-motion`
-- **Ultrawide responsiveness** — `html` element carries the background color so the full viewport is covered beyond the 1400px body; skills grid and hero typography scale up at wide breakpoints
-- **SEO & structured data** — JSON-LD (`ProfilePage`, `Person`, `WebSite`), `sitemap.xml` with an automated `lastmod` update script, and `robots.txt`
-- **Security** — strict Content-Security-Policy defined in `index.html`
-- **Analytics** — Google Analytics via `gtag.js`
-- **Testing** — Vitest unit tests covering the i18n module
-
----
-
-## Tech Stack
+## Tech stack
 
 | Technology | Purpose |
 |---|---|
-| HTML5 / CSS3 | Structure and styling |
-| JavaScript (vanilla, ES modules) | All application logic — no frontend framework |
-| Vite 8 | Build tool and local dev server |
-| GSAP 3 + ScrollTrigger | Hero entrance, scroll-triggered reveals, skills bar animation |
-| AOS 2 | Lightweight scroll fade-ins on select sections |
-| Font Awesome (`@fortawesome/fontawesome-svg-core`) | Icons, tree-shaken as an npm subset rather than the full CDN package |
-| Fontsource (DM Sans, DM Mono, Syne) | Self-hosted typography — Syne for the hero h1, DM Sans for body, DM Mono for labels and code |
-| flag-icons (CDN) | Flag icons for the language switcher |
-| Web3Forms | Contact form email delivery |
-| Vitest | Unit testing |
+| React 19 + TypeScript (strict) | UI and types |
+| React Router (Framework Mode, `ssr: false`) | Routing and build-time pre-rendering |
+| Vite | Build tool and dev server |
+| Tailwind CSS v4 | Styling, mapped to the design tokens in `src/shared/styles/tokens.css` |
+| GSAP + ScrollTrigger | Scroll reveals (lazy-loaded, reduced-motion aware) |
+| Font Awesome (icon data only) | Icons rendered as inline SVG |
+| Fontsource (DM Sans, DM Mono, Syne) | Self-hosted fonts |
+| Web3Forms | Contact form delivery (client-side, public access key) |
+| Vitest + Testing Library | Unit and component tests |
+| Playwright + axe-core | End-to-end, SEO, security and accessibility tests |
 
 ---
 
-## Project Structure
+## Project structure
+
+A lightweight, feature-oriented layout inspired by Feature-Sliced Design. Higher layers may import lower ones, never the reverse, and slices on the same layer do not import each other. `src/architecture.test.ts` enforces this.
 
 ```
-dev-portfolio/
-├── index.html
-├── vite.config.js
-├── package.json
-├── robots.txt
-├── sitemap.xml
-├── scripts/
-│   └── update-sitemap.js        # Updates sitemap lastmod on build
-├── public/
-│   └── locales/
-│       ├── en.json              # English content for dynamic/article sections
-│       ├── pt.json
-│       └── es.json
-└── src/
-    ├── assets/
-    │   └── img/
-    ├── css/
-    │   ├── styles.css           # Root import — assembles all partials
-    │   ├── base/
-    │   │   ├── fonts.css        # Fontsource imports
-    │   │   ├── variables.css    # CSS custom properties (light, dark, high-contrast)
-    │   │   ├── reset.css        # Global reset, base typography, ultrawide html background
-    │   │   └── aurora.css       # Animated background orbs
-    │   ├── layout/
-    │   │   ├── navbar.css       # Desktop pill navbar + hide/reveal behavior
-    │   │   ├── footer.css
-    │   │   ├── mobile-nav.css   # Mobile hamburger drawer
-    │   │   └── scrollbar.css
-    │   └── sections/
-    │       ├── hero.css
-    │       ├── about.css        # About + Experience (unified)
-    │       ├── skills.css       # Icon grid + runway progress bars
-    │       ├── projects.css
-    │       ├── project-article.css  # Article overlay for project pages
-    │       └── contact.css
-    └── js/
-        ├── main.js              # Entry point — imports CSS and all JS modules
-        ├── core/
-        │   ├── icons.js         # Font Awesome subset registration
-        │   ├── darkMode.js
-        │   ├── contrastMode.js
-        │   └── i18n.js          # Custom i18n system + langchange event
-        ├── ui/
-        │   ├── animations.js    # GSAP + ScrollTrigger + AOS init
-        │   ├── contact.js       # Form validation and Web3Forms submission
-        │   ├── cv.js            # CV download links per language
-        │   ├── langDropdown.js
-        │   ├── typewriter.js
-        │   ├── mobileNav.js
-        │   ├── about.js         # Expandable modal cards
-        │   ├── navbarScroll.js  # Hide-on-scroll trigger
-        │   └── projectRouter.js # Hash-based routing for project article pages
-        └── __tests__/
-            └── i18n.test.js
+src/
+├── app/         root document, routes, SEO metadata, analytics, pre-paint script
+├── pages/       route-level compositions (home, project, not-found)
+├── widgets/     page sections: site-nav, hero, about, skills, projects, contact, footer
+├── features/    user capabilities: switch-language, toggle-appearance, contact-form,
+│                experience-details (dialog), open-cv, locale-entry (first-visit redirect)
+├── entities/    domain data and UI: project, experience, skill
+└── shared/      i18n, config, UI primitives, helpers, styles, assets
+scripts/         build post-processing (CSP hashes, 404 page, sitemap) and its tests
+static/          files copied as-is: robots.txt and the stable share images (og/, images/)
+tests/           Playwright specs (e2e/), static host used by the tests, visual baseline tools
 ```
 
 ---
 
-## Project Article Pages
+## Internationalization
 
-Each project card opens a full-page article overlay routed by URL hash:
-
-```
-/#projects/eduassets
-/#projects/buenos-aires-explorer
-/#projects/dev-portfolio
-/#projects/aviation-safety
-/#projects/travel-explorer
-```
-
-The overlay is rendered by `projectRouter.js`, which:
-
-1. Listens to `hashchange` and the initial page load hash
-2. Lazily fetches the locale JSON for the active language (cached in memory after first fetch)
-3. Renders the article with intro, sections, and project links
-4. Re-renders in place when the user switches language (listens to the `langchange` custom event dispatched by `i18n.js`)
-5. Navigates back to `/#projects` when the back button is clicked or the hash changes
-
-Article content is stored under `projectArticles.<slug>` in each locale JSON file.
+- Supported locales: English (default), Portuguese, Spanish.
+- Copy lives in `src/shared/i18n/resources/{en,pt,es}.json` with identical key shapes, keyed by project slug or experience id. Tests enforce key parity, equal array lengths, no empty strings and balanced inline markers.
+- Keys are typed from `en.json`, so a misspelled key fails `tsc`.
+- Each route loads only its own locale's JSON. Rich text (the highlighted phrase in the About quote) is rendered from `<em>` markers as elements, never as HTML.
+- **First visit to `/`:** stored preference, then browser language, then English. Prefixed URLs and project URLs are never redirected. The preference is stored only when the user switches language explicitly.
+- **Legacy links:** `/#projects/<slug>` redirects to the real project route.
 
 ---
 
-## Contact Form — How It Works
+## SEO, security and analytics
 
-The contact form is powered by [Web3Forms](https://web3forms.com), a serverless email delivery service with a public access key — no backend required.
-
-**Client-side flow:**
-
-1. Honeypot field check to silently discard spam bot submissions
-2. Input validation — empty fields and email format
-3. Submits JSON to `https://api.web3forms.com/submit`
-4. Displays localized feedback — success or error, in the active language, with a live character counter for the message field
-
-Localized feedback messages are defined in `locales/pt.json` and `locales/es.json` under `contact.feedback`, and fall back to English defaults if a translation is missing.
+- Per-route `meta` exports build title, description, canonical, alternates, social tags and JSON-LD from the locale resources and typed project data (`src/app/seo/`).
+- After the build, `scripts/postbuild.ts` writes `sitemap.xml` (18 URLs with reciprocal `hreflang` alternates), turns the prerendered 404 route into `404.html`, removes the SPA fallback, and injects the Content-Security-Policy meta tag into every HTML file.
+- `vercel.json` adds security headers (`X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`), long-lived caching for hashed assets, and `trailingSlash: false`.
+- Google Analytics only activates on the production hostname (so previews and local runs send nothing) and sends one `page_view` per route change.
 
 ---
 
-## i18n — How Translations Work
+## Contact form
 
-Language priority on load: `localStorage` → browser language → English (default).
-
-- English text lives in the HTML via `data-i18n` attributes for static content, and in `public/locales/en.json` for dynamic content (project articles)
-- Portuguese and Spanish are fetched from `public/locales/` only when explicitly selected, and cached in memory for the rest of the session
-- Switching language updates the page instantly with no reload, including form placeholders and `aria-label` attributes
-- `i18n.js` dispatches a `langchange` custom event after each language switch, which modules like `projectRouter.js` listen to for re-rendering
+Powered by [Web3Forms](https://web3forms.com) directly from the browser, with a public access key (not a secret). The client validates empty fields and email format, uses a honeypot field, shows a live character counter, and reports success, provider failure and network error in the active language. Client-side validation is a UX aid; spam control relies on the honeypot and the provider.
 
 ---
 
-## Projects Featured
-
-| Project | Stack | Description |
-|---|---|---|
-| [eduAssets](https://github.com/dasilva-thiago/edu-assets) | TypeScript, Vite, Node.js, Express 5, Prisma, PostgreSQL (Neon), Zod | Full-stack system for managing school hardware assets, with optional RFID support and a feature-first frontend architecture |
-| [Buenos Aires Explorer](https://github.com/dasilva-thiago/BuenosAiresExp) | C#, .NET, SQLite, Windows Forms | Desktop app for organizing points of interest with geocoding API integration, distance calculation, and route planning |
-| [Developer Portfolio](https://github.com/dasilva-thiago/dev-portfolio) | HTML, CSS, JS, Vite | This website — custom i18n system, FOUC-safe dark mode, hash-based project article pages, modular CSS architecture |
-| [Aviation Safety Project](https://github.com/dasilva-thiago/aviation_safety_project) | Python, Pandas, NumPy, OpenPyXL, Power BI | Data pipeline with layered architecture: generation → transformation → export → visualization |
-| [Travel Explorer](https://github.com/dasilva-thiago/TravelExplorer) | HTML, CSS, JavaScript, TypeScript, React | In development — evolution of Buenos Aires Explorer with global scope, optimized routing, and business integration |
-
----
-
-## Running Locally
+## Scripts
 
 ```bash
 npm install
-npm run dev
+npm run dev          # React Router dev server
+npm run build        # pre-render all routes + post-process (CSP, sitemap, 404)
+npm run preview      # static host that mirrors the production routing, on :4173
+npm run typecheck    # react-router typegen && tsc (strict)
+npm test             # Vitest unit and component tests
+npm run test:e2e     # Playwright (builds are served from build/client; run `npm run build` first)
+npm run og:images    # regenerate the 1200x630 share images in static/og (needs `npm run preview` running)
 ```
 
-Build for production:
+Node 20.19+ is required (see `engines`).
 
-```bash
-npm run build
-```
+---
 
-Run tests:
+## Deployment (Vercel)
 
-```bash
-npm test
-```
+Static deployment of `build/client`, configured in `vercel.json` (`framework: null`, `buildCommand`, `outputDirectory`, headers, `trailingSlash: false`). No environment variables are needed. Unknown URLs return the real `404.html` with a 404 status; under `/pt` and `/es` the page switches to that language in the browser. Node.js 20.19+ must be selected in the Vercel project settings.
+
+---
+
+## Testing
+
+- **Unit/component:** locale parity, typed keys, project data, layer boundaries, contact validation and submission, pre-paint script, CSP builder, sitemap and metadata.
+- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the experience dialog, the contact form with a mocked provider, CV links, reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
+- **Visual and layout tools:** `tests/visual-baseline/` can capture screenshots, compare them against a reference, and measure element geometry.
 
 ---
 

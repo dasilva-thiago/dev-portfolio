@@ -1,0 +1,286 @@
+{
+  "nav": {
+    "projects": "View My Work",
+    "contact": "Get in Touch",
+    "cv": "Resume",
+    "aria": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact",
+      "darkToggle": "Themes",
+      "contrastToggle": "High contrast",
+      "cv": "View CV",
+      "language": "Language"
+    },
+    "mobile": {
+      "theme": "Theme"
+    }
+  },
+  "a11y": {
+    "skipLink": "Skip to main content",
+    "menu": "Menu",
+    "close": "Close",
+    "toggleDark": "Toggle dark mode",
+    "toggleContrast": "Toggle high contrast",
+    "resume": "Resume/CV",
+    "mainNavigation": "Main navigation"
+  },
+  "hero": {
+    "greeting": "hi there! welcome to my portfolio!",
+    "title": "i'm thiago,",
+    "typewriter": [
+      "a full stack developer",
+      "an IT support technician",
+      "a computer engineering student"
+    ],
+    "description": "I build software with a focus on solving real problems and keeping things simple."
+  },
+  "sections": {
+    "about": {
+      "title": "About Me",
+      "education": "Education",
+      "experience": "Experience"
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "These are the main technologies I have been studying and applying in projects.",
+      "consolidated": "Consolidated",
+      "evolving": "evolving"
+    },
+    "projects": {
+      "title": "Projects",
+      "subtitle": "My recent work — Click to learn more"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  },
+  "about": {
+    "role": "Computer Engineering Student",
+    "quote": "I am a <em>dedicated and curious developer</em> in the early stages of my career, with a strong ability to learn quickly and adapt to new challenges.",
+    "bio": "My background in both technical laboratory work and IT support has helped me build discipline, attention to detail, and problem-solving skills — qualities that drive my growth as a software developer.",
+    "seeMore": "see more"
+  },
+  "experience": {
+    "univesp": {
+      "date": "2025 — 2030",
+      "title": "Computer Engineering Student",
+      "place": "UNIVESP"
+    },
+    "senac": {
+      "date": "2025 — 2027",
+      "title": "IT Technician",
+      "place": "SENAC"
+    },
+    "seduc": {
+      "date": "2026 — Present",
+      "title": "Educational Technology & IT Intern",
+      "place": "SEDUC-SP",
+      "description": "Contributing to educational technology initiatives and digital transformation projects within public school environments, working with platform management, technology operations, digital accessibility, and the integration of digital tools into academic and administrative activities.",
+      "tags": [
+        "Platform Management",
+        "Digital Accessibility"
+      ]
+    },
+    "tenaris": {
+      "date": "2023 — 2025",
+      "title": "Technical Laboratory Operator",
+      "place": "TENARIS",
+      "description": "Worked in a multinational industrial laboratory environment, operating within high standards of precision, quality control, and process reliability. This experience built a solid foundation for my transition into software development, where I apply the same discipline, logical reasoning, and commitment to accuracy in designing and implementing robust solutions."
+    }
+  },
+  "initiative": {
+    "industrialSafety": {
+      "title": "Industrial Safety Localization",
+      "description": "Identified a documentation failure in an industrial environment and led the full corrective process: root cause analysis, technical translation, and standardized rollout across the lab.",
+      "imageAlt": "Industrial safety labels translation",
+      "tags": [
+        "Root Cause Analysis",
+        "Process Improvement"
+      ]
+    }
+  },
+  "buttons": {
+    "github": "View on GitHub",
+    "access": "Access the system"
+  },
+  "projectArticle": {
+    "back": "Back"
+  },
+  "projects": {
+    "eduassets": {
+      "tag": "FULL STACK",
+      "title": "eduAssets",
+      "alt": "EduAssets Banner",
+      "description": "Full-stack school equipment management system with a TypeScript and Vite frontend and a Node.js API built with Express 5, Prisma, and Zod. Uses PostgreSQL on Neon, with optional RFID hardware support.",
+      "article": {
+        "intro": [
+          "eduAssets is a full-stack school equipment management system built to solve a real problem: tracking hundreds of hardware assets with no reliable system in place. It combines a TypeScript/Vite frontend with a Node.js API backed by Express 5, Prisma, and PostgreSQL on Neon — with optional RFID hardware support for automated asset scanning."
+        ],
+        "sections": [
+          {
+            "heading": "The Problem",
+            "paragraphs": [
+              "School environments often rely on spreadsheets or manual logs to track IT equipment — laptops, projectors, tablets. This leads to lost assets, unclear responsibility, and time-consuming audits.",
+              "I wanted to build something that actually solved this, not just demonstrate CRUD operations."
+            ]
+          },
+          {
+            "heading": "Architecture",
+            "paragraphs": [
+              "The frontend is feature-first: each feature (assets, loans, users) has its own directory with its components, services, and types. The API uses Express 5 with Prisma as the ORM and Zod for runtime validation, deployed on an Oracle Cloud VPS behind Nginx in a Docker container."
+            ]
+          },
+          {
+            "heading": "What I Learned",
+            "paragraphs": [
+              "This project taught me to plan an architecture before writing code. Making early decisions — like the feature-first structure and the clear separation between frontend and API — prevented costly refactors throughout development."
+            ]
+          }
+        ]
+      }
+    },
+    "buenos-aires-explorer": {
+      "tag": "Full Stack",
+      "title": "Buenos Aires Explorer",
+      "alt": "BAexp Screenshot",
+      "description": "Built with C# and Windows Forms, backed by SQLite as an embedded relational database for local persistence. Integrated a geocoding API to automate coordinate resolution and implemented distance calculation to generate optimized visit routes — without relying on external UI frameworks.",
+      "article": {
+        "intro": [
+          "Buenos Aires Explorer is a desktop application built in C# with Windows Forms for planning tourist itineraries around the city. It uses SQLite as an embedded database and integrates the Nominatim geocoding API to automatically resolve addresses to coordinates."
+        ],
+        "sections": [
+          {
+            "heading": "The Challenge",
+            "paragraphs": [
+              "The goal was to build a functional application without relying on external UI frameworks or paid services. All routing logic and distance calculation was implemented from scratch, with SQLite for local persistence."
+            ]
+          },
+          {
+            "heading": "Technical Highlights",
+            "paragraphs": [
+              "The Nominatim integration converts place names to geographic coordinates automatically. The routing algorithm calculates a visit order based on distances, generating an optimized itinerary directly on the client."
+            ]
+          }
+        ]
+      }
+    },
+    "dev-portfolio": {
+      "tag": "Frontend",
+      "title": "Developer Portfolio",
+      "alt": "Developer Portfolio Screenshot",
+      "description": "Rebuilt from a hand-written vanilla JavaScript site into React, TypeScript and Tailwind CSS on React Router, with every page pre-rendered to static HTML in three languages. Per-page SEO metadata, a hash-based Content-Security-Policy, flash-free dark and high-contrast themes, and end-to-end tests with automated accessibility checks.",
+      "article": {
+        "intro": [
+          "This portfolio began as a hand-written vanilla JavaScript site. It was migrated in planned, tested phases to React, TypeScript and Tailwind CSS — keeping the same design while turning every project into a real page with its own address, share preview and search metadata."
+        ],
+        "sections": [
+          {
+            "heading": "Architecture",
+            "paragraphs": [
+              "React Router runs in framework mode with server rendering turned off: every page — the home page and each project, in English, Portuguese and Spanish — is pre-rendered to static HTML at build time and then hydrated in the browser. There is no runtime server to maintain.",
+              "The code is organized by responsibility (app, pages, widgets, features, entities, shared), and a test fails the build if a lower layer imports a higher one."
+            ]
+          },
+          {
+            "heading": "Languages and SEO",
+            "paragraphs": [
+              "The language is part of the URL (/, /pt, /es). Each page has its own title, description, canonical address, hreflang alternates, social preview and structured data, and the sitemap is generated from the same route data.",
+              "All copy lives in typed JSON files: a misspelled key fails the type check, and tests make sure the three languages always share the same structure."
+            ]
+          },
+          {
+            "heading": "Security, accessibility and performance",
+            "paragraphs": [
+              "A Content-Security-Policy is generated for every page with a hash of each inline script, so no inline code runs unless it was built into the page. A tiny script in the document head applies the saved theme and language before the first paint — no flash of the wrong theme.",
+              "Animations respect the reduced-motion setting and load only when the browser is idle; a first visit downloads about 140 kB of JavaScript. A Playwright suite covers routing, languages, themes, the contact form and automated accessibility checks."
+            ]
+          }
+        ]
+      }
+    },
+    "aviation-safety": {
+      "tag": "Backend",
+      "title": "Aviation Safety Project",
+      "alt": "Aviation Safety Project Screenshot",
+      "description": "Built a Python data pipeline using Pandas for transformation and normalization of simulated aeronautical incident records, exported via OpenPyXL, and visualized in Power BI.",
+      "article": {
+        "intro": [
+          "A Python data pipeline that processes simulated aeronautical incident records, applies transformations and normalizations with Pandas, exports results via OpenPyXL, and generates visualizations in Power BI."
+        ],
+        "sections": [
+          {
+            "heading": "The Pipeline",
+            "paragraphs": [
+              "I deliberately separated the data generation, processing, and presentation stages into distinct layers. Each pipeline stage is independent — making each part easier to test, maintain, and evolve."
+            ]
+          },
+          {
+            "heading": "Visualizations",
+            "paragraphs": [
+              "The processed data feeds a Power BI dashboard with metrics on the frequency, type, and severity of simulated incidents. The goal was to practice communicating data clearly to a non-technical audience."
+            ]
+          }
+        ]
+      }
+    },
+    "travel-explorer": {
+      "tag": "FULL STACK",
+      "title": "Travel Explorer",
+      "alt": "Travel Explorer Logo",
+      "description": "Still in development, it is an evolution of the Buenos Aires Explorer project, now focusing on a broader scope — a worldwide web platform with optimized routing and business integration.",
+      "article": {
+        "intro": [
+          "Travel Explorer is the evolution of Buenos Aires Explorer — a global web platform for planning tourist itineraries with optimized routes and integration with local businesses and services. Still in development."
+        ],
+        "sections": [
+          {
+            "heading": "The Vision",
+            "paragraphs": [
+              "While Buenos Aires Explorer was a desktop app focused on one city, Travel Explorer is a web platform with no geographic boundaries. The goal is to offer travel planning with optimized routes for any destination."
+            ]
+          },
+          {
+            "heading": "Stack and Progress",
+            "paragraphs": [
+              "The project uses React and TypeScript on the frontend. Architecture and scope are still being defined — this is a long-term project developed in parallel with my web development learning."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "contact": {
+    "intro": "Feel free to reach out! I'm currently seeking opportunities in technology, especially in software development. If you have a project, opportunity, or just want to connect, I'd be glad to talk — I'll get back to you soon.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "your_email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Your Message",
+      "button": "Get in Touch",
+      "sending": "Sending..."
+    },
+    "feedback": {
+      "emptyFields": "Please fill in all fields before sending.",
+      "invalidEmail": "Please enter a valid email address.",
+      "success": "Got it! I'll reply as soon as possible.",
+      "failed": "Failed to send message. Please try again later.",
+      "error": "An error occurred. Please try again later."
+    }
+  },
+  "meta": {
+    "homeTitle": "Thiago da Silva | Full Stack Developer",
+    "homeDescription": "Portfolio of Thiago da Silva, Computer Engineering student specializing in backend development, C#, Python and JavaScript. Open to internships and tech opportunities.",
+    "personDescription": "Computer Engineering and IT Technician student building real-world applications with C#, Python, JavaScript and Node.js.",
+    "jobTitle": "Computer Engineering Student"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or was moved.",
+    "home": "Back to the home page"
+  }
+}
