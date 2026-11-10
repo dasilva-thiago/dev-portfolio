@@ -10,7 +10,9 @@ export function useSwitchLanguage(): (target: Locale) => void {
   const location = useLocation();
   return (target) => {
     storeLocale(target);
-    void navigate(localizePath(location.pathname + location.hash, target), {
+    // The hash is left out on purpose: React Router scrolls to it even with preventScrollReset,
+    // so a leftover "#about" would pull the page to that section.
+    void navigate(localizePath(location.pathname, target), {
       replace: true,
       preventScrollReset: true,
     });

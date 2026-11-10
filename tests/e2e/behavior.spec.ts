@@ -18,6 +18,19 @@ test.describe("language", () => {
     await expect(page.locator("#projects h2")).toHaveText("Projetos");
   });
 
+  test("a leftover section anchor does not pull the page there when the language changes", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/#about");
+    await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(800);
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+    await page.locator("#lang-trigger").click();
+    await page.getByRole("button", { name: "Português" }).first().click();
+    await expect(page).toHaveURL(/\/pt$/);
+    await page.waitForTimeout(1000);
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
+  });
+
   test("switching back to English is explicit and sticks even with a Portuguese browser", async ({ browser }) => {
     const context = await browser.newContext({ locale: "pt-BR" });
     const page = await context.newPage();
@@ -488,6 +501,30 @@ test.describe("mobile drawer focus containment", () => {
     await page.keyboard.press("Escape");
     await expect(page.locator("#main-content")).toHaveJSProperty("inert", false);
   });
+});
+
+test.describe("mobile hero", () => {
+  test.use({ reducedMotion: "reduce" });
+
+  for (const [width, height] of [
+    [360, 640],
+    [375, 667],
+    [390, 844],
+  ] as const) {
+    test(`${width}x${height}: the name fits on one line and the hero clears the menu button`, async ({ page }) => {
+      await page.setViewportSize({ width, height });
+      await page.goto("/pt");
+      const lines = await page.locator("h1").evaluate((element) => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        return new Set([...range.getClientRects()].map((rect) => Math.round(rect.top))).size;
+      });
+      expect(lines).toBe(1);
+      const menu = await page.locator("#mobile-menu-btn").boundingBox();
+      const availability = await page.locator(".hero-greeting").boundingBox();
+      expect(availability?.y ?? 0).toBeGreaterThanOrEqual((menu?.y ?? 0) + (menu?.height ?? 0));
+    });
+  }
 });
 
 test.describe("localized 404", () => {
