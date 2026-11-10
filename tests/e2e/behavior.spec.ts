@@ -249,7 +249,7 @@ test.describe("experience dialog", () => {
     await card.click();
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
-    await expect(dialog).toHaveAccessibleName("Apprentice → Laboratory Specimen Preparer");
+    await expect(dialog).toHaveAccessibleName("Apprentice → Laboratory Test Specimen Preparation Technician");
     await expect(card).toHaveAttribute("aria-expanded", "true");
     expect(await page.evaluate(() => document.body.style.overflow)).toBe("hidden");
     expect(await page.evaluate(() => document.activeElement?.getAttribute("aria-label"))).toBe("Close");
