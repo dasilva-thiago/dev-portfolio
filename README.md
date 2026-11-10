@@ -6,6 +6,29 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 
 ---
 
+## Screenshots
+
+<table>
+  <tr>
+    <th>Desktop</th>
+    <th>Mobile</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/desktop-hero.webp" alt="Desktop hero with name, target role, stack, eduAssets figures and remote availability" width="640"></td>
+    <td><img src="docs/screenshots/mobile-hero.webp" alt="Mobile hero" width="220"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/desktop-projects.webp" alt="Desktop projects section with the eduAssets and Buenos Aires Explorer cards" width="640"></td>
+    <td><img src="docs/screenshots/mobile-projects.webp" alt="Mobile projects section" width="220"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/desktop-skills.webp" alt="Desktop skills section with consolidated technologies and the evolving panel" width="640"></td>
+    <td><img src="docs/screenshots/mobile-skills.webp" alt="Mobile skills section" width="220"></td>
+  </tr>
+</table>
+
+---
+
 ## Highlights
 
 - **Static output, real routes.** Every page is pre-rendered at build time with React Router (`ssr: false` + `prerender`): the home page and the five project pages, each in English, Portuguese and Spanish, plus a real `404.html`. No runtime server, no client-only shell for crawlers.
@@ -14,13 +37,13 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 - **Strict Content-Security-Policy.** Delivered per page as a `<meta>` tag; every inline script is allow-listed by SHA-256 hash computed at build time. No `'unsafe-inline'` or `'unsafe-eval'` for scripts.
 - **No flash of the wrong theme or language.** A tiny synchronous script in `<head>` applies the stored/system theme and sends a first-time visitor at `/` to `/pt` or `/es` before anything paints.
 - **Accessibility.** Dark mode and high-contrast mode (independent), native `<dialog>` for the experience details, keyboard-operable navigation, `prefers-reduced-motion` respected by every animation, automated axe checks on every theme and locale.
-- **Small by design.** About 139 kB of JavaScript (gzip) on first load; animation code is loaded on idle time; icons are tree-shaken data rendered as inline SVG; images are WebP.
+- **Small by design.** About 146 kB of JavaScript (gzip) on first load; animation code is loaded on idle time; icons are tree-shaken data rendered as inline SVG; images are WebP.
 
 ---
 
 ## What the site shows
 
-The home page follows a recruiter's first read: hero (role, stack, main proof point and availability), projects, skills, about and contact.
+The home page follows a recruiter's first read: a hero, then projects, skills, about and contact. The hero combines a typewriter that holds the target role longer and highlights it in the theme color, the main stack, the eduAssets figures and remote availability. Skills are split into consolidated technologies and an "evolving" panel for what is being studied, and the resume buttons open the PDF for the active language.
 
 | Project | Type | Main stack | Links |
 |---|---|---|---|
@@ -67,6 +90,8 @@ src/
 scripts/         build post-processing (CSP hashes, 404 page, sitemap) and its tests
 static/          files copied as-is: robots.txt and the stable share images (og/, images/)
 tests/           Playwright specs (e2e/), static host used by the tests, visual baseline tools
+docs/            architecture notes and the README screenshots
+server/          legacy email API kept in the repository; not part of the static deployment
 ```
 
 ---
@@ -123,7 +148,7 @@ Static deployment of `build/client`, configured in `vercel.json` (`framework: nu
 ## Testing
 
 - **Unit/component:** locale parity, typed keys, project data, layer boundaries, contact validation and submission, pre-paint script, CSP builder, sitemap and metadata.
-- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the experience dialog, the contact form with a mocked provider, CV links, reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
+- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the hero typewriter, the experience dialog, the contact form with a mocked provider, CV links, reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
 - **Visual and layout tools:** `tests/visual-baseline/` can capture screenshots, compare them against a reference, and measure element geometry.
 
 ---
