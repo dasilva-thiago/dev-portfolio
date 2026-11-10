@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "travel-explorer"];
+const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr"];
 
 test.describe("pre-rendered routes", () => {
   test("home responds 200 with its content in the HTML (no JavaScript needed)", async ({ request }) => {
@@ -46,7 +46,7 @@ test.describe("rendering", () => {
     const hero = page.locator("main article img");
     await expect(hero).toBeVisible();
     expect(await hero.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
-    await expect(page.getByRole("heading", { level: 2 })).toHaveCount(3);
+    await expect(page.getByRole("heading", { level: 2 })).toHaveCount(5);
   });
 
   test("dev-portfolio article keeps the literal <head> text from the copy", async ({ page }) => {
@@ -68,6 +68,11 @@ test.describe("rendering", () => {
     const github = page.locator('[data-slug="eduassets"] a[href*="github.com"]');
     await expect(github).toHaveAttribute("href", "https://github.com/dasilva-thiago/edu-assets");
     await expect(github).toHaveAttribute("target", "_blank");
+  });
+
+  test("a project without a public repository shows no GitHub button", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator('[data-slug="aviation-safety"] a[href*="github.com"]')).toHaveCount(0);
   });
 
   test("every image has explicit dimensions and alt text", async ({ page }) => {

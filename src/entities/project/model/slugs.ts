@@ -3,7 +3,7 @@ export const PROJECT_SLUGS = [
   "buenos-aires-explorer",
   "dev-portfolio",
   "aviation-safety",
-  "travel-explorer",
+  "parkschool-alpr",
 ] as const;
 
 export type ProjectSlug = (typeof PROJECT_SLUGS)[number];
@@ -18,11 +18,11 @@ export function projectPath(slug: ProjectSlug): string {
 
 // Content dates (YYYY-MM-DD) used for sitemap `lastmod`; update when a project's page content changes.
 export const PROJECT_UPDATED_AT: Record<ProjectSlug, string> = {
-  eduassets: "2026-11-03",
-  "buenos-aires-explorer": "2026-11-03",
+  eduassets: "2026-11-09",
+  "buenos-aires-explorer": "2026-11-09",
   "dev-portfolio": "2026-11-03",
-  "aviation-safety": "2026-11-03",
-  "travel-explorer": "2026-11-03",
+  "aviation-safety": "2026-11-09",
+  "parkschool-alpr": "2026-11-09",
 };
 
 export const HOME_UPDATED_AT = Object.values(PROJECT_UPDATED_AT).sort().at(-1) ?? "2026-11-03";
@@ -33,5 +33,5 @@ export const PROJECT_OG_IMAGE: Record<ProjectSlug, { path: string; width: number
   "buenos-aires-explorer": { path: "/og/buenos-aires-explorer.jpg", width: 1200, height: 630 },
   "dev-portfolio": { path: "/og/dev-portfolio.jpg", width: 1200, height: 630 },
   "aviation-safety": { path: "/og/aviation-safety.jpg", width: 1200, height: 630 },
-  "travel-explorer": { path: "/og/travel-explorer.jpg", width: 1200, height: 630 },
+  "parkschool-alpr": { path: "/og/parkschool-alpr.jpg", width: 1200, height: 630 },
 };

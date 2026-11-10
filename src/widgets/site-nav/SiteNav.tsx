@@ -20,9 +20,9 @@ import { useScrolledPastHero } from "./useScrolledPastHero";
 
 const SECTION_LINKS = [
   { hash: "", icon: faHouse, labelKey: "nav.aria.home" },
-  { hash: "#about", icon: faPen, labelKey: "nav.aria.about" },
-  { hash: "#skills", icon: faCode, labelKey: "nav.aria.skills" },
   { hash: "#projects", icon: faBriefcase, labelKey: "nav.aria.projects" },
+  { hash: "#skills", icon: faCode, labelKey: "nav.aria.skills" },
+  { hash: "#about", icon: faPen, labelKey: "nav.aria.about" },
   { hash: "#contact", icon: faEnvelope, labelKey: "nav.aria.contact" },
 ] as const;
 

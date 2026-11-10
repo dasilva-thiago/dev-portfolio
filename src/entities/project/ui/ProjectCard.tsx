@@ -93,7 +93,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="mt-5 flex flex-wrap gap-2.5">
           {project.links.live ? <AccessButton href={project.links.live} /> : null}
-          <GithubButton href={project.links.github} />
+          {project.links.github ? <GithubButton href={project.links.github} /> : null}
         </div>
       </div>
     </article>

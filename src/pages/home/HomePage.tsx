@@ -17,9 +17,9 @@ export function HomePage() {
       <SiteNav />
       <main id="main-content">
         <Hero />
-        <AboutSection />
-        <SkillsSection />
         <ProjectsShowcase />
+        <SkillsSection />
+        <AboutSection />
         <ContactSection />
       </main>
       <Footer />

@@ -1,6 +1,5 @@
 {
   "nav": {
-    "projects": "Confira Meus Trabalhos",
     "contact": "Entre em Contato",
     "cv": "Currículo",
     "aria": {
@@ -28,14 +27,13 @@
     "mainNavigation": "Navegação principal"
   },
   "hero": {
-    "greeting": "olá, seja bem-vindo ao meu portfólio!",
-    "title": "sou thiago,",
-    "typewriter": [
-      "um desenvolvedor full stack",
-      "um técnico de suporte em TI",
-      "estudante eng. computação"
-    ],
-    "description": "Desenvolvo software com foco em resolver problemas reais e manter as coisas simples."
+    "availability": "disponível para estágio e vaga júnior",
+    "title": "Thiago da Silva",
+    "subtitle": "Desenvolvedor Full Stack Júnior",
+    "stack": "TypeScript · Node.js · PostgreSQL",
+    "description": "Criei o eduAssets, sistema em uso em uma escola estadual, com 192 equipamentos controlados e mais de 66 chamados atendidos.",
+    "location": "Remoto no Brasil, ou presencial e híbrido em Pindamonhangaba e Taubaté.",
+    "cta": "Ver eduAssets"
   },
   "sections": {
     "about": {
@@ -47,7 +45,8 @@
       "title": "Habilidades",
       "description": "Estas são as principais tecnologias que venho estudando e aplicando em projetos, com foco em desenvolvimento backend e frontend, resolução de problemas e construção de uma base sólida em engenharia de software.",
       "consolidated": "Consolidadas",
-      "evolving": "em evolução"
+      "evolving": "em evolução",
+      "evolvingDescription": "O que estou estudando agora para ampliar minha base."
     },
     "projects": {
       "title": "Projetos",
@@ -59,8 +58,8 @@
   },
   "about": {
     "role": "Estudante de Engenharia da Computação",
-    "quote": "Sou um <em>desenvolvedor dedicado e curioso</em> no início da minha carreira, com grande capacidade de aprender rapidamente e me adaptar a novos desafios.",
-    "bio": "Minha experiência tanto em laboratório técnico quanto em suporte de TI me ajudou a desenvolver disciplina, atenção aos detalhes e habilidades de resolução de problemas — qualidades que impulsionam meu crescimento como desenvolvedor de software.",
+    "quote": "Sou estudante de Engenharia da Computação e Técnico em Informática. Gosto de <em>transformar problemas reais em software</em> organizado e confiável.",
+    "bio": "Passei por laboratório industrial na Tenaris e suporte técnico na Gestor Seller. Hoje atuo no suporte de TI da Secretaria da Educação de SP, onde levanto os problemas com quem usa os sistemas e desenvolvi o eduAssets para resolvê-los.",
     "seeMore": "veja mais"
   },
   "experience": {
@@ -70,23 +69,35 @@
       "place": "UNIVESP"
     },
     "senac": {
-      "date": "2025 - 2027",
+      "date": "Concluído",
       "title": "Técnico em Informática",
       "place": "SENAC"
     },
     "seduc": {
       "date": "2026 - Presente",
-      "title": "Estagiário de Tecnologia Educacional e TI",
-      "place": "SEDUC-SP - Secretaria da Educação do Estado de São Paulo",
-      "description": "Atuando em iniciativas de tecnologia educacional e projetos de transformação digital em ambientes escolares públicos, trabalhando com gerenciamento de plataformas, operações de tecnologia, acessibilidade digital e integração de ferramentas digitais em atividades acadêmicas e administrativas.",
+      "title": "Suporte Técnico e Técnico em Informática",
+      "place": "SEDUC-SP · PROATI",
+      "description": "Suporte a sistemas, plataformas digitais e equipamentos em atividades acadêmicas e administrativas, incluindo a manutenção de computadores, impressoras, notebooks e tablets. Levanto necessidades com os usuários e transformo problemas operacionais em requisitos e funcionalidades. Foi aqui que desenvolvi o eduAssets, que hoje controla os 192 equipamentos da escola.",
       "tags": [
-        "Gestão de Plataformas",
-        "Acessibilidade Digital"
+        "Suporte Técnico",
+        "Levantamento de Requisitos",
+        "APIs REST"
+      ]
+    },
+    "gestor-seller": {
+      "date": "2025",
+      "title": "Suporte Técnico",
+      "place": "Gestor Seller",
+      "description": "Registro, triagem e análise de incidentes em sistemas, investigação de inconsistências em integrações e fluxos de execução, e atendimento técnico a clientes por WhatsApp, chamada de vídeo e acesso remoto. Também testei aplicações web, fiz debugging e abri tickets para o time técnico com os erros identificados.",
+      "tags": [
+        "Triagem de Incidentes",
+        "Testes de Software",
+        "Debugging"
       ]
     },
     "tenaris": {
       "date": "2023 - 2025",
-      "title": "Operador Técnico de Laboratório",
+      "title": "Jovem Aprendiz → Preparador de Corpo de Prova em Laboratório",
       "place": "Tenaris",
       "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas."
     }
@@ -104,7 +115,7 @@
   },
   "buttons": {
     "github": "Ver no GitHub",
-    "access": "Acessar o sistema"
+    "access": "Ver demo (sem cadastro)"
   },
   "projectArticle": {
     "back": "Voltar"
@@ -114,10 +125,10 @@
       "tag": "FULL STACK",
       "title": "eduAssets",
       "alt": "Banner do eduAssets",
-      "description": "Sistema full-stack para gestão de equipamentos escolares, com frontend em TypeScript e Vite e API Node.js construída com Express 5, Prisma e Zod. Usa PostgreSQL na Neon e oferece suporte opcional a hardware RFID.",
+      "description": "Sistema full stack em uso em uma escola estadual: controla 192 equipamentos, já atendeu mais de 66 chamados e gera os relatórios usados toda semana para declarar o estoque a fiscais do Estado de São Paulo. Frontend em TypeScript e Vite, API em Node.js com Express 5, Prisma e PostgreSQL, e leitura opcional por RFID.",
       "article": {
         "intro": [
-          "O eduAssets é um sistema de gestão de equipamentos escolares desenvolvido para resolver um problema real: rastrear centenas de itens de hardware sem nenhum controle confiável. Combina um frontend em TypeScript com Vite e uma API Node.js com Express 5, Prisma e PostgreSQL no Neon — com suporte opcional a hardware RFID para leitura automática de patrimônios."
+          "O eduAssets é um sistema de gestão de equipamentos escolares que criei no meu trabalho no PROATI para digitalizar o controle de empréstimos, devoluções e ocorrências. Hoje ele controla todos os 192 equipamentos de uma escola estadual em Pindamonhangaba e já atendeu mais de 66 chamados."
         ],
         "sections": [
           {
@@ -128,9 +139,21 @@
             ]
           },
           {
+            "heading": "Em uso real",
+            "paragraphs": [
+              "Os relatórios gerados pelo sistema são usados toda semana para declarar o estoque a fiscais e agentes do Estado de São Paulo. O projeto roda em produção e é mantido com deploys frequentes por CI/CD."
+            ]
+          },
+          {
             "heading": "Arquitetura",
             "paragraphs": [
               "O frontend é organizado por feature: cada funcionalidade (ativos, empréstimos, usuários) tem seu próprio diretório com componentes, serviços e tipos. A API usa Express 5 com Prisma como ORM e Zod para validação em runtime, hospedada em um VPS na Oracle Cloud atrás do Nginx em container Docker."
+            ]
+          },
+          {
+            "heading": "Acesso e segurança",
+            "paragraphs": [
+              "A API é a fronteira de segurança. O acesso é dividido nos perfis Convidado (somente leitura), Editor e Administrador, com as permissões de escrita validadas no backend. No navegador, a sessão usa apenas cookies HttpOnly, e as alterações exigem uma Origin confiável."
             ]
           },
           {
@@ -143,25 +166,28 @@
       }
     },
     "buenos-aires-explorer": {
-      "tag": "Full Stack",
+      "tag": "Desktop",
       "title": "Buenos Aires Explorer",
       "alt": "Captura de tela do Buenos Aires Explorer",
-      "description": "Desenvolvido em C# com Windows Forms, usando SQLite como banco de dados relacional embarcado para persistência local. Integrei uma API de geocoding para resolução automática de coordenadas e implementei cálculo de distância para gerar rotas de visita otimizadas - sem depender de frameworks de UI externos.",
+      "description": "Aplicativo desktop em C# e .NET 10 para cadastrar pontos de interesse em Buenos Aires e montar roteiros de visita. Busca coordenadas e endereços na API Nominatim e imagens na Wikimedia, calcula distâncias entre as paradas com a fórmula de Haversine, mostra o roteiro em mapa interativo e exporta em PDF. Versão 1.0.0 publicada, com executável pronto para baixar.",
       "article": {
         "intro": [
-          "Buenos Aires Explorer é um aplicativo desktop desenvolvido em C# com Windows Forms que permite planejar roteiros turísticos pela cidade. Utiliza SQLite como banco de dados embarcado e integra a API Nominatim para geocodificação automática de endereços."
+          "Buenos Aires Explorer é um aplicativo desktop em C# e Windows Forms para cadastrar pontos de interesse em Buenos Aires e planejar roteiros de visita, com mapa interativo, cálculo de distâncias e exportação em PDF. A versão 1.0.0 está publicada, com executável pronto para baixar."
         ],
         "sections": [
           {
             "heading": "O Desafio",
             "paragraphs": [
-              "O objetivo era construir um aplicativo funcional sem depender de frameworks externos de UI ou serviços pagos. Toda a lógica de roteamento e cálculo de distâncias foi implementada do zero, com SQLite para persistência local."
+              "O objetivo era explorar o desenvolvimento desktop com C# e Windows Forms, com foco em arquitetura limpa, interface personalizada e integração com serviços externos, reunindo em um só aplicativo o cadastro de locais, os roteiros e a visualização no mapa."
             ]
           },
           {
             "heading": "Destaques Técnicos",
             "paragraphs": [
-              "A integração com Nominatim permite converter nomes de lugares em coordenadas geográficas automaticamente. O algoritmo de rota calcula a ordem de visitação com base em distâncias, gerando um itinerário otimizado diretamente no cliente."
+              "O código é organizado em camadas (Models, Services, Views, UI e Data), com Entity Framework Core e SQLite para persistência e migrations. São cerca de 6.900 linhas de C#.",
+              "A interface usa 7 componentes visuais próprios sobre Windows Forms, como RoundedButton e RoundedDateTimePicker, e um tema personalizado com cores por categoria.",
+              "A API Nominatim faz geocodificação direta e reversa, e a Wikimedia fornece imagens dos locais, buscando por coordenadas e, como alternativa, pelo título.",
+              "Nos roteiros, o usuário define a ordem das paradas, e o aplicativo calcula a distância por trecho e a total com a fórmula de Haversine. O mapa interativo usa Leaflet.js por meio do WebView2, e o roteiro pode ser exportado em PDF com QuestPDF."
             ]
           }
         ]
@@ -202,7 +228,7 @@
       }
     },
     "aviation-safety": {
-      "tag": "Backend",
+      "tag": "Dados",
       "title": "Projeto de Segurança na Aviação",
       "alt": "Captura de tela do Projeto de Segurança na Aviação",
       "description": "Construí um pipeline de dados em Python usando Pandas para transformação e normalização de registros simulados de incidentes aeronáuticos, exportados via OpenPyXL, e visualizados no Power BI. Separei deliberadamente geração, processamento e apresentação de dados em camadas distintas para manter cada preocupação independentemente sustentável.",
@@ -226,26 +252,32 @@
         ]
       }
     },
-    "travel-explorer": {
-      "tag": "FULL STACK",
-      "title": "Travel Explorer",
-      "alt": "Logo do Travel Explorer",
-      "description": "Ainda em desenvolvimento, é uma evolução do projeto Buenos Aires Explorer, agora com um escopo mais amplo: uma plataforma web global com rotas otimizadas e integração de estabelecimentos e serviços.",
+    "parkschool-alpr": {
+      "tag": "Visão Computacional",
+      "title": "Parkschool ALPR",
+      "alt": "Placa de exemplo no padrão Mercosul destacada por um quadro de detecção",
+      "description": "Microsserviço em Python para reconhecimento automático de placas em um sistema de estacionamento. Processa frames de câmera, detecta a placa, faz OCR, valida os formatos Mercosul e antigo, elimina leituras repetidas e envia o evento ao backend com novas tentativas e idempotência.",
       "article": {
         "intro": [
-          "Travel Explorer é a evolução do Buenos Aires Explorer — uma plataforma web global para planejamento de roteiros turísticos com rotas otimizadas e integração com estabelecimentos e serviços locais. Ainda em desenvolvimento."
+          "O Parkschool ALPR (Automatic License Plate Recognition) é o microsserviço de visão computacional de um sistema de controle de estacionamento, desenvolvido no Projeto Integrador do SENAC. Ele lê frames de arquivo, RTSP ou câmera USB, detecta a placa, lê os caracteres e envia o evento a um backend Node.js mantido por outra equipe."
         ],
         "sections": [
           {
-            "heading": "A Visão",
+            "heading": "Arquitetura",
             "paragraphs": [
-              "Enquanto o Buenos Aires Explorer era um aplicativo desktop focado em uma cidade, o Travel Explorer é uma plataforma web sem fronteiras geográficas. O objetivo é oferecer planejamento de viagens com rotas otimizadas para qualquer destino."
+              "O detector e o leitor ficam atrás de interfaces, o que permite trocar os modelos reais por versões simuladas nos testes, sem câmera nem TensorFlow. Uma API em FastAPI expõe /health/live e /health/ready, com contadores de frames, eventos enviados, duplicados e leituras inválidas."
             ]
           },
           {
-            "heading": "Stack e Progresso",
+            "heading": "Confiabilidade",
             "paragraphs": [
-              "O projeto usa React e TypeScript no frontend. A arquitetura e o escopo ainda estão sendo definidos — este é um projeto de longo prazo desenvolvido em paralelo com meu aprendizado em desenvolvimento web."
+              "Cada evento tem um identificador próprio, então os reenvios não geram registros duplicados. O cliente HTTP repete com backoff exponencial em falhas de rede e respeita o Retry-After. Só placas nos formatos Mercosul e antigo são enviadas, sem corrigir caracteres ambíguos, e os logs não expõem credenciais nem a placa completa."
+            ]
+          },
+          {
+            "heading": "Modelos e estado atual",
+            "paragraphs": [
+              "A detecção e o OCR usam modelos TensorFlow/Keras, com scripts de treino e avaliação sobre o dataset RodoSol-ALPR e uma ficha que registra versão, hash e métricas de cada modelo. O treino final e a medição com imagens reais são a próxima etapa, por isso o modo padrão ainda usa detector e OCR simulados. A suíte tem mais de 100 testes automatizados."
             ]
           }
         ]
@@ -253,7 +285,7 @@
     }
   },
   "contact": {
-    "intro": "Sinta-se à vontade para entrar em contato! Atualmente busco oportunidades de estágio na área de tecnologia, especialmente em desenvolvimento de software. Se tiver um projeto, oportunidade ou quiser trocar ideias, ficarei feliz em conversar. Você pode falar comigo por este formulário, e-mail ou LinkedIn — responderei em breve.",
+    "intro": "Sinta-se à vontade para entrar em contato! Atualmente busco estágio ou vaga júnior na área de tecnologia, especialmente em desenvolvimento de software. Se tiver um projeto, oportunidade ou quiser trocar ideias, ficarei feliz em conversar. Você pode falar comigo por este formulário, e-mail ou LinkedIn — responderei em breve.",
     "form": {
       "name": "Nome",
       "namePlaceholder": "Seu Nome",
@@ -273,10 +305,10 @@
     }
   },
   "meta": {
-    "homeTitle": "Thiago da Silva | Desenvolvedor Full Stack",
-    "homeDescription": "Portfólio de Thiago da Silva, estudante de Engenharia da Computação com foco em desenvolvimento backend, C#, Python e JavaScript. Aberto a estágios e oportunidades em tecnologia.",
+    "homeTitle": "Thiago da Silva | Desenvolvedor Full Stack Júnior",
+    "homeDescription": "Portfólio de Thiago da Silva, desenvolvedor full stack júnior e estudante de Engenharia da Computação. TypeScript, Node.js, PostgreSQL e Python. Aberto a estágio e vagas júnior.",
     "personDescription": "Estudante de Engenharia da Computação e Técnico em Informática que desenvolve aplicações reais com C#, Python, JavaScript e Node.js.",
-    "jobTitle": "Estudante de Engenharia da Computação"
+    "jobTitle": "Desenvolvedor Full Stack Júnior"
   },
   "notFound": {
     "title": "Página não encontrada",

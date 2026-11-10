@@ -33,7 +33,7 @@ async function shoot(name, { width, theme, lang, hash }) {
     const page = await ctx.newPage();
     await page.goto(BASE + (hash ?? ''), { waitUntil: 'networkidle' });
     await page.addStyleTag({
-        content: '*,*::before,*::after{animation:none!important;transition:none!important}[data-aos]{opacity:1!important;transform:none!important}.typewriter-cursor{visibility:hidden}#typewriter-target{visibility:hidden}',
+        content: '*,*::before,*::after{animation:none!important;transition:none!important}[data-aos]{opacity:1!important;transform:none!important}',
     });
     await page.waitForTimeout(900);
     if (!hash) {

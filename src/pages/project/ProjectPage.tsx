@@ -66,7 +66,7 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
 
               <div className="mb-10 flex flex-wrap gap-3 border-b border-line pb-8">
                 {project.links.live ? <AccessButton href={project.links.live} /> : null}
-                <GithubButton href={project.links.github} />
+                {project.links.github ? <GithubButton href={project.links.github} /> : null}
               </div>
 
               <div className="mb-12">

@@ -7,7 +7,7 @@ const targets = {
 const width = Number(process.env.WIDTH ?? 1440);
 const selectors = process.argv.slice(2).length ? process.argv.slice(2) : [
     '.hero-section', '.hero-greeting', '.hero-section h1', '.hero-subtitle', '.hero-description', '.hero-social-links', '.hero-buttons',
-    '#about', '#about h2', '.about-identity', '.about-right', '#skills', '#skills h2', '.skills-icon-grid', '.skills-runway-stack',
+    '#about', '#about h2', '.about-identity', '.about-right', '#skills', '#skills h2', '.skills-icon-grid', '.skills-evolving',
     '#projects', '#projects h2', '.project-card--featured', '.project-card--secondary', '.projects-grid-secondary',
     '#contact', '#contact h2', '.contact-form-wrapper', 'footer',
 ];

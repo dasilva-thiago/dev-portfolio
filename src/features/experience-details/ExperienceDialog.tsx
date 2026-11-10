@@ -88,11 +88,11 @@ export function ExperienceDialog({ id, onClose }: ExperienceDialogProps) {
             </div>
           </div>
 
-          {entry.id === "seduc" ? (
+          {entry.id === "seduc" || entry.id === "gestor-seller" ? (
             <>
-              <p className={BODY}>{t("experience.seduc.description")}</p>
+              <p className={BODY}>{t(`experience.${entry.id}.description`)}</p>
               <div className={CHIPS}>
-                {tList("experience.seduc.tags").map((tag) => (
+                {tList(`experience.${entry.id}.tags`).map((tag) => (
                   <span key={tag} className={CHIP}>{tag}</span>
                 ))}
               </div>

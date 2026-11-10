@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { expect, test, type Page } from "@playwright/test";
 
-const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "travel-explorer"];
+const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr"];
 const PREFIXES = ["", "/pt", "/es"] as const;
 const ORIGIN = "https://www.dasilva-thiago.dev";
 
@@ -88,7 +88,7 @@ test.describe("Content-Security-Policy", () => {
     return found;
   }
 
-  for (const path of ["/", "/pt", "/es/projects/travel-explorer", "/this-page-does-not-exist"]) {
+  for (const path of ["/", "/pt", "/es/projects/parkschool-alpr", "/this-page-does-not-exist"]) {
     test(`${path}: loads with zero CSP violations`, async ({ page }) => {
       expect(await violations(page, path)).toEqual([]);
     });

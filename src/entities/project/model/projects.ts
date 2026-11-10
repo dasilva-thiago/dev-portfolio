@@ -1,9 +1,9 @@
 import avCard from "~/shared/assets/img/Aviation_Safety_Project_screenshot.webp";
 import baCard from "~/shared/assets/img/BAexp_screenshot.webp";
-import teCard from "~/shared/assets/img/Texp_logo.webp";
 import edHero from "~/shared/assets/img/eduAssets_banner.webp";
 import edCard from "~/shared/assets/img/eduAssets_banner-for-card.webp";
 import devCard from "~/shared/assets/img/portfolio-preview.webp";
+import alprCard from "~/shared/assets/img/parkschool-alpr.webp";
 import { getProjectLinks } from "./links";
 import type { ProjectSlug } from "./slugs";
 
@@ -57,7 +57,7 @@ export const PROJECTS: readonly Project[] = [
     variant: "secondary",
     cardImage: { src: baCard, width: 1277, height: 488 },
     heroImage: { src: baCard, width: 1277, height: 488 },
-    tech: ["C#", ".NET", "SQLite", "Nominatim", "Windows Forms"],
+    tech: ["C#", ".NET 10", "Windows Forms", "Entity Framework Core", "SQLite", "WebView2", "Leaflet.js", "QuestPDF", "Nominatim", "Wikimedia"],
     links: getProjectLinks("buenos-aires-explorer"),
   },
   {
@@ -79,13 +79,13 @@ export const PROJECTS: readonly Project[] = [
     links: getProjectLinks("aviation-safety"),
   },
   {
-    slug: "travel-explorer",
+    slug: "parkschool-alpr",
     order: 5,
     variant: "compact",
-    cardImage: { src: teCard, width: 1200, height: 675 },
-    heroImage: { src: teCard, width: 1200, height: 675 },
-    tech: ["JavaScript", "TypeScript", "React"],
-    links: getProjectLinks("travel-explorer"),
+    cardImage: { src: alprCard, width: 1200, height: 675 },
+    heroImage: { src: alprCard, width: 1200, height: 675 },
+    tech: ["Python", "FastAPI", "OpenCV", "TensorFlow", "Keras", "Pydantic", "HTTPX", "Pytest"],
+    links: getProjectLinks("parkschool-alpr"),
   },
 ];
 

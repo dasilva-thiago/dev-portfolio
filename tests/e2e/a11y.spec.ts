@@ -7,7 +7,7 @@ const themes = {
   "high-contrast": { dark: "false", contrast: "true" },
 } as const;
 
-const pages = ["/", "/projects/eduassets", "/pt", "/es/projects/travel-explorer"];
+const pages = ["/", "/projects/eduassets", "/pt", "/es/projects/parkschool-alpr"];
 
 for (const [theme, flags] of Object.entries(themes)) {
   for (const path of pages) {

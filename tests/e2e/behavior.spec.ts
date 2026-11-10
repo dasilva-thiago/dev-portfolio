@@ -9,7 +9,7 @@ test.describe("language", () => {
     await page.getByRole("button", { name: "Português" }).first().click();
     await expect(page).toHaveURL(/\/pt$/);
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("sou thiago,");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Thiago da Silva");
     await expect(page.locator("#projects h2")).toHaveText("Projetos");
     expect(await stored(page, "lang")).toBe("pt");
 
@@ -249,7 +249,7 @@ test.describe("experience dialog", () => {
     await card.click();
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
-    await expect(dialog).toHaveAccessibleName("Technical Laboratory Operator");
+    await expect(dialog).toHaveAccessibleName("Apprentice → Laboratory Specimen Preparer");
     await expect(card).toHaveAttribute("aria-expanded", "true");
     expect(await page.evaluate(() => document.body.style.overflow)).toBe("hidden");
     expect(await page.evaluate(() => document.activeElement?.getAttribute("aria-label"))).toBe("Close");
@@ -267,10 +267,19 @@ test.describe("experience dialog", () => {
     const first = page.locator('[data-experience="seduc"]');
     await first.scrollIntoViewIfNeeded();
     await first.click();
-    await expect(page.getByRole("dialog")).toHaveAccessibleName("Educational Technology & IT Intern");
-    await expect(page.getByText("Platform Management", { exact: true })).toBeVisible();
+    await expect(page.getByRole("dialog")).toHaveAccessibleName("Technical Support & IT Technician");
+    await expect(page.getByRole("dialog").getByText("Requirements Gathering", { exact: true })).toBeVisible();
     await page.mouse.click(5, 300);
     await expect(page.getByRole("dialog")).toBeHidden();
+  });
+
+  test("the Gestor Seller entry opens its own details", async ({ page }) => {
+    await page.goto("/");
+    const card = page.locator('[data-experience="gestor-seller"]');
+    await card.scrollIntoViewIfNeeded();
+    await card.click();
+    await expect(page.getByRole("dialog")).toHaveAccessibleName("Technical Support");
+    await expect(page.getByRole("dialog").getByText("Incident Triage", { exact: true })).toBeVisible();
   });
 
   test("dialog text follows the locale", async ({ page }) => {
@@ -278,7 +287,7 @@ test.describe("experience dialog", () => {
     const card = page.locator('[data-experience="seduc"]');
     await card.scrollIntoViewIfNeeded();
     await card.click();
-    await expect(page.getByRole("dialog")).toContainText("Gestão de Plataformas");
+    await expect(page.getByRole("dialog")).toContainText("Levantamento de Requisitos");
   });
 });
 
@@ -402,7 +411,7 @@ test.describe("CV links", () => {
 test.describe("motion", () => {
   test.use({ reducedMotion: "reduce" });
 
-  test("with reduced motion nothing is hidden or transformed and the typewriter stays static", async ({ page }) => {
+  test("with reduced motion nothing is hidden or transformed", async ({ page }) => {
     await page.goto("/");
     await page.waitForTimeout(800);
     for (const selector of ["h1", ".hero-subtitle", ".hero-buttons", "#about", "#projects", "#contact"]) {
@@ -412,32 +421,26 @@ test.describe("motion", () => {
       }));
       expect(style, selector).toEqual({ opacity: "1", transform: "none" });
     }
-    const before = await page.locator("#typewriter-target").textContent();
-    await page.waitForTimeout(3200);
-    expect(await page.locator("#typewriter-target").textContent()).toBe(before);
-    expect(before).toBe("a full stack developer");
+    await expect(page.locator(".hero-subtitle")).toHaveText("Junior Full Stack Developer");
   });
 });
 
 test.describe("motion enabled", () => {
-  test("the typewriter cycles to the next phrase", async ({ page }) => {
-    await page.goto("/");
-    const target = page.locator("#typewriter-target");
-    await expect(target).toHaveText("a full stack developer");
-    await expect(target).toHaveText("an IT support technician", { timeout: 9000 });
-  });
-
   test("below-the-fold sections reveal on scroll and end fully visible", async ({ page }) => {
     await page.goto("/");
     await page.locator("#projects").scrollIntoViewIfNeeded();
     await page.waitForTimeout(1500);
     await expect(page.locator("#projects")).toHaveCSS("opacity", "1");
-    await expect(page.locator(".skill-runway-fill")).toHaveCSS("width", /\d/);
+    await page.locator(".skills-evolving").scrollIntoViewIfNeeded();
+    await page.waitForTimeout(1200);
+    await expect(page.locator(".skills-evolving")).toHaveCSS("opacity", "1");
+    await expect(page.locator(".skills-evolving")).toContainText("PHP");
+    await expect(page.locator(".skills-evolving")).not.toContainText("%");
   });
 });
 
 test.describe("hydration is clean in every locale", () => {
-  for (const path of ["/pt", "/es", "/pt/projects/eduassets", "/es/projects/travel-explorer"]) {
+  for (const path of ["/pt", "/es", "/pt/projects/eduassets", "/es/projects/parkschool-alpr"]) {
     test(`${path} logs no errors or warnings`, async ({ page }) => {
       const problems: string[] = [];
       page.on("console", (m) => {

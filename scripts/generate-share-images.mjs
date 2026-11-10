@@ -15,7 +15,7 @@ const PROJECTS = {
     eduassets: { file: 'eduAssets_banner.webp', fit: 'cover', background: '#05070d' },
     'buenos-aires-explorer': { file: 'BAexp_screenshot.webp', fit: 'contain', background: '#0d1420' },
     'aviation-safety': { file: 'Aviation_Safety_Project_screenshot.webp', fit: 'contain', background: '#ffffff' },
-    'travel-explorer': { file: 'Texp_logo.webp', fit: 'contain', background: '#ffffff' },
+    'parkschool-alpr': { file: 'parkschool-alpr.webp', fit: 'cover', background: '#16130d' },
 };
 
 const browser = await chromium.launch();

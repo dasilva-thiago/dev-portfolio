@@ -1,6 +1,5 @@
 {
   "nav": {
-    "projects": "View My Work",
     "contact": "Get in Touch",
     "cv": "Resume",
     "aria": {
@@ -28,14 +27,13 @@
     "mainNavigation": "Main navigation"
   },
   "hero": {
-    "greeting": "hi there! welcome to my portfolio!",
-    "title": "i'm thiago,",
-    "typewriter": [
-      "a full stack developer",
-      "an IT support technician",
-      "a computer engineering student"
-    ],
-    "description": "I build software with a focus on solving real problems and keeping things simple."
+    "availability": "open to internships and junior roles",
+    "title": "Thiago da Silva",
+    "subtitle": "Junior Full Stack Developer",
+    "stack": "TypeScript · Node.js · PostgreSQL",
+    "description": "I built eduAssets, a system in use at a public school in Brazil, with 192 devices tracked and over 66 tickets handled.",
+    "location": "Remote, or on-site and hybrid in Pindamonhangaba and Taubaté (SP, Brazil).",
+    "cta": "See eduAssets"
   },
   "sections": {
     "about": {
@@ -47,7 +45,8 @@
       "title": "Skills",
       "description": "These are the main technologies I have been studying and applying in projects.",
       "consolidated": "Consolidated",
-      "evolving": "evolving"
+      "evolving": "evolving",
+      "evolvingDescription": "What I'm studying right now to broaden my foundation."
     },
     "projects": {
       "title": "Projects",
@@ -59,8 +58,8 @@
   },
   "about": {
     "role": "Computer Engineering Student",
-    "quote": "I am a <em>dedicated and curious developer</em> in the early stages of my career, with a strong ability to learn quickly and adapt to new challenges.",
-    "bio": "My background in both technical laboratory work and IT support has helped me build discipline, attention to detail, and problem-solving skills — qualities that drive my growth as a software developer.",
+    "quote": "I'm a Computer Engineering student and IT Technician who enjoys <em>turning real problems into software</em> that is organized and reliable.",
+    "bio": "I've worked in an industrial laboratory at Tenaris and in technical support at Gestor Seller. Today I work in IT support at the São Paulo State Department of Education, where I gather problems from the people who use the systems and built eduAssets to solve them.",
     "seeMore": "see more"
   },
   "experience": {
@@ -70,23 +69,35 @@
       "place": "UNIVESP"
     },
     "senac": {
-      "date": "2025 — 2027",
+      "date": "Completed",
       "title": "IT Technician",
       "place": "SENAC"
     },
     "seduc": {
       "date": "2026 — Present",
-      "title": "Educational Technology & IT Intern",
-      "place": "SEDUC-SP",
-      "description": "Contributing to educational technology initiatives and digital transformation projects within public school environments, working with platform management, technology operations, digital accessibility, and the integration of digital tools into academic and administrative activities.",
+      "title": "Technical Support & IT Technician",
+      "place": "SEDUC-SP · PROATI",
+      "description": "Support for systems, digital platforms and equipment used in academic and administrative activities, including maintenance of computers, printers, laptops and tablets. I gather needs from users and turn operational problems into requirements and features. This is where I built eduAssets, which now tracks all 192 devices at the school.",
       "tags": [
-        "Platform Management",
-        "Digital Accessibility"
+        "Technical Support",
+        "Requirements Gathering",
+        "REST APIs"
+      ]
+    },
+    "gestor-seller": {
+      "date": "2025",
+      "title": "Technical Support",
+      "place": "Gestor Seller",
+      "description": "Logged, triaged and analyzed system incidents, investigated inconsistencies in integrations and execution flows, and supported customers over WhatsApp, video calls and remote access. I also tested web applications, debugged issues and opened tickets for the technical team with the errors I found.",
+      "tags": [
+        "Incident Triage",
+        "Software Testing",
+        "Debugging"
       ]
     },
     "tenaris": {
       "date": "2023 — 2025",
-      "title": "Technical Laboratory Operator",
+      "title": "Apprentice → Laboratory Specimen Preparer",
       "place": "TENARIS",
       "description": "Worked in a multinational industrial laboratory environment, operating within high standards of precision, quality control, and process reliability. This experience built a solid foundation for my transition into software development, where I apply the same discipline, logical reasoning, and commitment to accuracy in designing and implementing robust solutions."
     }
@@ -104,7 +115,7 @@
   },
   "buttons": {
     "github": "View on GitHub",
-    "access": "Access the system"
+    "access": "Try the demo (no sign-up)"
   },
   "projectArticle": {
     "back": "Back"
@@ -114,10 +125,10 @@
       "tag": "FULL STACK",
       "title": "eduAssets",
       "alt": "EduAssets Banner",
-      "description": "Full-stack school equipment management system with a TypeScript and Vite frontend and a Node.js API built with Express 5, Prisma, and Zod. Uses PostgreSQL on Neon, with optional RFID hardware support.",
+      "description": "Full stack system in use at a public school in São Paulo state: it tracks 192 devices, has handled over 66 tickets, and generates the reports used every week to declare inventory to state inspectors. TypeScript and Vite frontend, Node.js API with Express 5, Prisma and PostgreSQL, and optional RFID reading.",
       "article": {
         "intro": [
-          "eduAssets is a full-stack school equipment management system built to solve a real problem: tracking hundreds of hardware assets with no reliable system in place. It combines a TypeScript/Vite frontend with a Node.js API backed by Express 5, Prisma, and PostgreSQL on Neon — with optional RFID hardware support for automated asset scanning."
+          "eduAssets is a school equipment management system I built while working at PROATI to digitize the control of loans, returns and incidents. It now tracks all 192 devices at a public school in Pindamonhangaba and has handled over 66 tickets."
         ],
         "sections": [
           {
@@ -128,9 +139,21 @@
             ]
           },
           {
+            "heading": "Real-World Use",
+            "paragraphs": [
+              "The reports generated by the system are used every week to declare inventory to inspectors and agents of the State of São Paulo. The project runs in production and is maintained with frequent deployments through CI/CD."
+            ]
+          },
+          {
             "heading": "Architecture",
             "paragraphs": [
               "The frontend is feature-first: each feature (assets, loans, users) has its own directory with its components, services, and types. The API uses Express 5 with Prisma as the ORM and Zod for runtime validation, deployed on an Oracle Cloud VPS behind Nginx in a Docker container."
+            ]
+          },
+          {
+            "heading": "Access and Security",
+            "paragraphs": [
+              "The API is the security boundary. Access is split into Guest (read-only), Editor and Administrator roles, with write permissions enforced on the backend. In the browser, sessions use HttpOnly cookies only, and state-changing requests require a trusted Origin."
             ]
           },
           {
@@ -143,25 +166,28 @@
       }
     },
     "buenos-aires-explorer": {
-      "tag": "Full Stack",
+      "tag": "Desktop",
       "title": "Buenos Aires Explorer",
       "alt": "BAexp Screenshot",
-      "description": "Built with C# and Windows Forms, backed by SQLite as an embedded relational database for local persistence. Integrated a geocoding API to automate coordinate resolution and implemented distance calculation to generate optimized visit routes — without relying on external UI frameworks.",
+      "description": "Desktop application in C# and .NET 10 for registering points of interest in Buenos Aires and building visit itineraries. It looks up coordinates and addresses through the Nominatim API and images on Wikimedia, calculates distances between stops with the Haversine formula, shows the itinerary on an interactive map and exports it to PDF. Version 1.0.0 is published, with a ready-to-download executable.",
       "article": {
         "intro": [
-          "Buenos Aires Explorer is a desktop application built in C# with Windows Forms for planning tourist itineraries around the city. It uses SQLite as an embedded database and integrates the Nominatim geocoding API to automatically resolve addresses to coordinates."
+          "Buenos Aires Explorer is a desktop application in C# and Windows Forms for registering points of interest in Buenos Aires and planning visit itineraries, with an interactive map, distance calculation and PDF export. Version 1.0.0 is published, with a ready-to-download executable."
         ],
         "sections": [
           {
             "heading": "The Challenge",
             "paragraphs": [
-              "The goal was to build a functional application without relying on external UI frameworks or paid services. All routing logic and distance calculation was implemented from scratch, with SQLite for local persistence."
+              "The goal was to explore desktop development with C# and Windows Forms, focusing on clean architecture, a custom interface and integration with external services, bringing location management, itineraries and map visualization into a single application."
             ]
           },
           {
             "heading": "Technical Highlights",
             "paragraphs": [
-              "The Nominatim integration converts place names to geographic coordinates automatically. The routing algorithm calculates a visit order based on distances, generating an optimized itinerary directly on the client."
+              "The code is organized in layers (Models, Services, Views, UI and Data), with Entity Framework Core and SQLite for persistence and migrations. It comes to about 6,900 lines of C#.",
+              "The interface uses 7 custom visual components built on Windows Forms, such as RoundedButton and RoundedDateTimePicker, plus a custom theme with per-category colors.",
+              "The Nominatim API handles forward and reverse geocoding, and Wikimedia provides location images, searching by coordinates with a fallback to the title.",
+              "In itineraries, the user sets the order of the stops, and the application calculates per-leg and total distances with the Haversine formula. The interactive map uses Leaflet.js through WebView2, and itineraries can be exported to PDF with QuestPDF."
             ]
           }
         ]
@@ -202,7 +228,7 @@
       }
     },
     "aviation-safety": {
-      "tag": "Backend",
+      "tag": "Data",
       "title": "Aviation Safety Project",
       "alt": "Aviation Safety Project Screenshot",
       "description": "Built a Python data pipeline using Pandas for transformation and normalization of simulated aeronautical incident records, exported via OpenPyXL, and visualized in Power BI.",
@@ -226,26 +252,32 @@
         ]
       }
     },
-    "travel-explorer": {
-      "tag": "FULL STACK",
-      "title": "Travel Explorer",
-      "alt": "Travel Explorer Logo",
-      "description": "Still in development, it is an evolution of the Buenos Aires Explorer project, now focusing on a broader scope — a worldwide web platform with optimized routing and business integration.",
+    "parkschool-alpr": {
+      "tag": "Computer Vision",
+      "title": "Parkschool ALPR",
+      "alt": "Sample Mercosur license plate highlighted by a detection frame",
+      "description": "Python microservice for automatic license plate recognition in a parking system. It processes camera frames, detects the plate, runs OCR, validates the Mercosur and legacy Brazilian formats, removes repeated readings and sends the event to the backend with retries and idempotency.",
       "article": {
         "intro": [
-          "Travel Explorer is the evolution of Buenos Aires Explorer — a global web platform for planning tourist itineraries with optimized routes and integration with local businesses and services. Still in development."
+          "Parkschool ALPR (Automatic License Plate Recognition) is the computer vision microservice of a parking control system, developed in the SENAC Capstone Project. It reads frames from a file, RTSP or USB camera, detects the plate, reads the characters and sends the event to a Node.js backend maintained by another team."
         ],
         "sections": [
           {
-            "heading": "The Vision",
+            "heading": "Architecture",
             "paragraphs": [
-              "While Buenos Aires Explorer was a desktop app focused on one city, Travel Explorer is a web platform with no geographic boundaries. The goal is to offer travel planning with optimized routes for any destination."
+              "The detector and reader sit behind interfaces, so the real models can be swapped for simulated versions in tests, with no camera or TensorFlow. A FastAPI service exposes /health/live and /health/ready, with counters for frames, events sent, duplicates and invalid readings."
             ]
           },
           {
-            "heading": "Stack and Progress",
+            "heading": "Reliability",
             "paragraphs": [
-              "The project uses React and TypeScript on the frontend. Architecture and scope are still being defined — this is a long-term project developed in parallel with my web development learning."
+              "Each event has its own identifier, so retries do not create duplicate records. The HTTP client retries with exponential backoff on network failures and honors Retry-After. Only plates in the Mercosur and legacy formats are sent, without correcting ambiguous characters, and logs do not expose credentials or the full plate."
+            ]
+          },
+          {
+            "heading": "Models and Current Status",
+            "paragraphs": [
+              "Detection and OCR use TensorFlow/Keras models, with training and evaluation scripts for the RodoSol-ALPR dataset and a model card that records each model's version, hash and metrics. Final training and measurement with real images are the next step, so the default mode still uses a simulated detector and OCR. The suite has more than 100 automated tests."
             ]
           }
         ]
@@ -253,7 +285,7 @@
     }
   },
   "contact": {
-    "intro": "Feel free to reach out! I'm currently seeking opportunities in technology, especially in software development. If you have a project, opportunity, or just want to connect, I'd be glad to talk — I'll get back to you soon.",
+    "intro": "Feel free to reach out! I'm currently looking for internships and junior roles in technology, especially in software development. If you have a project, an opportunity, or just want to connect, I'd be happy to talk. You can reach me through this form, email, or LinkedIn — I'll reply soon.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your Name",
@@ -273,10 +305,10 @@
     }
   },
   "meta": {
-    "homeTitle": "Thiago da Silva | Full Stack Developer",
-    "homeDescription": "Portfolio of Thiago da Silva, Computer Engineering student specializing in backend development, C#, Python and JavaScript. Open to internships and tech opportunities.",
+    "homeTitle": "Thiago da Silva | Junior Full Stack Developer",
+    "homeDescription": "Portfolio of Thiago da Silva, a junior full stack developer and Computer Engineering student working with TypeScript, Node.js, PostgreSQL and Python. Open to internships and junior roles.",
     "personDescription": "Computer Engineering and IT Technician student building real-world applications with C#, Python, JavaScript and Node.js.",
-    "jobTitle": "Computer Engineering Student"
+    "jobTitle": "Junior Full Stack Developer"
   },
   "notFound": {
     "title": "Page not found",

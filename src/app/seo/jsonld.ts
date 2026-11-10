@@ -83,7 +83,7 @@ export function projectJsonLd(locale: Locale, slug: ProjectSlug, resources: Reso
         name: copy.title,
         description: copy.description,
         url,
-        codeRepository: links.github,
+        ...(links.github ? { codeRepository: links.github } : {}),
         inLanguage: HREFLANG[locale],
         dateModified: PROJECT_UPDATED_AT[slug],
         programmingLanguage: links.languages,

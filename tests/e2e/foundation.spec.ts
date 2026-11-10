@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("pre-rendered HTML carries the pre-paint theme script and content without JS", async ({ request }) => {
   const html = await (await request.get("/")).text();
   expect(html).toContain("darkMode");
-  expect(html).toContain("i&#x27;m thiago,");
+  expect(html).toContain("Junior Full Stack Developer");
 });
 
 test("hydrates without warnings and stored dark mode is applied before first paint", async ({ browser }) => {
@@ -32,6 +32,6 @@ test("hydrates without warnings and stored dark mode is applied before first pai
 
 test("design tokens resolve in light mode", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "View My Work" })).toHaveCSS("background-color", "rgb(242, 176, 30)");
+  await expect(page.getByRole("link", { name: "See eduAssets" })).toHaveCSS("background-color", "rgb(242, 176, 30)");
   await expect(page.locator("html")).toHaveCSS("background-color", "rgb(250, 246, 236)");
 });
