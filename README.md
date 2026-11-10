@@ -18,6 +18,22 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 
 ---
 
+## What the site shows
+
+The home page follows a recruiter's first read: hero (role, stack, main proof point and availability), projects, skills, about and contact.
+
+| Project | Type | Main stack | Links |
+|---|---|---|---|
+| eduAssets | Full stack, in real use at a public school | TypeScript, Node.js, Express 5, Prisma, PostgreSQL | [Demo](https://app.eduassets.tech) · [Code](https://github.com/dasilva-thiago/edu-assets) |
+| Buenos Aires Explorer | Desktop application | C#, .NET 10, Windows Forms, Entity Framework Core, SQLite | [Code](https://github.com/dasilva-thiago/BuenosAiresExp) |
+| Developer Portfolio | Frontend | React, TypeScript, Tailwind CSS, React Router | This repository |
+| Aviation Safety Project | Data pipeline | Python, Pandas, Power BI | [Code](https://github.com/dasilva-thiago/aviation_safety_project) |
+| Parkschool ALPR | Computer vision microservice, in development | Python, FastAPI, OpenCV, TensorFlow/Keras | [Code](https://github.com/FenixParkSchool/py_vision_park) |
+
+To add or replace a project, update `slugs.ts`, `links.ts` and `projects.ts` in `src/entities/project/model/`, add its copy to the three locale files, register its share image in `scripts/generate-share-images.mjs`, and update the slug lists in `tests/e2e/`.
+
+---
+
 ## Tech stack
 
 | Technology | Purpose |
