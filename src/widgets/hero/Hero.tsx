@@ -8,6 +8,7 @@ import { SITE } from "~/shared/config/site";
 import { useLocalizedPath, useT } from "~/shared/i18n/useT";
 import { Icon } from "~/shared/ui/Icon";
 import { SECTION } from "~/shared/ui/section";
+import { Typewriter } from "./Typewriter";
 
 const SOCIAL_ICON =
   "inline-flex size-8 cursor-pointer items-center justify-center rounded-full border border-social-border bg-social-bg text-[1.1rem] text-social " +
@@ -35,8 +36,8 @@ export function Hero() {
         <h1 className="animate-fade-up [animation-delay:100ms] motion-reduce:animate-none self-center text-balance pb-[15px] font-[family-name:var(--font-hero)] text-[clamp(44px,6vw,84px)] leading-[1.15] text-text hc:text-link hc:[-webkit-text-fill-color:var(--link-color)]">
           {t("hero.title")}
         </h1>
-        <p className="hero-subtitle animate-fade-up [animation-delay:350ms] motion-reduce:animate-none self-center text-[32px] font-semibold italic tracking-[0.3px] text-muted max-bp1024:text-[28px] max-bp768:text-[26px] max-bp600:text-[24px] max-bp480:text-[22px] max-bp360:text-[19px]">
-          {t("hero.subtitle")}
+        <p className="hero-subtitle animate-fade-up [animation-delay:350ms] motion-reduce:animate-none self-center text-[32px] font-semibold italic tracking-[0.3px] text-muted max-bp1024:text-[28px] max-bp768:text-[26px] max-bp600:text-[24px] max-bp480:text-[22px] max-bp360:text-[19px] max-bp600:min-h-[2.6em]">
+          <Typewriter />
         </p>
         <p className="hero-stack animate-fade-up [animation-delay:425ms] motion-reduce:animate-none mt-3 font-[family-name:var(--font-mono)] text-[15px] tracking-[0.04em] text-link max-bp480:text-[13px]">
           {t("hero.stack")}
@@ -44,7 +45,7 @@ export function Hero() {
 
         <div className="hero-description animate-fade-up [animation-delay:500ms] motion-reduce:animate-none mt-8 max-w-[650px] text-balance text-center text-[1.1rem] leading-[1.8] text-muted max-bp1024:max-w-[620px] max-bp1024:text-[1.05rem] max-bp768:max-w-[520px] max-bp768:text-[1rem] max-bp768:leading-[1.7] max-bp600:mt-6 max-bp600:max-w-[400px] max-bp600:leading-[1.65] max-bp480:mt-7 max-bp480:max-w-[340px] max-bp480:leading-[1.6] max-bp360:max-w-[300px] max-bp360:text-[0.95rem]">
           <p>{t("hero.description")}</p>
-          <p className="mt-2 text-[0.95rem] max-bp480:text-[0.9rem]">{t("hero.location")}</p>
+          <p className="mt-2 font-semibold text-link">{t("hero.location")}</p>
         </div>
 
         <div className="hero-social-links animate-fade-up [animation-delay:600ms] motion-reduce:animate-none mb-[5px] mt-[25px] flex items-center justify-center gap-[18px]">

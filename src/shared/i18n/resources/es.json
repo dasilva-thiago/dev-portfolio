@@ -29,10 +29,14 @@
   "hero": {
     "availability": "disponible para prácticas y puestos junior",
     "title": "Thiago da Silva",
-    "subtitle": "Desarrollador Full Stack Junior",
+    "typewriter": [
+      "Desarrollador Full Stack Junior",
+      "técnico de soporte en TI",
+      "ingeniería en computación"
+    ],
     "stack": "TypeScript · Node.js · PostgreSQL",
     "description": "Creé eduAssets, un sistema en uso en una escuela estatal de Brasil, con 192 equipos controlados y más de 66 solicitudes atendidas.",
-    "location": "Remoto, o presencial e híbrido en Pindamonhangaba y Taubaté (SP, Brasil).",
+    "location": "Remoto en Brasil",
     "cta": "Ver eduAssets"
   },
   "sections": {

@@ -29,10 +29,14 @@
   "hero": {
     "availability": "disponível para estágio e vaga júnior",
     "title": "Thiago da Silva",
-    "subtitle": "Desenvolvedor Full Stack Júnior",
+    "typewriter": [
+      "Desenvolvedor Full Stack Júnior",
+      "um técnico de suporte em TI",
+      "estudante eng. computação"
+    ],
     "stack": "TypeScript · Node.js · PostgreSQL",
     "description": "Criei o eduAssets, sistema em uso em uma escola estadual, com 192 equipamentos controlados e mais de 66 chamados atendidos.",
-    "location": "Remoto no Brasil, ou presencial e híbrido em Pindamonhangaba e Taubaté.",
+    "location": "Remoto no Brasil",
     "cta": "Ver eduAssets"
   },
   "sections": {

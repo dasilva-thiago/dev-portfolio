@@ -43,6 +43,7 @@
   --color-social-border: var(--social-icon-border);
   --color-social-bg: var(--social-icon-bg);
 
+  --animate-cursor-blink: cursor-blink 0.75s step-end infinite;
   --animate-spin-fast: spin-fast 0.7s linear infinite;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -55,6 +56,16 @@
     to {
       opacity: 1;
       transform: none;
+    }
+  }
+
+  @keyframes cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
     }
   }
 

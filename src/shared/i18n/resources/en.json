@@ -29,10 +29,14 @@
   "hero": {
     "availability": "open to internships and junior roles",
     "title": "Thiago da Silva",
-    "subtitle": "Junior Full Stack Developer",
+    "typewriter": [
+      "Junior Full Stack Developer",
+      "an IT support technician",
+      "a computer engineering student"
+    ],
     "stack": "TypeScript · Node.js · PostgreSQL",
     "description": "I built eduAssets, a system in use at a public school in Brazil, with 192 devices tracked and over 66 tickets handled.",
-    "location": "Remote, or on-site and hybrid in Pindamonhangaba and Taubaté (SP, Brazil).",
+    "location": "Remote in Brazil",
     "cta": "See eduAssets"
   },
   "sections": {

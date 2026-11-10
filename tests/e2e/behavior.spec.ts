@@ -182,6 +182,8 @@ test.describe("navigation", () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/");
     await expect(page.locator("nav")).toHaveCSS("opacity", "1");
+    // The hover zone covers the top 70px, and the virtual mouse may start at (0, 0) depending on the platform.
+    await page.mouse.move(700, 500);
     await page.evaluate(() => window.scrollTo(0, 1500));
     await expect(page.locator("body")).toHaveClass(/scrolled-past-hero/);
     await expect(page.locator("nav")).toHaveCSS("opacity", "0");
@@ -411,7 +413,7 @@ test.describe("CV links", () => {
 test.describe("motion", () => {
   test.use({ reducedMotion: "reduce" });
 
-  test("with reduced motion nothing is hidden or transformed", async ({ page }) => {
+  test("with reduced motion nothing is hidden or transformed and the typewriter stays static", async ({ page }) => {
     await page.goto("/");
     await page.waitForTimeout(800);
     for (const selector of ["h1", ".hero-subtitle", ".hero-buttons", "#about", "#projects", "#contact"]) {
@@ -421,11 +423,25 @@ test.describe("motion", () => {
       }));
       expect(style, selector).toEqual({ opacity: "1", transform: "none" });
     }
-    await expect(page.locator(".hero-subtitle")).toHaveText("Junior Full Stack Developer");
+    const before = await page.locator("#typewriter-target").textContent();
+    await page.waitForTimeout(3200);
+    expect(await page.locator("#typewriter-target").textContent()).toBe(before);
+    expect(before).toBe("Junior Full Stack Developer");
   });
 });
 
 test.describe("motion enabled", () => {
+  test("the typewriter holds the highlighted role, then cycles to the next phrase", async ({ page }) => {
+    await page.goto("/");
+    const target = page.locator("#typewriter-target");
+    await expect(target).toHaveText("Junior Full Stack Developer");
+    await expect(target).toHaveClass(/text-link/);
+    await page.waitForTimeout(3000);
+    await expect(target).toHaveText("Junior Full Stack Developer");
+    await expect(target).toHaveText("an IT support technician", { timeout: 15000 });
+    await expect(target).not.toHaveClass(/text-link/);
+  });
+
   test("below-the-fold sections reveal on scroll and end fully visible", async ({ page }) => {
     await page.goto("/");
     await page.locator("#projects").scrollIntoViewIfNeeded();
