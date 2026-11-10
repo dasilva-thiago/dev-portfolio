@@ -2,7 +2,7 @@ import type { ProjectSlug } from "./slugs";
 
 // Pure data (no asset imports) so build scripts and SEO code can read it.
 interface ProjectLinks {
-  github?: string;
+  github: string;
   live?: string;
   languages: string[];
 }
@@ -22,6 +22,7 @@ const LINKS: Record<ProjectSlug, ProjectLinks> = {
     languages: ["TypeScript", "CSS"],
   },
   "aviation-safety": {
+    github: "https://github.com/dasilva-thiago/aviation_safety_project",
     languages: ["Python"],
   },
   "parkschool-alpr": {

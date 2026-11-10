@@ -70,11 +70,6 @@ test.describe("rendering", () => {
     await expect(github).toHaveAttribute("target", "_blank");
   });
 
-  test("a project without a public repository shows no GitHub button", async ({ page }) => {
-    await page.goto("/");
-    await expect(page.locator('[data-slug="aviation-safety"] a[href*="github.com"]')).toHaveCount(0);
-  });
-
   test("every image has explicit dimensions and alt text", async ({ page }) => {
     await page.goto("/");
     const bad = await page.$$eval("img", (imgs) =>
