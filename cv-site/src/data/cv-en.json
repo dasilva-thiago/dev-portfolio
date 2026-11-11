@@ -1,0 +1,102 @@
+{
+  "lang": "en",
+  "page_format": "a4",
+  "candidate": {
+    "name": "Thiago da Silva",
+    "title": "Software Developer (Backend • Full-Stack • Data & AI)",
+    "email": "thiagosilva785@gmail.com",
+    "linkedin": { "url": "https://www.linkedin.com/in/dasilva-thiago/", "display": "linkedin.com/in/dasilva-thiago" },
+    "github": { "url": "https://github.com/dasilva-thiago", "display": "github.com/dasilva-thiago" },
+    "portfolio": { "url": "https://www.dasilva-thiago.dev/", "display": "dasilva-thiago.dev" },
+    "location": "Pindamonhangaba, São Paulo, Brazil"
+  },
+  "sections": {
+    "summary": "Technical Profile",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "certifications": "Additional Training",
+    "skills": "Skills"
+  },
+  "summary": "Computer Engineering student and IT Technician with experience in technical support, systems analysis, software development, and process improvement. Practical experience with JavaScript, TypeScript, Python, C#, Node.js, REST APIs, SQL, PostgreSQL, FastAPI, React, and Git, along with knowledge of data and Artificial Intelligence. Focused on turning real-world problems into organized, efficient, and reliable solutions, with interests in backend development, full-stack engineering, data, and AI.",
+  "experience": [
+    {
+      "company": "São Paulo State Department of Education",
+      "role": "Technical Support & IT Technician",
+      "location": "Pindamonhangaba, São Paulo, Brazil · PROATI (Information Technology Support Project)",
+      "dates": "2026 - Present",
+      "bullets": [
+        "Provided support for systems, digital platforms, and technology equipment used in academic and administrative activities.",
+        "Performed day-to-day maintenance of computers, printers, laptops, tablets, and other school equipment.",
+        "Developed eduAssets, a web solution to digitize equipment loan, return, and incident tracking, now used to control 192 devices, with more than 66 tickets handled as of November 5, 2026.",
+        "Gathered user needs and translated operational problems into requirements, business rules, and software features.",
+        "Developed and integrated backend services, REST APIs, and databases, as well as technical documentation and continuous improvement initiatives."
+      ]
+    },
+    {
+      "company": "Gestor Seller",
+      "role": "Technical Support",
+      "location": "Taubaté, São Paulo, Brazil",
+      "dates": "2025",
+      "bullets": [
+        "Registered, triaged, and analyzed system incidents, contributing to root-cause identification and solution delivery.",
+        "Investigated inconsistencies in system integrations and execution flows.",
+        "Provided technical support to clients, translating user needs and problems into structured information for the technical team.",
+        "Supported clients over WhatsApp, video calls, meetings, and remote access.",
+        "Supported feature validation and analyzed web application behavior.",
+        "Performed software testing on web applications, including debugging and identifying problems and errors.",
+        "Opened tickets for the technical team, reporting the software problems and errors identified."
+      ]
+    },
+    {
+      "company": "Tenaris Confab",
+      "role": "Apprentice -> Laboratory Test Specimen Preparation Technician",
+      "location": "Pindamonhangaba, São Paulo, Brazil",
+      "dates": "2023 - 2025",
+      "bullets": [
+        "Prepared and analyzed samples for laboratory testing following technical standards and standardized procedures.",
+        "Recorded and organized experimental data with a focus on traceability and information reliability.",
+        "Participated in continuous improvement initiatives focused on laboratory process efficiency and standardization.",
+        "Presented the laboratory to foreign visitors.",
+        "Developed strong organizational, attention-to-detail, and problem-solving skills in a technical environment, and was later promoted to a laboratory role."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "eduAssets - Equipment Management System",
+      "url": "https://eduassets.tech",
+      "tech": "TypeScript, Node.js, Express, PostgreSQL, Prisma, Vite, REST API, Git, Raspberry Pi, RFID",
+      "description": "Full-stack application to digitize equipment loan, return, and incident tracking based on a real problem in a school environment, with control software and working hardware using Raspberry Pi and RFID. Controls all equipment at a public school in Pindamonhangaba (192 devices), with more than 66 tickets handled from the testing phase through November 5, 2026; the system generates reports used weekly to declare inventory to inspectors and agents of the State of São Paulo. REST APIs, endpoints, validations, and business rules with Node.js and Express; PostgreSQL database modeled with Prisma, including relationships, entity states, and data consistency rules. Application structured with separation of responsibilities, access control, and a focus on maintainability, clarity, and code evolution, using Git for version control and AI tools to support development, technical analysis, and documentation. Hosting configured by me on an Ubuntu VM on Oracle Cloud, with the application running in Docker and frequent use of CI/CD and deployment."
+    },
+    {
+      "name": "Buenos Aires Explorer",
+      "url": "https://github.com/dasilva-thiago/BuenosAiresExp",
+      "tech": "C#, .NET 10, Windows Forms, Entity Framework Core, SQLite, WebView2, Leaflet.js, QuestPDF, Nominatim API, Wikimedia API",
+      "description": "Desktop application in C# and Windows Forms for registering points of interest in Buenos Aires and planning visit itineraries, with version 1.0.0 published. Persistence with Entity Framework Core and SQLite, with migrations and code organized in layers (Models, Services, Views, UI, and Data). Integration with external APIs: forward and reverse geocoding through the Nominatim API (OpenStreetMap) and image search on Wikimedia/Wikipedia. Distance calculation between stops with the Haversine formula, interactive itinerary map with Leaflet.js through WebView2, PDF export with QuestPDF, and custom interface components."
+    }
+  ],
+  "education": [
+    { "title": "Computer Engineering", "org": "UNIVESP", "location": "São Paulo, Brazil", "year": "In progress" },
+    { "title": "IT Technician", "org": "SENAC", "location": "Pindamonhangaba, Brazil", "year": "Completed", "description": "Relevant coursework: Software Engineering, Data Structures, Databases, Cloud Computing, Design Patterns, Usability Engineering, Agile Methods, and Cybersecurity." }
+  ],
+  "certifications": [
+    { "title": "Data Immersion with Python", "org": "Alura", "year": "" },
+    { "title": "Data Analysis with Power BI", "org": "Fundação Bradesco", "year": "" },
+    { "title": "Cyber Threat Management", "org": "Cisco Networking Academy", "year": "" },
+    { "title": "IT Essentials", "org": "Cisco Networking Academy", "year": "" }
+  ],
+  "skills": [
+    { "category": "Languages", "items": "JavaScript, TypeScript, Python, C#" },
+    { "category": "Backend & APIs", "items": "Node.js, Express, FastAPI, REST APIs, HTTP, API integration" },
+    { "category": ".NET & Desktop", "items": "C#, .NET, Entity Framework Core, SQLite, Windows Forms, WebView2, QuestPDF" },
+    { "category": "Frontend", "items": "React.js, Vite, HTML5, CSS3, Tailwind CSS, Responsive Design" },
+    { "category": "Data & Databases", "items": "SQL, PostgreSQL, MySQL, Prisma, Data Modeling, Pandas, NumPy, Scikit-learn" },
+    { "category": "AI & LLMs", "items": "LLMs, RAG, embeddings, vector databases, AI-assisted development, language model APIs" },
+    { "category": "Software Engineering", "items": "Object-Oriented Programming, Data Structures, Application Architecture, Business Rules, Software Testing, Debugging, Software Problem Identification, Code Organization and Maintenance" },
+    { "category": "Practices & Version Control", "items": "Git, GitHub, GitHub Actions, CI/CD, deployment, branches, pull requests, technical documentation, requirements gathering, Spec-Driven Development (SDD)" },
+    { "category": "Infrastructure & Security", "items": "Linux (Ubuntu), Docker, Oracle Cloud (VM), information security fundamentals" },
+    { "category": "Systems & Tools", "items": "Linux, Power BI, Excel, Figma" },
+    { "category": "Spoken Languages", "items": "English: Advanced - reading and communication; Portuguese: Native" }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "lang": "es",
+  "page_format": "a4",
+  "candidate": {
+    "name": "Thiago da Silva",
+    "title": "Desarrollador de Software (Backend • Fullstack • Datos e IA)",
+    "email": "thiagosilva785@gmail.com",
+    "linkedin": { "url": "https://www.linkedin.com/in/dasilva-thiago/", "display": "linkedin.com/in/dasilva-thiago" },
+    "github": { "url": "https://github.com/dasilva-thiago", "display": "github.com/dasilva-thiago" },
+    "portfolio": { "url": "https://www.dasilva-thiago.dev/es", "display": "dasilva-thiago.dev" },
+    "location": "Pindamonhangaba - SP, Brasil"
+  },
+  "sections": {
+    "summary": "Perfil Técnico",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "certifications": "Cursos Complementarios",
+    "skills": "Habilidades"
+  },
+  "summary": "Estudiante de Ingeniería Informática y Técnico en Informática, con experiencia en soporte técnico, análisis de sistemas, desarrollo de software y mejora de procesos. Experiencia práctica con JavaScript, TypeScript, Python, C#, Node.js, APIs REST, SQL, PostgreSQL, FastAPI, React y Git, además de conocimientos en datos e Inteligencia Artificial. Enfoque en transformar problemas reales en soluciones organizadas, eficientes y confiables, con interés en Backend, Fullstack, Datos e IA.",
+  "experience": [
+    {
+      "company": "Secretaría de Educación del Estado de São Paulo",
+      "role": "Soporte Técnico y Técnico en Informática",
+      "location": "Pindamonhangaba - SP · PROATI (Proyecto de Apoyo a las Tecnologías de la Información)",
+      "dates": "2026 - Actualidad",
+      "bullets": [
+        "Soporte en el uso de sistemas, plataformas digitales y equipos tecnológicos en actividades académicas y administrativas.",
+        "Mantenimiento diario de equipos: computadoras, impresoras, portátiles, tabletas y demás equipos de la escuela.",
+        "Desarrollo de eduAssets, solución web para digitalizar el control de préstamos, devoluciones e incidencias de equipos, usada hoy en el control de 192 equipos, con más de 66 solicitudes atendidas hasta el 05/11/2026.",
+        "Identificación de necesidades de los usuarios y transformación de problemas operativos en requisitos, reglas de negocio y funcionalidades.",
+        "Desarrollo e integración de backend, APIs REST y bases de datos, además de documentación técnica y mejora continua."
+      ]
+    },
+    {
+      "company": "Gestor Seller",
+      "role": "Soporte Técnico",
+      "location": "Taubaté - SP",
+      "dates": "2025",
+      "bullets": [
+        "Registro, clasificación y análisis de incidentes en sistemas, contribuyendo a la identificación de causas y al encaminamiento de soluciones.",
+        "Investigación de inconsistencias en integraciones y flujos de ejecución de sistemas.",
+        "Atención y soporte técnico a clientes, traduciendo sus necesidades y problemas en información estructurada para el equipo técnico.",
+        "Atención a clientes por WhatsApp, videollamada, reuniones y acceso remoto.",
+        "Apoyo en la validación de funcionalidades y en el análisis del comportamiento de aplicaciones web.",
+        "Pruebas de software en aplicaciones web, con debugging e identificación de problemas y errores.",
+        "Apertura de tickets para el equipo técnico, informando los problemas y errores de software identificados."
+      ]
+    },
+    {
+      "company": "Tenaris Confab",
+      "role": "Joven Aprendiz -> Preparador de Muestras en Laboratorio",
+      "location": "Pindamonhangaba - SP",
+      "dates": "2023 - 2025",
+      "bullets": [
+        "Preparación y análisis de muestras para ensayos de laboratorio, siguiendo normas técnicas y procedimientos estandarizados.",
+        "Registro y organización de datos experimentales, con enfoque en la trazabilidad y confiabilidad de la información.",
+        "Participación en iniciativas de mejora continua orientadas a la eficiencia y estandarización de procesos de laboratorio.",
+        "Presentaciones del laboratorio para visitantes extranjeros.",
+        "Desarrollo de organización, atención al detalle y capacidad de resolución de problemas en un entorno técnico, con posterior promoción para desempeñarme en el laboratorio."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "eduAssets - Sistema de Gestión de Equipos",
+      "url": "https://eduassets.tech",
+      "tech": "TypeScript, Node.js, Express, PostgreSQL, Prisma, Vite, REST API, Git, Raspberry Pi, RFID",
+      "description": "Aplicación full stack para digitalizar el control de préstamos, devoluciones e incidencias de equipos a partir de una necesidad real del entorno escolar, con software de control y hardware funcional con Raspberry Pi y RFID. Control de todos los equipos de una escuela estatal en Pindamonhangaba (192 equipos), con más de 66 solicitudes atendidas desde la fase de pruebas hasta el 05/11/2026. Los informes generados por el sistema se usan semanalmente para declarar el inventario a inspectores y agentes del Estado de São Paulo. APIs REST, endpoints, validaciones y reglas de negocio con Node.js y Express; modelado de la base de datos PostgreSQL con Prisma, incluyendo relaciones, estados de las entidades y reglas de integridad. Aplicación estructurada con separación de responsabilidades, control de acceso y enfoque en mantenibilidad, claridad y evolución del código, con Git para el control de versiones y herramientas de IA como apoyo al desarrollo, análisis técnico y documentación. Alojamiento configurado por mí en una VM Ubuntu en Oracle Cloud, con la aplicación ejecutándose en Docker y uso frecuente de CI/CD y despliegue."
+    },
+    {
+      "name": "Buenos Aires Explorer",
+      "url": "https://github.com/dasilva-thiago/BuenosAiresExp",
+      "tech": "C#, .NET 10, Windows Forms, Entity Framework Core, SQLite, WebView2, Leaflet.js, QuestPDF, Nominatim API, Wikimedia API",
+      "description": "Aplicación de escritorio en C# y Windows Forms para registrar puntos de interés en Buenos Aires y planificar itinerarios de visita, con la versión 1.0.0 publicada. Persistencia con Entity Framework Core y SQLite, con migraciones y código organizado en capas (Models, Services, Views, UI y Data). Integración con APIs externas: geocodificación directa e inversa con la API Nominatim (OpenStreetMap) y búsqueda de imágenes en Wikimedia/Wikipedia. Cálculo de distancia entre paradas con la fórmula de Haversine, mapa interactivo del itinerario con Leaflet.js mediante WebView2, exportación a PDF con QuestPDF y componentes de interfaz personalizados."
+    }
+  ],
+  "education": [
+    { "title": "Ingeniería Informática", "org": "UNIVESP", "location": "São Paulo, Brasil", "year": "En curso" },
+    { "title": "Técnico en Informática", "org": "SENAC", "location": "Pindamonhangaba, Brasil", "year": "Completado", "description": "Formación académica: Ingeniería de Software, Estructuras de Datos, Bases de Datos, Computación en la Nube, Patrones de Diseño, Ingeniería de Usabilidad, Métodos Ágiles y Ciberseguridad." }
+  ],
+  "certifications": [
+    { "title": "Inmersión en Datos con Python", "org": "Alura", "year": "" },
+    { "title": "Análisis de Datos con Power BI", "org": "Fundação Bradesco", "year": "" },
+    { "title": "Cyber Threat Management", "org": "Cisco Networking Academy", "year": "" },
+    { "title": "IT Essentials", "org": "Cisco Networking Academy", "year": "" }
+  ],
+  "skills": [
+    { "category": "Lenguajes", "items": "JavaScript, TypeScript, Python, C#" },
+    { "category": "Backend y APIs", "items": "Node.js, Express, FastAPI, APIs REST, HTTP, integración de APIs" },
+    { "category": ".NET y Escritorio", "items": "C#, .NET, Entity Framework Core, SQLite, Windows Forms, WebView2, QuestPDF" },
+    { "category": "Frontend", "items": "React.js, Vite, HTML5, CSS3, Tailwind CSS, diseño responsivo" },
+    { "category": "Datos y Bases de Datos", "items": "SQL, PostgreSQL, MySQL, Prisma, modelado de datos, Pandas, NumPy, Scikit-learn" },
+    { "category": "IA y LLMs", "items": "LLMs, RAG, embeddings, bases de datos vectoriales, desarrollo asistido por IA, APIs de modelos de lenguaje" },
+    { "category": "Ingeniería de Software", "items": "Programación Orientada a Objetos, Estructuras de Datos, Arquitectura de Aplicaciones, Reglas de Negocio, Pruebas de Software, Debugging, Identificación de Problemas de Software, Organización y Mantenimiento de Código" },
+    { "category": "Prácticas y Control de Versiones", "items": "Git, GitHub, GitHub Actions, CI/CD, despliegue, branches, pull requests, documentación técnica, levantamiento de requisitos, Spec-Driven Development (SDD)" },
+    { "category": "Infraestructura y Seguridad", "items": "Linux (Ubuntu), Docker, Oracle Cloud (VM), fundamentos de seguridad de la información" },
+    { "category": "Sistemas y Herramientas", "items": "Linux, Power BI, Excel, Figma" },
+    { "category": "Idiomas", "items": "Inglés: Avanzado - lectura y comunicación; Español: Intermedio - comunicación escrita y lectura; Portugués: Nativo" }
+  ]
+}
