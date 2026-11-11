@@ -1,11 +1,13 @@
 import type { SkillGlyph } from "../model/skills";
 import { SkillGlyphSvg } from "./SkillGlyphSvg";
 
-export function SkillIconCard({ skill }: { skill: SkillGlyph }) {
+// `learning` marks a skill still being studied: same tile, dashed outline.
+export function SkillIconCard({ skill, learning = false }: { skill: SkillGlyph; learning?: boolean }) {
   return (
     <div
       className={
-        "skill-icon-card group relative flex cursor-default flex-col items-center gap-2.5 overflow-hidden rounded-[14px] border border-line bg-surface px-2.5 pb-3.5 pt-[18px] max-bp600:px-1 " +
+        "skill-icon-card group relative flex cursor-default flex-col items-center gap-2.5 overflow-hidden rounded-[14px] border bg-surface px-2.5 pb-3.5 pt-[18px] max-bp600:px-1 " +
+        (learning ? "border-dashed border-link/50 " : "border-line ") +
         "transition-[transform,border-color,box-shadow] duration-[300ms,250ms,250ms] " +
         "hover:-translate-y-[5px] hover:border-link/45 hover:shadow-[0_10px_30px_color-mix(in_srgb,var(--link-color)_12%,transparent),0_2px_8px_color-mix(in_srgb,var(--link-color)_8%,transparent)] " +
         "before:pointer-events-none before:absolute before:inset-0 before:opacity-0 before:transition-opacity before:duration-[350ms] before:content-[''] " +

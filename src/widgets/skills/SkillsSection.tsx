@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { CONSOLIDATED_SKILLS, EVOLVING_SKILLS } from "~/entities/skill/model/skills";
 import { SkillIconCard } from "~/entities/skill/ui/SkillIconCard";
-import { SkillLearningChip } from "~/entities/skill/ui/SkillLearningChip";
 import { useT } from "~/shared/i18n/useT";
 import { useMotion } from "~/shared/lib/motion";
 import { SectionHeading } from "~/shared/ui/SectionHeading";
@@ -61,24 +60,23 @@ export function SkillsSection() {
         ))}
       </div>
 
-      <div className="skills-evolving flex items-center justify-between gap-8 rounded-2xl border border-dashed border-link/40 bg-[color-mix(in_srgb,var(--link-color)_5%,var(--white-color))] px-7 py-6 max-bp600:flex-col max-bp600:items-start max-bp600:gap-5 max-bp600:px-5">
-        <div className="min-w-0">
-          <p className={`${GROUP_LABEL} flex items-center gap-2.5 text-link`}>
-            <span className="relative flex size-2.5 shrink-0" aria-hidden="true">
+      {/* Same grid as the consolidated skills: what is being studied reads as the next tiles, not a separate banner. */}
+      <div className="skills-evolving">
+        <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <p className={`${GROUP_LABEL} flex items-center gap-2 text-link`}>
+            <span className="relative flex size-2 shrink-0 self-center" aria-hidden="true">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-link opacity-60 motion-reduce:animate-none" />
-              <span className="relative inline-flex size-2.5 rounded-full bg-link" />
+              <span className="relative inline-flex size-2 rounded-full bg-link" />
             </span>
             {t("sections.skills.evolving")}
           </p>
-          <p className="mt-2 text-[14.5px] font-medium leading-[1.55] text-muted">
-            {t("sections.skills.evolvingDescription")}
-          </p>
+          <p className="text-[14px] font-medium text-muted">{t("sections.skills.evolvingDescription")}</p>
         </div>
-        <ul className="flex flex-wrap justify-end gap-2.5 max-bp600:justify-start">
+        <div className="grid grid-cols-4 gap-2.5 max-bp600:gap-2">
           {EVOLVING_SKILLS.map((skill) => (
-            <SkillLearningChip key={skill.id} skill={skill} />
+            <SkillIconCard key={skill.id} skill={skill} learning />
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
