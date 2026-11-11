@@ -50,17 +50,9 @@ function ExperienceSection({ entry, last }: { entry: ExperienceEntry & { id: Wor
       </div>
 
       <div className={last ? "pb-4" : "pb-16"}>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="font-[family-name:var(--font-mono)] text-[12px] font-semibold uppercase tracking-[0.05em] text-link">
-            {t(`${key}.date`)}
-          </span>
-          {current ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-link/40 bg-link/8 px-2.5 py-0.5 text-[11.5px] font-semibold text-link">
-              <span className="size-1.5 rounded-full bg-fill" aria-hidden="true" />
-              {t("about.featured.badge")}
-            </span>
-          ) : null}
-        </div>
+        <span className="block font-[family-name:var(--font-mono)] text-[12px] font-semibold uppercase tracking-[0.05em] text-link">
+          {t(`${key}.date`)}
+        </span>
         <h2 id={`${entry.id}-title`} className="mt-1.5 text-[clamp(1.35rem,3vw,1.65rem)] font-semibold text-text">
           {t(`${key}.title`)}
         </h2>
@@ -130,7 +122,7 @@ export function ExperiencePage() {
         <BackLink to={localize("/#about")} label={t("experiencePage.back")} />
 
         <div className="mx-auto max-w-[860px] px-[clamp(1.25rem,5vw,2.5rem)] pb-24 pt-[clamp(110px,16vh,150px)] text-text max-bp640:pb-16">
-          <header className="mb-14 border-b border-line pb-10">
+          <header data-nav-hero className="mb-14 border-b border-line pb-10">
             <ProjectTag className="mb-3">{t("experiencePage.tag")}</ProjectTag>
             <h1 className="font-[family-name:var(--font-hero)] text-[clamp(2.2rem,5vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-text">
               {t("experiencePage.title")}

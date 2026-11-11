@@ -28,6 +28,7 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
         <div className="mx-auto max-w-[1400px]">
           <article>
             <div
+              data-nav-hero
               className={
                 "relative h-[clamp(220px,48vh,480px)] w-full overflow-hidden bg-surface " +
                 "after:pointer-events-none after:absolute after:inset-0 after:content-[''] hc:after:hidden " +

@@ -204,11 +204,35 @@ test.describe("navigation", () => {
     await expect(page.locator("nav")).toHaveCSS("opacity", "1");
   });
 
-  test("project pages show the navigation permanently", async ({ page }) => {
+  for (const path of ["/projects/eduassets", "/experience"]) {
+    test(`${path}: the navbar hides past the top of the page and the hover zone reveals it`, async ({ page }) => {
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await page.goto(path);
+      await expect(page.locator("nav")).toHaveCSS("opacity", "1");
+      await page.mouse.move(700, 500);
+      await page.evaluate(() => window.scrollTo(0, 1500));
+      await expect(page.locator("body")).toHaveClass(/scrolled-past-hero/);
+      await expect(page.locator("nav")).toHaveCSS("opacity", "0");
+      await page.mouse.move(700, 20);
+      await expect(page.locator("nav")).toHaveCSS("opacity", "1");
+      // The back link stays clickable above the hover zone.
+      await page.getByRole("link", { name: "Back" }).click();
+      await expect(page).toHaveURL(/\/#(projects|about)$/);
+    });
+  }
+
+  test("the 404 page, which has no hero, keeps the navbar visible", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/this-page-does-not-exist");
+    await page.evaluate(() => window.scrollTo(0, 1500));
+    await expect(page.locator("body")).not.toHaveClass(/scrolled-past-hero/);
+    await expect(page.locator("nav")).toHaveCSS("opacity", "1");
+  });
+
+  test("project page navbar links lead back to the home sections", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/projects/eduassets");
     await expect(page.locator("nav > div")).toBeVisible();
-    await expect(page.locator("nav")).toHaveCSS("opacity", "1");
     await page.locator("nav > div").getByRole("link", { name: "About", exact: true }).click();
     await expect(page).toHaveURL(/\/#about$/);
   });
@@ -262,7 +286,6 @@ test.describe("experience", () => {
     const featured = page.locator("#current-experience");
     await featured.scrollIntoViewIfNeeded();
     await expect(featured.getByRole("heading", { name: "Technical Support & IT Technician" })).toBeVisible();
-    await expect(featured.getByText("Current role")).toBeVisible();
     const images = featured.locator("img");
     await expect(images).toHaveCount(4);
     for (const img of await images.all()) {
