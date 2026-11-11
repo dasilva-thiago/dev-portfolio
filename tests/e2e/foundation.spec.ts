@@ -32,6 +32,6 @@ test("hydrates without warnings and stored dark mode is applied before first pai
 
 test("design tokens resolve in light mode", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "See eduAssets" })).toHaveCSS("background-color", "rgb(242, 176, 30)");
+  await expect(page.getByRole("link", { name: "See eduAssets" }).first()).toHaveCSS("background-color", "rgb(242, 176, 30)");
   await expect(page.locator("html")).toHaveCSS("background-color", "rgb(250, 246, 236)");
 });

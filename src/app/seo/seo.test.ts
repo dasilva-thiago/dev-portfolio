@@ -37,7 +37,8 @@ describe("sitemap", () => {
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 
   it("has one entry per locale per page (18) and no duplicates", () => {
-    expect(locs).toHaveLength((PROJECT_SLUGS.length + 1) * 3);
+    // Home, experience and one page per project, in each of the three languages.
+    expect(locs).toHaveLength((PROJECT_SLUGS.length + 2) * 3);
     expect(new Set(locs).size).toBe(locs.length);
   });
 

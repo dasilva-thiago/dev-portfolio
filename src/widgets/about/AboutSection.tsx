@@ -1,14 +1,18 @@
-import { useRef, useState } from "react";
-import { EXPERIENCE, type ExperienceId } from "~/entities/experience/model/experience";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useRef } from "react";
+import { Link } from "react-router";
+import { EXPERIENCE } from "~/entities/experience/model/experience";
+import { EXPERIENCE_PATH } from "~/entities/experience/model/paths";
 import { ExperienceCard } from "~/entities/experience/ui/ExperienceCard";
-import { ExperienceDialog } from "~/features/experience-details/ExperienceDialog";
 import profile from "~/shared/assets/img/profile-about.webp";
 import { SITE } from "~/shared/config/site";
-import { useT } from "~/shared/i18n/useT";
+import { useLocalizedPath, useT } from "~/shared/i18n/useT";
 import { Rich } from "~/shared/lib/Rich";
 import { useSectionFade } from "~/shared/lib/useSectionFade";
+import { Icon } from "~/shared/ui/Icon";
 import { SectionHeading } from "~/shared/ui/SectionHeading";
 import { SECTION, SECTION_BLOCK } from "~/shared/ui/section";
+import { FeaturedExperience } from "./FeaturedExperience";
 
 const COPY =
   "mt-5 max-w-[475px] text-left text-[18px] font-medium leading-[1.75] tracking-[0.01em] text-muted max-bp480:text-center";
@@ -17,19 +21,9 @@ const GROUP_LABEL = "text-[12px] font-semibold uppercase tracking-[0.07em] text-
 
 export function AboutSection() {
   const { t } = useT();
+  const localize = useLocalizedPath();
   const section = useRef<HTMLElement>(null);
-  const [openId, setOpenId] = useState<ExperienceId | null>(null);
   useSectionFade(section);
-
-  const renderGroup = (group: "education" | "experience") =>
-    EXPERIENCE.filter((entry) => entry.group === group).map((entry) => (
-      <ExperienceCard
-        key={entry.id}
-        entry={entry}
-        expanded={openId === entry.id}
-        onOpen={() => setOpenId(entry.id)}
-      />
-    ));
 
   return (
     <section id="about" className={`${SECTION} ${SECTION_BLOCK} cursor-default`} ref={section}>
@@ -63,16 +57,28 @@ export function AboutSection() {
           <p className={COPY}>{t("about.bio")}</p>
         </div>
 
-        <div className="mx-auto flex w-full max-w-[75%] flex-col gap-2">
+        <div className="mx-auto flex w-full max-w-[75%] flex-col gap-2 max-bp1024:max-w-full">
           <p className={`${GROUP_LABEL} pb-0.5 pt-0`}>{t("sections.about.education")}</p>
-          {renderGroup("education")}
+          {EXPERIENCE.filter((entry) => entry.group === "education").map((entry) => (
+            <ExperienceCard key={entry.id} entry={entry} />
+          ))}
 
           <p className={`${GROUP_LABEL} pb-0.5 pt-2`}>{t("sections.about.experience")}</p>
-          {renderGroup("experience")}
+          {EXPERIENCE.filter((entry) => entry.group === "experience").map((entry) => (
+            <ExperienceCard key={entry.id} entry={entry} to={localize(`${EXPERIENCE_PATH}#${entry.id}`)} />
+          ))}
+
+          <Link
+            to={localize(EXPERIENCE_PATH)}
+            className="mt-2 inline-flex items-center gap-2 self-start text-[14px] font-semibold text-link no-underline transition-[gap] duration-150 hover:gap-3 max-bp740:self-center"
+          >
+            <span>{t("about.featured.all")}</span>
+            <Icon icon={faArrowRight} />
+          </Link>
         </div>
       </div>
 
-      <ExperienceDialog id={openId} onClose={() => setOpenId(null)} />
+      <FeaturedExperience />
     </section>
   );
 }

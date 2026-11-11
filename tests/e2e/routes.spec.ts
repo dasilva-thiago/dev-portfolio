@@ -21,13 +21,22 @@ test.describe("pre-rendered routes", () => {
     });
   }
 
+  test("/experience is pre-rendered with every role and the education list", async ({ request }) => {
+    const response = await request.get("/experience");
+    expect(response.status()).toBe(200);
+    const html = await response.text();
+    for (const id of ["seduc", "gestor-seller", "tenaris"]) expect(html).toContain(`id="${id}"`);
+    expect(html).toContain('id="education-title"');
+    expect(html).not.toContain("hero-section");
+  });
+
   test("unknown project slug is a 404", async ({ request }) => {
     expect((await request.get("/projects/does-not-exist")).status()).toBe(404);
   });
 });
 
 test.describe("rendering", () => {
-  for (const path of ["/", ...SLUGS.map((s) => `/projects/${s}`)]) {
+  for (const path of ["/", "/experience", ...SLUGS.map((s) => `/projects/${s}`)]) {
     test(`${path} hydrates without console errors or warnings`, async ({ page }) => {
       const problems: string[] = [];
       page.on("console", (m) => {

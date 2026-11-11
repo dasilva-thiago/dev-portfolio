@@ -64,7 +64,12 @@
     "role": "Computer Engineering Student",
     "quote": "I'm a Computer Engineering student and IT Technician who enjoys <em>turning real problems into software</em> that is organized and reliable.",
     "bio": "I've worked in an industrial laboratory at Tenaris and in technical support at Gestor Seller. Today I work in IT support at the São Paulo State Department of Education, where I gather problems from the people who use the systems and built eduAssets to solve them.",
-    "seeMore": "see more"
+    "seeMore": "see more",
+    "featured": {
+      "badge": "Current role",
+      "project": "See eduAssets",
+      "all": "See full experience"
+    }
   },
   "experience": {
     "univesp": {
@@ -86,7 +91,27 @@
         "Technical Support",
         "Requirements Gathering",
         "REST APIs"
-      ]
+      ],
+      "company": "São Paulo State Department of Education",
+      "location": "Pindamonhangaba, São Paulo, Brazil · PROATI (Information Technology Support Project)",
+      "highlights": [
+        "Provided support for systems, digital platforms, and technology equipment used in academic and administrative activities.",
+        "Performed day-to-day maintenance of computers, printers, laptops, tablets, and other school equipment.",
+        "Developed eduAssets, a web solution to digitize equipment loan, return, and incident tracking, now used to control 192 devices, with more than 66 tickets handled as of November 5, 2026.",
+        "Gathered user needs and translated operational problems into requirements, business rules, and software features.",
+        "Developed and integrated backend services, REST APIs, and databases, as well as technical documentation and continuous improvement initiatives."
+      ],
+      "gallery": {
+        "banner": "eduAssets logo on a laptop screen",
+        "rfid": "eduAssets prototype with an RC522 RFID reader wired to a Raspberry Pi",
+        "cart": "A laptop with an asset tag being taken from the school's charging cart",
+        "system": "eduAssets open on a school computer"
+      },
+      "captions": {
+        "rfid": "Hardware: Raspberry Pi + RFID",
+        "cart": "Tagged equipment",
+        "system": "In use at the school"
+      }
     },
     "gestor-seller": {
       "date": "2025",
@@ -97,13 +122,38 @@
         "Incident Triage",
         "Software Testing",
         "Debugging"
+      ],
+      "company": "Gestor Seller",
+      "location": "Taubaté, São Paulo, Brazil",
+      "highlights": [
+        "Registered, triaged, and analyzed system incidents, contributing to root-cause identification and solution delivery.",
+        "Investigated inconsistencies in system integrations and execution flows.",
+        "Provided technical support to clients, translating user needs and problems into structured information for the technical team.",
+        "Supported clients over WhatsApp, video calls, meetings, and remote access.",
+        "Supported feature validation and analyzed web application behavior.",
+        "Performed software testing on web applications, including debugging and identifying problems and errors.",
+        "Opened tickets for the technical team, reporting the software problems and errors identified."
       ]
     },
     "tenaris": {
       "date": "2023 — 2025",
       "title": "Apprentice → Laboratory Test Specimen Preparation Technician",
       "place": "TENARIS",
-      "description": "Worked in a multinational industrial laboratory environment, operating within high standards of precision, quality control, and process reliability. This experience built a solid foundation for my transition into software development, where I apply the same discipline, logical reasoning, and commitment to accuracy in designing and implementing robust solutions."
+      "description": "Worked in a multinational industrial laboratory environment, operating within high standards of precision, quality control, and process reliability. This experience built a solid foundation for my transition into software development, where I apply the same discipline, logical reasoning, and commitment to accuracy in designing and implementing robust solutions.",
+      "company": "Tenaris Confab",
+      "location": "Pindamonhangaba, São Paulo, Brazil",
+      "highlights": [
+        "Prepared and analyzed samples for laboratory testing following technical standards and standardized procedures.",
+        "Recorded and organized experimental data with a focus on traceability and information reliability.",
+        "Participated in continuous improvement initiatives focused on laboratory process efficiency and standardization.",
+        "Presented the laboratory to foreign visitors.",
+        "Developed strong organizational, attention-to-detail, and problem-solving skills in a technical environment, and was later promoted to a laboratory role."
+      ],
+      "tags": [
+        "Quality Control",
+        "Data Traceability",
+        "Continuous Improvement"
+      ]
     }
   },
   "initiative": {
@@ -312,11 +362,23 @@
     "homeTitle": "Thiago da Silva | Junior Full Stack Developer",
     "homeDescription": "Portfolio of Thiago da Silva, a junior full stack developer and Computer Engineering student working with TypeScript, Node.js, PostgreSQL and Python. Open to internships and junior roles.",
     "personDescription": "Computer Engineering and IT Technician student building real-world applications with C#, Python, JavaScript and Node.js.",
-    "jobTitle": "Junior Full Stack Developer"
+    "jobTitle": "Junior Full Stack Developer",
+    "experienceTitle": "Professional experience | Thiago da Silva",
+    "experienceDescription": "Career of Thiago da Silva: IT support at the São Paulo State Department of Education, where he built eduAssets, technical support at Gestor Seller and an industrial laboratory at Tenaris."
   },
   "notFound": {
     "title": "Page not found",
     "text": "The page you are looking for does not exist or was moved.",
     "home": "Back to the home page"
+  },
+  "experiencePage": {
+    "tag": "Career",
+    "title": "Professional experience",
+    "intro": "From an industrial laboratory at Tenaris to technical support at Gestor Seller and IT support at the São Paulo State Department of Education, where I built eduAssets.",
+    "back": "Back",
+    "highlights": "Main activities",
+    "education": "Education",
+    "project": "See eduAssets",
+    "resume": "View resume"
   }
 }

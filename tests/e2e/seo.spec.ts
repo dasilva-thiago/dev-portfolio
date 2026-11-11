@@ -7,6 +7,7 @@ const ORIGIN = "https://www.dasilva-thiago.dev";
 
 const pages = PREFIXES.flatMap((prefix) => [
   { path: prefix === "" ? "/" : prefix, kind: "home" as const, prefix },
+  { path: `${prefix}/experience`, kind: "experience" as const, prefix },
   ...SLUGS.map((slug) => ({ path: `${prefix}/projects/${slug}`, kind: "project" as const, prefix, slug })),
 ]);
 
@@ -45,13 +46,19 @@ test.describe("per-route head", () => {
       expect(attr(html, /<meta property="og:locale" content="([^"]+)"/)).toBe(
         prefix === "/pt" ? "pt_BR" : prefix === "/es" ? "es_ES" : "en_US",
       );
-      expect(attr(html, /<meta property="og:type" content="([^"]+)"/)).toBe(kind === "home" ? "website" : "article");
+      expect(attr(html, /<meta property="og:type" content="([^"]+)"/)).toBe(kind === "home" ? "website" : kind === "experience" ? "profile" : "article");
       expect(attr(html, /<meta property="og:image" content="([^"]+)"/)).toMatch(/^https:\/\/www\.dasilva-thiago\.dev\/og\//);
       expect(attr(html, /<meta name="twitter:card" content="([^"]+)"/)).toBe("summary_large_image");
 
       const jsonLd = attr(html, /<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
       const graph = (JSON.parse(jsonLd ?? "{}") as { "@graph": Array<{ "@type": string }> })["@graph"].map((n) => n["@type"]);
-      expect(graph).toEqual(kind === "home" ? ["ProfilePage", "WebSite"] : ["SoftwareSourceCode", "BreadcrumbList"]);
+      expect(graph).toEqual(
+        kind === "home"
+          ? ["ProfilePage", "WebSite"]
+          : kind === "experience"
+            ? ["ProfilePage", "BreadcrumbList"]
+            : ["SoftwareSourceCode", "BreadcrumbList"],
+      );
     });
   }
 
@@ -88,7 +95,7 @@ test.describe("Content-Security-Policy", () => {
     return found;
   }
 
-  for (const path of ["/", "/pt", "/es/projects/parkschool-alpr", "/this-page-does-not-exist"]) {
+  for (const path of ["/", "/pt", "/es/projects/parkschool-alpr", "/pt/experience", "/this-page-does-not-exist"]) {
     test(`${path}: loads with zero CSP violations`, async ({ page }) => {
       expect(await violations(page, path)).toEqual([]);
     });
@@ -104,7 +111,9 @@ test.describe("Content-Security-Policy", () => {
       await page.waitForURL(/\/es$/);
       await page.locator('[data-experience="tenaris"]').scrollIntoViewIfNeeded();
       await page.locator('[data-experience="tenaris"]').click();
-      await page.keyboard.press("Escape");
+      await page.waitForURL(/\/es\/experience#tenaris$/);
+      await page.goBack();
+      await page.waitForURL(/\/es$/);
       await page.locator("#name").fill("Ana");
       await page.locator("#email").fill("ana@example.com");
       await page.locator("#message").fill("Hola");
@@ -191,12 +200,12 @@ test.describe("host behavior", () => {
     }
   });
 
-  test("robots.txt points to a sitemap that lists all 18 URLs, each of which responds 200", async ({ request }) => {
+  test("robots.txt points to a sitemap that lists all 21 URLs, each of which responds 200", async ({ request }) => {
     const robots = await (await request.get("/robots.txt")).text();
     expect(robots).toContain("Sitemap: https://www.dasilva-thiago.dev/sitemap.xml");
     const xml = await (await request.get("/sitemap.xml")).text();
     const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => (m[1] ?? "").replace(ORIGIN, "") || "/");
-    expect(locs).toHaveLength(18);
+    expect(locs).toHaveLength(21);
     for (const loc of locs) expect((await request.get(loc)).status(), loc).toBe(200);
   });
 

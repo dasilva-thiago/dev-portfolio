@@ -1,5 +1,7 @@
 // Imported by react-router.config.ts, which loads before the `~/` alias exists: keep these imports relative.
-import { HOME_UPDATED_AT, PROJECT_SLUGS, PROJECT_UPDATED_AT } from "../../entities/project/model/slugs";
+import { EXPERIENCE_PATH, EXPERIENCE_UPDATED_AT } from "../../entities/experience/model/paths";
+import { PROJECT_SLUGS, PROJECT_UPDATED_AT } from "../../entities/project/model/slugs";
+import { HOME_UPDATED_AT } from "./dates";
 import { LOCALES } from "../../shared/i18n/locales";
 import { localizePath } from "../../shared/i18n/path";
 import { alternatesFor, pageUrl } from "./urls";
@@ -14,6 +16,7 @@ interface SitemapPage {
 export function sitemapPages(): SitemapPage[] {
   return [
     { neutralPath: "/", lastmod: HOME_UPDATED_AT, changefreq: "monthly", priority: "1.0" },
+    { neutralPath: EXPERIENCE_PATH, lastmod: EXPERIENCE_UPDATED_AT, changefreq: "monthly", priority: "0.8" },
     ...PROJECT_SLUGS.map((slug) => ({
       neutralPath: `/projects/${slug}`,
       lastmod: PROJECT_UPDATED_AT[slug],

@@ -256,53 +256,56 @@ test.describe("navigation", () => {
   });
 });
 
-test.describe("experience dialog", () => {
-  test("opens with focus inside, locks scroll, closes with Escape, and restores focus", async ({ page }) => {
+test.describe("experience", () => {
+  test("the About section features the current role with its photos and links", async ({ page }) => {
+    await page.goto("/");
+    const featured = page.locator("#current-experience");
+    await featured.scrollIntoViewIfNeeded();
+    await expect(featured.getByRole("heading", { name: "Technical Support & IT Technician" })).toBeVisible();
+    await expect(featured.getByText("Current role")).toBeVisible();
+    const images = featured.locator("img");
+    await expect(images).toHaveCount(4);
+    for (const img of await images.all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth)).toBeGreaterThan(0);
+    }
+    await expect(featured.getByRole("link", { name: "See eduAssets" })).toHaveAttribute("href", "/projects/eduassets");
+    await expect(featured.getByRole("link", { name: "See full experience" })).toHaveAttribute("href", "/experience");
+  });
+
+  test("a compact card opens its section on the experience page, and Back returns to About", async ({ page }) => {
     await page.goto("/");
     const card = page.locator('[data-experience="tenaris"]');
     await card.scrollIntoViewIfNeeded();
     await card.click();
-    const dialog = page.getByRole("dialog");
-    await expect(dialog).toBeVisible();
-    await expect(dialog).toHaveAccessibleName("Apprentice → Laboratory Test Specimen Preparation Technician");
-    await expect(card).toHaveAttribute("aria-expanded", "true");
-    expect(await page.evaluate(() => document.body.style.overflow)).toBe("hidden");
-    expect(await page.evaluate(() => document.activeElement?.getAttribute("aria-label"))).toBe("Close");
-    await expect(page.getByText("Industrial Safety Localization")).toBeVisible();
-
-    await page.keyboard.press("Escape");
-    await expect(dialog).toBeHidden();
-    await expect(card).toHaveAttribute("aria-expanded", "false");
-    expect(await page.evaluate(() => document.body.style.overflow)).toBe("");
-    await expect(card).toBeFocused();
+    await expect(page).toHaveURL(/\/experience#tenaris$/);
+    const section = page.locator("article#tenaris");
+    await expect(section.getByRole("heading", { level: 2 })).toHaveText(
+      "Apprentice → Laboratory Test Specimen Preparation Technician",
+    );
+    await expect(section.getByText("Industrial Safety Localization")).toBeVisible();
+    await expect(section).toBeInViewport();
+    await page.getByRole("link", { name: "Back" }).click();
+    await expect(page).toHaveURL(/\/#about$/);
   });
 
-  test("each entry labels the dialog with its own title and the backdrop closes it", async ({ page }) => {
-    await page.goto("/");
-    const first = page.locator('[data-experience="seduc"]');
-    await first.scrollIntoViewIfNeeded();
-    await first.click();
-    await expect(page.getByRole("dialog")).toHaveAccessibleName("Technical Support & IT Technician");
-    await expect(page.getByRole("dialog").getByText("Requirements Gathering", { exact: true })).toBeVisible();
-    await page.mouse.click(5, 300);
-    await expect(page.getByRole("dialog")).toBeHidden();
+  test("the experience page lists every role, its activities and the education", async ({ page }) => {
+    await page.goto("/experience");
+    await expect(page.getByRole("heading", { level: 1, name: "Professional experience" })).toBeVisible();
+    await expect(page.locator("main article")).toHaveCount(3);
+    await expect(page.locator("main article#seduc li").first()).toContainText("Provided support for systems");
+    await expect(page.locator("main article#seduc img")).toHaveCount(4);
+    await expect(page.getByRole("heading", { level: 2, name: "Education" })).toBeVisible();
   });
 
-  test("the Gestor Seller entry opens its own details", async ({ page }) => {
-    await page.goto("/");
-    const card = page.locator('[data-experience="gestor-seller"]');
-    await card.scrollIntoViewIfNeeded();
-    await card.click();
-    await expect(page.getByRole("dialog")).toHaveAccessibleName("Technical Support");
-    await expect(page.getByRole("dialog").getByText("Incident Triage", { exact: true })).toBeVisible();
-  });
-
-  test("dialog text follows the locale", async ({ page }) => {
-    await page.goto("/pt");
-    const card = page.locator('[data-experience="seduc"]');
-    await card.scrollIntoViewIfNeeded();
-    await card.click();
-    await expect(page.getByRole("dialog")).toContainText("Levantamento de Requisitos");
+  test("the experience page follows the locale", async ({ page }) => {
+    await page.goto("/pt/experience");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Experiência profissional");
+    await expect(page.locator("article#seduc")).toContainText("Levantamento de Requisitos");
+    await expect(page.locator("article#seduc").getByRole("link", { name: "Ver o eduAssets" })).toHaveAttribute(
+      "href",
+      "/pt/projects/eduassets",
+    );
   });
 });
 

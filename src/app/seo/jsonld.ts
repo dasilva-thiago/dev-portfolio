@@ -1,9 +1,11 @@
-import { HOME_UPDATED_AT, PROJECT_UPDATED_AT, type ProjectSlug } from "~/entities/project/model/slugs";
+import { EXPERIENCE_PATH, EXPERIENCE_UPDATED_AT } from "~/entities/experience/model/paths";
+import { PROJECT_UPDATED_AT, type ProjectSlug } from "~/entities/project/model/slugs";
 import { getProjectLinks } from "~/entities/project/model/links";
 import { SITE } from "~/shared/config/site";
 import { LOCALES, type Locale } from "~/shared/i18n/locales";
 import { localizePath } from "~/shared/i18n/path";
 import type { Resources } from "~/shared/i18n/types";
+import { HOME_UPDATED_AT } from "./dates";
 import { HREFLANG, assetUrl, pageUrl } from "./urls";
 
 const PERSON_ID = `${SITE.origin}/#person`;
@@ -101,6 +103,34 @@ export function projectJsonLd(locale: Locale, slug: ProjectSlug, resources: Reso
             item: pageUrl(localizePath("/", locale)) + "#projects",
           },
           { "@type": "ListItem", position: 3, name: copy.title, item: url },
+        ],
+      },
+    ],
+  };
+}
+
+// The experience page is the person's career: it points at the same Person (by @id) as the home page.
+export function experienceJsonLd(locale: Locale, resources: Resources): JsonLd {
+  const url = pageUrl(localizePath(EXPERIENCE_PATH, locale));
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": `${url}#profilepage`,
+        url,
+        name: resources.meta.experienceTitle,
+        description: resources.meta.experienceDescription,
+        inLanguage: HREFLANG[locale],
+        dateModified: EXPERIENCE_UPDATED_AT,
+        mainEntity: { "@id": PERSON_ID },
+        isPartOf: { "@id": WEBSITE_ID },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: resources.nav.aria.home, item: pageUrl(localizePath("/", locale)) },
+          { "@type": "ListItem", position: 2, name: resources.experiencePage.title, item: url },
         ],
       },
     ],

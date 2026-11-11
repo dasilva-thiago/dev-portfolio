@@ -1,10 +1,11 @@
 import type { MetaDescriptor } from "react-router";
+import { EXPERIENCE_PATH } from "~/entities/experience/model/paths";
 import { PROJECT_OG_IMAGE, type ProjectSlug } from "~/entities/project/model/slugs";
 import { SITE } from "~/shared/config/site";
 import { LOCALES, type Locale } from "~/shared/i18n/locales";
 import { localizePath } from "~/shared/i18n/path";
 import type { Resources } from "~/shared/i18n/types";
-import { homeJsonLd, projectJsonLd } from "./jsonld";
+import { experienceJsonLd, homeJsonLd, projectJsonLd } from "./jsonld";
 import { OG_LOCALE, alternatesFor, assetUrl, pageUrl } from "./urls";
 
 interface Page {
@@ -13,7 +14,7 @@ interface Page {
   title: string;
   description: string;
   image: { path: string; width: number; height: number };
-  type: "website" | "article";
+  type: "website" | "article" | "profile";
 }
 
 function pageMeta({ neutralPath, locale, title, description, image, type }: Page): MetaDescriptor[] {
@@ -76,6 +77,20 @@ export function projectMeta(locale: Locale, slug: ProjectSlug, resources: Resour
       type: "article",
     }),
     { "script:ld+json": projectJsonLd(locale, slug, resources) },
+  ];
+}
+
+export function experienceMeta(locale: Locale, resources: Resources): MetaDescriptor[] {
+  return [
+    ...pageMeta({
+      neutralPath: EXPERIENCE_PATH,
+      locale,
+      title: resources.meta.experienceTitle,
+      description: resources.meta.experienceDescription,
+      image: { path: "/og/portfolio.jpg", width: 1200, height: 630 },
+      type: "profile",
+    }),
+    { "script:ld+json": experienceJsonLd(locale, resources) },
   ];
 }
 

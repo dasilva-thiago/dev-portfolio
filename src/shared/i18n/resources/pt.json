@@ -64,7 +64,12 @@
     "role": "Estudante de Engenharia da Computação",
     "quote": "Sou estudante de Engenharia da Computação e Técnico em Informática. Gosto de <em>transformar problemas reais em software</em> organizado e confiável.",
     "bio": "Passei por laboratório industrial na Tenaris e suporte técnico na Gestor Seller. Hoje atuo no suporte de TI da Secretaria da Educação de SP, onde levanto os problemas com quem usa os sistemas e desenvolvi o eduAssets para resolvê-los.",
-    "seeMore": "veja mais"
+    "seeMore": "veja mais",
+    "featured": {
+      "badge": "Experiência atual",
+      "project": "Ver o eduAssets",
+      "all": "Ver trajetória completa"
+    }
   },
   "experience": {
     "univesp": {
@@ -86,7 +91,27 @@
         "Suporte Técnico",
         "Levantamento de Requisitos",
         "APIs REST"
-      ]
+      ],
+      "company": "Secretaria da Educação do Estado de SP",
+      "location": "Pindamonhangaba - SP · PROATI (Projeto de Apoio à Tecnologia da Informação)",
+      "highlights": [
+        "Suporte ao uso de sistemas, plataformas digitais e equipamentos tecnológicos em atividades acadêmicas e administrativas.",
+        "Manutenção de equipamentos no dia a dia: computadores, impressoras, notebooks, tablets e demais equipamentos da escola.",
+        "Desenvolvimento do eduAssets, solução web para digitalizar o controle de empréstimos, devoluções e ocorrências de equipamentos, hoje usada no controle de 192 equipamentos, com mais de 66 chamados atendidos até 05/11/2026.",
+        "Levantamento de necessidades dos usuários e transformação de problemas operacionais em requisitos, regras de negócio e funcionalidades.",
+        "Desenvolvimento e integração de backend, APIs REST e banco de dados, além de documentação técnica e melhoria contínua."
+      ],
+      "gallery": {
+        "banner": "Logo do eduAssets na tela de um notebook",
+        "rfid": "Protótipo do eduAssets com leitor RFID RC522 ligado a um Raspberry Pi",
+        "cart": "Notebook com etiqueta de patrimônio sendo retirado do carrinho de carregamento da escola",
+        "system": "eduAssets aberto em um computador da escola"
+      },
+      "captions": {
+        "rfid": "Hardware: Raspberry Pi + RFID",
+        "cart": "Equipamentos identificados",
+        "system": "Sistema em uso na escola"
+      }
     },
     "gestor-seller": {
       "date": "2025",
@@ -97,13 +122,38 @@
         "Triagem de Incidentes",
         "Testes de Software",
         "Debugging"
+      ],
+      "company": "Gestor Seller",
+      "location": "Taubaté - SP",
+      "highlights": [
+        "Registro, triagem e análise de incidentes em sistemas, contribuindo para identificação de causas e encaminhamento de soluções.",
+        "Investigação de inconsistências em integrações e fluxos de execução de sistemas.",
+        "Atendimento técnico a clientes, traduzindo necessidades e problemas dos usuários em informações estruturadas para o time técnico.",
+        "Atendimento a clientes por WhatsApp, chamada de vídeo, reuniões e acesso remoto.",
+        "Apoio na validação de funcionalidades e análise do comportamento de aplicações web.",
+        "Testes de software em aplicações web, com debugging e identificação de problemas e erros.",
+        "Abertura de tickets para a equipe técnica, informando os problemas e erros de software identificados."
       ]
     },
     "tenaris": {
       "date": "2023 - 2025",
       "title": "Jovem Aprendiz → Preparador de Corpo de Prova em Laboratório",
       "place": "Tenaris",
-      "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas."
+      "description": "Atuei em um ambiente laboratorial industrial multinacional, seguindo altos padrões de precisão, controle de qualidade e confiabilidade de processos. Essa experiência construiu uma base sólida para minha transição para o desenvolvimento de software, onde aplico a mesma disciplina, raciocínio lógico e compromisso com a precisão no desenvolvimento de soluções robustas.",
+      "company": "Tenaris Confab",
+      "location": "Pindamonhangaba - SP",
+      "highlights": [
+        "Preparação e análise de amostras para ensaios laboratoriais seguindo normas técnicas e procedimentos padronizados.",
+        "Registro e organização de dados experimentais com foco em rastreabilidade e confiabilidade das informações.",
+        "Participação em iniciativas de melhoria contínua voltadas à eficiência e padronização de processos laboratoriais.",
+        "Apresentações do laboratório para visitantes estrangeiros.",
+        "Desenvolvimento de organização, atenção aos detalhes e resolução de problemas em ambiente técnico, com posterior promoção para atuação no laboratório."
+      ],
+      "tags": [
+        "Controle de Qualidade",
+        "Rastreabilidade de Dados",
+        "Melhoria Contínua"
+      ]
     }
   },
   "initiative": {
@@ -312,11 +362,23 @@
     "homeTitle": "Thiago da Silva | Desenvolvedor Full Stack Júnior",
     "homeDescription": "Portfólio de Thiago da Silva, desenvolvedor full stack júnior e estudante de Engenharia da Computação. TypeScript, Node.js, PostgreSQL e Python. Aberto a estágio e vagas júnior.",
     "personDescription": "Estudante de Engenharia da Computação e Técnico em Informática que desenvolve aplicações reais com C#, Python, JavaScript e Node.js.",
-    "jobTitle": "Desenvolvedor Full Stack Júnior"
+    "jobTitle": "Desenvolvedor Full Stack Júnior",
+    "experienceTitle": "Experiência profissional | Thiago da Silva",
+    "experienceDescription": "Trajetória de Thiago da Silva: suporte de TI na Secretaria da Educação de SP, onde criou o eduAssets, suporte técnico na Gestor Seller e laboratório industrial na Tenaris."
   },
   "notFound": {
     "title": "Página não encontrada",
     "text": "A página que você procura não existe ou foi movida.",
     "home": "Voltar para a página inicial"
+  },
+  "experiencePage": {
+    "tag": "Trajetória",
+    "title": "Experiência profissional",
+    "intro": "Do laboratório industrial na Tenaris ao suporte técnico na Gestor Seller e ao suporte de TI na Secretaria da Educação de SP, onde desenvolvi o eduAssets.",
+    "back": "Voltar",
+    "highlights": "Principais atividades",
+    "education": "Educação",
+    "project": "Ver o eduAssets",
+    "resume": "Ver currículo"
   }
 }

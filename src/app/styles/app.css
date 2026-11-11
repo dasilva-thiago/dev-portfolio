@@ -7,7 +7,6 @@
 @import "@fortawesome/fontawesome-svg-core/styles.css" layer(base);
 @import "../../shared/styles/tokens.css";
 @import "../../widgets/site-nav/hamburger.css" layer(components);
-@import "../../features/experience-details/dialog.css" layer(components);
 @import "../../shared/styles/scrollbar.css" layer(components);
 
 /* max-bpN is `width < N+1px`, i.e. the legacy `max-width: Npx`; min-bpN is `width >= Npx`. */
