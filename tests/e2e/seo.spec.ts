@@ -96,7 +96,7 @@ test.describe("Content-Security-Policy", () => {
 
   test("the main interactions run under the policy without violations", async ({ page }) => {
     await page.route("**/api.web3forms.com/**", (route) => route.fulfill({ json: { success: true } }));
-    await page.route("https://drive.google.com/**", (route) => route.fulfill({ body: "ok" }));
+    await page.route("https://cv.dasilva-thiago.dev/**", (route) => route.fulfill({ body: "ok" }));
     const found = await violations(page, "/", async () => {
       await page.locator("#dark-toggle").click();
       await page.locator("#lang-trigger").click();

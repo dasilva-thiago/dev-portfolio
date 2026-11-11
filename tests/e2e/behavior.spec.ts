@@ -409,16 +409,17 @@ test.describe("contact form", () => {
 });
 
 test.describe("CV links", () => {
-  for (const [path, fragment] of [
-    ["/", "1vNS3DdUoLXmWjCaGW1jwlL7wkwcYgS_h"],
-    ["/pt", "1AenjuFP2L_emXYSSnc7XWO_PpPnCfs38"],
-    ["/es", "1ZIuraVsYhbsz5QyXXTFOm1njuVFEIy2Y"],
+  for (const [path, target] of [
+    ["/", "https://cv.dasilva-thiago.dev/en"],
+    ["/pt", "https://cv.dasilva-thiago.dev/pt"],
+    ["/es", "https://cv.dasilva-thiago.dev/es"],
   ] as const) {
     test(`${path} opens the matching CV in a new tab`, async ({ page, context }) => {
-      await context.route("https://drive.google.com/**", (route) => route.fulfill({ body: "ok" }));
+      await context.route("https://cv.dasilva-thiago.dev/**", (route) => route.fulfill({ body: "ok" }));
       await page.goto(path);
+      await expect(page.locator("#hero-cv-icon")).toHaveAttribute("href", target);
       const [popup] = await Promise.all([page.waitForEvent("popup"), page.locator("#hero-cv-icon").click()]);
-      expect(popup.url()).toContain(fragment);
+      expect(popup.url()).toBe(target);
     });
   }
 });
