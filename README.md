@@ -22,8 +22,16 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
     <td><img src="docs/screenshots/mobile-projects.webp" alt="Mobile projects section" width="220"></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/desktop-skills.webp" alt="Desktop skills section with consolidated technologies and the evolving panel" width="640"></td>
+    <td><img src="docs/screenshots/desktop-skills.webp" alt="Desktop skills section with the consolidated technologies and the evolving group, where PHP is a tile with a dashed outline" width="640"></td>
     <td><img src="docs/screenshots/mobile-skills.webp" alt="Mobile skills section" width="220"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/desktop-about-current-role.webp" alt="Current role card in the About section: Technical Support and IT Technician at the São Paulo State Department of Education, with the eduAssets banner and three photos from the school in a mosaic" width="640"></td>
+    <td><img src="docs/screenshots/mobile-about-current-role.webp" alt="Current role card on mobile, with the mosaic below the text" width="220"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/desktop-experience.webp" alt="Experience page header with the back link, the title Professional experience, the resume button and the start of the timeline" width="640"></td>
+    <td><img src="docs/screenshots/mobile-experience.webp" alt="Experience page on mobile" width="220"></td>
   </tr>
 </table>
 
@@ -48,12 +56,12 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 
 ## Highlights
 
-- **Static output, real routes.** Every page is pre-rendered at build time with React Router (`ssr: false` + `prerender`): the home page and the five project pages, each in English, Portuguese and Spanish, plus a real `404.html`. No runtime server, no client-only shell for crawlers.
-- **Clean, localized URLs.** `/`, `/pt`, `/es` and `/projects/<slug>` under each locale. Language is part of the URL; switching language is a navigation that keeps the page and the scroll position.
-- **Per-page SEO.** Title, description, canonical URL, `hreflang` alternates, Open Graph and Twitter cards, JSON-LD (`ProfilePage` / `Person` / `WebSite` on the home page, `SoftwareSourceCode` / `BreadcrumbList` on project pages), and a `sitemap.xml` generated from the same route data.
+- **Static output, real routes.** Every page is pre-rendered at build time with React Router (`ssr: false` + `prerender`): the home page, the experience page and the five project pages, each in English, Portuguese and Spanish, plus a real `404.html`. No runtime server, no client-only shell for crawlers.
+- **Clean, localized URLs.** `/`, `/pt`, `/es`, plus `/experience` and `/projects/<slug>` under each locale. Language is part of the URL; switching language is a navigation that keeps the page and the scroll position.
+- **Per-page SEO.** Title, description, canonical URL, `hreflang` alternates, Open Graph and Twitter cards, JSON-LD (`ProfilePage` / `Person` / `WebSite` on the home page, `ProfilePage` / `BreadcrumbList` on the experience page, `SoftwareSourceCode` / `BreadcrumbList` on project pages), and a `sitemap.xml` generated from the same route data.
 - **Strict Content-Security-Policy.** Delivered per page as a `<meta>` tag; every inline script is allow-listed by SHA-256 hash computed at build time. No `'unsafe-inline'` or `'unsafe-eval'` for scripts.
 - **No flash of the wrong theme or language.** A tiny synchronous script in `<head>` applies the stored/system theme and sends a first-time visitor at `/` to `/pt` or `/es` before anything paints.
-- **Accessibility.** Dark mode and high-contrast mode (independent), native `<dialog>` for the experience details, keyboard-operable navigation, `prefers-reduced-motion` respected by every animation, automated axe checks on every theme and locale.
+- **Accessibility.** Dark mode and high-contrast mode (independent), keyboard-operable navigation, `prefers-reduced-motion` respected by every animation, automated axe checks on every theme and locale.
 - **Resumes on their own subdomain.** The resume buttons open [cv.dasilva-thiago.dev](https://cv.dasilva-thiago.dev) in the active language: an HTML resume with the same visual identity and a persistent PDF download, instead of a file on a cloud drive. See [Resume site](#resume-site-cvdasilva-thiagodev-1).
 - **Small by design.** About 146 kB of JavaScript (gzip) on first load; animation code is loaded on idle time; icons are tree-shaken data rendered as inline SVG; images are WebP.
 
@@ -61,7 +69,11 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 
 ## What the site shows
 
-The home page follows a recruiter's first read: a hero, then projects, skills, about and contact. The hero combines a typewriter that holds the target role longer and highlights it in the theme color, the main stack, the eduAssets figures and remote availability. Skills are split into consolidated technologies and an "evolving" panel for what is being studied, and the resume buttons open the resume for the active language on `cv.dasilva-thiago.dev`.
+The home page follows a recruiter's first read: a hero, then projects, skills, about and contact. The hero combines a typewriter that holds the target role longer and highlights it in the theme color, the main stack, the eduAssets figures and remote availability. Skills are split into consolidated technologies and an "evolving" group for what is being studied, shown as tiles in the same grid with a dashed outline, and the resume buttons open the resume for the active language on `cv.dasilva-thiago.dev`.
+
+**About and experience.** The About section keeps education and experience as compact cards and features the current role in full: IT support at the São Paulo State Department of Education (SEDUC-SP, PROATI), where eduAssets was built. That card shows the eduAssets banner and three photos taken at the school (the dashboard in use, the Raspberry Pi + RFID prototype and the tagged equipment) in a mosaic, and links to the eduAssets project page and to the experience page. Each experience card opens its own section of `/experience`, a timeline with every role's description, main activities, tags, the eduAssets gallery, the Tenaris industrial safety initiative, and the education list.
+
+On the project and experience pages the pill navbar behaves as on the home page: it stays while the top of the page (the project cover or the experience header) is on screen, hides once it scrolls away, and comes back when the pointer reaches the top of the window.
 
 | Project | Type | Main stack | Links |
 |---|---|---|---|
@@ -124,10 +136,10 @@ A lightweight, feature-oriented layout inspired by Feature-Sliced Design. Higher
 ```
 src/
 ├── app/         root document, routes, SEO metadata, analytics, pre-paint script
-├── pages/       route-level compositions (home, project, not-found)
+├── pages/       route-level compositions (home, experience, project, not-found)
 ├── widgets/     page sections: site-nav, hero, about, skills, projects, contact, footer
 ├── features/    user capabilities: switch-language, toggle-appearance, contact-form,
-│                experience-details (dialog), open-cv, locale-entry (first-visit redirect)
+│                open-cv, locale-entry (first-visit redirect)
 ├── entities/    domain data and UI: project, experience, skill
 └── shared/      i18n, config, UI primitives, helpers, styles, assets
 scripts/         build post-processing (CSP hashes, 404 page, sitemap) and its tests
@@ -154,7 +166,7 @@ server/          legacy email API kept in the repository; not part of the static
 ## SEO, security and analytics
 
 - Per-route `meta` exports build title, description, canonical, alternates, social tags and JSON-LD from the locale resources and typed project data (`src/app/seo/`).
-- After the build, `scripts/postbuild.ts` writes `sitemap.xml` (18 URLs with reciprocal `hreflang` alternates), turns the prerendered 404 route into `404.html`, removes the SPA fallback, and injects the Content-Security-Policy meta tag into every HTML file.
+- After the build, `scripts/postbuild.ts` writes `sitemap.xml` (21 URLs with reciprocal `hreflang` alternates), turns the prerendered 404 route into `404.html`, removes the SPA fallback, and injects the Content-Security-Policy meta tag into every HTML file.
 - `vercel.json` adds security headers (`X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`), long-lived caching for hashed assets, and `trailingSlash: false`.
 - Google Analytics only activates on the production hostname (so previews and local runs send nothing) and sends one `page_view` per route change.
 
@@ -194,7 +206,7 @@ The resume subdomain is a second Vercel project on the same repository, with **R
 ## Testing
 
 - **Unit/component:** locale parity, typed keys, project data, layer boundaries, contact validation and submission, pre-paint script, CSP builder, sitemap and metadata.
-- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the hero typewriter, the experience dialog, the contact form with a mocked provider, CV links (each locale opens its resume on `cv.dasilva-thiago.dev`), reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
+- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the hero typewriter, the featured current role and the experience page (cards open their section, the back link returns to About), the navbar hiding past the top of inner pages, the contact form with a mocked provider, CV links (each locale opens its resume on `cv.dasilva-thiago.dev`), reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home, experience and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
 - **Visual and layout tools:** `tests/visual-baseline/` can capture screenshots, compare them against a reference, and measure element geometry.
 
 ---
