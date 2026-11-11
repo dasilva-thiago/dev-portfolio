@@ -2,7 +2,7 @@
 
 A multilingual, accessible developer portfolio built with React, TypeScript and Tailwind CSS, pre-rendered to static HTML for every route.
 
-**Live:** [dasilva-thiago.dev](https://www.dasilva-thiago.dev)
+**Live:** [dasilva-thiago.dev](https://www.dasilva-thiago.dev) · **Resumes:** [cv.dasilva-thiago.dev](https://cv.dasilva-thiago.dev)
 
 ---
 
@@ -27,6 +27,23 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
   </tr>
 </table>
 
+### Resume site (cv.dasilva-thiago.dev)
+
+<table>
+  <tr>
+    <th>Desktop</th>
+    <th>Mobile</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/cv-site-desktop-home.webp" alt="Resume site landing page with name, role, social links, a short about and the three resumes" width="640"></td>
+    <td><img src="docs/screenshots/cv-site-mobile-home.webp" alt="Resume site landing page on mobile" width="220"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/cv-site-desktop-resume.webp" alt="Portuguese resume in dark mode, scrolled, with the sticky bar holding language flags, theme toggles and the PDF download button" width="640"></td>
+    <td><img src="docs/screenshots/cv-site-mobile-resume.webp" alt="Resume on mobile in dark mode with the sticky bar" width="220"></td>
+  </tr>
+</table>
+
 ---
 
 ## Highlights
@@ -37,13 +54,14 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 - **Strict Content-Security-Policy.** Delivered per page as a `<meta>` tag; every inline script is allow-listed by SHA-256 hash computed at build time. No `'unsafe-inline'` or `'unsafe-eval'` for scripts.
 - **No flash of the wrong theme or language.** A tiny synchronous script in `<head>` applies the stored/system theme and sends a first-time visitor at `/` to `/pt` or `/es` before anything paints.
 - **Accessibility.** Dark mode and high-contrast mode (independent), native `<dialog>` for the experience details, keyboard-operable navigation, `prefers-reduced-motion` respected by every animation, automated axe checks on every theme and locale.
+- **Resumes on their own subdomain.** The resume buttons open [cv.dasilva-thiago.dev](https://cv.dasilva-thiago.dev) in the active language: an HTML resume with the same visual identity and a persistent PDF download, instead of a file on a cloud drive. See [Resume site](#resume-site-cvdasilva-thiagodev-1).
 - **Small by design.** About 146 kB of JavaScript (gzip) on first load; animation code is loaded on idle time; icons are tree-shaken data rendered as inline SVG; images are WebP.
 
 ---
 
 ## What the site shows
 
-The home page follows a recruiter's first read: a hero, then projects, skills, about and contact. The hero combines a typewriter that holds the target role longer and highlights it in the theme color, the main stack, the eduAssets figures and remote availability. Skills are split into consolidated technologies and an "evolving" panel for what is being studied, and the resume buttons open the PDF for the active language.
+The home page follows a recruiter's first read: a hero, then projects, skills, about and contact. The hero combines a typewriter that holds the target role longer and highlights it in the theme color, the main stack, the eduAssets figures and remote availability. Skills are split into consolidated technologies and an "evolving" panel for what is being studied, and the resume buttons open the resume for the active language on `cv.dasilva-thiago.dev`.
 
 | Project | Type | Main stack | Links |
 |---|---|---|---|
@@ -54,6 +72,31 @@ The home page follows a recruiter's first read: a hero, then projects, skills, a
 | Parkschool ALPR | Computer vision microservice, in development | Python, FastAPI, OpenCV, TensorFlow/Keras | [Code](https://github.com/FenixParkSchool/py_vision_park) |
 
 To add or replace a project, update `slugs.ts`, `links.ts` and `projects.ts` in `src/entities/project/model/`, add its copy to the three locale files, register its share image in `scripts/generate-share-images.mjs`, and update the slug lists in `tests/e2e/`.
+
+---
+
+## Resume site (cv.dasilva-thiago.dev)
+
+The three general resumes (Portuguese, English and Spanish) live on a subdomain instead of a shared drive, so a recruiter gets a fast, readable page with a one-click PDF. The site lives in `cv-site/` and is deployed as a **separate Vercel project** from this same repository, so updating a resume never rebuilds the portfolio.
+
+**What it shows**
+
+| URL | Content |
+|---|---|
+| `/` | Short about for anyone who lands on the subdomain directly: name, target role, stack, GitHub, LinkedIn, email and portfolio links right below the name, a one-line summary, and a card per language with "View online" and "PDF" |
+| `/pt`, `/en`, `/es` | The full resume as HTML: summary, experience, projects, education, courses and skills |
+| `/thiago-da-silva-cv-{pt,en,es}.pdf` | The PDF of each resume |
+
+**How it works**
+
+- **Same visual identity as the portfolio.** It reuses the portfolio's color tokens (light, dark and high contrast), fonts (DM Sans, Syne, DM Mono, self-hosted), Font Awesome icons, flags and the pill navbar style.
+- **Language flags.** On the landing page they switch the text in place; the language follows the stored choice, then the browser language. On resume pages they link between the three resumes.
+- **Light/dark and high-contrast toggles**, applied by a tiny script in `<head>` before the first paint, as on the portfolio. The choice is stored per site; on a first visit both sites follow the system theme.
+- **Persistent PDF download.** On resume pages a sticky bar keeps the language flags, the theme toggles and the "Download PDF" button visible while scrolling. Printing the page hides the bar and prints a clean resume.
+- **Generated, not hand-written.** `cv-site/tools/build.mjs` renders `public/index.html` and `public/{pt,en,es}.html` from the resume data in `cv-site/src/data/cv-{lang}.json`. Vercel serves `cv-site/public/` as-is, with no build step on deploy.
+- **Private by default.** No phone number in the public versions, and every response carries `X-Robots-Tag: noindex`. `cv-site/vercel.json` sets a strict Content-Security-Policy (`default-src 'none'`; scripts, styles, fonts and images from the site itself only) plus the same security headers as the portfolio.
+
+**Updating a resume:** copy the new data to `cv-site/src/data/cv-{lang}.json` and the PDF to `cv-site/public/`, run `node cv-site/tools/build.mjs` and commit. Details in [`cv-site/README.md`](cv-site/README.md).
 
 ---
 
@@ -91,6 +134,7 @@ scripts/         build post-processing (CSP hashes, 404 page, sitemap) and its t
 static/          files copied as-is: robots.txt and the stable share images (og/, images/)
 tests/           Playwright specs (e2e/), static host used by the tests, visual baseline tools
 docs/            architecture notes and the README screenshots
+cv-site/         resume subdomain (cv.dasilva-thiago.dev): data, page generator and static output
 server/          legacy email API kept in the repository; not part of the static deployment
 ```
 
@@ -143,12 +187,14 @@ Node 20.19+ is required (see `engines`).
 
 Static deployment of `build/client`, configured in `vercel.json` (`framework: null`, `buildCommand`, `outputDirectory`, headers, `trailingSlash: false`). No environment variables are needed. Unknown URLs return the real `404.html` with a 404 status; under `/pt` and `/es` the page switches to that language in the browser. Node.js 20.19+ must be selected in the Vercel project settings.
 
+The resume subdomain is a second Vercel project on the same repository, with **Root Directory** `cv-site` and framework "Other". Its `cv-site/vercel.json` serves `public/` with no build command, clean URLs (`/pt` instead of `/pt.html`) and its own headers. The `cv.dasilva-thiago.dev` domain is attached to that project only.
+
 ---
 
 ## Testing
 
 - **Unit/component:** locale parity, typed keys, project data, layer boundaries, contact validation and submission, pre-paint script, CSP builder, sitemap and metadata.
-- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the hero typewriter, the experience dialog, the contact form with a mocked provider, CV links, reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
+- **End-to-end:** every route, language switching and redirects, legacy links, theme and contrast, navigation and the mobile drawer, the hero typewriter, the experience dialog, the contact form with a mocked provider, CV links (each locale opens its resume on `cv.dasilva-thiago.dev`), reduced motion, hydration without console warnings, per-page head contents, CSP hashes and zero violations, analytics, 404 behavior, and axe (WCAG 2.0/2.1 A and AA) on home and project pages in light, dark and high-contrast themes for three locales. The same checks run in GitHub Actions on every push and pull request (`.github/workflows/ci.yml`).
 - **Visual and layout tools:** `tests/visual-baseline/` can capture screenshots, compare them against a reference, and measure element geometry.
 
 ---
