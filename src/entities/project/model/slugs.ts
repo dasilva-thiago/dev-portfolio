@@ -22,7 +22,7 @@ export const PROJECT_UPDATED_AT: Record<ProjectSlug, string> = {
   "buenos-aires-explorer": "2026-11-09",
   "dev-portfolio": "2026-11-03",
   "aviation-safety": "2026-11-09",
-  "parkschool-alpr": "2026-11-09",
+  "parkschool-alpr": "2026-11-11",
 };
 
 export const HOME_UPDATED_AT = Object.values(PROJECT_UPDATED_AT).sort().at(-1) ?? "2026-11-03";

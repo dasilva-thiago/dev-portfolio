@@ -309,10 +309,11 @@
       "tag": "Visión Artificial",
       "title": "Parkschool ALPR",
       "alt": "Matrícula de ejemplo en el formato Mercosur destacada por un cuadro de detección",
-      "description": "Microservicio en Python para el reconocimiento automático de matrículas en un sistema de estacionamiento. Procesa fotogramas de cámara, detecta la matrícula, aplica OCR, valida los formatos Mercosur y antiguo de Brasil, elimina lecturas repetidas y envía el evento al backend con reintentos e idempotencia.",
+      "description": "Microservicio en Python que desarrollé por completo para el reconocimiento automático de matrículas en un sistema de estacionamiento. Procesa fotogramas de cámara, detecta la matrícula, aplica OCR, valida los formatos Mercosur y antiguo de Brasil, elimina lecturas repetidas y envía el evento al backend con reintentos e idempotencia.",
       "article": {
         "intro": [
-          "Parkschool ALPR (Automatic License Plate Recognition) es el microservicio de visión artificial de un sistema de control de estacionamiento, desarrollado en el Proyecto Integrador de SENAC. Lee fotogramas de un archivo, RTSP o cámara USB, detecta la matrícula, lee los caracteres y envía el evento a un backend Node.js mantenido por otro equipo."
+          "Parkschool ALPR (Automatic License Plate Recognition) es el microservicio de visión artificial de un sistema de control de estacionamiento, desarrollado en el Proyecto Integrador de SENAC. Lee fotogramas de un archivo, RTSP o cámara USB, detecta la matrícula, lee los caracteres y envía el evento al backend Node.js del sistema.",
+          "El código está en el repositorio de la organización del proyecto. Fui responsable de todo el desarrollo de este microservicio y también contribuí al frontend y al backend del sistema de estacionamiento."
         ],
         "sections": [
           {

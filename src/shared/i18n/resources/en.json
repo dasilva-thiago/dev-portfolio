@@ -309,10 +309,11 @@
       "tag": "Computer Vision",
       "title": "Parkschool ALPR",
       "alt": "Sample Mercosur license plate highlighted by a detection frame",
-      "description": "Python microservice for automatic license plate recognition in a parking system. It processes camera frames, detects the plate, runs OCR, validates the Mercosur and legacy Brazilian formats, removes repeated readings and sends the event to the backend with retries and idempotency.",
+      "description": "Python microservice I built end to end for automatic license plate recognition in a parking system. It processes camera frames, detects the plate, runs OCR, validates the Mercosur and legacy Brazilian formats, removes repeated readings and sends the event to the backend with retries and idempotency.",
       "article": {
         "intro": [
-          "Parkschool ALPR (Automatic License Plate Recognition) is the computer vision microservice of a parking control system, developed in the SENAC Capstone Project. It reads frames from a file, RTSP or USB camera, detects the plate, reads the characters and sends the event to a Node.js backend maintained by another team."
+          "Parkschool ALPR (Automatic License Plate Recognition) is the computer vision microservice of a parking control system, developed in the SENAC Capstone Project. It reads frames from a file, RTSP or USB camera, detects the plate, reads the characters and sends the event to the system's Node.js backend.",
+          "The code lives in the project organization's repository. I was responsible for the entire development of this microservice and also contributed to the frontend and backend of the parking system."
         ],
         "sections": [
           {
