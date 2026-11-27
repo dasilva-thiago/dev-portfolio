@@ -2,9 +2,10 @@ import type { ProjectSlug } from "./slugs";
 
 // Pure data (no asset imports) so build scripts and SEO code can read it.
 interface ProjectLinks {
-  github: string;
+  // Omitted for projects whose repository stays private.
+  github?: string;
   live?: string;
-  languages: string[];
+  languages?: string[];
 }
 
 const LINKS: Record<ProjectSlug, ProjectLinks> = {
@@ -29,10 +30,7 @@ const LINKS: Record<ProjectSlug, ProjectLinks> = {
     github: "https://github.com/FenixParkSchool/py_vision_park",
     languages: ["Python"],
   },
-  "eduserver-box": {
-    github: "https://github.com/dasilva-thiago/server_box",
-    languages: ["Python", "JavaScript"],
-  },
+  "eduserver-box": {},
 };
 
 export function getProjectLinks(slug: ProjectSlug): ProjectLinks {

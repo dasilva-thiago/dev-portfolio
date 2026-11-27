@@ -1,10 +1,10 @@
 export const PROJECT_SLUGS = [
   "eduassets",
+  "eduserver-box",
   "buenos-aires-explorer",
   "dev-portfolio",
   "aviation-safety",
   "parkschool-alpr",
-  "eduserver-box",
 ] as const;
 
 export type ProjectSlug = (typeof PROJECT_SLUGS)[number];

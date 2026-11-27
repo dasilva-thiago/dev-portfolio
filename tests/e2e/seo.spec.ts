@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { expect, test, type Page } from "@playwright/test";
 
-const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr", "eduserver-box"];
+const SLUGS = ["eduassets", "eduserver-box", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr"];
 const PREFIXES = ["", "/pt", "/es"] as const;
 const ORIGIN = "https://www.dasilva-thiago.dev";
 

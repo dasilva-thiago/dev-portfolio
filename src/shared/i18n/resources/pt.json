@@ -341,7 +341,7 @@
       "tag": "Hardware · CAD",
       "title": "eduServer Box",
       "alt": "Caixa do eduServer modelada no Autodesk Fusion, com a grade em colmeia da ventoinha na tampa",
-      "description": "Em desenvolvimento. Caixa impressa em 3D que transforma a placa-mãe de um notebook velho, reaproveitada para o projeto, em um mini servidor para projetos da escola, ligado ao eduAssets. Modelada no Autodesk Fusion por scripts Python paramétricos, a partir de medidas feitas na própria placa.",
+      "description": "Em desenvolvimento. Caixa impressa em 3D que transforma a placa-mãe de um notebook velho, reaproveitada para o projeto, em um mini servidor para projetos da escola, ligado ao eduAssets. Desenvolvida no Autodesk Fusion, a partir de medidas feitas na própria placa.",
       "article": {
         "intro": [
           "O eduServer Box é a parte física do eduServer: um mini servidor montado com a placa-mãe de um notebook velho reaproveitada para o projeto, para rodar serviços de projetos da escola ligados ao eduAssets. O projeto ainda está em desenvolvimento: a caixa principal já está modelada no Fusion, e a primeira impressão de teste está prevista para janeiro de 2027."
@@ -374,8 +374,7 @@
           {
             "heading": "Como está sendo feito",
             "paragraphs": [
-              "Não tenho impressora 3D, então a caixa precisa encaixar já na primeira impressão. Por isso, cada medida da placa vem do paquímetro ou de um escaneamento com a escala conferida por régua, e só entra no modelo depois de verificada.",
-              "O modelo no Fusion é gerado por scripts Python que leem parâmetros nomeados: mudar uma cota é mudar um parâmetro e rodar o script de novo, nunca editar a peça à mão."
+              "A caixa está sendo desenvolvida no Autodesk Fusion. Como não tenho impressora 3D, ela precisa encaixar já na primeira impressão: por isso, cada medida da placa vem do paquímetro ou de um escaneamento com a escala conferida por régua, e só entra no modelo depois de verificada."
             ]
           },
           {

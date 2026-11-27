@@ -17,7 +17,7 @@ const CARD: Record<Variant, string> = {
 
 const IMAGE: Record<Variant, string> = {
   featured: "h-[340px] bg-text/6",
-  secondary: "flex h-[340px] items-center justify-center bg-logo-bg [&_img]:size-[70%] [&_img]:object-contain",
+  secondary: "h-[340px] bg-text/6",
   compact: "aspect-[16/10] bg-text/6",
 };
 
@@ -61,7 +61,7 @@ export function ProjectCard({ project }: { project: Project }) {
           width={project.cardImage.width}
           height={project.cardImage.height}
           loading="lazy"
-          className="block size-full object-cover"
+          className={`block size-full ${project.cardFit === "contain" ? "object-contain" : "object-cover"}`}
         />
       </div>
       <div className={`flex flex-1 flex-col ${INFO[variant]}`}>
@@ -93,7 +93,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="mt-5 flex flex-wrap gap-2.5">
           {project.links.live ? <AccessButton href={project.links.live} /> : null}
-          <GithubButton href={project.links.github} />
+          {project.links.github ? <GithubButton href={project.links.github} /> : null}
         </div>
       </div>
     </article>

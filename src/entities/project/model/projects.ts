@@ -23,6 +23,8 @@ export interface Project {
   readonly order: number;
   readonly variant: "featured" | "secondary" | "compact";
   readonly cardImage: ImageAsset;
+  // "contain" keeps a very wide screenshot whole in the card instead of cropping it.
+  readonly cardFit?: "cover" | "contain";
   readonly heroImage: ImageAsset;
   readonly tech: readonly string[];
   readonly links: ReturnType<typeof getProjectLinks>;
@@ -59,9 +61,24 @@ export const PROJECTS: readonly Project[] = [
     links: getProjectLinks("eduassets"),
   },
   {
-    slug: "buenos-aires-explorer",
+    slug: "eduserver-box",
     order: 2,
     variant: "secondary",
+    cardImage: { src: esCard, width: 800, height: 450 },
+    heroImage: { src: esHero, width: 1600, height: 900 },
+    tech: ["Autodesk Fusion", "3D printing (FDM)", "Arduino Nano", "RFID"],
+    links: getProjectLinks("eduserver-box"),
+    gallery: [
+      { src: esFront, width: 1280, height: 720 },
+      { src: esOpen, width: 1280, height: 720 },
+      { src: esCoupon, width: 1280, height: 720 },
+    ],
+  },
+  {
+    slug: "buenos-aires-explorer",
+    order: 3,
+    variant: "compact",
+    cardFit: "contain",
     cardImage: { src: baCard, width: 1277, height: 488 },
     heroImage: { src: baCard, width: 1277, height: 488 },
     tech: ["C#", ".NET 10", "Windows Forms", "Entity Framework Core", "SQLite", "WebView2", "Leaflet.js", "QuestPDF", "Nominatim", "Wikimedia"],
@@ -69,7 +86,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     slug: "dev-portfolio",
-    order: 3,
+    order: 4,
     variant: "compact",
     cardImage: { src: devCard, width: 1280, height: 640 },
     heroImage: { src: devCard, width: 1280, height: 640 },
@@ -78,7 +95,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     slug: "aviation-safety",
-    order: 4,
+    order: 5,
     variant: "compact",
     cardImage: { src: avCard, width: 1077, height: 460 },
     heroImage: { src: avCard, width: 1077, height: 460 },
@@ -87,26 +104,12 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     slug: "parkschool-alpr",
-    order: 5,
+    order: 6,
     variant: "compact",
     cardImage: { src: alprCard, width: 1200, height: 675 },
     heroImage: { src: alprCard, width: 1200, height: 675 },
     tech: ["Python", "FastAPI", "OpenCV", "TensorFlow", "Keras", "Pydantic", "HTTPX", "Pytest"],
     links: getProjectLinks("parkschool-alpr"),
-  },
-  {
-    slug: "eduserver-box",
-    order: 6,
-    variant: "compact",
-    cardImage: { src: esCard, width: 800, height: 450 },
-    heroImage: { src: esHero, width: 1600, height: 900 },
-    tech: ["Autodesk Fusion", "Python · Fusion API", "Parametric CAD", "3D printing (FDM)", "Arduino Nano", "RFID"],
-    links: getProjectLinks("eduserver-box"),
-    gallery: [
-      { src: esFront, width: 1280, height: 720 },
-      { src: esOpen, width: 1280, height: 720 },
-      { src: esCoupon, width: 1280, height: 720 },
-    ],
   },
 ];
 
