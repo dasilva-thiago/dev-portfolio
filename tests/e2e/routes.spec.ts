@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr"];
+const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr", "eduserver-box"];
 
 test.describe("pre-rendered routes", () => {
   test("home responds 200 with its content in the HTML (no JavaScript needed)", async ({ request }) => {

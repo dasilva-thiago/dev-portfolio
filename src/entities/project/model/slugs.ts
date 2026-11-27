@@ -4,6 +4,7 @@ export const PROJECT_SLUGS = [
   "dev-portfolio",
   "aviation-safety",
   "parkschool-alpr",
+  "eduserver-box",
 ] as const;
 
 export type ProjectSlug = (typeof PROJECT_SLUGS)[number];
@@ -23,6 +24,7 @@ export const PROJECT_UPDATED_AT: Record<ProjectSlug, string> = {
   "dev-portfolio": "2026-11-03",
   "aviation-safety": "2026-11-09",
   "parkschool-alpr": "2026-11-11",
+  "eduserver-box": "2026-11-27",
 };
 
 export const HOME_UPDATED_AT = Object.values(PROJECT_UPDATED_AT).sort().at(-1) ?? "2026-11-03";
@@ -34,4 +36,5 @@ export const PROJECT_OG_IMAGE: Record<ProjectSlug, { path: string; width: number
   "dev-portfolio": { path: "/og/dev-portfolio.jpg", width: 1200, height: 630 },
   "aviation-safety": { path: "/og/aviation-safety.jpg", width: 1200, height: 630 },
   "parkschool-alpr": { path: "/og/parkschool-alpr.jpg", width: 1200, height: 630 },
+  "eduserver-box": { path: "/og/eduserver-box.jpg", width: 1200, height: 630 },
 };

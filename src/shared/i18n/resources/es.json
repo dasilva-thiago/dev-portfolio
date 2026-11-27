@@ -336,6 +336,56 @@
           }
         ]
       }
+    },
+    "eduserver-box": {
+      "tag": "Hardware · CAD",
+      "title": "eduServer Box",
+      "alt": "Caja del eduServer modelada en Autodesk Fusion, con la rejilla en panal del ventilador en la tapa",
+      "description": "En desarrollo. Caja impresa en 3D que convierte la placa base de una notebook vieja, reutilizada para el proyecto, en un mini servidor para proyectos de la escuela, vinculado a eduAssets. Modelada en Autodesk Fusion con scripts paramétricos en Python, a partir de medidas tomadas en la propia placa.",
+      "article": {
+        "intro": [
+          "eduServer Box es la parte física de eduServer: un mini servidor armado con la placa base de una notebook vieja reutilizada para el proyecto, para ejecutar servicios de proyectos de la escuela vinculados a eduAssets. El proyecto sigue en desarrollo: la caja principal ya está modelada en Fusion, y la primera impresión de prueba está prevista para enero de 2027."
+        ],
+        "gallery": {
+          "heading": "El modelo hoy",
+          "items": [
+            {
+              "alt": "Caja cerrada vista desde el lado abierto, donde aún falta modelar la pared",
+              "caption": "La caja desde otro ángulo: el lado abierto todavía espera la pared que falta modelar."
+            },
+            {
+              "alt": "Base de la caja sin la tapa, con la placa simplificada, los apoyos y el anillo de la cuna del ventilador",
+              "caption": "Sin la tapa: la placa simplificada sobre sus apoyos y la cuna del ventilador."
+            },
+            {
+              "alt": "Piezas pequeñas del cupón de ajuste, con agujeros de distintos diámetros marcados en relieve",
+              "caption": "Cupón de ajuste: piezas pequeñas para probar agujeros, insertos y encajes antes de la impresión final."
+            }
+          ]
+        },
+        "sections": [
+          {
+            "heading": "El objetivo",
+            "paragraphs": [
+              "Una caja cerrada y discreta, con aspecto de equipo de red, que proteja la placa, sujete el SSD, se enfríe con un ventilador reutilizado de un cooler AMD y deje accesibles los puertos en uso: HDMI, USB y alimentación.",
+              "La caja también reserva espacio para un disco de 2,5\" y, al frente, para un módulo con pantalla, lector RFID y buzzer, conectado a la placa por un único puerto USB."
+            ]
+          },
+          {
+            "heading": "Cómo se está haciendo",
+            "paragraphs": [
+              "No tengo impresora 3D, así que la caja tiene que encajar en la primera impresión. Por eso cada medida de la placa sale del calibre o de un escaneo con la escala verificada con una regla, y solo entra en el modelo después de verificarse.",
+              "El modelo en Fusion se genera con scripts en Python que leen parámetros con nombre: cambiar una cota es cambiar un parámetro y volver a ejecutar el script, nunca editar la pieza a mano."
+            ]
+          },
+          {
+            "heading": "Estado actual",
+            "paragraphs": [
+              "Ya están modeladas la base y la tapa de la caja principal, la cuna del ventilador, la bandeja del disco y un cupón de ajuste. Faltan la pared trasera, el módulo frontal y las auditorías de diseño antes de imprimir la versión final."
+            ]
+          }
+        ]
+      }
     }
   },
   "contact": {

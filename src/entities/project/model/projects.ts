@@ -4,6 +4,11 @@ import edHero from "~/shared/assets/img/eduAssets_banner.webp";
 import edCard from "~/shared/assets/img/eduAssets_banner-for-card.webp";
 import devCard from "~/shared/assets/img/portfolio-preview.webp";
 import alprCard from "~/shared/assets/img/parkschool-alpr.webp";
+import esCard from "~/shared/assets/img/eduserver-box-card.webp";
+import esCoupon from "~/shared/assets/img/eduserver-box-coupon.webp";
+import esFront from "~/shared/assets/img/eduserver-box-front.webp";
+import esHero from "~/shared/assets/img/eduserver-box-hero.webp";
+import esOpen from "~/shared/assets/img/eduserver-box-open.webp";
 import { getProjectLinks } from "./links";
 import type { ProjectSlug } from "./slugs";
 
@@ -21,6 +26,8 @@ export interface Project {
   readonly heroImage: ImageAsset;
   readonly tech: readonly string[];
   readonly links: ReturnType<typeof getProjectLinks>;
+  // Extra images shown on the project page, in the same order as `article.gallery.items` in each locale.
+  readonly gallery?: readonly ImageAsset[];
 }
 
 export const PROJECTS: readonly Project[] = [
@@ -86,6 +93,20 @@ export const PROJECTS: readonly Project[] = [
     heroImage: { src: alprCard, width: 1200, height: 675 },
     tech: ["Python", "FastAPI", "OpenCV", "TensorFlow", "Keras", "Pydantic", "HTTPX", "Pytest"],
     links: getProjectLinks("parkschool-alpr"),
+  },
+  {
+    slug: "eduserver-box",
+    order: 6,
+    variant: "compact",
+    cardImage: { src: esCard, width: 800, height: 450 },
+    heroImage: { src: esHero, width: 1600, height: 900 },
+    tech: ["Autodesk Fusion", "Python · Fusion API", "Parametric CAD", "3D printing (FDM)", "Arduino Nano", "RFID"],
+    links: getProjectLinks("eduserver-box"),
+    gallery: [
+      { src: esFront, width: 1280, height: 720 },
+      { src: esOpen, width: 1280, height: 720 },
+      { src: esCoupon, width: 1280, height: 720 },
+    ],
   },
 ];
 

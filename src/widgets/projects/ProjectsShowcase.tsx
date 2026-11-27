@@ -42,7 +42,7 @@ export function ProjectsShowcase() {
         {secondary.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
-        <div className="col-span-full grid grid-cols-3 gap-6 max-bp1024:grid-cols-2 max-bp740:grid-cols-1">
+        <div className="col-span-full grid grid-cols-2 gap-6 max-bp740:grid-cols-1">
           {compact.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

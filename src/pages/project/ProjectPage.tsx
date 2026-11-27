@@ -9,6 +9,8 @@ import { SiteNav } from "~/widgets/site-nav/SiteNav";
 
 const INTRO_P = "mb-5 text-[1.125rem] font-medium leading-[1.75] text-muted last:mb-0";
 const SECTION_P = "mb-4 text-[1rem] font-medium leading-[1.75] text-muted last:mb-0";
+const SECTION_H2 =
+  "text-[1.25rem] font-semibold leading-[1.15] tracking-[-0.02em] text-text after:mb-4 after:mt-2 after:block after:h-[3px] after:w-8 after:rounded-[2px] after:bg-fill after:content-['']";
 
 export function ProjectPage({ slug }: { slug: ProjectSlug }) {
   const { t } = useT();
@@ -16,6 +18,7 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
   const project = getProject(slug);
   const key = `projects.${slug}` as const;
   const article = useResources().projects[slug].article;
+  const galleryCopy = "gallery" in article ? article.gallery : undefined;
 
   return (
     <>
@@ -65,9 +68,33 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
                 ))}
               </div>
 
+              {project.gallery && galleryCopy ? (
+                <section className="mb-11">
+                  <h2 className={SECTION_H2}>{galleryCopy.heading}</h2>
+                  <div className="flex flex-col gap-5">
+                    {project.gallery.map((image, i) => (
+                      <figure key={image.src} className="m-0">
+                        <img
+                          src={image.src}
+                          alt={galleryCopy.items[i]?.alt ?? ""}
+                          width={image.width}
+                          height={image.height}
+                          loading="lazy"
+                          decoding="async"
+                          className="block h-auto w-full rounded-xl border border-line bg-surface"
+                        />
+                        <figcaption className="mt-2 text-[0.875rem] font-medium leading-[1.6] text-muted">
+                          {galleryCopy.items[i]?.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
+
               {article.sections.map((section) => (
                 <section key={section.heading} className="mb-11">
-                  <h2 className="text-[1.25rem] font-semibold leading-[1.15] tracking-[-0.02em] text-text after:mb-4 after:mt-2 after:block after:h-[3px] after:w-8 after:rounded-[2px] after:bg-fill after:content-['']">
+                  <h2 className={SECTION_H2}>
                     {section.heading}
                   </h2>
                   {section.paragraphs.map((paragraph) => (

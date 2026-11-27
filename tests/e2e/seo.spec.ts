@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { expect, test, type Page } from "@playwright/test";
 
-const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr"];
+const SLUGS = ["eduassets", "buenos-aires-explorer", "dev-portfolio", "aviation-safety", "parkschool-alpr", "eduserver-box"];
 const PREFIXES = ["", "/pt", "/es"] as const;
 const ORIGIN = "https://www.dasilva-thiago.dev";
 
@@ -200,12 +200,12 @@ test.describe("host behavior", () => {
     }
   });
 
-  test("robots.txt points to a sitemap that lists all 21 URLs, each of which responds 200", async ({ request }) => {
+  test("robots.txt points to a sitemap that lists all 24 URLs, each of which responds 200", async ({ request }) => {
     const robots = await (await request.get("/robots.txt")).text();
     expect(robots).toContain("Sitemap: https://www.dasilva-thiago.dev/sitemap.xml");
     const xml = await (await request.get("/sitemap.xml")).text();
     const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => (m[1] ?? "").replace(ORIGIN, "") || "/");
-    expect(locs).toHaveLength(21);
+    expect(locs).toHaveLength(24);
     for (const loc of locs) expect((await request.get(loc)).status(), loc).toBe(200);
   });
 

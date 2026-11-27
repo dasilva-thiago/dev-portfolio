@@ -8,7 +8,7 @@ import { PROJECT_SLUGS, isProjectSlug, projectPath } from "./slugs";
 describe("project data", () => {
   it("has one entry per slug, in display order", () => {
     expect(PROJECTS.map((p) => p.slug)).toEqual([...PROJECT_SLUGS]);
-    expect(PROJECTS.map((p) => p.order)).toEqual([1, 2, 3, 4, 5]);
+    expect(PROJECTS.map((p) => p.order)).toEqual([1, 2, 3, 4, 5, 6]);
   });
 
   it("has exactly one featured and one secondary project", () => {
@@ -31,9 +31,27 @@ describe("project data", () => {
     }
   });
 
+  it.each([
+    ["en", en],
+    ["pt", pt],
+    ["es", es],
+  ] as const)("%s has alt text and a caption for every gallery image", (_name, locale) => {
+    for (const project of PROJECTS) {
+      if (!project.gallery) continue;
+      const article = locale.projects[project.slug].article;
+      const gallery = "gallery" in article ? article.gallery : undefined;
+      expect(gallery?.heading).toBeTruthy();
+      expect(gallery?.items).toHaveLength(project.gallery.length);
+      for (const item of gallery?.items ?? []) {
+        expect(item.alt).toBeTruthy();
+        expect(item.caption).toBeTruthy();
+      }
+    }
+  });
+
   it("images declare real dimensions", () => {
     for (const project of PROJECTS) {
-      for (const image of [project.cardImage, project.heroImage]) {
+      for (const image of [project.cardImage, project.heroImage, ...(project.gallery ?? [])]) {
         expect(image.src).toBeTruthy();
         expect(image.width).toBeGreaterThan(0);
         expect(image.height).toBeGreaterThan(0);

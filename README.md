@@ -56,7 +56,7 @@ A multilingual, accessible developer portfolio built with React, TypeScript and 
 
 ## Highlights
 
-- **Static output, real routes.** Every page is pre-rendered at build time with React Router (`ssr: false` + `prerender`): the home page, the experience page and the five project pages, each in English, Portuguese and Spanish, plus a real `404.html`. No runtime server, no client-only shell for crawlers.
+- **Static output, real routes.** Every page is pre-rendered at build time with React Router (`ssr: false` + `prerender`): the home page, the experience page and the six project pages, each in English, Portuguese and Spanish, plus a real `404.html`. No runtime server, no client-only shell for crawlers.
 - **Clean, localized URLs.** `/`, `/pt`, `/es`, plus `/experience` and `/projects/<slug>` under each locale. Language is part of the URL; switching language is a navigation that keeps the page and the scroll position.
 - **Per-page SEO.** Title, description, canonical URL, `hreflang` alternates, Open Graph and Twitter cards, JSON-LD (`ProfilePage` / `Person` / `WebSite` on the home page, `ProfilePage` / `BreadcrumbList` on the experience page, `SoftwareSourceCode` / `BreadcrumbList` on project pages), and a `sitemap.xml` generated from the same route data.
 - **Strict Content-Security-Policy.** Delivered per page as a `<meta>` tag; every inline script is allow-listed by SHA-256 hash computed at build time. No `'unsafe-inline'` or `'unsafe-eval'` for scripts.

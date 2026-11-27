@@ -29,6 +29,10 @@ const LINKS: Record<ProjectSlug, ProjectLinks> = {
     github: "https://github.com/FenixParkSchool/py_vision_park",
     languages: ["Python"],
   },
+  "eduserver-box": {
+    github: "https://github.com/dasilva-thiago/server_box",
+    languages: ["Python", "JavaScript"],
+  },
 };
 
 export function getProjectLinks(slug: ProjectSlug): ProjectLinks {
