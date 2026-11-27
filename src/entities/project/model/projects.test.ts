@@ -35,23 +35,32 @@ describe("project data", () => {
     ["en", en],
     ["pt", pt],
     ["es", es],
-  ] as const)("%s has alt text and a caption for every gallery image", (_name, locale) => {
+  ] as const)("%s has a heading, alt text and a caption for every gallery image", (_name, locale) => {
     for (const project of PROJECTS) {
-      if (!project.gallery) continue;
+      if (!project.galleries) continue;
       const article = locale.projects[project.slug].article;
-      const gallery = "gallery" in article ? article.gallery : undefined;
-      expect(gallery?.heading).toBeTruthy();
-      expect(gallery?.items).toHaveLength(project.gallery.length);
-      for (const item of gallery?.items ?? []) {
-        expect(item.alt).toBeTruthy();
-        expect(item.caption).toBeTruthy();
-      }
+      const copy = "galleries" in article ? article.galleries : undefined;
+      expect(copy).toHaveLength(project.galleries.length);
+      project.galleries.forEach((images, g) => {
+        expect(copy?.[g]?.heading).toBeTruthy();
+        expect(copy?.[g]?.items).toHaveLength(images.length);
+        for (const item of copy?.[g]?.items ?? []) {
+          expect(item.alt).toBeTruthy();
+          expect(item.caption).toBeTruthy();
+        }
+      });
+    }
+  });
+
+  it("card slides point at existing gallery images", () => {
+    for (const project of PROJECTS) {
+      for (const [g, i] of project.cardSlides ?? []) expect(project.galleries?.[g]?.[i]).toBeDefined();
     }
   });
 
   it("images declare real dimensions", () => {
     for (const project of PROJECTS) {
-      for (const image of [project.cardImage, project.heroImage, ...(project.gallery ?? [])]) {
+      for (const image of [project.cardImage, project.heroImage, ...(project.galleries ?? []).flat()]) {
         expect(image.src).toBeTruthy();
         expect(image.width).toBeGreaterThan(0);
         expect(image.height).toBeGreaterThan(0);

@@ -168,7 +168,9 @@
   },
   "buttons": {
     "github": "Ver no GitHub",
-    "access": "Ver demo (sem cadastro)"
+    "access": "Ver demo (sem cadastro)",
+    "pauseSlides": "Pausar as imagens",
+    "playSlides": "Retomar as imagens"
   },
   "projectArticle": {
     "back": "Voltar"
@@ -346,23 +348,6 @@
         "intro": [
           "O eduServer Box é a parte física do eduServer: um mini servidor montado com a placa-mãe de um notebook velho reaproveitada para o projeto, para rodar serviços de projetos da escola ligados ao eduAssets. O projeto ainda está em desenvolvimento: a caixa principal já está modelada no Fusion, e a primeira impressão de teste está prevista para janeiro de 2027."
         ],
-        "gallery": {
-          "heading": "O modelo hoje",
-          "items": [
-            {
-              "alt": "Caixa fechada vista pelo lado aberto, onde ainda falta modelar a parede",
-              "caption": "A caixa por outro ângulo: o lado aberto ainda espera a parede que falta modelar."
-            },
-            {
-              "alt": "Base da caixa sem a tampa, com a placa simplificada, os apoios e o anel do berço da ventoinha",
-              "caption": "Sem a tampa: a placa simplificada sobre os apoios e o berço da ventoinha."
-            },
-            {
-              "alt": "Peças pequenas do cupom de ajuste, com furos de diâmetros diferentes marcados em relevo",
-              "caption": "Cupom de ajuste: peças pequenas para testar furos, insertos e encaixes antes da impressão final."
-            }
-          ]
-        },
         "sections": [
           {
             "heading": "O objetivo",
@@ -381,6 +366,70 @@
             "heading": "Estado atual",
             "paragraphs": [
               "Já estão modelados a base e a tampa da caixa principal, o berço da ventoinha, a bandeja do HD e um cupom de ajuste. Faltam a parede de trás, o módulo da frente e as auditorias de projeto antes de imprimir a versão final."
+            ]
+          }
+        ],
+        "galleries": [
+          {
+            "heading": "A placa e os testes",
+            "items": [
+              {
+                "alt": "Placa-mãe de notebook reaproveitada, vista de cima",
+                "caption": "A placa-mãe reaproveitada para o projeto: todas as portas ficam numa borda só."
+              },
+              {
+                "alt": "Detalhe das portas e dos componentes da placa",
+                "caption": "As portas e os componentes que a caixa precisa respeitar."
+              },
+              {
+                "alt": "Paquímetro digital medindo a placa com o dissipador de cobre",
+                "caption": "Medição com paquímetro: cada cota é conferida antes de entrar no modelo."
+              },
+              {
+                "alt": "Paquímetro medindo uma altura com a haste de profundidade",
+                "caption": "Alturas medidas com a haste do paquímetro."
+              },
+              {
+                "alt": "Placa ligada sobre uma manta antiestática, com o SSD e um hub USB conectados",
+                "caption": "A placa ligada sozinha, com o SSD e um hub USB."
+              },
+              {
+                "alt": "Placa ligada a monitor, teclado e mouse, funcionando como um computador",
+                "caption": "Primeiro teste: a placa funcionando como computador, fora do notebook."
+              },
+              {
+                "alt": "Módulo leitor RFID na mão",
+                "caption": "O leitor RFID do módulo da frente."
+              },
+              {
+                "alt": "Pequena tela TFT colorida na mão",
+                "caption": "O visor TFT do módulo da frente."
+              }
+            ]
+          },
+          {
+            "heading": "O modelo no Fusion",
+            "items": [
+              {
+                "alt": "Caixa montada no Autodesk Fusion, com a grade em colmeia da ventoinha na tampa",
+                "caption": "A caixa montada, com a grade da ventoinha na tampa."
+              },
+              {
+                "alt": "Caixa montada vista pela frente, com a abertura do módulo da frente",
+                "caption": "Vista da frente: a abertura ainda espera o módulo com visor e leitor RFID."
+              },
+              {
+                "alt": "Base da caixa sem a tampa, com os apoios da placa e o berço da ventoinha",
+                "caption": "Sem a tampa: os apoios da placa e o berço da ventoinha."
+              },
+              {
+                "alt": "Tampa vista por baixo, com a grade da ventoinha e o berço preso por colunas",
+                "caption": "A tampa por dentro: a ventoinha fica presa num berço sob a grade."
+              },
+              {
+                "alt": "Peças pequenas do cupom de ajuste, com furos de diâmetros diferentes",
+                "caption": "Cupom de ajuste: peças pequenas para testar furos, insertos e encaixes antes da impressão final."
+              }
             ]
           }
         ]

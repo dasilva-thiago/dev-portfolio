@@ -1,9 +1,10 @@
 import { Link } from "react-router";
-import { useLocalizedPath, useT } from "~/shared/i18n/useT";
+import { useLocalizedPath, useResources, useT } from "~/shared/i18n/useT";
 import { AccessButton, GithubButton } from "~/shared/ui/ProjectLinks";
 import { ProjectTag } from "~/shared/ui/ProjectTag";
 import type { Project } from "../model/projects";
 import { projectPath } from "../model/slugs";
+import { CardCarousel, type CardSlide } from "./CardCarousel";
 
 type Variant = Project["variant"];
 
@@ -45,6 +46,13 @@ export function ProjectCard({ project }: { project: Project }) {
   const localize = useLocalizedPath();
   const key = `projects.${project.slug}` as const;
   const { variant } = project;
+  const article = useResources().projects[project.slug].article;
+  const galleriesCopy = "galleries" in article ? article.galleries : undefined;
+  const slides: CardSlide[] = (project.cardSlides ?? []).flatMap(([g, i]) => {
+    const image = project.galleries?.[g]?.[i];
+    const alt = galleriesCopy?.[g]?.items[i]?.alt;
+    return image && alt ? [{ image, alt }] : [];
+  });
 
   return (
     <article
@@ -55,14 +63,18 @@ export function ProjectCard({ project }: { project: Project }) {
       }
     >
       <div className={`w-full overflow-hidden ${IMAGE[variant]}`}>
-        <img
-          src={project.cardImage.src}
-          alt={t(`${key}.alt`)}
-          width={project.cardImage.width}
-          height={project.cardImage.height}
-          loading="lazy"
-          className={`block size-full ${project.cardFit === "contain" ? "object-contain" : "object-cover"}`}
-        />
+        {slides.length > 0 ? (
+          <CardCarousel slides={slides} />
+        ) : (
+          <img
+            src={project.cardImage.src}
+            alt={t(`${key}.alt`)}
+            width={project.cardImage.width}
+            height={project.cardImage.height}
+            loading="lazy"
+            className={`block size-full ${project.cardFit === "contain" ? "object-contain" : "object-cover"}`}
+          />
+        )}
       </div>
       <div className={`flex flex-1 flex-col ${INFO[variant]}`}>
         <span className="mb-2 font-[family-name:var(--font-mono)] text-[12px] font-bold text-link">

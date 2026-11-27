@@ -18,7 +18,7 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
   const project = getProject(slug);
   const key = `projects.${slug}` as const;
   const article = useResources().projects[slug].article;
-  const galleryCopy = "gallery" in article ? article.gallery : undefined;
+  const galleriesCopy = "galleries" in article ? article.galleries : undefined;
 
   return (
     <>
@@ -68,30 +68,6 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
                 ))}
               </div>
 
-              {project.gallery && galleryCopy ? (
-                <section className="mb-11">
-                  <h2 className={SECTION_H2}>{galleryCopy.heading}</h2>
-                  <div className="flex flex-col gap-5">
-                    {project.gallery.map((image, i) => (
-                      <figure key={image.src} className="m-0">
-                        <img
-                          src={image.src}
-                          alt={galleryCopy.items[i]?.alt ?? ""}
-                          width={image.width}
-                          height={image.height}
-                          loading="lazy"
-                          decoding="async"
-                          className="block h-auto w-full rounded-xl border border-line bg-surface"
-                        />
-                        <figcaption className="mt-2 text-[0.875rem] font-medium leading-[1.6] text-muted">
-                          {galleryCopy.items[i]?.caption}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </section>
-              ) : null}
-
               {article.sections.map((section) => (
                 <section key={section.heading} className="mb-11">
                   <h2 className={SECTION_H2}>
@@ -104,6 +80,34 @@ export function ProjectPage({ slug }: { slug: ProjectSlug }) {
                   ))}
                 </section>
               ))}
+
+              {project.galleries?.map((images, g) => {
+                const copy = galleriesCopy?.[g];
+                if (!copy) return null;
+                return (
+                  <section key={copy.heading} className="mb-11">
+                    <h2 className={SECTION_H2}>{copy.heading}</h2>
+                    <div className="grid grid-cols-2 gap-4 max-bp480:gap-3">
+                      {images.map((image, i) => (
+                        <figure key={image.src} className={`m-0 ${image.height > image.width ? "" : "col-span-2"}`}>
+                          <img
+                            src={image.src}
+                            alt={copy.items[i]?.alt ?? ""}
+                            width={image.width}
+                            height={image.height}
+                            loading="lazy"
+                            decoding="async"
+                            className={`block h-auto w-full rounded-xl border border-line ${image.render ? "bg-[#1d2127]" : "bg-surface"}`}
+                          />
+                          <figcaption className="mt-2 text-[0.875rem] font-medium leading-[1.6] text-muted">
+                            {copy.items[i]?.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
           </article>
         </div>

@@ -168,7 +168,9 @@
   },
   "buttons": {
     "github": "View on GitHub",
-    "access": "Try the demo (no sign-up)"
+    "access": "Try the demo (no sign-up)",
+    "pauseSlides": "Pause the images",
+    "playSlides": "Resume the images"
   },
   "projectArticle": {
     "back": "Back"
@@ -346,23 +348,6 @@
         "intro": [
           "eduServer Box is the physical side of eduServer: a small server built from the motherboard of an old laptop reused for the project, meant to run school project services linked to eduAssets. The project is still in progress: the main enclosure is already modeled in Fusion, and the first test print is planned for January 2027."
         ],
-        "gallery": {
-          "heading": "The model today",
-          "items": [
-            {
-              "alt": "Closed enclosure seen from its open side, where a wall is still to be modeled",
-              "caption": "The enclosure from another angle: the open side is still waiting for the wall that is left to model."
-            },
-            {
-              "alt": "Enclosure base without the lid, showing the simplified board, its supports and the fan cradle ring",
-              "caption": "Without the lid: the simplified board on its supports and the fan cradle."
-            },
-            {
-              "alt": "Small fit-test coupon parts, with holes of different diameters labeled in relief",
-              "caption": "Fit-test coupon: small parts to check holes, inserts and fits before the final print."
-            }
-          ]
-        },
         "sections": [
           {
             "heading": "The goal",
@@ -381,6 +366,70 @@
             "heading": "Current state",
             "paragraphs": [
               "The base and lid of the main enclosure, the fan cradle, the hard drive tray and a fit-test coupon are modeled. Still to do: the back wall, the front module and the design audits before the final version is printed."
+            ]
+          }
+        ],
+        "galleries": [
+          {
+            "heading": "The board and the tests",
+            "items": [
+              {
+                "alt": "Reused laptop motherboard, seen from above",
+                "caption": "The motherboard reused for the project: every port sits on a single edge."
+              },
+              {
+                "alt": "Close-up of the board's ports and components",
+                "caption": "The ports and components the enclosure has to work around."
+              },
+              {
+                "alt": "Digital caliper measuring the board with its copper heat spreader",
+                "caption": "Caliper measurement: every dimension is checked before it goes into the model."
+              },
+              {
+                "alt": "Caliper measuring a height with its depth rod",
+                "caption": "Heights measured with the caliper's depth rod."
+              },
+              {
+                "alt": "Board powered on an anti-static sheet, with the SSD and a USB hub connected",
+                "caption": "The board running on its own, with the SSD and a USB hub."
+              },
+              {
+                "alt": "Board connected to a monitor, keyboard and mouse, working as a computer",
+                "caption": "First test: the board working as a computer, outside the laptop."
+              },
+              {
+                "alt": "RFID reader module held in a hand",
+                "caption": "The RFID reader for the front module."
+              },
+              {
+                "alt": "Small color TFT display held in a hand",
+                "caption": "The TFT display for the front module."
+              }
+            ]
+          },
+          {
+            "heading": "The model in Fusion",
+            "items": [
+              {
+                "alt": "Assembled enclosure in Autodesk Fusion, with the honeycomb fan grille on the lid",
+                "caption": "The assembled enclosure, with the fan grille on the lid."
+              },
+              {
+                "alt": "Assembled enclosure seen from the front, with the opening for the front module",
+                "caption": "Front view: the opening is still waiting for the module with the display and RFID reader."
+              },
+              {
+                "alt": "Enclosure base without the lid, with the board supports and the fan cradle",
+                "caption": "Without the lid: the board supports and the fan cradle."
+              },
+              {
+                "alt": "Lid seen from below, with the fan grille and the cradle held by columns",
+                "caption": "Inside the lid: the fan is held in a cradle under the grille."
+              },
+              {
+                "alt": "Small fit-test coupon parts, with holes of different diameters",
+                "caption": "Fit-test coupon: small parts to check holes, inserts and fits before the final print."
+              }
             ]
           }
         ]
